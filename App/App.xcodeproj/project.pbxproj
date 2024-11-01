@@ -15,6 +15,10 @@
 		CCFE26AF2CD4C3C100E8D655 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26AE2CD4C3C100E8D655 /* AppTests.swift */; };
 		CCFE26B92CD4C3C100E8D655 /* AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26B82CD4C3C100E8D655 /* AppUITests.swift */; };
 		CCFE26BB2CD4C3C100E8D655 /* AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26BA2CD4C3C100E8D655 /* AppUITestsLaunchTests.swift */; };
+		CCFE275D2CD4D30900E8D655 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE275C2CD4D30900E8D655 /* Common.framework */; };
+		CCFE275E2CD4D30900E8D655 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE275C2CD4D30900E8D655 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CCFE27612CD4D31E00E8D655 /* Feature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE27602CD4D31E00E8D655 /* Feature.framework */; };
+		CCFE27622CD4D31E00E8D655 /* Feature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE27602CD4D31E00E8D655 /* Feature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CCFE275F2CD4D30900E8D655 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CCFE275E2CD4D30900E8D655 /* Common.framework in Embed Frameworks */,
+				CCFE27622CD4D31E00E8D655 /* Feature.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CCFE26942CD4C3C000E8D655 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE26972CD4C3C000E8D655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +66,8 @@
 		CCFE26B42CD4C3C100E8D655 /* AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE26B82CD4C3C100E8D655 /* AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITests.swift; sourceTree = "<group>"; };
 		CCFE26BA2CD4C3C100E8D655 /* AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CCFE275C2CD4D30900E8D655 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCFE27602CD4D31E00E8D655 /* Feature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Feature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFE275D2CD4D30900E8D655 /* Common.framework in Frameworks */,
+				CCFE27612CD4D31E00E8D655 /* Feature.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +104,7 @@
 				CCFE26AD2CD4C3C100E8D655 /* AppTests */,
 				CCFE26B72CD4C3C100E8D655 /* AppUITests */,
 				CCFE26952CD4C3C000E8D655 /* Products */,
+				CCFE275B2CD4D30900E8D655 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +148,15 @@
 			path = AppUITests;
 			sourceTree = "<group>";
 		};
+		CCFE275B2CD4D30900E8D655 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CCFE27602CD4D31E00E8D655 /* Feature.framework */,
+				CCFE275C2CD4D30900E8D655 /* Common.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +167,7 @@
 				CCFE26902CD4C3C000E8D655 /* Sources */,
 				CCFE26912CD4C3C000E8D655 /* Frameworks */,
 				CCFE26922CD4C3C000E8D655 /* Resources */,
+				CCFE275F2CD4D30900E8D655 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -356,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -413,7 +447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC15F4BC2CD50DF000EBAA7D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC15F4BB2CD50DF000EBAA7D /* LoginViewController.swift */; };
 		CCFE26982CD4C3C000E8D655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26972CD4C3C000E8D655 /* AppDelegate.swift */; };
 		CCFE269A2CD4C3C000E8D655 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26992CD4C3C000E8D655 /* SceneDelegate.swift */; };
 		CCFE269C2CD4C3C000E8D655 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE269B2CD4C3C000E8D655 /* ViewController.swift */; };
@@ -55,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		CCA2FFE82CD74DE80076F5A8 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
+		CC15F4BA2CD50BFA00EBAA7D /* ko-KR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ko-KR"; path = "ko-KR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CC15F4BB2CD50DF000EBAA7D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CCFE26942CD4C3C000E8D655 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE26972CD4C3C000E8D655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCFE26992CD4C3C000E8D655 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 				CCFE26A22CD4C3C100E8D655 /* LaunchScreen.storyboard */,
 				CCFE26A52CD4C3C100E8D655 /* Info.plist */,
 				CCA2FFE82CD74DE80076F5A8 /* Secret.xcconfig */,
+				CC15F4BB2CD50DF000EBAA7D /* LoginViewController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -243,11 +247,12 @@
 			};
 			buildConfigurationList = CCFE268F2CD4C3C000E8D655 /* Build configuration list for PBXProject "App" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "ko-KR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"ko-KR",
 			);
 			mainGroup = CCFE268B2CD4C3C000E8D655;
 			packageReferences = (
@@ -294,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC15F4BC2CD50DF000EBAA7D /* LoginViewController.swift in Sources */,
 				CCFE269C2CD4C3C000E8D655 /* ViewController.swift in Sources */,
 				CCFE26982CD4C3C000E8D655 /* AppDelegate.swift in Sources */,
 				CCFE269A2CD4C3C000E8D655 /* SceneDelegate.swift in Sources */,
@@ -337,6 +343,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CCFE26A32CD4C3C100E8D655 /* Base */,
+				CC15F4BA2CD50BFA00EBAA7D /* ko-KR */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -350,6 +357,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -413,6 +421,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

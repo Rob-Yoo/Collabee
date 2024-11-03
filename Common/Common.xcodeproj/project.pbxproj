@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CCA52A1E2CD7522B000E62EA /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CCA52A1D2CD7522B000E62EA /* KakaoSDKAuth */; };
+		CCA52A202CD7522B000E62EA /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = CCA52A1F2CD7522B000E62EA /* KakaoSDKCommon */; };
+		CCA52A222CD7522B000E62EA /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = CCA52A212CD7522B000E62EA /* KakaoSDKUser */; };
+		CCA52A262CD75351000E62EA /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA52A252CD75351000E62EA /* AuthManager.swift */; };
 		CCFE273C2CD4CDB600E8D655 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = CCFE273B2CD4CDB600E8D655 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CCA52A252CD75351000E62EA /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		CCFE27382CD4CDB600E8D655 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE273B2CD4CDB600E8D655 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -20,6 +25,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA52A202CD7522B000E62EA /* KakaoSDKCommon in Frameworks */,
+				CCA52A1E2CD7522B000E62EA /* KakaoSDKAuth in Frameworks */,
+				CCA52A222CD7522B000E62EA /* KakaoSDKUser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				CCFE273B2CD4CDB600E8D655 /* Common.h */,
+				CCA52A252CD75351000E62EA /* AuthManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -78,6 +87,11 @@
 			dependencies = (
 			);
 			name = Common;
+			packageProductDependencies = (
+				CCA52A1D2CD7522B000E62EA /* KakaoSDKAuth */,
+				CCA52A1F2CD7522B000E62EA /* KakaoSDKCommon */,
+				CCA52A212CD7522B000E62EA /* KakaoSDKUser */,
+			);
 			productName = Common;
 			productReference = CCFE27382CD4CDB600E8D655 /* Common.framework */;
 			productType = "com.apple.product-type.framework";
@@ -93,6 +107,7 @@
 				TargetAttributes = {
 					CCFE27372CD4CDB600E8D655 = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
 				};
 			};
@@ -105,6 +120,9 @@
 				Base,
 			);
 			mainGroup = CCFE272E2CD4CDB600E8D655;
+			packageReferences = (
+				CCA52A1C2CD7522B000E62EA /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+			);
 			productRefGroup = CCFE27392CD4CDB600E8D655 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA52A262CD75351000E62EA /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +282,8 @@
 		CCFE27402CD4CDB600E8D655 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -284,7 +304,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.sesac.Common;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.Common;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -293,6 +313,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -301,7 +322,8 @@
 		CCFE27412CD4CDB600E8D655 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -322,7 +344,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.sesac.Common;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.Common;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -358,6 +380,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CCA52A1C2CD7522B000E62EA /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.23.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CCA52A1D2CD7522B000E62EA /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCA52A1C2CD7522B000E62EA /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		CCA52A1F2CD7522B000E62EA /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCA52A1C2CD7522B000E62EA /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+		CCA52A212CD7522B000E62EA /* KakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCA52A1C2CD7522B000E62EA /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKUser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CCFE272F2CD4CDB600E8D655 /* Project object */;
 }

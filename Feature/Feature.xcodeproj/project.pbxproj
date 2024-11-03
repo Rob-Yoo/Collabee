@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CCA52A2A2CD7874E000E62EA /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA52A292CD7874E000E62EA /* OnboardingViewController.swift */; };
+		CCA52A2D2CD787DF000E62EA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA52A2C2CD787DF000E62EA /* UIViewController+Extension.swift */; };
+		CCA52A302CD788E4000E62EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA52A2F2CD788E4000E62EA /* Assets.xcassets */; };
+		CCA52A322CD7894A000E62EA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA52A312CD7894A000E62EA /* Constant.swift */; };
+		CCA52A342CD78A8D000E62EA /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA52A332CD78A8D000E62EA /* UIFont+Extension.swift */; };
 		CCFE271F2CD4CD9A00E8D655 /* Feature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE27162CD4CD9A00E8D655 /* Feature.framework */; };
 		CCFE27242CD4CD9A00E8D655 /* FeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE27232CD4CD9A00E8D655 /* FeatureTests.swift */; };
 		CCFE27252CD4CD9A00E8D655 /* Feature.h in Headers */ = {isa = PBXBuildFile; fileRef = CCFE27192CD4CD9A00E8D655 /* Feature.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,6 +50,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CCA52A292CD7874E000E62EA /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		CCA52A2C2CD787DF000E62EA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		CCA52A2F2CD788E4000E62EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCA52A312CD7894A000E62EA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		CCA52A332CD78A8D000E62EA /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		CCFE27162CD4CD9A00E8D655 /* Feature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE27192CD4CD9A00E8D655 /* Feature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
 		CCFE271E2CD4CD9A00E8D655 /* FeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +87,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CCA52A282CD78709000E62EA /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CCA52A292CD7874E000E62EA /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CCA52A2B2CD787CD000E62EA /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				CCA52A2C2CD787DF000E62EA /* UIViewController+Extension.swift */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		CCA52A2E2CD788D2000E62EA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CCA52A2F2CD788E4000E62EA /* Assets.xcassets */,
+				CCA52A312CD7894A000E62EA /* Constant.swift */,
+				CCA52A332CD78A8D000E62EA /* UIFont+Extension.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CCFE270C2CD4CD9A00E8D655 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +135,9 @@
 		CCFE27182CD4CD9A00E8D655 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				CCA52A2E2CD788D2000E62EA /* Resources */,
+				CCA52A2B2CD787CD000E62EA /* Preview */,
+				CCA52A282CD78709000E62EA /* Onboarding */,
 				CCFE27192CD4CD9A00E8D655 /* Feature.h */,
 			);
 			path = Feature;
@@ -189,6 +228,7 @@
 				TargetAttributes = {
 					CCFE27152CD4CD9A00E8D655 = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
 					CCFE271D2CD4CD9A00E8D655 = {
 						CreatedOnToolsVersion = 15.4;
@@ -224,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA52A302CD788E4000E62EA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA52A2D2CD787DF000E62EA /* UIViewController+Extension.swift in Sources */,
+				CCA52A2A2CD7874E000E62EA /* OnboardingViewController.swift in Sources */,
+				CCA52A342CD78A8D000E62EA /* UIFont+Extension.swift in Sources */,
+				CCA52A322CD7894A000E62EA /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +436,8 @@
 		CCFE27292CD4CD9A00E8D655 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -421,6 +467,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -429,7 +476,8 @@
 		CCFE272A2CD4CD9A00E8D655 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -467,6 +515,7 @@
 		CCFE272C2CD4CD9A00E8D655 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YWNQ4RZBTS;
@@ -483,6 +532,7 @@
 		CCFE272D2CD4CD9A00E8D655 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YWNQ4RZBTS;

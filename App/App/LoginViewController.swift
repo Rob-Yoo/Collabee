@@ -34,7 +34,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
-            // You can create an account in your system.
+
             let userIdentifier = appleIDCredential.user
             let fullName = appleIDCredential.fullName
             let email = appleIDCredential.email
@@ -52,19 +52,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate, 
             print("useridentifier: \(userIdentifier)")
             print("fullName: \(fullName) \(fullName?.givenName) \(fullName?.familyName) \(fullName?.nickname)")
             print("email: \(email)")
-            
-            //Move to MainPage
-            //let validVC = SignValidViewController()
-            //validVC.modalPresentationStyle = .fullScreen
-            //present(validVC, animated: true, completion: nil)
-            
-        case let passwordCredential as ASPasswordCredential:
-            // Sign in using an existing iCloud Keychain credential.
-            let username = passwordCredential.user
-            let password = passwordCredential.password
-            
-            print("username: \(username)")
-            print("password: \(password)")
             
         default:
             break

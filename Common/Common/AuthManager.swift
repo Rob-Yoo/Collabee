@@ -8,10 +8,12 @@
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
+import AuthenticationServices
 
+@objc
 public protocol OAuthProvider {
     func login()
-    func handleOpenURL(_ url: URL)
+    @objc optional func handleOpenURL(_ url: URL)
 }
 
 public final class AuthManager {
@@ -27,7 +29,7 @@ public final class AuthManager {
     }
     
     public func handleOpenURL(_ url: URL) {
-        oauthProivder.handleOpenURL(url)
+        oauthProivder.handleOpenURL?(url)
     }
 }
 
@@ -66,6 +68,62 @@ public final class KakaoOAuth: OAuthProvider {
         if (AuthApi.isKakaoTalkLoginUrl(url)) {
             _ = AuthController.handleOpenUrl(url: url)
         }
+    }
+}
+
+public final class AppleOAuth: NSObject, OAuthProvider,  ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    
+    private var presentationAnchor: ASPresentationAnchor
+    
+    public init(presentationAnchor: ASPresentationAnchor) {
+        self.presentationAnchor = presentationAnchor
+    }
+    
+    public func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return presentationAnchor
+    }
+    
+    public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+
+            let userIdentifier = appleIDCredential.user
+            let fullName = appleIDCredential.fullName
+            let email = appleIDCredential.email
+            
+            if  let authorizationCode = appleIDCredential.authorizationCode,
+                let identityToken = appleIDCredential.identityToken,
+                let authCodeString = String(data: authorizationCode, encoding: .utf8),
+                let identifyTokenString = String(data: identityToken, encoding: .utf8) {
+                print("authorizationCode: \(authorizationCode)")
+                print("identityToken: \(identityToken)")
+                print("authCodeString: \(authCodeString)")
+                print("identifyTokenString: \(identifyTokenString)")
+            }
+            
+            print("useridentifier: \(userIdentifier)")
+            print("fullName: \(fullName) \(fullName?.givenName) \(fullName?.familyName) \(fullName?.nickname)")
+            print("email: \(email)")
+            
+        default:
+            break
+        }
+    }
+    
+    public func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // 로그인 실패(유저의 취소도 포함)
+        print("login failed - \(error.localizedDescription)")
+    }
+    
+    public func login() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
     }
 }
     

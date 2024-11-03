@@ -1,0 +1,16 @@
+//
+//  UIFont+Extension.swift
+//  Feature
+//
+//  Created by Jinyoung Yoo on 11/3/24.
+//
+
+import UIKit
+
+extension UIFont {
+    static let regular12 = UIFont.systemFont(ofSize: 12, weight: .regular)
+    static let regular13 = UIFont.systemFont(ofSize: 13, weight: .regular)
+    static let bold13 = UIFont.systemFont(ofSize: 13, weight: .bold)
+    static let bold14 = UIFont.systemFont(ofSize: 14, weight: .bold)
+    static let bold22 = UIFont.systemFont(ofSize: 22, weight: .bold)
+}

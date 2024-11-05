@@ -7,15 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CCB4466F2CD9F12000A4FCAB /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4466E2CD9F12000A4FCAB /* DIContainer.swift */; };
+		CCB446772CDA07F700A4FCAB /* CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446762CDA07F700A4FCAB /* CommonTests.swift */; };
+		CCB4467E2CDA080C00A4FCAB /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE27382CD4CDB600E8D655 /* Common.framework */; platformFilter = ios; };
+		CCB4467F2CDA080C00A4FCAB /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE27382CD4CDB600E8D655 /* Common.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CCB446832CDA084600A4FCAB /* DIContainerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446822CDA084600A4FCAB /* DIContainerTest.swift */; };
+		CCB446852CDA090B00A4FCAB /* MockClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446842CDA090B00A4FCAB /* MockClass.swift */; };
+		CCB446872CDA161B00A4FCAB /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446862CDA161B00A4FCAB /* Injected.swift */; };
 		CCFE273C2CD4CDB600E8D655 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = CCFE273B2CD4CDB600E8D655 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CCB446792CDA07F700A4FCAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCFE272F2CD4CDB600E8D655 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCFE27372CD4CDB600E8D655;
+			remoteInfo = Common;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CCB446802CDA080C00A4FCAB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CCB4467F2CDA080C00A4FCAB /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CCB4466E2CD9F12000A4FCAB /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		CCB446742CDA07F700A4FCAB /* CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCB446762CDA07F700A4FCAB /* CommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTests.swift; sourceTree = "<group>"; };
+		CCB446822CDA084600A4FCAB /* DIContainerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainerTest.swift; sourceTree = "<group>"; };
+		CCB446842CDA090B00A4FCAB /* MockClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClass.swift; sourceTree = "<group>"; };
+		CCB446862CDA161B00A4FCAB /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
 		CCFE27382CD4CDB600E8D655 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE273B2CD4CDB600E8D655 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CCB446712CDA07F700A4FCAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCB4467E2CDA080C00A4FCAB /* Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCFE27352CD4CDB600E8D655 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -26,10 +71,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CCB4466D2CD9F11800A4FCAB /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				CCB4466E2CD9F12000A4FCAB /* DIContainer.swift */,
+				CCB446862CDA161B00A4FCAB /* Injected.swift */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
+		CCB446752CDA07F700A4FCAB /* CommonTests */ = {
+			isa = PBXGroup;
+			children = (
+				CCB446812CDA082700A4FCAB /* DIContainerTests */,
+				CCB446762CDA07F700A4FCAB /* CommonTests.swift */,
+			);
+			path = CommonTests;
+			sourceTree = "<group>";
+		};
+		CCB446812CDA082700A4FCAB /* DIContainerTests */ = {
+			isa = PBXGroup;
+			children = (
+				CCB446822CDA084600A4FCAB /* DIContainerTest.swift */,
+				CCB446842CDA090B00A4FCAB /* MockClass.swift */,
+			);
+			path = DIContainerTests;
+			sourceTree = "<group>";
+		};
 		CCFE272E2CD4CDB600E8D655 = {
 			isa = PBXGroup;
 			children = (
 				CCFE273A2CD4CDB600E8D655 /* Common */,
+				CCB446752CDA07F700A4FCAB /* CommonTests */,
 				CCFE27392CD4CDB600E8D655 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -38,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				CCFE27382CD4CDB600E8D655 /* Common.framework */,
+				CCB446742CDA07F700A4FCAB /* CommonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -45,6 +119,7 @@
 		CCFE273A2CD4CDB600E8D655 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CCB4466D2CD9F11800A4FCAB /* Dependency */,
 				CCFE273B2CD4CDB600E8D655 /* Common.h */,
 			);
 			path = Common;
@@ -64,6 +139,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		CCB446732CDA07F700A4FCAB /* CommonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCB4467B2CDA07F700A4FCAB /* Build configuration list for PBXNativeTarget "CommonTests" */;
+			buildPhases = (
+				CCB446702CDA07F700A4FCAB /* Sources */,
+				CCB446712CDA07F700A4FCAB /* Frameworks */,
+				CCB446722CDA07F700A4FCAB /* Resources */,
+				CCB446802CDA080C00A4FCAB /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCB4467A2CDA07F700A4FCAB /* PBXTargetDependency */,
+			);
+			name = CommonTests;
+			productName = CommonTests;
+			productReference = CCB446742CDA07F700A4FCAB /* CommonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CCFE27372CD4CDB600E8D655 /* Common */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCFE273F2CD4CDB600E8D655 /* Build configuration list for PBXNativeTarget "Common" */;
@@ -91,8 +185,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					CCB446732CDA07F700A4FCAB = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					CCFE27372CD4CDB600E8D655 = {
 						CreatedOnToolsVersion = 15.4;
 						LastSwiftMigration = 1540;
@@ -116,11 +214,19 @@
 			projectRoot = "";
 			targets = (
 				CCFE27372CD4CDB600E8D655 /* Common */,
+				CCB446732CDA07F700A4FCAB /* CommonTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CCB446722CDA07F700A4FCAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCFE27362CD4CDB600E8D655 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -131,16 +237,79 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CCB446702CDA07F700A4FCAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCB446832CDA084600A4FCAB /* DIContainerTest.swift in Sources */,
+				CCB446852CDA090B00A4FCAB /* MockClass.swift in Sources */,
+				CCB446772CDA07F700A4FCAB /* CommonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCFE27342CD4CDB600E8D655 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB4466F2CD9F12000A4FCAB /* DIContainer.swift in Sources */,
+				CCB446872CDA161B00A4FCAB /* Injected.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CCB4467A2CDA07F700A4FCAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = CCFE27372CD4CDB600E8D655 /* Common */;
+			targetProxy = CCB446792CDA07F700A4FCAB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		CCB4467C2CDA07F700A4FCAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YWNQ4RZBTS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.CommonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CCB4467D2CDA07F700A4FCAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YWNQ4RZBTS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.CommonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		CCFE273D2CD4CDB600E8D655 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -348,6 +517,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CCB4467B2CDA07F700A4FCAB /* Build configuration list for PBXNativeTarget "CommonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCB4467C2CDA07F700A4FCAB /* Debug */,
+				CCB4467D2CDA07F700A4FCAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CCFE27322CD4CDB600E8D655 /* Build configuration list for PBXProject "Common" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -7,17 +7,18 @@
 
 import UIKit
 import Domain
+import Data
 import Feature
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    private var authUseCase: AuthUseCase!
+    private var authUseCase: AuthUseCase! = DefaultAuthUseCase(authRepository: DefaultAuthRepository())
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = OnboardingViewController()
+        window?.rootViewController = OnboardingViewController(useCase: authUseCase)
         window?.makeKeyAndVisible()
     }
     

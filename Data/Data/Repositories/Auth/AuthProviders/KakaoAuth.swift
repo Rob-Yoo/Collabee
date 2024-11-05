@@ -15,6 +15,7 @@ final class KakaoOAuth: AuthProvider {
 
     public init() {
         let kakaoAppKey = Bundle.main.infoDictionary?["KAKAO_NATIVE_KEY"] ?? ""
+        print(kakaoAppKey)
         KakaoSDK.initSDK(appKey: kakaoAppKey as! String)
     }
     

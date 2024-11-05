@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CCB446512CD9C30400A4FCAB /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446502CD9C30400A4FCAB /* AuthUseCase.swift */; };
-		CCB446532CD9C35100A4FCAB /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446522CD9C35100A4FCAB /* AuthProvider.swift */; };
 		CCB4465A2CD9C6E600A4FCAB /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446592CD9C6E600A4FCAB /* AuthRepository.swift */; };
 		CCFE26DA2CD4C47000E8D655 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE26D12CD4C47000E8D655 /* Domain.framework */; };
 		CCFE26DF2CD4C47000E8D655 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26DE2CD4C47000E8D655 /* DomainTests.swift */; };
@@ -27,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		CCB446502CD9C30400A4FCAB /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
-		CCB446522CD9C35100A4FCAB /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		CCB446592CD9C6E600A4FCAB /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		CCFE26D12CD4C47000E8D655 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE26D42CD4C47000E8D655 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 		CCB4464F2CD9C2E800A4FCAB /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				CCB446522CD9C35100A4FCAB /* AuthProvider.swift */,
 				CCB446502CD9C30400A4FCAB /* AuthUseCase.swift */,
 			);
 			path = Auth;
@@ -226,7 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCB4465A2CD9C6E600A4FCAB /* AuthRepository.swift in Sources */,
-				CCB446532CD9C35100A4FCAB /* AuthProvider.swift in Sources */,
 				CCB446512CD9C30400A4FCAB /* AuthUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

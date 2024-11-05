@@ -1,6 +1,6 @@
 //
 //  AuthProvider.swift
-//  Domain
+//  Data
 //
 //  Created by Jinyoung Yoo on 11/5/24.
 //
@@ -10,3 +10,4 @@ public protocol AuthProvider {
     func login()
     @objc optional func handleOpenURL(_ url: URL)
 }
+

@@ -6,11 +6,24 @@
 //
 
 import UIKit
+
+import Domain
+
 import SnapKit
 import Then
-import Common
 
 public final class OnboardingViewController: UIViewController {
+    
+    private let useCase: AuthUseCase
+    
+    public init(useCase: AuthUseCase) {
+        self.useCase = useCase
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private let descriptionLabel = UILabel().then {
         $0.textColor = .textPrimary
@@ -78,25 +91,21 @@ public final class OnboardingViewController: UIViewController {
     }
     
     @objc private func appleLoginButtonTapped() {
-        let appleAuth = AppleOAuth(presentationAnchor: view.window!)
-        
-        AuthManager.shared.login(appleAuth)
+        useCase.login(.apple(self.view.window!))
     }
     
     @objc private func kakaoLoginButtonTapped() {
-        let kakaoAuth = KakaoOAuth()
-        
-        AuthManager.shared.login(kakaoAuth)
+        useCase.login(.kakao)
     }
     
 }
-
-#if DEBUG
-import SwiftUI
-
-struct PreView: PreviewProvider {
-    static var previews: some View {
-        OnboardingViewController().toPreview()
-    }
-}
-#endif
+//
+//#if DEBUG
+//import SwiftUI
+//
+//struct PreView: PreviewProvider {
+//    static var previews: some View {
+//        OnboardingViewController().toPreview()
+//    }
+//}
+//#endif

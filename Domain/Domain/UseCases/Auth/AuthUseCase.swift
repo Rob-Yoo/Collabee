@@ -21,7 +21,7 @@ public final class DefaultAuthUseCase: AuthUseCase {
     
     private var authRepository: AuthRepository
     
-    init(authRepository: AuthRepository) {
+    public init(authRepository: AuthRepository) {
         self.authRepository = authRepository
     }
     

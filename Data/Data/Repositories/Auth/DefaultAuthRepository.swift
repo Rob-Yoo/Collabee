@@ -11,6 +11,8 @@ public final class DefaultAuthRepository: AuthRepository {
     
     private var authProvider: AuthProvider!
     
+    public init() {}
+    
     public func login(_ providerType: AuthProviderType) {
         self.authProvider = AuthProviderFactory.createAuthProvider(providerType)
         authProvider.login()

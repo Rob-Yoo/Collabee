@@ -14,6 +14,7 @@
 		CCB4465F2CD9E9A300A4FCAB /* KakaoAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4465E2CD9E9A300A4FCAB /* KakaoAuth.swift */; };
 		CCB446612CD9E9D800A4FCAB /* AppleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446602CD9E9D800A4FCAB /* AppleAuth.swift */; };
 		CCB446642CD9EA9700A4FCAB /* AuthProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446632CD9EA9700A4FCAB /* AuthProviderFactory.swift */; };
+		CCB446662CD9EC6A00A4FCAB /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446652CD9EC6A00A4FCAB /* AuthProvider.swift */; };
 		CCFE26FC2CD4C55300E8D655 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE26F32CD4C55300E8D655 /* Data.framework */; };
 		CCFE27012CD4C55300E8D655 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE27002CD4C55300E8D655 /* DataTests.swift */; };
 		CCFE27022CD4C55300E8D655 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = CCFE26F62CD4C55300E8D655 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,6 +54,7 @@
 		CCB4465E2CD9E9A300A4FCAB /* KakaoAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuth.swift; sourceTree = "<group>"; };
 		CCB446602CD9E9D800A4FCAB /* AppleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuth.swift; sourceTree = "<group>"; };
 		CCB446632CD9EA9700A4FCAB /* AuthProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderFactory.swift; sourceTree = "<group>"; };
+		CCB446652CD9EC6A00A4FCAB /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		CCFE26F32CD4C55300E8D655 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE26F62CD4C55300E8D655 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		CCFE26FB2CD4C55300E8D655 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 		CCB446622CD9EA8600A4FCAB /* AuthProviders */ = {
 			isa = PBXGroup;
 			children = (
+				CCB446652CD9EC6A00A4FCAB /* AuthProvider.swift */,
 				CCB446632CD9EA9700A4FCAB /* AuthProviderFactory.swift */,
 				CCB4465E2CD9E9A300A4FCAB /* KakaoAuth.swift */,
 				CCB446602CD9E9D800A4FCAB /* AppleAuth.swift */,
@@ -278,6 +281,7 @@
 			files = (
 				CCB4465C2CD9C76F00A4FCAB /* DefaultAuthRepository.swift in Sources */,
 				CCB446642CD9EA9700A4FCAB /* AuthProviderFactory.swift in Sources */,
+				CCB446662CD9EC6A00A4FCAB /* AuthProvider.swift in Sources */,
 				CCB4465F2CD9E9A300A4FCAB /* KakaoAuth.swift in Sources */,
 				CCB446612CD9E9D800A4FCAB /* AppleAuth.swift in Sources */,
 			);

@@ -13,10 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-//        let kakaoAppKey = Bundle.main.infoDictionary?["KAKAO_NATIVE_KEY"] ?? ""
-//
-//        KakaoSDK.initSDK(appKey: kakaoAppKey as! String)
         return true
     }
 

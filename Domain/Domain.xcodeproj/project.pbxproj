@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CCB446512CD9C30400A4FCAB /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446502CD9C30400A4FCAB /* AuthUseCase.swift */; };
+		CCB446532CD9C35100A4FCAB /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446522CD9C35100A4FCAB /* AuthProvider.swift */; };
+		CCB4465A2CD9C6E600A4FCAB /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446592CD9C6E600A4FCAB /* AuthRepository.swift */; };
 		CCFE26DA2CD4C47000E8D655 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE26D12CD4C47000E8D655 /* Domain.framework */; };
 		CCFE26DF2CD4C47000E8D655 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26DE2CD4C47000E8D655 /* DomainTests.swift */; };
 		CCFE26E02CD4C47000E8D655 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = CCFE26D42CD4C47000E8D655 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +26,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CCB446502CD9C30400A4FCAB /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
+		CCB446522CD9C35100A4FCAB /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		CCB446592CD9C6E600A4FCAB /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		CCFE26D12CD4C47000E8D655 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE26D42CD4C47000E8D655 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		CCFE26D92CD4C47000E8D655 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +54,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CCB4464F2CD9C2E800A4FCAB /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				CCB446522CD9C35100A4FCAB /* AuthProvider.swift */,
+				CCB446502CD9C30400A4FCAB /* AuthUseCase.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		CCB446572CD9C6C800A4FCAB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CCB4464F2CD9C2E800A4FCAB /* Auth */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CCB446582CD9C6D100A4FCAB /* RepositoryInterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				CCB446592CD9C6E600A4FCAB /* AuthRepository.swift */,
+			);
+			path = RepositoryInterfaces;
+			sourceTree = "<group>";
+		};
 		CCFE26C72CD4C47000E8D655 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +100,8 @@
 		CCFE26D32CD4C47000E8D655 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				CCB446582CD9C6D100A4FCAB /* RepositoryInterfaces */,
+				CCB446572CD9C6C800A4FCAB /* UseCases */,
 				CCFE26D42CD4C47000E8D655 /* Domain.h */,
 			);
 			path = Domain;
@@ -144,6 +177,7 @@
 				TargetAttributes = {
 					CCFE26D02CD4C47000E8D655 = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
 					CCFE26D82CD4C47000E8D655 = {
 						CreatedOnToolsVersion = 15.4;
@@ -191,6 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB4465A2CD9C6E600A4FCAB /* AuthRepository.swift in Sources */,
+				CCB446532CD9C35100A4FCAB /* AuthProvider.swift in Sources */,
+				CCB446512CD9C30400A4FCAB /* AuthUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -371,6 +409,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -380,6 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -417,6 +457,7 @@
 		CCFE26E72CD4C47000E8D655 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YWNQ4RZBTS;
@@ -433,6 +474,7 @@
 		CCFE26E82CD4C47000E8D655 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YWNQ4RZBTS;

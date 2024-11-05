@@ -6,44 +6,24 @@
 //
 
 import UIKit
-import Common
+import Domain
 import Feature
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private var authUseCase: AuthUseCase!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-//        AuthManager.shared.login()
-
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = OnboardingViewController()
         window?.makeKeyAndVisible()
-//        let appleIDProvider = ASAuthorizationAppleIDProvider()
-//        appleIDProvider.getCredentialState(forUserID: "000820.a14d6e075d0249b3ab3e9502079f0cbd.1109") { (credentialState, error) in
-//            switch credentialState {
-//            case .authorized:
-//                print("authorized")
-//                DispatchQueue.main.async {
-//                   self.window?.rootViewController = ViewController()
-//                   self.window?.makeKeyAndVisible()
-//               }
-//            default:
-//                DispatchQueue.main.async {
-//                   self.window?.rootViewController = LoginViewController()
-//                   self.window?.makeKeyAndVisible()
-//               }
-//            }
-//        }
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let url = URLContexts.first?.url {
-            AuthManager.shared.handleOpenURL(url)
+            authUseCase.handleOpenURL(url)
         }
     }
 

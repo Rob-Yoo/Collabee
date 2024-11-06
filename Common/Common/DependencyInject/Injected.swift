@@ -9,7 +9,7 @@
 public struct Injected<Dependency> {
     public var wrappedValue: Dependency
     
-    public init(objectScope: DIContainer.ObjectScope = .shared) {
-        self.wrappedValue = DIContainer.resolve(Dependency.self, objectScope: objectScope)
+    public init(objectScope: Container.ObjectScope = .shared) {
+        self.wrappedValue = DIContainer.shared.resolve(Dependency.self, objectScope: objectScope)
     }
 }

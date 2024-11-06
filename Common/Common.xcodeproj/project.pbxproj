@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CCB4466F2CD9F12000A4FCAB /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4466E2CD9F12000A4FCAB /* DIContainer.swift */; };
+		CCB4466F2CD9F12000A4FCAB /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4466E2CD9F12000A4FCAB /* Container.swift */; };
 		CCB446772CDA07F700A4FCAB /* CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446762CDA07F700A4FCAB /* CommonTests.swift */; };
 		CCB4467E2CDA080C00A4FCAB /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE27382CD4CDB600E8D655 /* Common.framework */; platformFilter = ios; };
 		CCB4467F2CDA080C00A4FCAB /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE27382CD4CDB600E8D655 /* Common.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CCB446832CDA084600A4FCAB /* DIContainerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446822CDA084600A4FCAB /* DIContainerTest.swift */; };
+		CCB446832CDA084600A4FCAB /* ContainerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446822CDA084600A4FCAB /* ContainerTest.swift */; };
 		CCB446852CDA090B00A4FCAB /* MockClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446842CDA090B00A4FCAB /* MockClass.swift */; };
 		CCB446872CDA161B00A4FCAB /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446862CDA161B00A4FCAB /* Injected.swift */; };
+		CCB446892CDB17E300A4FCAB /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446882CDB17E300A4FCAB /* DIContainer.swift */; };
+		CCB4468B2CDB8F7500A4FCAB /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4468A2CDB8F7500A4FCAB /* Assembly.swift */; };
 		CCFE273C2CD4CDB600E8D655 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = CCFE273B2CD4CDB600E8D655 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -42,12 +44,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CCB4466E2CD9F12000A4FCAB /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		CCB4466E2CD9F12000A4FCAB /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		CCB446742CDA07F700A4FCAB /* CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCB446762CDA07F700A4FCAB /* CommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTests.swift; sourceTree = "<group>"; };
-		CCB446822CDA084600A4FCAB /* DIContainerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainerTest.swift; sourceTree = "<group>"; };
+		CCB446822CDA084600A4FCAB /* ContainerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTest.swift; sourceTree = "<group>"; };
 		CCB446842CDA090B00A4FCAB /* MockClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClass.swift; sourceTree = "<group>"; };
 		CCB446862CDA161B00A4FCAB /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
+		CCB446882CDB17E300A4FCAB /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		CCB4468A2CDB8F7500A4FCAB /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		CCFE27382CD4CDB600E8D655 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE273B2CD4CDB600E8D655 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,13 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CCB4466D2CD9F11800A4FCAB /* Dependency */ = {
+		CCB4466D2CD9F11800A4FCAB /* DependencyInject */ = {
 			isa = PBXGroup;
 			children = (
-				CCB4466E2CD9F12000A4FCAB /* DIContainer.swift */,
+				CCB4466E2CD9F12000A4FCAB /* Container.swift */,
 				CCB446862CDA161B00A4FCAB /* Injected.swift */,
+				CCB446882CDB17E300A4FCAB /* DIContainer.swift */,
+				CCB4468A2CDB8F7500A4FCAB /* Assembly.swift */,
 			);
-			path = Dependency;
+			path = DependencyInject;
 			sourceTree = "<group>";
 		};
 		CCB446752CDA07F700A4FCAB /* CommonTests */ = {
@@ -92,7 +98,7 @@
 		CCB446812CDA082700A4FCAB /* DIContainerTests */ = {
 			isa = PBXGroup;
 			children = (
-				CCB446822CDA084600A4FCAB /* DIContainerTest.swift */,
+				CCB446822CDA084600A4FCAB /* ContainerTest.swift */,
 				CCB446842CDA090B00A4FCAB /* MockClass.swift */,
 			);
 			path = DIContainerTests;
@@ -119,7 +125,7 @@
 		CCFE273A2CD4CDB600E8D655 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				CCB4466D2CD9F11800A4FCAB /* Dependency */,
+				CCB4466D2CD9F11800A4FCAB /* DependencyInject */,
 				CCFE273B2CD4CDB600E8D655 /* Common.h */,
 			);
 			path = Common;
@@ -241,7 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCB446832CDA084600A4FCAB /* DIContainerTest.swift in Sources */,
+				CCB446832CDA084600A4FCAB /* ContainerTest.swift in Sources */,
 				CCB446852CDA090B00A4FCAB /* MockClass.swift in Sources */,
 				CCB446772CDA07F700A4FCAB /* CommonTests.swift in Sources */,
 			);
@@ -251,7 +257,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCB4466F2CD9F12000A4FCAB /* DIContainer.swift in Sources */,
+				CCB4466F2CD9F12000A4FCAB /* Container.swift in Sources */,
+				CCB4468B2CDB8F7500A4FCAB /* Assembly.swift in Sources */,
+				CCB446892CDB17E300A4FCAB /* DIContainer.swift in Sources */,
 				CCB446872CDA161B00A4FCAB /* Injected.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

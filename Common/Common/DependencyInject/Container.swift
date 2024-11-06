@@ -5,10 +5,10 @@
 //  Created by Jinyoung Yoo on 11/5/24.
 //
 
-public enum DIContainer {
+public final class Container {
     
-    static var factoryStorage: [String: () -> AnyObject] = [:]
-    static var sharedObjectStorage: [String: WeakWrapper] = [:]
+    var factoryStorage: [String: (Container) -> AnyObject] = [:]
+    var sharedObjectStorage: [String: WeakWrapper] = [:]
     
     final class WeakWrapper {
         weak var value: AnyObject?
@@ -23,14 +23,16 @@ public enum DIContainer {
         case shared
     }
     
-    public static func register<T>(
+    public init() {}
+    
+    public func register<T>(
         _ type: T.Type,
-        factory: @escaping () -> AnyObject)
+        factory: @escaping (Container) -> AnyObject)
     {
         factoryStorage["\(type)"] = factory
     }
     
-    public static func resolve<T>(_ type: T.Type, objectScope: ObjectScope) -> T {
+    public func resolve<T>(_ type: T.Type, objectScope: ObjectScope) -> T {
         let key = "\(type)"
 
         // value가 nil인 WeakWrapper를 sharedObjectStorage에서 지움
@@ -39,7 +41,7 @@ public enum DIContainer {
         if let object = sharedObjectStorage[key]?.value as? T {
             return object
         }
-        else if let factory = factoryStorage[key], let object = factory() as? T {
+        else if let factory = factoryStorage[key], let object = factory(self) as? T {
             
             if objectScope == .shared {
                 sharedObjectStorage[key] = WeakWrapper(value: object as AnyObject)

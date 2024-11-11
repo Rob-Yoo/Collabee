@@ -8,8 +8,9 @@
 import Foundation
 import Security
 
-final class KeyChain {
+final class KeyChain: Sendable {
     
+    static let shared = KeyChain()
     private let service = "Collabee"
     
     private init() {}
@@ -27,7 +28,7 @@ final class KeyChain {
         let status = SecItemAdd(query as CFDictionary, nil)
         
         guard status == errSecSuccess else {
-            print("Failed to save data to Keychain with status: \(status)")
+            print("Keychain 저장 실패: \(status)")
             return
         }
     }
@@ -45,7 +46,7 @@ final class KeyChain {
         let status = SecItemCopyMatching(query as CFDictionary, &result)
         
         guard status == errSecSuccess else {
-            print("Failed to read data from Keychain with status: \(status)")
+            print("키체인 접근 실패: \(status)")
             return nil
         }
         
@@ -62,7 +63,7 @@ final class KeyChain {
         let status = SecItemDelete(query as CFDictionary)
         
         guard status == errSecSuccess else {
-            print("Failed to delete data from Keychain with status: \(status)")
+            print("키체인 삭제 실패: \(status)")
             return
         }
     }

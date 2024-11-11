@@ -15,7 +15,25 @@
 		CCB446612CD9E9D800A4FCAB /* AppleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446602CD9E9D800A4FCAB /* AppleAuth.swift */; };
 		CCB446642CD9EA9700A4FCAB /* AuthProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446632CD9EA9700A4FCAB /* AuthProviderFactory.swift */; };
 		CCB446662CD9EC6A00A4FCAB /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446652CD9EC6A00A4FCAB /* AuthProvider.swift */; };
-		CCFE26FC2CD4C55300E8D655 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE26F32CD4C55300E8D655 /* Data.framework */; };
+		CCB446952CDC3ABC00A4FCAB /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = CCB446942CDC3ABC00A4FCAB /* CombineMoya */; };
+		CCB4469A2CDC3AF600A4FCAB /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446992CDC3AF600A4FCAB /* UserAPI.swift */; };
+		CCB446A12CDCA66300A4FCAB /* LoginBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446A02CDCA66300A4FCAB /* LoginBody.swift */; };
+		CCB446A32CDCA80C00A4FCAB /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446A22CDCA80C00A4FCAB /* Header.swift */; };
+		CCB446A62CDCAC6300A4FCAB /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446A52CDCAC6300A4FCAB /* LoginResult.swift */; };
+		CCB446A82CDCD67A00A4FCAB /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446A72CDCD67A00A4FCAB /* NetworkProvider.swift */; };
+		CCB446AB2CDDB66600A4FCAB /* CollabeeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446AA2CDDB66600A4FCAB /* CollabeeError.swift */; };
+		CCB446AE2CDDC4EE00A4FCAB /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446AD2CDDC4EE00A4FCAB /* MockAPI.swift */; };
+		CCB446B02CDDC61800A4FCAB /* TokenInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446AF2CDDC61800A4FCAB /* TokenInterceptor.swift */; };
+		CCB446B62CDDCB8300A4FCAB /* Literal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446B52CDDCB8300A4FCAB /* Literal.swift */; };
+		CCB446B92CDDDDBC00A4FCAB /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446B82CDDDDBC00A4FCAB /* KeyChain.swift */; };
+		CCB446BB2CDDFEDE00A4FCAB /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446BA2CDDFEDE00A4FCAB /* TokenStorage.swift */; };
+		CCB446BD2CE0B8A600A4FCAB /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446BC2CE0B8A600A4FCAB /* MoyaLoggerPlugin.swift */; };
+		CCB446C12CE0E83000A4FCAB /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446C02CE0E83000A4FCAB /* AuthAPI.swift */; };
+		CCB446C32CE0E8AB00A4FCAB /* TargetType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446C22CE0E8AB00A4FCAB /* TargetType+Extension.swift */; };
+		CCB446C52CE0F12100A4FCAB /* TokenRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446C42CE0F12100A4FCAB /* TokenRefresh.swift */; };
+		CCB446C72CE1ABC500A4FCAB /* NetworkProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446C62CE1ABC500A4FCAB /* NetworkProviderTest.swift */; };
+		CCB446C82CE1C99500A4FCAB /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE26F32CD4C55300E8D655 /* Data.framework */; };
+		CCB446C92CE1C99500A4FCAB /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE26F32CD4C55300E8D655 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CCFE27012CD4C55300E8D655 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE27002CD4C55300E8D655 /* DataTests.swift */; };
 		CCFE27022CD4C55300E8D655 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = CCFE26F62CD4C55300E8D655 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CCFE274D2CD4D2CF00E8D655 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE274C2CD4D2CF00E8D655 /* Domain.framework */; };
@@ -35,6 +53,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		CCB446CA2CE1C99500A4FCAB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CCB446C92CE1C99500A4FCAB /* Data.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CCFE274F2CD4D2CF00E8D655 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,6 +84,24 @@
 		CCB446602CD9E9D800A4FCAB /* AppleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuth.swift; sourceTree = "<group>"; };
 		CCB446632CD9EA9700A4FCAB /* AuthProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderFactory.swift; sourceTree = "<group>"; };
 		CCB446652CD9EC6A00A4FCAB /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		CCB446992CDC3AF600A4FCAB /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		CCB4469D2CDC407C00A4FCAB /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
+		CCB4469E2CDC40BE00A4FCAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CCB446A02CDCA66300A4FCAB /* LoginBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBody.swift; sourceTree = "<group>"; };
+		CCB446A22CDCA80C00A4FCAB /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		CCB446A52CDCAC6300A4FCAB /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
+		CCB446A72CDCD67A00A4FCAB /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		CCB446AA2CDDB66600A4FCAB /* CollabeeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollabeeError.swift; sourceTree = "<group>"; };
+		CCB446AD2CDDC4EE00A4FCAB /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
+		CCB446AF2CDDC61800A4FCAB /* TokenInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInterceptor.swift; sourceTree = "<group>"; };
+		CCB446B52CDDCB8300A4FCAB /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
+		CCB446B82CDDDDBC00A4FCAB /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		CCB446BA2CDDFEDE00A4FCAB /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
+		CCB446BC2CE0B8A600A4FCAB /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
+		CCB446C02CE0E83000A4FCAB /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		CCB446C22CE0E8AB00A4FCAB /* TargetType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TargetType+Extension.swift"; sourceTree = "<group>"; };
+		CCB446C42CE0F12100A4FCAB /* TokenRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefresh.swift; sourceTree = "<group>"; };
+		CCB446C62CE1ABC500A4FCAB /* NetworkProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderTest.swift; sourceTree = "<group>"; };
 		CCFE26F32CD4C55300E8D655 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE26F62CD4C55300E8D655 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		CCFE26FB2CD4C55300E8D655 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +117,7 @@
 			files = (
 				CCB4464C2CD9C2D000A4FCAB /* KakaoSDKCommon in Frameworks */,
 				CCFE274D2CD4D2CF00E8D655 /* Domain.framework in Frameworks */,
+				CCB446952CDC3ABC00A4FCAB /* CombineMoya in Frameworks */,
 				CCFE27512CD4D2D800E8D655 /* Common.framework in Frameworks */,
 				CCB4464E2CD9C2D000A4FCAB /* KakaoSDKUser in Frameworks */,
 				CCB4464A2CD9C2D000A4FCAB /* KakaoSDKAuth in Frameworks */,
@@ -80,7 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCFE26FC2CD4C55300E8D655 /* Data.framework in Frameworks */,
+				CCB446C82CE1C99500A4FCAB /* Data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +163,93 @@
 			path = AuthProviders;
 			sourceTree = "<group>";
 		};
+		CCB446972CDC3ADC00A4FCAB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CCB446BC2CE0B8A600A4FCAB /* MoyaLoggerPlugin.swift */,
+				CCB446A22CDCA80C00A4FCAB /* Header.swift */,
+				CCB446A72CDCD67A00A4FCAB /* NetworkProvider.swift */,
+				CCB446AF2CDDC61800A4FCAB /* TokenInterceptor.swift */,
+				CCB446A92CDDB65E00A4FCAB /* Error */,
+				CCB446A42CDCA8C500A4FCAB /* Response */,
+				CCB4469F2CDCA64C00A4FCAB /* Request */,
+				CCB446982CDC3AE600A4FCAB /* APIEndPoint */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CCB446982CDC3AE600A4FCAB /* APIEndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				CCB446C22CE0E8AB00A4FCAB /* TargetType+Extension.swift */,
+				CCB446992CDC3AF600A4FCAB /* UserAPI.swift */,
+				CCB446C02CE0E83000A4FCAB /* AuthAPI.swift */,
+			);
+			path = APIEndPoint;
+			sourceTree = "<group>";
+		};
+		CCB4469B2CDC405E00A4FCAB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CCB446B72CDDDDAB00A4FCAB /* PersistenceStorages */,
+				CCB446562CD9C3FB00A4FCAB /* Repositories */,
+				CCB446972CDC3ADC00A4FCAB /* Network */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CCB4469C2CDC407100A4FCAB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CCB4469D2CDC407C00A4FCAB /* Secret.xcconfig */,
+				CCB446B52CDDCB8300A4FCAB /* Literal.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CCB4469F2CDCA64C00A4FCAB /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				CCB446A02CDCA66300A4FCAB /* LoginBody.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		CCB446A42CDCA8C500A4FCAB /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				CCB446A52CDCAC6300A4FCAB /* LoginResult.swift */,
+				CCB446C42CE0F12100A4FCAB /* TokenRefresh.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		CCB446A92CDDB65E00A4FCAB /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				CCB446AA2CDDB66600A4FCAB /* CollabeeError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		CCB446AC2CDDC4C900A4FCAB /* NetworkProviderTest */ = {
+			isa = PBXGroup;
+			children = (
+				CCB446AD2CDDC4EE00A4FCAB /* MockAPI.swift */,
+				CCB446C62CE1ABC500A4FCAB /* NetworkProviderTest.swift */,
+			);
+			path = NetworkProviderTest;
+			sourceTree = "<group>";
+		};
+		CCB446B72CDDDDAB00A4FCAB /* PersistenceStorages */ = {
+			isa = PBXGroup;
+			children = (
+				CCB446B82CDDDDBC00A4FCAB /* KeyChain.swift */,
+				CCB446BA2CDDFEDE00A4FCAB /* TokenStorage.swift */,
+			);
+			path = PersistenceStorages;
+			sourceTree = "<group>";
+		};
 		CCFE26E92CD4C55300E8D655 = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +272,9 @@
 		CCFE26F52CD4C55300E8D655 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				CCB446562CD9C3FB00A4FCAB /* Repositories */,
+				CCB4469E2CDC40BE00A4FCAB /* Info.plist */,
+				CCB4469C2CDC407100A4FCAB /* Resources */,
+				CCB4469B2CDC405E00A4FCAB /* Sources */,
 				CCFE26F62CD4C55300E8D655 /* Data.h */,
 			);
 			path = Data;
@@ -146,6 +283,7 @@
 		CCFE26FF2CD4C55300E8D655 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				CCB446AC2CDDC4C900A4FCAB /* NetworkProviderTest */,
 				CCFE27002CD4C55300E8D655 /* DataTests.swift */,
 			);
 			path = DataTests;
@@ -193,6 +331,7 @@
 				CCB446492CD9C2D000A4FCAB /* KakaoSDKAuth */,
 				CCB4464B2CD9C2D000A4FCAB /* KakaoSDKCommon */,
 				CCB4464D2CD9C2D000A4FCAB /* KakaoSDKUser */,
+				CCB446942CDC3ABC00A4FCAB /* CombineMoya */,
 			);
 			productName = Data;
 			productReference = CCFE26F32CD4C55300E8D655 /* Data.framework */;
@@ -205,6 +344,7 @@
 				CCFE26F72CD4C55300E8D655 /* Sources */,
 				CCFE26F82CD4C55300E8D655 /* Frameworks */,
 				CCFE26F92CD4C55300E8D655 /* Resources */,
+				CCB446CA2CE1C99500A4FCAB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,6 +386,7 @@
 			mainGroup = CCFE26E92CD4C55300E8D655;
 			packageReferences = (
 				CCB446482CD9C2D000A4FCAB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				CCB446932CDC3ABC00A4FCAB /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = CCFE26F42CD4C55300E8D655 /* Products */;
 			projectDirPath = "";
@@ -279,11 +420,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB446A32CDCA80C00A4FCAB /* Header.swift in Sources */,
+				CCB446A12CDCA66300A4FCAB /* LoginBody.swift in Sources */,
+				CCB446A62CDCAC6300A4FCAB /* LoginResult.swift in Sources */,
+				CCB446C12CE0E83000A4FCAB /* AuthAPI.swift in Sources */,
+				CCB446C52CE0F12100A4FCAB /* TokenRefresh.swift in Sources */,
 				CCB4465C2CD9C76F00A4FCAB /* DefaultAuthRepository.swift in Sources */,
 				CCB446642CD9EA9700A4FCAB /* AuthProviderFactory.swift in Sources */,
+				CCB446BD2CE0B8A600A4FCAB /* MoyaLoggerPlugin.swift in Sources */,
 				CCB446662CD9EC6A00A4FCAB /* AuthProvider.swift in Sources */,
+				CCB446AB2CDDB66600A4FCAB /* CollabeeError.swift in Sources */,
+				CCB446BB2CDDFEDE00A4FCAB /* TokenStorage.swift in Sources */,
+				CCB446C32CE0E8AB00A4FCAB /* TargetType+Extension.swift in Sources */,
+				CCB446B62CDDCB8300A4FCAB /* Literal.swift in Sources */,
 				CCB4465F2CD9E9A300A4FCAB /* KakaoAuth.swift in Sources */,
 				CCB446612CD9E9D800A4FCAB /* AppleAuth.swift in Sources */,
+				CCB4469A2CDC3AF600A4FCAB /* UserAPI.swift in Sources */,
+				CCB446B92CDDDDBC00A4FCAB /* KeyChain.swift in Sources */,
+				CCB446A82CDCD67A00A4FCAB /* NetworkProvider.swift in Sources */,
+				CCB446B02CDDC61800A4FCAB /* TokenInterceptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +446,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB446AE2CDDC4EE00A4FCAB /* MockAPI.swift in Sources */,
+				CCB446C72CE1ABC500A4FCAB /* NetworkProviderTest.swift in Sources */,
 				CCFE27012CD4C55300E8D655 /* DataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +465,7 @@
 /* Begin XCBuildConfiguration section */
 		CCFE27032CD4C55300E8D655 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCB4469D2CDC407C00A4FCAB /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -374,6 +532,7 @@
 		};
 		CCFE27042CD4C55300E8D655 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCB4469D2CDC407C00A4FCAB /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -433,6 +592,7 @@
 		};
 		CCFE27062CD4C55300E8D655 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCB4469D2CDC407C00A4FCAB /* Secret.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -445,6 +605,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Data/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -456,7 +617,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.sesac.Data;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -473,6 +634,7 @@
 		};
 		CCFE27072CD4C55300E8D655 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCB4469D2CDC407C00A4FCAB /* Secret.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -485,6 +647,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Data/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -496,7 +659,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.sesac.Data;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -512,35 +675,42 @@
 		};
 		CCFE27092CD4C55300E8D655 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCB4469D2CDC407C00A4FCAB /* Secret.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YWNQ4RZBTS;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.sesac.DataTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.DataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CCFE270A2CD4C55300E8D655 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YWNQ4RZBTS;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.sesac.DataTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.DataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -585,6 +755,14 @@
 				minimumVersion = 2.23.0;
 			};
 		};
+		CCB446932CDC3ABC00A4FCAB /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -602,6 +780,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CCB446482CD9C2D000A4FCAB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
 			productName = KakaoSDKUser;
+		};
+		CCB446942CDC3ABC00A4FCAB /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCB446932CDC3ABC00A4FCAB /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -13,6 +13,7 @@ enum Literal {
     enum InfoDictionary {
         static var SERVER_KEY: String { "SERVER_KEY" }
         static var BASE_URL: String { "BASE_URL" }
+        static var KAKAO_NATIVE_KEY: String { "KAKAO_NATIVE_KEY" }
     }
     
     enum Secret {
@@ -34,6 +35,10 @@ enum Literal {
             }
             
             return serverKey
+        }
+        
+        static var KakaoNativeKey: String? {
+            Bundle.main.infoDictionary?[Literal.InfoDictionary.KAKAO_NATIVE_KEY] as? String
         }
     }
 }

@@ -9,13 +9,13 @@ import Foundation
 import Alamofire
 import Combine
 
+
 final class TokenInterceptor: RequestInterceptor {
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, any Error>) -> Void) {
         var urlRequest = urlRequest
         guard let serverKey = Literal.Secret.ServerKey else { return }
 
-//        let accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYjc1Yzg3YjEtMGIzZS00NGJiLWFiNmUtMWRiZWY2NTUzM2RlIiwibmlja25hbWUiOiLsp4DribQiLCJpYXQiOjE3MzEwMzkzNTYsImV4cCI6MTczMTAzOTY1NiwiaXNzIjoic2xwIn0.zmlI7SM2PtnDnP6G1tT1ULjBK6rg7JnAkeARWM1pn3A"
         if let accessToken = TokenStorage.read(.access) {
             urlRequest.setValue(accessToken, forHTTPHeaderField: Header.authoriztion.rawValue)
         }

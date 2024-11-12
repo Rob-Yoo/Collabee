@@ -5,15 +5,16 @@
 //  Created by Jinyoung Yoo on 11/5/24.
 //
 
+import Combine
 import AuthenticationServices
 
-public enum AuthProviderType {
+public enum AuthType {
     case kakao
     case apple(_ presentationAnchor: ASPresentationAnchor)
 }
 
 public protocol AuthUseCase {
-    func login(_ providerType: AuthProviderType)
+    func login(_ providerType: AuthType) -> AnyPublisher<Void, Error>
     func handleOpenURL(_ url: URL)
 }
 
@@ -25,7 +26,7 @@ public final class DefaultAuthUseCase: AuthUseCase {
         self.authRepository = authRepository
     }
     
-    public func login(_ providerType: AuthProviderType) {
+    public func login(_ providerType: AuthType) -> AnyPublisher<Void, Error> {
         authRepository.login(providerType)
     }
     

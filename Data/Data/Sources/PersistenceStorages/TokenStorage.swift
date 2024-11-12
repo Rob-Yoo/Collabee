@@ -7,13 +7,13 @@
 
 import Foundation
 import Combine
-import Moya
-import CombineMoya
+
+import Common
 
 enum TokenStorage {
 
     private static let keyChain = KeyChain.shared
-    private static let tokenProvider = MoyaProvider<AuthAPI>()
+    private static let tokenProvider = DefaultNetworkProvider.shared
     private static var cancellables = Set<AnyCancellable>()
     
     enum TokenType: String, CaseIterable {
@@ -38,31 +38,31 @@ enum TokenStorage {
         TokenType.allCases.forEach {
             keyChain.delete(account: $0.rawValue)
         }
+        
     }
     
-    static func refresh(completionHandler: @escaping () -> Void) {
-        let refreshToken = Self.read(.refresh) ?? ""
-
-        tokenProvider.requestPublisher(.tokenRefresh(refreshToken))
+    static func delete(_ tokenType: TokenType) {
+        keyChain.delete(account: tokenType.rawValue)
+    }
+    
+    static func refresh(completionHandler: (() -> Void)? = nil) {
+        guard let refreshToken = Self.read(.refresh) else { return }
+        
+        delete(.access)
+        tokenProvider.request(AuthAPI.tokenRefresh(refreshToken), TokenRefresh.self)
             .sink { completion in
                 switch completion {
-                case .finished:
-                    completionHandler()
+                case .finished: break
                 case .failure(let error):
-                    guard let res = error.response, let decodeError = try? JSONDecoder().decode(CollabeeError.self, from: res.data) else {
-                        print(#function, "CollabeeError 변환 실패")
-                        return
+                    if let errorCode = error.errorCode, errorCode == "E06" {
+                        UserDefaultsStorage.isAuthorized = false
+                        delete(.refresh)
+                        // 로그인 화면으로 돌아가기
                     }
-                    if let errorCode = decodeError.errorCode, errorCode == "E06" {
-                        // 로그인 화면으로 돌아가야함!!
-                    }
-                    print(error.errorDescription ?? "")
                 }
-            } receiveValue: { res in
-                if let decodedData = try? JSONDecoder().decode(TokenRefresh.self, from: res.data) {
-                    Self.save(decodedData.accessToken, .access)
-                }
+            } receiveValue: { tokenRefresh in
+                save(tokenRefresh.accessToken, .access)
+                completionHandler?()
             }.store(in: &cancellables)
-
     }
 }

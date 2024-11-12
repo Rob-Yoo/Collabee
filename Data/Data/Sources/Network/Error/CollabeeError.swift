@@ -6,8 +6,15 @@
 //
 
 import Foundation
+import Combine
 
-enum CollabeeError: Decodable, LocalizedError {
+import Domain
+
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
+
+public enum CollabeeError: Decodable, LocalizedError {
     case apiError(String)
     case unknownError
 
@@ -15,7 +22,7 @@ enum CollabeeError: Decodable, LocalizedError {
         case errorCode
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         if let errorCode = try? container.decode(String.self, forKey: .errorCode) {
             self = .apiError(errorCode)
@@ -24,7 +31,7 @@ enum CollabeeError: Decodable, LocalizedError {
         }
     }
 
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case .apiError(let code):
             return Self.descriptionForErrorCode(code)

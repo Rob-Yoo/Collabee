@@ -1,5 +1,5 @@
 {
-  "originHash" : "187a1a6bfd40875089c9a59d4ed94e9725e62d834d0279e21d4cdd90da1f2cb1",
+  "originHash" : "42256dd58e225b1c96b537e94a57ee93ae5d1b71b2610774a3d7b9bf44c0916e",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -44,33 +44,6 @@
       "state" : {
         "revision" : "c7c7d2cf50a3211fe2843f76869c698e4e417930",
         "version" : "6.8.0"
-      }
-    },
-    {
-      "identity" : "sidemenu",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/jonkykong/SideMenu.git",
-      "state" : {
-        "revision" : "8bd4fd128923cf5494fa726839af8afe12908ad9",
-        "version" : "6.5.0"
-      }
-    },
-    {
-      "identity" : "snapkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SnapKit/SnapKit.git",
-      "state" : {
-        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
-        "version" : "5.7.1"
-      }
-    },
-    {
-      "identity" : "then",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/devxoul/Then.git",
-      "state" : {
-        "revision" : "d41ef523faef0f911369f79c0b96815d9dbb6d7a",
-        "version" : "3.0.0"
       }
     }
   ],

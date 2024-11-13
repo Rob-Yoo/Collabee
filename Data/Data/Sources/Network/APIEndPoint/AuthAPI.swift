@@ -38,7 +38,6 @@ extension AuthAPI: TargetType {
         switch self {
         case .tokenRefresh(let refreshToken):
             return [
-                Header.serverKey.rawValue: Literal.Secret.ServerKey ?? "",
                 Header.refresh.rawValue: refreshToken
             ]
         }

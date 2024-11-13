@@ -68,12 +68,20 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
-		CCB446582CD9C6D100A4FCAB /* RepositoryInterfaces */ = {
+		CCB446582CD9C6D100A4FCAB /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				CCBC38582CE35047008472E5 /* Auth */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		CCBC38582CE35047008472E5 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				CCB446592CD9C6E600A4FCAB /* AuthRepository.swift */,
 			);
-			path = RepositoryInterfaces;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		CCFE26C72CD4C47000E8D655 = {
@@ -97,7 +105,7 @@
 		CCFE26D32CD4C47000E8D655 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				CCB446582CD9C6D100A4FCAB /* RepositoryInterfaces */,
+				CCB446582CD9C6D100A4FCAB /* Interfaces */,
 				CCB446572CD9C6C800A4FCAB /* UseCases */,
 				CCFE26D42CD4C47000E8D655 /* Domain.h */,
 			);

@@ -15,29 +15,32 @@ protocol NetworkProvider {
     func request<T: TargetType, R: Decodable>(_ target: T, _ responseType: R.Type) -> AnyPublisher<R, CollabeeError>
 }
 
-struct DefaultNetworkProvider: NetworkProvider {
+final class DefaultNetworkProvider: NetworkProvider {
 
+    static let shared = DefaultNetworkProvider()
     private let session = Session(interceptor: TokenInterceptor())
-    private static var cancellable = Set<AnyCancellable>()
+    private var cancellable = Set<AnyCancellable>()
+    
+    private init() {}
     
     func request<T: TargetType, R: Decodable>(_ target: T, _ responseType: R.Type) -> AnyPublisher<R, CollabeeError> {
         let provider = MoyaProvider<T>(session: session, plugins: [MoyaLoggerPlugin()])
         
-        return Future<R, CollabeeError> { promise in
+        return Future<R, CollabeeError> { [weak self] promise in
+            
+            guard let self else { return }
+            
             provider.requestPublisher(target)
                 .sink { completion in
                     switch completion {
-                    case .finished:
-                        print("네트워크 작업 종료")
+                    case .finished: break
                     case .failure(let error):
                         guard let res = error.response else {
-                            print(error.localizedDescription)
                             promise(.failure(.unknownError))
                             return
                         }
-        
-                        guard let decodedError = try? JSONDecoder().decode(CollabeeError.self, from: res.data) else {
-                            print(">>>>>", error.localizedDescription)
+
+                        guard let decodedError = try? res.map(CollabeeError.self) else {
                             promise(.failure(.unknownError))
                             return
                         }
@@ -45,13 +48,13 @@ struct DefaultNetworkProvider: NetworkProvider {
                         promise(.failure(decodedError))
                     }
                 } receiveValue: { res in
-                    guard let result = try? JSONDecoder().decode(responseType.self, from: res.data) else {
+                    guard let result = try? res.map(responseType.self) else {
                         promise(.failure(.unknownError))
                         return
                     }
                     
                     promise(.success(result))
-                }.store(in: &Self.cancellable)
+                }.store(in: &self.cancellable)
         }
         .eraseToAnyPublisher()
     }

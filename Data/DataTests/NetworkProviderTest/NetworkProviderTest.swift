@@ -15,7 +15,7 @@ final class NetworkProviderTest: XCTestCase {
     var cancellables = Set<AnyCancellable>()
 
     override func setUpWithError() throws {
-        sut = DefaultNetworkProvider()
+        sut = DefaultNetworkProvider.shared
     }
 
     override func tearDownWithError() throws {

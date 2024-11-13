@@ -16,6 +16,9 @@
 		CCB446872CDA161B00A4FCAB /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446862CDA161B00A4FCAB /* Injected.swift */; };
 		CCB446892CDB17E300A4FCAB /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446882CDB17E300A4FCAB /* DIContainer.swift */; };
 		CCB4468B2CDB8F7500A4FCAB /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4468A2CDB8F7500A4FCAB /* Assembly.swift */; };
+		CCB831EA2CE4A2F4007E2CDD /* Notification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB831E92CE4A2F4007E2CDD /* Notification.Name+Extension.swift */; };
+		CCBC38542CE3493A008472E5 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC38532CE3493A008472E5 /* KeyChain.swift */; };
+		CCBC38572CE34A67008472E5 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC38562CE34A67008472E5 /* UserDefaultStorage.swift */; };
 		CCFE273C2CD4CDB600E8D655 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = CCFE273B2CD4CDB600E8D655 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		CCB446862CDA161B00A4FCAB /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
 		CCB446882CDB17E300A4FCAB /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		CCB4468A2CDB8F7500A4FCAB /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		CCB831E92CE4A2F4007E2CDD /* Notification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extension.swift"; sourceTree = "<group>"; };
+		CCBC38532CE3493A008472E5 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		CCBC38562CE34A67008472E5 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		CCFE27382CD4CDB600E8D655 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE273B2CD4CDB600E8D655 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +110,30 @@
 			path = DIContainerTests;
 			sourceTree = "<group>";
 		};
+		CCB831E82CE4A2A1007E2CDD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CCB831E92CE4A2F4007E2CDD /* Notification.Name+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CCBC38522CE348F7008472E5 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				CCBC38532CE3493A008472E5 /* KeyChain.swift */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
+		CCBC38552CE34A00008472E5 /* UserDefaultStorage */ = {
+			isa = PBXGroup;
+			children = (
+				CCBC38562CE34A67008472E5 /* UserDefaultStorage.swift */,
+			);
+			path = UserDefaultStorage;
+			sourceTree = "<group>";
+		};
 		CCFE272E2CD4CDB600E8D655 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +155,9 @@
 		CCFE273A2CD4CDB600E8D655 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CCB831E82CE4A2A1007E2CDD /* Extensions */,
+				CCBC38552CE34A00008472E5 /* UserDefaultStorage */,
+				CCBC38522CE348F7008472E5 /* KeyChain */,
 				CCB4466D2CD9F11800A4FCAB /* DependencyInject */,
 				CCFE273B2CD4CDB600E8D655 /* Common.h */,
 			);
@@ -257,8 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCBC38572CE34A67008472E5 /* UserDefaultStorage.swift in Sources */,
+				CCB831EA2CE4A2F4007E2CDD /* Notification.Name+Extension.swift in Sources */,
 				CCB4466F2CD9F12000A4FCAB /* Container.swift in Sources */,
 				CCB4468B2CDB8F7500A4FCAB /* Assembly.swift in Sources */,
+				CCBC38542CE3493A008472E5 /* KeyChain.swift in Sources */,
 				CCB446892CDB17E300A4FCAB /* DIContainer.swift in Sources */,
 				CCB446872CDA161B00A4FCAB /* Injected.swift in Sources */,
 			);

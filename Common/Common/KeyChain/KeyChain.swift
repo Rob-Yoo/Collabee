@@ -1,21 +1,21 @@
 //
 //  KeyChain.swift
-//  Data
+//  Common
 //
-//  Created by Jinyoung Yoo on 11/8/24.
+//  Created by Jinyoung Yoo on 11/12/24.
 //
 
 import Foundation
 import Security
 
-final class KeyChain: Sendable {
+public final class KeyChain {
     
-    static let shared = KeyChain()
+    public static let shared = KeyChain()
     private let service = "Collabee"
     
     private init() {}
     
-    func save(_ data: Data, account: String) {
+    public func save(_ data: Data, account: String) {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
@@ -31,9 +31,10 @@ final class KeyChain: Sendable {
             print("Keychain 저장 실패: \(status)")
             return
         }
+        print("Keychain 저장 성공: \(account)")
     }
     
-    func read(account: String) -> Data? {
+    public func read(account: String) -> Data? {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
@@ -53,7 +54,7 @@ final class KeyChain: Sendable {
         return result as? Data
     }
     
-    func delete(account: String) {
+    public func delete(account: String) {
         let query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
@@ -66,5 +67,6 @@ final class KeyChain: Sendable {
             print("키체인 삭제 실패: \(status)")
             return
         }
+        print("Keychain 삭제 성공: \(account)")
     }
 }

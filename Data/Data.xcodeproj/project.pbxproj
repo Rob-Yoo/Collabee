@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC73E1CA2CE312A700FDC848 /* OAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73E1C92CE312A700FDC848 /* OAuthError.swift */; };
 		CCB4464A2CD9C2D000A4FCAB /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CCB446492CD9C2D000A4FCAB /* KakaoSDKAuth */; };
 		CCB4464C2CD9C2D000A4FCAB /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = CCB4464B2CD9C2D000A4FCAB /* KakaoSDKCommon */; };
 		CCB4464E2CD9C2D000A4FCAB /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = CCB4464D2CD9C2D000A4FCAB /* KakaoSDKUser */; };
-		CCB4465C2CD9C76F00A4FCAB /* DefaultAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4465B2CD9C76F00A4FCAB /* DefaultAuthRepository.swift */; };
-		CCB4465F2CD9E9A300A4FCAB /* KakaoAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4465E2CD9E9A300A4FCAB /* KakaoAuth.swift */; };
-		CCB446612CD9E9D800A4FCAB /* AppleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446602CD9E9D800A4FCAB /* AppleAuth.swift */; };
-		CCB446642CD9EA9700A4FCAB /* AuthProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446632CD9EA9700A4FCAB /* AuthProviderFactory.swift */; };
-		CCB446662CD9EC6A00A4FCAB /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446652CD9EC6A00A4FCAB /* AuthProvider.swift */; };
+		CCB446612CD9E9D800A4FCAB /* AppleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446602CD9E9D800A4FCAB /* AppleAuthService.swift */; };
 		CCB446952CDC3ABC00A4FCAB /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = CCB446942CDC3ABC00A4FCAB /* CombineMoya */; };
 		CCB4469A2CDC3AF600A4FCAB /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446992CDC3AF600A4FCAB /* UserAPI.swift */; };
 		CCB446A12CDCA66300A4FCAB /* LoginBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446A02CDCA66300A4FCAB /* LoginBody.swift */; };
@@ -25,7 +22,6 @@
 		CCB446AE2CDDC4EE00A4FCAB /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446AD2CDDC4EE00A4FCAB /* MockAPI.swift */; };
 		CCB446B02CDDC61800A4FCAB /* TokenInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446AF2CDDC61800A4FCAB /* TokenInterceptor.swift */; };
 		CCB446B62CDDCB8300A4FCAB /* Literal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446B52CDDCB8300A4FCAB /* Literal.swift */; };
-		CCB446B92CDDDDBC00A4FCAB /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446B82CDDDDBC00A4FCAB /* KeyChain.swift */; };
 		CCB446BB2CDDFEDE00A4FCAB /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446BA2CDDFEDE00A4FCAB /* TokenStorage.swift */; };
 		CCB446BD2CE0B8A600A4FCAB /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446BC2CE0B8A600A4FCAB /* MoyaLoggerPlugin.swift */; };
 		CCB446C12CE0E83000A4FCAB /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446C02CE0E83000A4FCAB /* AuthAPI.swift */; };
@@ -34,6 +30,9 @@
 		CCB446C72CE1ABC500A4FCAB /* NetworkProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446C62CE1ABC500A4FCAB /* NetworkProviderTest.swift */; };
 		CCB446C82CE1C99500A4FCAB /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE26F32CD4C55300E8D655 /* Data.framework */; };
 		CCB446C92CE1C99500A4FCAB /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE26F32CD4C55300E8D655 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CCBC385E2CE36DAB008472E5 /* DefaultAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC385D2CE36DAB008472E5 /* DefaultAuthRepository.swift */; };
+		CCBC38602CE36F51008472E5 /* AuthServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC385F2CE36F51008472E5 /* AuthServiceFactory.swift */; };
+		CCBC38622CE37579008472E5 /* KakaoAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC38612CE37579008472E5 /* KakaoAuthService.swift */; };
 		CCFE27012CD4C55300E8D655 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE27002CD4C55300E8D655 /* DataTests.swift */; };
 		CCFE27022CD4C55300E8D655 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = CCFE26F62CD4C55300E8D655 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CCFE274D2CD4D2CF00E8D655 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE274C2CD4D2CF00E8D655 /* Domain.framework */; };
@@ -79,11 +78,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CCB4465B2CD9C76F00A4FCAB /* DefaultAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthRepository.swift; sourceTree = "<group>"; };
-		CCB4465E2CD9E9A300A4FCAB /* KakaoAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuth.swift; sourceTree = "<group>"; };
-		CCB446602CD9E9D800A4FCAB /* AppleAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuth.swift; sourceTree = "<group>"; };
-		CCB446632CD9EA9700A4FCAB /* AuthProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderFactory.swift; sourceTree = "<group>"; };
-		CCB446652CD9EC6A00A4FCAB /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		CC73E1C92CE312A700FDC848 /* OAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthError.swift; sourceTree = "<group>"; };
+		CCB446602CD9E9D800A4FCAB /* AppleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthService.swift; sourceTree = "<group>"; };
 		CCB446992CDC3AF600A4FCAB /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		CCB4469D2CDC407C00A4FCAB /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		CCB4469E2CDC40BE00A4FCAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -95,13 +91,15 @@
 		CCB446AD2CDDC4EE00A4FCAB /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
 		CCB446AF2CDDC61800A4FCAB /* TokenInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInterceptor.swift; sourceTree = "<group>"; };
 		CCB446B52CDDCB8300A4FCAB /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
-		CCB446B82CDDDDBC00A4FCAB /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		CCB446BA2CDDFEDE00A4FCAB /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		CCB446BC2CE0B8A600A4FCAB /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
 		CCB446C02CE0E83000A4FCAB /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		CCB446C22CE0E8AB00A4FCAB /* TargetType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TargetType+Extension.swift"; sourceTree = "<group>"; };
 		CCB446C42CE0F12100A4FCAB /* TokenRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefresh.swift; sourceTree = "<group>"; };
 		CCB446C62CE1ABC500A4FCAB /* NetworkProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderTest.swift; sourceTree = "<group>"; };
+		CCBC385D2CE36DAB008472E5 /* DefaultAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthRepository.swift; sourceTree = "<group>"; };
+		CCBC385F2CE36F51008472E5 /* AuthServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceFactory.swift; sourceTree = "<group>"; };
+		CCBC38612CE37579008472E5 /* KakaoAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthService.swift; sourceTree = "<group>"; };
 		CCFE26F32CD4C55300E8D655 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE26F62CD4C55300E8D655 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		CCFE26FB2CD4C55300E8D655 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,21 +144,20 @@
 		CCB4465D2CD9E99800A4FCAB /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				CCB446622CD9EA8600A4FCAB /* AuthProviders */,
-				CCB4465B2CD9C76F00A4FCAB /* DefaultAuthRepository.swift */,
+				CCBC385D2CE36DAB008472E5 /* DefaultAuthRepository.swift */,
+				CCB446622CD9EA8600A4FCAB /* Services */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		CCB446622CD9EA8600A4FCAB /* AuthProviders */ = {
+		CCB446622CD9EA8600A4FCAB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CCB446652CD9EC6A00A4FCAB /* AuthProvider.swift */,
-				CCB446632CD9EA9700A4FCAB /* AuthProviderFactory.swift */,
-				CCB4465E2CD9E9A300A4FCAB /* KakaoAuth.swift */,
-				CCB446602CD9E9D800A4FCAB /* AppleAuth.swift */,
+				CCBC385F2CE36F51008472E5 /* AuthServiceFactory.swift */,
+				CCB446602CD9E9D800A4FCAB /* AppleAuthService.swift */,
+				CCBC38612CE37579008472E5 /* KakaoAuthService.swift */,
 			);
-			path = AuthProviders;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CCB446972CDC3ADC00A4FCAB /* Network */ = {
@@ -228,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				CCB446AA2CDDB66600A4FCAB /* CollabeeError.swift */,
+				CC73E1C92CE312A700FDC848 /* OAuthError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -244,7 +242,6 @@
 		CCB446B72CDDDDAB00A4FCAB /* PersistenceStorages */ = {
 			isa = PBXGroup;
 			children = (
-				CCB446B82CDDDDBC00A4FCAB /* KeyChain.swift */,
 				CCB446BA2CDDFEDE00A4FCAB /* TokenStorage.swift */,
 			);
 			path = PersistenceStorages;
@@ -425,18 +422,17 @@
 				CCB446A62CDCAC6300A4FCAB /* LoginResult.swift in Sources */,
 				CCB446C12CE0E83000A4FCAB /* AuthAPI.swift in Sources */,
 				CCB446C52CE0F12100A4FCAB /* TokenRefresh.swift in Sources */,
-				CCB4465C2CD9C76F00A4FCAB /* DefaultAuthRepository.swift in Sources */,
-				CCB446642CD9EA9700A4FCAB /* AuthProviderFactory.swift in Sources */,
+				CC73E1CA2CE312A700FDC848 /* OAuthError.swift in Sources */,
 				CCB446BD2CE0B8A600A4FCAB /* MoyaLoggerPlugin.swift in Sources */,
-				CCB446662CD9EC6A00A4FCAB /* AuthProvider.swift in Sources */,
 				CCB446AB2CDDB66600A4FCAB /* CollabeeError.swift in Sources */,
 				CCB446BB2CDDFEDE00A4FCAB /* TokenStorage.swift in Sources */,
 				CCB446C32CE0E8AB00A4FCAB /* TargetType+Extension.swift in Sources */,
 				CCB446B62CDDCB8300A4FCAB /* Literal.swift in Sources */,
-				CCB4465F2CD9E9A300A4FCAB /* KakaoAuth.swift in Sources */,
-				CCB446612CD9E9D800A4FCAB /* AppleAuth.swift in Sources */,
+				CCBC38622CE37579008472E5 /* KakaoAuthService.swift in Sources */,
+				CCB446612CD9E9D800A4FCAB /* AppleAuthService.swift in Sources */,
 				CCB4469A2CDC3AF600A4FCAB /* UserAPI.swift in Sources */,
-				CCB446B92CDDDDBC00A4FCAB /* KeyChain.swift in Sources */,
+				CCBC38602CE36F51008472E5 /* AuthServiceFactory.swift in Sources */,
+				CCBC385E2CE36DAB008472E5 /* DefaultAuthRepository.swift in Sources */,
 				CCB446A82CDCD67A00A4FCAB /* NetworkProvider.swift in Sources */,
 				CCB446B02CDDC61800A4FCAB /* TokenInterceptor.swift in Sources */,
 			);

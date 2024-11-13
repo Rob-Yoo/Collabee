@@ -57,7 +57,7 @@ enum TokenStorage {
                     if let errorCode = error.errorCode, errorCode == "E06" {
                         UserDefaultsStorage.isAuthorized = false
                         delete(.refresh)
-                        // 로그인 화면으로 돌아가기
+                        NotificationCenter.default.post(name: .ChangeWindowScene, object: nil)
                     }
                 }
             } receiveValue: { tokenRefresh in

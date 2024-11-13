@@ -23,8 +23,7 @@ enum Literal {
                 print("변형 실패")
                 return ""
             }
-            
-            print(">>>>>", urlString)
+
             return urlString
         }
         

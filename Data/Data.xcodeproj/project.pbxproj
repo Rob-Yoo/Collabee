@@ -144,8 +144,8 @@
 		CCB4465D2CD9E99800A4FCAB /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				CCB446622CD9EA8600A4FCAB /* Services */,
 				CCBC385D2CE36DAB008472E5 /* DefaultAuthRepository.swift */,
+				CCB446622CD9EA8600A4FCAB /* Services */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -153,8 +153,8 @@
 		CCB446622CD9EA8600A4FCAB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CCB446602CD9E9D800A4FCAB /* AppleAuthService.swift */,
 				CCBC385F2CE36F51008472E5 /* AuthServiceFactory.swift */,
+				CCB446602CD9E9D800A4FCAB /* AppleAuthService.swift */,
 				CCBC38612CE37579008472E5 /* KakaoAuthService.swift */,
 			);
 			path = Services;

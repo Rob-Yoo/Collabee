@@ -24,8 +24,31 @@ final class KakaoAuthService: AuthService {
         self.networkProvider = networkProvider
     }
     
-    func perform() {
-        kakaoLogin()
+    func perform() -> AnyPublisher<Void, CollabeeError> {
+        return Future<Void, CollabeeError> { [weak self] promise in
+            guard let self else { return }
+            
+            self.kakaoLogin()
+                .mapError { _ in CollabeeError.unknownError }
+                .flatMap { loginBody -> AnyPublisher<LoginResult, CollabeeError> in
+                    
+                    return self.networkProvider.request(UserAPI.kakaoLogin(loginBody), LoginResult.self)
+                }
+                .sink { completion in
+                    switch completion {
+                    case .finished: break
+                    case .failure(let error):
+                        promise(.failure(error))
+                    }
+                } receiveValue: { res in
+                    let token = res.token
+                    
+                    TokenStorage.save(token.accessToken, .access)
+                    TokenStorage.save(token.refreshToken, .refresh)
+                    promise(.success(()))
+                }
+                .store(in: &cancellable)
+        }.eraseToAnyPublisher()
     }
     
     func handleOpenURL(_ url: URL) {
@@ -34,17 +57,17 @@ final class KakaoAuthService: AuthService {
         }
     }
     
-    private func kakaoLogin() -> AnyPublisher<LoginBody, Error> {
+    private func kakaoLogin() -> AnyPublisher<KakaoLoginBody, Error> {
             
-        return Future<LoginBody, Error> { promise in
+        return Future<KakaoLoginBody, Error> { promise in
             
             let completion: (OAuthToken?, (any Error)?) -> Void = { (token, error) in
                 if let error {
                     promise(.failure(error))
                 }
                 
-                if let token, let idToken = token.idToken {
-                    let loginBody = LoginBody(idToken: idToken)
+                if let token {
+                    let loginBody = KakaoLoginBody(oauthToken: token.accessToken)
                     promise(.success(loginBody))
                 }
             }

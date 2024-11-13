@@ -5,10 +5,12 @@
 //  Created by Jinyoung Yoo on 11/12/24.
 //
 
+import Combine
+
 import Domain
 
 protocol AuthService {
-    func perform()
+    func perform() -> AnyPublisher<Void, CollabeeError>
     func handleOpenURL(_ url: URL)
 }
 

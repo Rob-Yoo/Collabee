@@ -31,6 +31,7 @@ public final class KeyChain {
             print("Keychain 저장 실패: \(status)")
             return
         }
+        print("Keychain 저장 성공: \(account)")
     }
     
     public func read(account: String) -> Data? {
@@ -66,5 +67,6 @@ public final class KeyChain {
             print("키체인 삭제 실패: \(status)")
             return
         }
+        print("Keychain 삭제 성공: \(account)")
     }
 }

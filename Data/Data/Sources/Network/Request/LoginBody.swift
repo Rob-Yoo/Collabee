@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct LoginBody: Encodable {
+struct AppleLoginBody: Encodable {
     let idToken: String
     var nickname: String?
-    let deviceToken: String = ""
+    var deviceToken: String?
+}
+
+struct KakaoLoginBody: Encodable {
+    let oauthToken: String
+    var deviceToken: String?
 }

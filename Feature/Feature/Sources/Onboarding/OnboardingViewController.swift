@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Combine
 
 import Domain
+import Common
 
 import SnapKit
 import Then
@@ -15,6 +17,7 @@ import Then
 public final class OnboardingViewController: UIViewController {
     
     private let useCase: AuthUseCase
+    private var cancellable = Set<AnyCancellable>()
     
     public init(useCase: AuthUseCase) {
         self.useCase = useCase
@@ -92,10 +95,29 @@ public final class OnboardingViewController: UIViewController {
     
     @objc private func appleLoginButtonTapped() {
         useCase.login(.apple(self.view.window!))
+            .sink { completion in
+                switch completion {
+                case .finished: break
+                case .failure(let error):
+                    print("📌 에러 발생: " + error.localizedDescription)
+                }
+            } receiveValue: { _ in
+                NotificationCenter.default.post(name: .ChangeWindowScene, object: nil)
+            }.store(in: &cancellable)
+
     }
     
     @objc private func kakaoLoginButtonTapped() {
         useCase.login(.kakao)
+            .sink { completion in
+                switch completion {
+                case .finished: break
+                case .failure(let error):
+                    print("📌 에러 발생: " + error.localizedDescription)
+                }
+            } receiveValue: { _ in
+                NotificationCenter.default.post(name: .ChangeWindowScene, object: nil)
+            }.store(in: &cancellable)
     }
     
 }

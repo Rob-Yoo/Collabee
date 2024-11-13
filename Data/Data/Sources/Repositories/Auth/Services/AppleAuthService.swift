@@ -14,7 +14,8 @@ final class AppleAuthService: NSObject, AuthService,  ASAuthorizationControllerD
     
     private var networkProvider: NetworkProvider
     private var presentationAnchor: ASPresentationAnchor
-    private var loginSubject = PassthroughSubject<LoginBody, Error>()
+    private var loginSubject = PassthroughSubject<AppleLoginBody, Error>()
+    private var cancellable = Set<AnyCancellable>()
     
     init(
         presentationAnchor: ASPresentationAnchor,
@@ -39,8 +40,8 @@ final class AppleAuthService: NSObject, AuthService,  ASAuthorizationControllerD
             
             if  let identityToken = appleIDCredential.identityToken,
                 let identifyTokenString = String(data: identityToken, encoding: .utf8) {
-                let loginBody = LoginBody(idToken: identifyTokenString, nickname: nickName)
-                loginSubject.send(loginBody)
+                let appleLoginBody = AppleLoginBody(idToken: identifyTokenString, nickname: nickName)
+                loginSubject.send(appleLoginBody)
                 loginSubject.send(completion: .finished)
             } else {
                 loginSubject.send(completion: .failure(OAuthError.tokenError))
@@ -55,11 +56,34 @@ final class AppleAuthService: NSObject, AuthService,  ASAuthorizationControllerD
         loginSubject.send(completion: .failure(error))
     }
     
-    func perform() {
-        
+    func perform() -> AnyPublisher<Void, CollabeeError> {
+        return Future<Void, CollabeeError> { [weak self] promise in
+            guard let self else { return }
+            
+            self.appleLogin()
+                .mapError { _ in CollabeeError.unknownError }
+                .flatMap { loginBody -> AnyPublisher<LoginResult, CollabeeError> in
+                    
+                    return self.networkProvider.request(UserAPI.appleLogin(loginBody), LoginResult.self)
+                }
+                .sink { completion in
+                    switch completion {
+                    case .finished: break
+                    case .failure(let error):
+                        promise(.failure(error))
+                    }
+                } receiveValue: { res in
+                    let token = res.token
+                    
+                    TokenStorage.save(token.accessToken, .access)
+                    TokenStorage.save(token.refreshToken, .refresh)
+                    promise(.success(()))
+                }
+                .store(in: &cancellable)
+        }.eraseToAnyPublisher()
     }
     
-    func login() -> AnyPublisher<LoginBody, Error> {
+    private func appleLogin() -> AnyPublisher<AppleLoginBody, Error> {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
         request.requestedScopes = [.fullName, .email]

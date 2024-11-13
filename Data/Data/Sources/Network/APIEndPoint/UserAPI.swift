@@ -9,8 +9,8 @@ import Foundation
 import Moya
 
 enum UserAPI {
-    case kakaoLogin(_ body: LoginBody)
-    case appleLogin(_ body: LoginBody)
+    case kakaoLogin(_ body: KakaoLoginBody)
+    case appleLogin(_ body: AppleLoginBody)
 }
 
 extension UserAPI: TargetType {
@@ -33,7 +33,9 @@ extension UserAPI: TargetType {
     
     var task: Moya.Task {
         switch self {
-        case .kakaoLogin(let body), .appleLogin(let body):
+        case .kakaoLogin(let body):
+            return .requestJSONEncodable(body)
+        case .appleLogin(let body):
             return .requestJSONEncodable(body)
         }
     }

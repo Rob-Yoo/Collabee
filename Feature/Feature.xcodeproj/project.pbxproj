@@ -12,6 +12,7 @@
 		CCA52A302CD788E4000E62EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA52A2F2CD788E4000E62EA /* Assets.xcassets */; };
 		CCA52A322CD7894A000E62EA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA52A312CD7894A000E62EA /* Constant.swift */; };
 		CCA52A342CD78A8D000E62EA /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA52A332CD78A8D000E62EA /* UIFont+Extension.swift */; };
+		CCB831E32CE48FAB007E2CDD /* WorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB831E22CE48FAB007E2CDD /* WorkspaceViewController.swift */; };
 		CCFE271F2CD4CD9A00E8D655 /* Feature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE27162CD4CD9A00E8D655 /* Feature.framework */; };
 		CCFE27242CD4CD9A00E8D655 /* FeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE27232CD4CD9A00E8D655 /* FeatureTests.swift */; };
 		CCFE27252CD4CD9A00E8D655 /* Feature.h in Headers */ = {isa = PBXBuildFile; fileRef = CCFE27192CD4CD9A00E8D655 /* Feature.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,6 +56,7 @@
 		CCA52A2F2CD788E4000E62EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCA52A312CD7894A000E62EA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CCA52A332CD78A8D000E62EA /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		CCB831E22CE48FAB007E2CDD /* WorkspaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewController.swift; sourceTree = "<group>"; };
 		CCFE27162CD4CD9A00E8D655 /* Feature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE27192CD4CD9A00E8D655 /* Feature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
 		CCFE271E2CD4CD9A00E8D655 /* FeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,24 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		CCB831E02CE48EC2007E2CDD /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CCB831E12CE48ECD007E2CDD /* Workspace */,
+				CCA52A2B2CD787CD000E62EA /* Preview */,
+				CCA52A282CD78709000E62EA /* Onboarding */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CCB831E12CE48ECD007E2CDD /* Workspace */ = {
+			isa = PBXGroup;
+			children = (
+				CCB831E22CE48FAB007E2CDD /* WorkspaceViewController.swift */,
+			);
+			path = Workspace;
+			sourceTree = "<group>";
+		};
 		CCFE270C2CD4CD9A00E8D655 = {
 			isa = PBXGroup;
 			children = (
@@ -135,9 +155,8 @@
 		CCFE27182CD4CD9A00E8D655 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				CCB831E02CE48EC2007E2CDD /* Sources */,
 				CCA52A2E2CD788D2000E62EA /* Resources */,
-				CCA52A2B2CD787CD000E62EA /* Preview */,
-				CCA52A282CD78709000E62EA /* Onboarding */,
 				CCFE27192CD4CD9A00E8D655 /* Feature.h */,
 			);
 			path = Feature;
@@ -285,6 +304,7 @@
 				CCA52A2D2CD787DF000E62EA /* UIViewController+Extension.swift in Sources */,
 				CCA52A2A2CD7874E000E62EA /* OnboardingViewController.swift in Sources */,
 				CCA52A342CD78A8D000E62EA /* UIFont+Extension.swift in Sources */,
+				CCB831E32CE48FAB007E2CDD /* WorkspaceViewController.swift in Sources */,
 				CCA52A322CD7894A000E62EA /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

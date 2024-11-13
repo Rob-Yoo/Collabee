@@ -10,7 +10,7 @@ import Domain
 import Feature
 import Common
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     @Injected private var authUseCase: AuthUseCase
@@ -19,7 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = OnboardingViewController(useCase: authUseCase)
+        NotificationCenter.default.addObserver(self, selector: #selector(connectWindowScene), name: .ChangeWindowScene, object: nil)
+        connectWindowScene()
+    }
+    
+    @objc
+    private func connectWindowScene() {
+        let isAuthorized = UserDefaultsStorage.isAuthorized
+        let rootVC = isAuthorized ? WorkspaceViewController() : UINavigationController(rootViewController: OnboardingViewController(useCase: authUseCase))
+        window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
     }
     

@@ -7,11 +7,20 @@
 
 import Foundation
 
-struct LoginResult: Decodable {
-    let token: Token
+public struct LoginResult: Decodable {
+    public let token: Token
+    
+    public init(token: Token) {
+        self.token = token
+    }
 }
 
-struct Token: Decodable {
-    let accessToken: String
-    let refreshToken: String
+public struct Token: Decodable {
+    public let accessToken: String
+    public let refreshToken: String
+    
+    public init(accessToken: String, refreshToken: String) {
+        self.accessToken = accessToken
+        self.refreshToken = refreshToken
+    }
 }

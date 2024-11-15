@@ -1,14 +1,14 @@
 //
-//  AppleAuthRepository.swift
-//  Data
+//  AppleAuthService.swift
+//  Authorization
 //
-//  Created by Jinyoung Yoo on 11/5/24.
+//  Created by Jinyoung Yoo on 11/15/24.
 //
 
 import Combine
 import AuthenticationServices
 
-import Domain
+import DataSource
 
 final class AppleAuthService: NSObject, AuthService,  ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     
@@ -97,3 +97,4 @@ final class AppleAuthService: NSObject, AuthService,  ASAuthorizationControllerD
     
     func handleOpenURL(_ url: URL) {}
 }
+

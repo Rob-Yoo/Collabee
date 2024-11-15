@@ -10,23 +10,23 @@ import Combine
 
 import Common
 
-enum TokenStorage {
+public enum TokenStorage {
 
     private static let keyChain = KeyChain.shared
     private static let tokenProvider = DefaultNetworkProvider.shared
     private static var cancellables = Set<AnyCancellable>()
     
-    enum TokenType: String, CaseIterable {
+    public enum TokenType: String, CaseIterable {
         case access
         case refresh
     }
     
-    static func save(_ token: String, _ tokenType: TokenType
+    public static func save(_ token: String, _ tokenType: TokenType
     ) {
         keyChain.save(token.data(using: .utf8)!, account: tokenType.rawValue)
     }
     
-    static func read(_ tokenType: TokenType) -> String? {
+    public static func read(_ tokenType: TokenType) -> String? {
         guard let tokenData = keyChain.read(account: tokenType.rawValue) else {
             return nil
         }
@@ -34,18 +34,18 @@ enum TokenStorage {
         return String(data: tokenData, encoding: .utf8)
     }
     
-    static func deleteAll() {
+    public static func deleteAll() {
         TokenType.allCases.forEach {
             keyChain.delete(account: $0.rawValue)
         }
         
     }
     
-    static func delete(_ tokenType: TokenType) {
+    public static func delete(_ tokenType: TokenType) {
         keyChain.delete(account: tokenType.rawValue)
     }
     
-    static func refresh(completionHandler: (() -> Void)? = nil) {
+    public static func refresh(completionHandler: (() -> Void)? = nil) {
         guard let refreshToken = Self.read(.refresh) else { return }
         
         delete(.access)

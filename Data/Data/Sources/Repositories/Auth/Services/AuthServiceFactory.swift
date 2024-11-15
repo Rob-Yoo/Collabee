@@ -7,7 +7,7 @@
 
 import Combine
 
-import Domain
+import DataSource
 
 protocol AuthService {
     func perform() -> AnyPublisher<Void, CollabeeError>

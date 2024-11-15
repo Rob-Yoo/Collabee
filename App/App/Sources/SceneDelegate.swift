@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import Domain
-import Feature
+import Authorization
 import Common
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {

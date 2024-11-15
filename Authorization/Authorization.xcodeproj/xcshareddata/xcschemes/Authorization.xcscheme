@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CCFE26F22CD4C55300E8D655"
-               BuildableName = "Data.framework"
-               BlueprintName = "Data"
-               ReferencedContainer = "container:Data.xcodeproj">
+               BlueprintIdentifier = "CCC4B0442CE705D700707CD2"
+               BuildableName = "Authorization.framework"
+               BlueprintName = "Authorization"
+               ReferencedContainer = "container:Authorization.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,10 +35,10 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CCFE26FA2CD4C55300E8D655"
-               BuildableName = "DataTests.xctest"
-               BlueprintName = "DataTests"
-               ReferencedContainer = "container:Data.xcodeproj">
+               BlueprintIdentifier = "CCC4B04C2CE705D700707CD2"
+               BuildableName = "AuthorizationTests.xctest"
+               BlueprintName = "AuthorizationTests"
+               ReferencedContainer = "container:Authorization.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CCFE26F22CD4C55300E8D655"
-            BuildableName = "Data.framework"
-            BlueprintName = "Data"
-            ReferencedContainer = "container:Data.xcodeproj">
+            BlueprintIdentifier = "CCC4B0442CE705D700707CD2"
+            BuildableName = "Authorization.framework"
+            BlueprintName = "Authorization"
+            ReferencedContainer = "container:Authorization.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

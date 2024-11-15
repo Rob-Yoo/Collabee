@@ -8,12 +8,6 @@
 import Foundation
 import Combine
 
-import Domain
-
-import KakaoSDKCommon
-import KakaoSDKAuth
-import KakaoSDKUser
-
 public enum CollabeeError: Decodable, LocalizedError {
     case apiError(String)
     case unknownError

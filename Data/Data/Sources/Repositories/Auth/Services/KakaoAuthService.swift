@@ -7,7 +7,7 @@
 
 import Combine
 
-import Domain
+import DataSource
 
 import KakaoSDKCommon
 import KakaoSDKAuth

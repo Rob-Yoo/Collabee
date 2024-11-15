@@ -8,7 +8,7 @@
 import Foundation
 
 enum Literal {
-    static var bundleIdentifier: String { "com.jinyoo.Data" }
+    static var bundleIdentifier: String { "com.jinyoo.DataSource" }
     
     enum InfoDictionary {
         static var SERVER_KEY: String { "SERVER_KEY" }

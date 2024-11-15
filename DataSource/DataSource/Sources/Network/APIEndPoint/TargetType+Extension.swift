@@ -7,7 +7,7 @@
 
 import Moya
 
-extension TargetType {
+public extension TargetType {
     var baseURL: URL {
         return URL(string: Literal.Secret.BaseURL)!
     }

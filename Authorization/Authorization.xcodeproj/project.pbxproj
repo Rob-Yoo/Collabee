@@ -7,56 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CCB4464A2CD9C2D000A4FCAB /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CCB446492CD9C2D000A4FCAB /* KakaoSDKAuth */; };
-		CCB4464C2CD9C2D000A4FCAB /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = CCB4464B2CD9C2D000A4FCAB /* KakaoSDKCommon */; };
-		CCB4464E2CD9C2D000A4FCAB /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = CCB4464D2CD9C2D000A4FCAB /* KakaoSDKUser */; };
-		CCB446612CD9E9D800A4FCAB /* AppleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446602CD9E9D800A4FCAB /* AppleAuthService.swift */; };
-		CCB446952CDC3ABC00A4FCAB /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = CCB446942CDC3ABC00A4FCAB /* CombineMoya */; };
-		CCB446AE2CDDC4EE00A4FCAB /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446AD2CDDC4EE00A4FCAB /* MockAPI.swift */; };
-		CCB446C72CE1ABC500A4FCAB /* NetworkProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446C62CE1ABC500A4FCAB /* NetworkProviderTest.swift */; };
-		CCB446C82CE1C99500A4FCAB /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE26F32CD4C55300E8D655 /* Data.framework */; };
-		CCB446C92CE1C99500A4FCAB /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE26F32CD4C55300E8D655 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CCBC385E2CE36DAB008472E5 /* DefaultAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC385D2CE36DAB008472E5 /* DefaultAuthRepository.swift */; };
-		CCBC38602CE36F51008472E5 /* AuthServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC385F2CE36F51008472E5 /* AuthServiceFactory.swift */; };
-		CCBC38622CE37579008472E5 /* KakaoAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBC38612CE37579008472E5 /* KakaoAuthService.swift */; };
-		CCFE27012CD4C55300E8D655 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE27002CD4C55300E8D655 /* DataTests.swift */; };
-		CCFE27022CD4C55300E8D655 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = CCFE26F62CD4C55300E8D655 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CCFE274D2CD4D2CF00E8D655 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE274C2CD4D2CF00E8D655 /* Domain.framework */; };
-		CCFE274E2CD4D2CF00E8D655 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE274C2CD4D2CF00E8D655 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CCFE27512CD4D2D800E8D655 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE27502CD4D2D800E8D655 /* Common.framework */; };
-		CCFE27522CD4D2D800E8D655 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE27502CD4D2D800E8D655 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CC8386302CE708420077ED8B /* AuthServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386292CE708420077ED8B /* AuthServiceFactory.swift */; };
+		CC8386312CE708420077ED8B /* KakaoAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC83862A2CE708420077ED8B /* KakaoAuthService.swift */; };
+		CC8386322CE708420077ED8B /* DefaultAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC83862C2CE708420077ED8B /* DefaultAuthRepository.swift */; };
+		CC8386352CE708820077ED8B /* DataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8386342CE708820077ED8B /* DataSource.framework */; };
+		CC8386362CE708820077ED8B /* DataSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC8386342CE708820077ED8B /* DataSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CC8386392CE7089B0077ED8B /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8386382CE7089B0077ED8B /* Common.framework */; };
+		CC83863A2CE7089B0077ED8B /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC8386382CE7089B0077ED8B /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CC8386432CE70CFE0077ED8B /* AppleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386422CE70CFE0077ED8B /* AppleAuthService.swift */; };
+		CC8386532CE710C20077ED8B /* Literal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386522CE710C20077ED8B /* Literal.swift */; };
+		CC83867F2CE721B70077ED8B /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CC83867E2CE721B70077ED8B /* KakaoSDKAuth */; };
+		CC8386812CE721B70077ED8B /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = CC8386802CE721B70077ED8B /* KakaoSDKCommon */; };
+		CC8386832CE721B70077ED8B /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = CC8386822CE721B70077ED8B /* KakaoSDKUser */; };
+		CCC4B04E2CE705D700707CD2 /* Authorization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC4B0452CE705D700707CD2 /* Authorization.framework */; };
+		CCC4B0532CE705D700707CD2 /* AuthorizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4B0522CE705D700707CD2 /* AuthorizationTests.swift */; };
+		CCC4B0542CE705D700707CD2 /* Authorization.h in Headers */ = {isa = PBXBuildFile; fileRef = CCC4B0482CE705D700707CD2 /* Authorization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCC4B07F2CE7074C00707CD2 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4B07E2CE7074C00707CD2 /* AuthRepository.swift */; };
+		CCC4B0812CE7077500707CD2 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4B0802CE7077500707CD2 /* AuthUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CCFE26FD2CD4C55300E8D655 /* PBXContainerItemProxy */ = {
+		CCC4B04F2CE705D700707CD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CCFE26EA2CD4C55300E8D655 /* Project object */;
+			containerPortal = CCC4B03C2CE705D700707CD2 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CCFE26F22CD4C55300E8D655;
-			remoteInfo = Data;
+			remoteGlobalIDString = CCC4B0442CE705D700707CD2;
+			remoteInfo = Authorization;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CCB446CA2CE1C99500A4FCAB /* Embed Frameworks */ = {
+		CC8386372CE708820077ED8B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CCB446C92CE1C99500A4FCAB /* Data.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CCFE274F2CD4D2CF00E8D655 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				CCFE274E2CD4D2CF00E8D655 /* Domain.framework in Embed Frameworks */,
-				CCFE27522CD4D2D800E8D655 /* Common.framework in Embed Frameworks */,
+				CC8386362CE708820077ED8B /* DataSource.framework in Embed Frameworks */,
+				CC83863A2CE7089B0077ED8B /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,215 +52,229 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CCB446602CD9E9D800A4FCAB /* AppleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthService.swift; sourceTree = "<group>"; };
-		CCB4469E2CDC40BE00A4FCAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		CCB446AD2CDDC4EE00A4FCAB /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
-		CCB446C62CE1ABC500A4FCAB /* NetworkProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderTest.swift; sourceTree = "<group>"; };
-		CCBC385D2CE36DAB008472E5 /* DefaultAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthRepository.swift; sourceTree = "<group>"; };
-		CCBC385F2CE36F51008472E5 /* AuthServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceFactory.swift; sourceTree = "<group>"; };
-		CCBC38612CE37579008472E5 /* KakaoAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthService.swift; sourceTree = "<group>"; };
-		CCFE26F32CD4C55300E8D655 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCFE26F62CD4C55300E8D655 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
-		CCFE26FB2CD4C55300E8D655 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCFE27002CD4C55300E8D655 /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
-		CCFE274C2CD4D2CF00E8D655 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCFE27502CD4D2D800E8D655 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC8386292CE708420077ED8B /* AuthServiceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceFactory.swift; sourceTree = "<group>"; };
+		CC83862A2CE708420077ED8B /* KakaoAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoAuthService.swift; sourceTree = "<group>"; };
+		CC83862C2CE708420077ED8B /* DefaultAuthRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultAuthRepository.swift; sourceTree = "<group>"; };
+		CC8386342CE708820077ED8B /* DataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC8386382CE7089B0077ED8B /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC8386422CE70CFE0077ED8B /* AppleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthService.swift; sourceTree = "<group>"; };
+		CC8386522CE710C20077ED8B /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
+		CCC4B0452CE705D700707CD2 /* Authorization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Authorization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCC4B0482CE705D700707CD2 /* Authorization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Authorization.h; sourceTree = "<group>"; };
+		CCC4B04D2CE705D700707CD2 /* AuthorizationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthorizationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCC4B0522CE705D700707CD2 /* AuthorizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationTests.swift; sourceTree = "<group>"; };
+		CCC4B07E2CE7074C00707CD2 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		CCC4B0802CE7077500707CD2 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CCFE26F02CD4C55300E8D655 /* Frameworks */ = {
+		CCC4B0422CE705D700707CD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCB4464C2CD9C2D000A4FCAB /* KakaoSDKCommon in Frameworks */,
-				CCFE274D2CD4D2CF00E8D655 /* Domain.framework in Frameworks */,
-				CCB446952CDC3ABC00A4FCAB /* CombineMoya in Frameworks */,
-				CCFE27512CD4D2D800E8D655 /* Common.framework in Frameworks */,
-				CCB4464E2CD9C2D000A4FCAB /* KakaoSDKUser in Frameworks */,
-				CCB4464A2CD9C2D000A4FCAB /* KakaoSDKAuth in Frameworks */,
+				CC8386812CE721B70077ED8B /* KakaoSDKCommon in Frameworks */,
+				CC8386352CE708820077ED8B /* DataSource.framework in Frameworks */,
+				CC8386392CE7089B0077ED8B /* Common.framework in Frameworks */,
+				CC8386832CE721B70077ED8B /* KakaoSDKUser in Frameworks */,
+				CC83867F2CE721B70077ED8B /* KakaoSDKAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CCFE26F82CD4C55300E8D655 /* Frameworks */ = {
+		CCC4B04A2CE705D700707CD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCB446C82CE1C99500A4FCAB /* Data.framework in Frameworks */,
+				CCC4B04E2CE705D700707CD2 /* Authorization.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CCB446562CD9C3FB00A4FCAB /* Repositories */ = {
+		CC83862B2CE708420077ED8B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CCB4465D2CD9E99800A4FCAB /* Auth */,
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		CCB4465D2CD9E99800A4FCAB /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				CCBC385D2CE36DAB008472E5 /* DefaultAuthRepository.swift */,
-				CCB446622CD9EA8600A4FCAB /* Services */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
-		CCB446622CD9EA8600A4FCAB /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				CCBC385F2CE36F51008472E5 /* AuthServiceFactory.swift */,
-				CCB446602CD9E9D800A4FCAB /* AppleAuthService.swift */,
-				CCBC38612CE37579008472E5 /* KakaoAuthService.swift */,
+				CC8386292CE708420077ED8B /* AuthServiceFactory.swift */,
+				CC83862A2CE708420077ED8B /* KakaoAuthService.swift */,
+				CC8386422CE70CFE0077ED8B /* AppleAuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		CCB4469B2CDC405E00A4FCAB /* Sources */ = {
+		CC83862D2CE708420077ED8B /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				CCB446562CD9C3FB00A4FCAB /* Repositories */,
+				CC83862B2CE708420077ED8B /* Services */,
+				CC83862C2CE708420077ED8B /* DefaultAuthRepository.swift */,
 			);
-			path = Sources;
+			path = Auth;
 			sourceTree = "<group>";
 		};
-		CCB446AC2CDDC4C900A4FCAB /* NetworkProviderTest */ = {
+		CC83862E2CE708420077ED8B /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				CCB446AD2CDDC4EE00A4FCAB /* MockAPI.swift */,
-				CCB446C62CE1ABC500A4FCAB /* NetworkProviderTest.swift */,
+				CC83862D2CE708420077ED8B /* Auth */,
 			);
-			path = NetworkProviderTest;
+			name = Repositories;
+			path = ../../../../Data/Data/Sources/Repositories;
 			sourceTree = "<group>";
 		};
-		CCFE26E92CD4C55300E8D655 = {
+		CC8386332CE708820077ED8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CCFE26F52CD4C55300E8D655 /* Data */,
-				CCFE26FF2CD4C55300E8D655 /* DataTests */,
-				CCFE26F42CD4C55300E8D655 /* Products */,
-				CCFE274B2CD4D2CF00E8D655 /* Frameworks */,
+				CC8386382CE7089B0077ED8B /* Common.framework */,
+				CC8386342CE708820077ED8B /* DataSource.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC8386512CE710BB0077ED8B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC8386522CE710C20077ED8B /* Literal.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CCC4B03B2CE705D700707CD2 = {
+			isa = PBXGroup;
+			children = (
+				CCC4B0472CE705D700707CD2 /* Authorization */,
+				CCC4B0512CE705D700707CD2 /* AuthorizationTests */,
+				CCC4B0462CE705D700707CD2 /* Products */,
+				CC8386332CE708820077ED8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		CCFE26F42CD4C55300E8D655 /* Products */ = {
+		CCC4B0462CE705D700707CD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CCFE26F32CD4C55300E8D655 /* Data.framework */,
-				CCFE26FB2CD4C55300E8D655 /* DataTests.xctest */,
+				CCC4B0452CE705D700707CD2 /* Authorization.framework */,
+				CCC4B04D2CE705D700707CD2 /* AuthorizationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CCFE26F52CD4C55300E8D655 /* Data */ = {
+		CCC4B0472CE705D700707CD2 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				CCB4469E2CDC40BE00A4FCAB /* Info.plist */,
-				CCB4469B2CDC405E00A4FCAB /* Sources */,
-				CCFE26F62CD4C55300E8D655 /* Data.h */,
+				CC8386512CE710BB0077ED8B /* Resources */,
+				CCC4B05D2CE7060800707CD2 /* Sources */,
+				CCC4B0482CE705D700707CD2 /* Authorization.h */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		CCC4B0512CE705D700707CD2 /* AuthorizationTests */ = {
+			isa = PBXGroup;
+			children = (
+				CCC4B0522CE705D700707CD2 /* AuthorizationTests.swift */,
+			);
+			path = AuthorizationTests;
+			sourceTree = "<group>";
+		};
+		CCC4B05D2CE7060800707CD2 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CCC4B0822CE7078F00707CD2 /* Data */,
+				CCC4B05F2CE706A400707CD2 /* Domain */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CCC4B05F2CE706A400707CD2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CCC4B07E2CE7074C00707CD2 /* AuthRepository.swift */,
+				CCC4B0802CE7077500707CD2 /* AuthUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CCC4B0822CE7078F00707CD2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CC83862E2CE708420077ED8B /* Repositories */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		CCFE26FF2CD4C55300E8D655 /* DataTests */ = {
-			isa = PBXGroup;
-			children = (
-				CCB446AC2CDDC4C900A4FCAB /* NetworkProviderTest */,
-				CCFE27002CD4C55300E8D655 /* DataTests.swift */,
-			);
-			path = DataTests;
-			sourceTree = "<group>";
-		};
-		CCFE274B2CD4D2CF00E8D655 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CCFE27502CD4D2D800E8D655 /* Common.framework */,
-				CCFE274C2CD4D2CF00E8D655 /* Domain.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		CCFE26EE2CD4C55300E8D655 /* Headers */ = {
+		CCC4B0402CE705D700707CD2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCFE27022CD4C55300E8D655 /* Data.h in Headers */,
+				CCC4B0542CE705D700707CD2 /* Authorization.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CCFE26F22CD4C55300E8D655 /* Data */ = {
+		CCC4B0442CE705D700707CD2 /* Authorization */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CCFE27052CD4C55300E8D655 /* Build configuration list for PBXNativeTarget "Data" */;
+			buildConfigurationList = CCC4B0572CE705D700707CD2 /* Build configuration list for PBXNativeTarget "Authorization" */;
 			buildPhases = (
-				CCFE26EE2CD4C55300E8D655 /* Headers */,
-				CCFE26EF2CD4C55300E8D655 /* Sources */,
-				CCFE26F02CD4C55300E8D655 /* Frameworks */,
-				CCFE26F12CD4C55300E8D655 /* Resources */,
-				CCFE274F2CD4D2CF00E8D655 /* Embed Frameworks */,
+				CCC4B0402CE705D700707CD2 /* Headers */,
+				CCC4B0412CE705D700707CD2 /* Sources */,
+				CCC4B0422CE705D700707CD2 /* Frameworks */,
+				CCC4B0432CE705D700707CD2 /* Resources */,
+				CC8386372CE708820077ED8B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Data;
+			name = Authorization;
 			packageProductDependencies = (
-				CCB446492CD9C2D000A4FCAB /* KakaoSDKAuth */,
-				CCB4464B2CD9C2D000A4FCAB /* KakaoSDKCommon */,
-				CCB4464D2CD9C2D000A4FCAB /* KakaoSDKUser */,
-				CCB446942CDC3ABC00A4FCAB /* CombineMoya */,
+				CC83867E2CE721B70077ED8B /* KakaoSDKAuth */,
+				CC8386802CE721B70077ED8B /* KakaoSDKCommon */,
+				CC8386822CE721B70077ED8B /* KakaoSDKUser */,
 			);
-			productName = Data;
-			productReference = CCFE26F32CD4C55300E8D655 /* Data.framework */;
+			productName = Authorization;
+			productReference = CCC4B0452CE705D700707CD2 /* Authorization.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CCFE26FA2CD4C55300E8D655 /* DataTests */ = {
+		CCC4B04C2CE705D700707CD2 /* AuthorizationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CCFE27082CD4C55300E8D655 /* Build configuration list for PBXNativeTarget "DataTests" */;
+			buildConfigurationList = CCC4B05A2CE705D700707CD2 /* Build configuration list for PBXNativeTarget "AuthorizationTests" */;
 			buildPhases = (
-				CCFE26F72CD4C55300E8D655 /* Sources */,
-				CCFE26F82CD4C55300E8D655 /* Frameworks */,
-				CCFE26F92CD4C55300E8D655 /* Resources */,
-				CCB446CA2CE1C99500A4FCAB /* Embed Frameworks */,
+				CCC4B0492CE705D700707CD2 /* Sources */,
+				CCC4B04A2CE705D700707CD2 /* Frameworks */,
+				CCC4B04B2CE705D700707CD2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CCFE26FE2CD4C55300E8D655 /* PBXTargetDependency */,
+				CCC4B0502CE705D700707CD2 /* PBXTargetDependency */,
 			);
-			name = DataTests;
-			productName = DataTests;
-			productReference = CCFE26FB2CD4C55300E8D655 /* DataTests.xctest */;
+			name = AuthorizationTests;
+			productName = AuthorizationTests;
+			productReference = CCC4B04D2CE705D700707CD2 /* AuthorizationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CCFE26EA2CD4C55300E8D655 /* Project object */ = {
+		CCC4B03C2CE705D700707CD2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					CCFE26F22CD4C55300E8D655 = {
+					CCC4B0442CE705D700707CD2 = {
 						CreatedOnToolsVersion = 15.4;
 						LastSwiftMigration = 1540;
 					};
-					CCFE26FA2CD4C55300E8D655 = {
+					CCC4B04C2CE705D700707CD2 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
-			buildConfigurationList = CCFE26ED2CD4C55300E8D655 /* Build configuration list for PBXProject "Data" */;
+			buildConfigurationList = CCC4B03F2CE705D700707CD2 /* Build configuration list for PBXProject "Authorization" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -280,30 +282,29 @@
 				en,
 				Base,
 			);
-			mainGroup = CCFE26E92CD4C55300E8D655;
+			mainGroup = CCC4B03B2CE705D700707CD2;
 			packageReferences = (
-				CCB446482CD9C2D000A4FCAB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
-				CCB446932CDC3ABC00A4FCAB /* XCRemoteSwiftPackageReference "Moya" */,
+				CC83867D2CE721B70077ED8B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 			);
-			productRefGroup = CCFE26F42CD4C55300E8D655 /* Products */;
+			productRefGroup = CCC4B0462CE705D700707CD2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CCFE26F22CD4C55300E8D655 /* Data */,
-				CCFE26FA2CD4C55300E8D655 /* DataTests */,
+				CCC4B0442CE705D700707CD2 /* Authorization */,
+				CCC4B04C2CE705D700707CD2 /* AuthorizationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CCFE26F12CD4C55300E8D655 /* Resources */ = {
+		CCC4B0432CE705D700707CD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CCFE26F92CD4C55300E8D655 /* Resources */ = {
+		CCC4B04B2CE705D700707CD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -313,43 +314,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CCFE26EF2CD4C55300E8D655 /* Sources */ = {
+		CCC4B0412CE705D700707CD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCBC38622CE37579008472E5 /* KakaoAuthService.swift in Sources */,
-				CCB446612CD9E9D800A4FCAB /* AppleAuthService.swift in Sources */,
-				CCBC38602CE36F51008472E5 /* AuthServiceFactory.swift in Sources */,
-				CCBC385E2CE36DAB008472E5 /* DefaultAuthRepository.swift in Sources */,
+				CC8386312CE708420077ED8B /* KakaoAuthService.swift in Sources */,
+				CCC4B07F2CE7074C00707CD2 /* AuthRepository.swift in Sources */,
+				CC8386432CE70CFE0077ED8B /* AppleAuthService.swift in Sources */,
+				CC8386302CE708420077ED8B /* AuthServiceFactory.swift in Sources */,
+				CC8386532CE710C20077ED8B /* Literal.swift in Sources */,
+				CCC4B0812CE7077500707CD2 /* AuthUseCase.swift in Sources */,
+				CC8386322CE708420077ED8B /* DefaultAuthRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CCFE26F72CD4C55300E8D655 /* Sources */ = {
+		CCC4B0492CE705D700707CD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCB446AE2CDDC4EE00A4FCAB /* MockAPI.swift in Sources */,
-				CCB446C72CE1ABC500A4FCAB /* NetworkProviderTest.swift in Sources */,
-				CCFE27012CD4C55300E8D655 /* DataTests.swift in Sources */,
+				CCC4B0532CE705D700707CD2 /* AuthorizationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CCFE26FE2CD4C55300E8D655 /* PBXTargetDependency */ = {
+		CCC4B0502CE705D700707CD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CCFE26F22CD4C55300E8D655 /* Data */;
-			targetProxy = CCFE26FD2CD4C55300E8D655 /* PBXContainerItemProxy */;
+			target = CCC4B0442CE705D700707CD2 /* Authorization */;
+			targetProxy = CCC4B04F2CE705D700707CD2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		CCFE27032CD4C55300E8D655 /* Debug */ = {
+		CCC4B0552CE705D700707CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -411,11 +414,12 @@
 			};
 			name = Debug;
 		};
-		CCFE27042CD4C55300E8D655 /* Release */ = {
+		CCC4B0562CE705D700707CD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -470,9 +474,10 @@
 			};
 			name = Release;
 		};
-		CCFE27062CD4C55300E8D655 /* Debug */ = {
+		CCC4B0582CE705D700707CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,7 +489,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Data/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -493,10 +497,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.Data;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.Authorization;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -511,9 +516,10 @@
 			};
 			name = Debug;
 		};
-		CCFE27072CD4C55300E8D655 /* Release */ = {
+		CCC4B0592CE705D700707CD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -525,7 +531,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Data/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -534,10 +539,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.Data;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.Authorization;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -551,15 +557,16 @@
 			};
 			name = Release;
 		};
-		CCFE27092CD4C55300E8D655 /* Debug */ = {
+		CCC4B05B2CE705D700707CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YWNQ4RZBTS;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.DataTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.AuthorizationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -571,15 +578,16 @@
 			};
 			name = Debug;
 		};
-		CCFE270A2CD4C55300E8D655 /* Release */ = {
+		CCC4B05C2CE705D700707CD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YWNQ4RZBTS;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.DataTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.AuthorizationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -594,29 +602,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CCFE26ED2CD4C55300E8D655 /* Build configuration list for PBXProject "Data" */ = {
+		CCC4B03F2CE705D700707CD2 /* Build configuration list for PBXProject "Authorization" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CCFE27032CD4C55300E8D655 /* Debug */,
-				CCFE27042CD4C55300E8D655 /* Release */,
+				CCC4B0552CE705D700707CD2 /* Debug */,
+				CCC4B0562CE705D700707CD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CCFE27052CD4C55300E8D655 /* Build configuration list for PBXNativeTarget "Data" */ = {
+		CCC4B0572CE705D700707CD2 /* Build configuration list for PBXNativeTarget "Authorization" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CCFE27062CD4C55300E8D655 /* Debug */,
-				CCFE27072CD4C55300E8D655 /* Release */,
+				CCC4B0582CE705D700707CD2 /* Debug */,
+				CCC4B0592CE705D700707CD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CCFE27082CD4C55300E8D655 /* Build configuration list for PBXNativeTarget "DataTests" */ = {
+		CCC4B05A2CE705D700707CD2 /* Build configuration list for PBXNativeTarget "AuthorizationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CCFE27092CD4C55300E8D655 /* Debug */,
-				CCFE270A2CD4C55300E8D655 /* Release */,
+				CCC4B05B2CE705D700707CD2 /* Debug */,
+				CCC4B05C2CE705D700707CD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -624,7 +632,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CCB446482CD9C2D000A4FCAB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+		CC83867D2CE721B70077ED8B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
 			requirement = {
@@ -632,38 +640,25 @@
 				minimumVersion = 2.23.0;
 			};
 		};
-		CCB446932CDC3ABC00A4FCAB /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.3;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CCB446492CD9C2D000A4FCAB /* KakaoSDKAuth */ = {
+		CC83867E2CE721B70077ED8B /* KakaoSDKAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CCB446482CD9C2D000A4FCAB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			package = CC83867D2CE721B70077ED8B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
 			productName = KakaoSDKAuth;
 		};
-		CCB4464B2CD9C2D000A4FCAB /* KakaoSDKCommon */ = {
+		CC8386802CE721B70077ED8B /* KakaoSDKCommon */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CCB446482CD9C2D000A4FCAB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			package = CC83867D2CE721B70077ED8B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
 			productName = KakaoSDKCommon;
 		};
-		CCB4464D2CD9C2D000A4FCAB /* KakaoSDKUser */ = {
+		CC8386822CE721B70077ED8B /* KakaoSDKUser */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CCB446482CD9C2D000A4FCAB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			package = CC83867D2CE721B70077ED8B /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
 			productName = KakaoSDKUser;
-		};
-		CCB446942CDC3ABC00A4FCAB /* CombineMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CCB446932CDC3ABC00A4FCAB /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = CombineMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = CCFE26EA2CD4C55300E8D655 /* Project object */;
+	rootObject = CCC4B03C2CE705D700707CD2 /* Project object */;
 }

@@ -8,14 +8,14 @@
 import Foundation
 import Moya
 
-enum UserAPI {
+public enum UserAPI {
     case kakaoLogin(_ body: KakaoLoginBody)
     case appleLogin(_ body: AppleLoginBody)
 }
 
 extension UserAPI: TargetType {
     
-    var path: String {
+    public var path: String {
         switch self {
         case .kakaoLogin:
             return "/v1/users/login/kakao"
@@ -24,14 +24,14 @@ extension UserAPI: TargetType {
         }
     }
     
-    var method: Moya.Method {
+    public var method: Moya.Method {
         switch self {
         case .kakaoLogin, .appleLogin:
             return .post
         }
     }
     
-    var task: Moya.Task {
+    public var task: Moya.Task {
         switch self {
         case .kakaoLogin(let body):
             return .requestJSONEncodable(body)
@@ -40,7 +40,7 @@ extension UserAPI: TargetType {
         }
     }
     
-    var headers: [String : String]? {
+    public var headers: [String : String]? {
         switch self {
         case .kakaoLogin, .appleLogin:
             return [

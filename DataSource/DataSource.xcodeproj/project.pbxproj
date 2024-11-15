@@ -7,16 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CCC4AFD12CE7005400707CD2 /* DataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC4AFC82CE7005400707CD2 /* DataSource.framework */; };
+		CC0D21A82CE763B900EA6254 /* Literal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D21A72CE763B900EA6254 /* Literal.swift */; };
+		CC8386442CE70D520077ED8B /* CollabeeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE42CE700EA00707CD2 /* CollabeeError.swift */; };
+		CC8386452CE70D540077ED8B /* OAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE52CE700EA00707CD2 /* OAuthError.swift */; };
+		CC8386462CE70D570077ED8B /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE22CE700EA00707CD2 /* NetworkProvider.swift */; };
+		CC8386472CE70D590077ED8B /* TokenInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE32CE700EA00707CD2 /* TokenInterceptor.swift */; };
+		CC8386482CE70D5B0077ED8B /* LoginBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFEA2CE700EA00707CD2 /* LoginBody.swift */; };
+		CC8386492CE70D600077ED8B /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE72CE700EA00707CD2 /* LoginResult.swift */; };
+		CC83864A2CE70D620077ED8B /* TokenRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE82CE700EA00707CD2 /* TokenRefresh.swift */; };
+		CC83864B2CE70D650077ED8B /* TargetType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFEC2CE700EA00707CD2 /* TargetType+Extension.swift */; };
+		CC83864C2CE70D670077ED8B /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFED2CE700EA00707CD2 /* UserAPI.swift */; };
+		CC83864D2CE70D6B0077ED8B /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFEE2CE700EA00707CD2 /* AuthAPI.swift */; };
+		CC8386502CE70D740077ED8B /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFF52CE701D400707CD2 /* TokenStorage.swift */; };
+		CC8386682CE716210077ED8B /* NetworkProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386672CE716210077ED8B /* NetworkProviderTest.swift */; };
+		CC83866A2CE716440077ED8B /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386692CE716440077ED8B /* MockAPI.swift */; };
+		CC83866B2CE7165A0077ED8B /* DataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC4AFC82CE7005400707CD2 /* DataSource.framework */; };
+		CC83866C2CE7165A0077ED8B /* DataSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCC4AFC82CE7005400707CD2 /* DataSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CC8386862CE721CB0077ED8B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = CC8386852CE721CB0077ED8B /* CombineMoya */; };
 		CCC4AFD62CE7005400707CD2 /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFD52CE7005400707CD2 /* DataSourceTests.swift */; };
 		CCC4AFD72CE7005400707CD2 /* DataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CCC4AFCB2CE7005400707CD2 /* DataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CCC4AFF32CE7015E00707CD2 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE12CE700EA00707CD2 /* Header.swift */; };
 		CCC4AFF42CE7017500707CD2 /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE02CE700EA00707CD2 /* MoyaLoggerPlugin.swift */; };
-		CCC4AFFF2CE7029B00707CD2 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = CCC4AFFE2CE7029B00707CD2 /* CombineMoya */; };
-		CCC4B0022CE702B300707CD2 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CCC4B0012CE702B300707CD2 /* KakaoSDKAuth */; };
-		CCC4B0042CE702B300707CD2 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = CCC4B0032CE702B300707CD2 /* KakaoSDKCommon */; };
-		CCC4B0062CE702B300707CD2 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = CCC4B0052CE702B300707CD2 /* KakaoSDKUser */; };
 		CCC4B0092CE7033E00707CD2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCC4B0082CE7033E00707CD2 /* RealmSwift */; };
+		CCC4B00A2CE704E000707CD2 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CCC4B0082CE7033E00707CD2 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CCC4B00E2CE7052900707CD2 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC4B00D2CE7052900707CD2 /* Common.framework */; };
+		CCC4B00F2CE7052900707CD2 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCC4B00D2CE7052900707CD2 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +44,38 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CC83866D2CE7165A0077ED8B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CC83866C2CE7165A0077ED8B /* DataSource.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCC4B00B2CE704E000707CD2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CCC4B00A2CE704E000707CD2 /* RealmSwift in Embed Frameworks */,
+				CCC4B00F2CE7052900707CD2 /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CC0D21A62CE7626C00EA6254 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
+		CC0D21A72CE763B900EA6254 /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
+		CC8386672CE716210077ED8B /* NetworkProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderTest.swift; sourceTree = "<group>"; };
+		CC8386692CE716440077ED8B /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
+		CC9772EA2CE75E6500443542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CCC4AFC82CE7005400707CD2 /* DataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC4AFCB2CE7005400707CD2 /* DataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		CCC4AFD02CE7005400707CD2 /* DataSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataSourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,8 +93,7 @@
 		CCC4AFED2CE700EA00707CD2 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		CCC4AFEE2CE700EA00707CD2 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		CCC4AFF52CE701D400707CD2 /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
-		CCC4AFF92CE7020500707CD2 /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
-		CCC4AFFC2CE7022D00707CD2 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
+		CCC4B00D2CE7052900707CD2 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +101,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCC4B0062CE702B300707CD2 /* KakaoSDKUser in Frameworks */,
-				CCC4AFFF2CE7029B00707CD2 /* CombineMoya in Frameworks */,
-				CCC4B0042CE702B300707CD2 /* KakaoSDKCommon in Frameworks */,
+				CCC4B00E2CE7052900707CD2 /* Common.framework in Frameworks */,
 				CCC4B0092CE7033E00707CD2 /* RealmSwift in Frameworks */,
-				CCC4B0022CE702B300707CD2 /* KakaoSDKAuth in Frameworks */,
+				CC8386862CE721CB0077ED8B /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCC4AFD12CE7005400707CD2 /* DataSource.framework in Frameworks */,
+				CC83866B2CE7165A0077ED8B /* DataSource.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +124,7 @@
 				CCC4AFCA2CE7005400707CD2 /* DataSource */,
 				CCC4AFD42CE7005400707CD2 /* DataSourceTests */,
 				CCC4AFC92CE7005400707CD2 /* Products */,
+				CCC4B00C2CE7052900707CD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +140,7 @@
 		CCC4AFCA2CE7005400707CD2 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				CC9772EA2CE75E6500443542 /* Info.plist */,
 				CCC4AFFA2CE7020500707CD2 /* Resources */,
 				CCC4AFFB2CE7020D00707CD2 /* Sources */,
 				CCC4AFCB2CE7005400707CD2 /* DataSource.h */,
@@ -107,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				CCC4AFD52CE7005400707CD2 /* DataSourceTests.swift */,
+				CC8386672CE716210077ED8B /* NetworkProviderTest.swift */,
+				CC8386692CE716440077ED8B /* MockAPI.swift */,
 			);
 			path = DataSourceTests;
 			sourceTree = "<group>";
@@ -173,8 +220,8 @@
 		CCC4AFFA2CE7020500707CD2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CCC4AFF92CE7020500707CD2 /* Literal.swift */,
-				CCC4AFFC2CE7022D00707CD2 /* Secret.xcconfig */,
+				CC0D21A62CE7626C00EA6254 /* Secret.xcconfig */,
+				CC0D21A72CE763B900EA6254 /* Literal.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -186,6 +233,14 @@
 				CCC4AFF02CE700EA00707CD2 /* Network */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		CCC4B00C2CE7052900707CD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CCC4B00D2CE7052900707CD2 /* Common.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +265,7 @@
 				CCC4AFC42CE7005400707CD2 /* Sources */,
 				CCC4AFC52CE7005400707CD2 /* Frameworks */,
 				CCC4AFC62CE7005400707CD2 /* Resources */,
+				CCC4B00B2CE704E000707CD2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,11 +273,8 @@
 			);
 			name = DataSource;
 			packageProductDependencies = (
-				CCC4AFFE2CE7029B00707CD2 /* CombineMoya */,
-				CCC4B0012CE702B300707CD2 /* KakaoSDKAuth */,
-				CCC4B0032CE702B300707CD2 /* KakaoSDKCommon */,
-				CCC4B0052CE702B300707CD2 /* KakaoSDKUser */,
 				CCC4B0082CE7033E00707CD2 /* RealmSwift */,
+				CC8386852CE721CB0077ED8B /* CombineMoya */,
 			);
 			productName = DataSource;
 			productReference = CCC4AFC82CE7005400707CD2 /* DataSource.framework */;
@@ -234,6 +287,7 @@
 				CCC4AFCC2CE7005400707CD2 /* Sources */,
 				CCC4AFCD2CE7005400707CD2 /* Frameworks */,
 				CCC4AFCE2CE7005400707CD2 /* Resources */,
+				CC83866D2CE7165A0077ED8B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,9 +327,9 @@
 			);
 			mainGroup = CCC4AFBE2CE7005400707CD2;
 			packageReferences = (
-				CCC4AFFD2CE7029B00707CD2 /* XCRemoteSwiftPackageReference "Moya" */,
-				CCC4B0002CE702B300707CD2 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				CCC4B0072CE7033E00707CD2 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				CC8386842CE721CB0077ED8B /* XCRemoteSwiftPackageReference "Moya" */,
+				CCCBB4362CE72D0F000DBB95 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = CCC4AFC92CE7005400707CD2 /* Products */;
 			projectDirPath = "";
@@ -310,7 +364,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCC4AFF42CE7017500707CD2 /* MoyaLoggerPlugin.swift in Sources */,
+				CC83864A2CE70D620077ED8B /* TokenRefresh.swift in Sources */,
+				CC83864C2CE70D670077ED8B /* UserAPI.swift in Sources */,
+				CC8386502CE70D740077ED8B /* TokenStorage.swift in Sources */,
+				CC83864B2CE70D650077ED8B /* TargetType+Extension.swift in Sources */,
+				CC83864D2CE70D6B0077ED8B /* AuthAPI.swift in Sources */,
+				CC8386472CE70D590077ED8B /* TokenInterceptor.swift in Sources */,
+				CC8386482CE70D5B0077ED8B /* LoginBody.swift in Sources */,
 				CCC4AFF32CE7015E00707CD2 /* Header.swift in Sources */,
+				CC8386492CE70D600077ED8B /* LoginResult.swift in Sources */,
+				CC8386452CE70D540077ED8B /* OAuthError.swift in Sources */,
+				CC0D21A82CE763B900EA6254 /* Literal.swift in Sources */,
+				CC8386442CE70D520077ED8B /* CollabeeError.swift in Sources */,
+				CC8386462CE70D570077ED8B /* NetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +385,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCC4AFD62CE7005400707CD2 /* DataSourceTests.swift in Sources */,
+				CC83866A2CE716440077ED8B /* MockAPI.swift in Sources */,
+				CC8386682CE716210077ED8B /* NetworkProviderTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,10 +403,11 @@
 /* Begin XCBuildConfiguration section */
 		CCC4AFD82CE7005400707CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCC4AFFC2CE7022D00707CD2 /* Secret.xcconfig */;
+			baseConfigurationReference = CC0D21A62CE7626C00EA6254 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -402,10 +471,10 @@
 		};
 		CCC4AFD92CE7005400707CD2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCC4AFFC2CE7022D00707CD2 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -462,9 +531,10 @@
 		};
 		CCC4AFDB2CE7005400707CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCC4AFFC2CE7022D00707CD2 /* Secret.xcconfig */;
+			baseConfigurationReference = CC0D21A62CE7626C00EA6254 /* Secret.xcconfig */;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -474,6 +544,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DataSource/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -482,6 +553,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -501,9 +573,9 @@
 		};
 		CCC4AFDC2CE7005400707CD2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCC4AFFC2CE7022D00707CD2 /* Secret.xcconfig */;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -513,6 +585,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DataSource/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -521,6 +594,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -541,7 +615,7 @@
 		CCC4AFDE2CE7005400707CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YWNQ4RZBTS;
@@ -549,16 +623,20 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.DataSourceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CCC4AFDF2CE7005400707CD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YWNQ4RZBTS;
@@ -566,9 +644,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.DataSourceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -605,20 +687,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CCC4AFFD2CE7029B00707CD2 /* XCRemoteSwiftPackageReference "Moya" */ = {
+		CC8386842CE721CB0077ED8B /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 15.0.3;
-			};
-		};
-		CCC4B0002CE702B300707CD2 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.23.0;
 			};
 		};
 		CCC4B0072CE7033E00707CD2 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
@@ -629,28 +703,21 @@
 				version = 10.54.1;
 			};
 		};
+		CCCBB4362CE72D0F000DBB95 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CCC4AFFE2CE7029B00707CD2 /* CombineMoya */ = {
+		CC8386852CE721CB0077ED8B /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CCC4AFFD2CE7029B00707CD2 /* XCRemoteSwiftPackageReference "Moya" */;
+			package = CC8386842CE721CB0077ED8B /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = CombineMoya;
-		};
-		CCC4B0012CE702B300707CD2 /* KakaoSDKAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CCC4B0002CE702B300707CD2 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
-			productName = KakaoSDKAuth;
-		};
-		CCC4B0032CE702B300707CD2 /* KakaoSDKCommon */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CCC4B0002CE702B300707CD2 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
-			productName = KakaoSDKCommon;
-		};
-		CCC4B0052CE702B300707CD2 /* KakaoSDKUser */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CCC4B0002CE702B300707CD2 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
-			productName = KakaoSDKUser;
 		};
 		CCC4B0082CE7033E00707CD2 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;

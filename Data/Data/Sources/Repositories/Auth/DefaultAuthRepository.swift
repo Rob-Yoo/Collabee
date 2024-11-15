@@ -7,7 +7,6 @@
 
 import Combine
 
-import Domain
 import Common
 
 public final class DefaultAuthRepository: AuthRepository {
@@ -43,3 +42,4 @@ public final class DefaultAuthRepository: AuthRepository {
         authService.handleOpenURL(url)
     }
 }
+

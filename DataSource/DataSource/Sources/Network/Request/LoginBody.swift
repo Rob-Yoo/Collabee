@@ -7,13 +7,25 @@
 
 import Foundation
 
-struct AppleLoginBody: Encodable {
+public struct AppleLoginBody: Encodable {
     let idToken: String
     var nickname: String?
     var deviceToken: String?
+    
+    public init(idToken: String, nickname: String? = nil, deviceToken: String? = nil) {
+        self.idToken = idToken
+        self.nickname = nickname
+        self.deviceToken = deviceToken
+    }
 }
 
-struct KakaoLoginBody: Encodable {
+public struct KakaoLoginBody: Encodable {
     let oauthToken: String
     var deviceToken: String?
+    
+    public init(oauthToken: String, deviceToken: String? = nil) {
+        self.oauthToken = oauthToken
+        self.deviceToken = deviceToken
+    }
+
 }

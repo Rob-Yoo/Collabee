@@ -11,19 +11,19 @@ import Combine
 import Moya
 import CombineMoya
 
-protocol NetworkProvider {
+public protocol NetworkProvider {
     func request<T: TargetType, R: Decodable>(_ target: T, _ responseType: R.Type) -> AnyPublisher<R, CollabeeError>
 }
 
-final class DefaultNetworkProvider: NetworkProvider {
+public final class DefaultNetworkProvider: NetworkProvider {
 
-    static let shared = DefaultNetworkProvider()
+    public static let shared = DefaultNetworkProvider()
     private let session = Session(interceptor: TokenInterceptor())
     private var cancellable = Set<AnyCancellable>()
     
     private init() {}
     
-    func request<T: TargetType, R: Decodable>(_ target: T, _ responseType: R.Type) -> AnyPublisher<R, CollabeeError> {
+    public func request<T: TargetType, R: Decodable>(_ target: T, _ responseType: R.Type) -> AnyPublisher<R, CollabeeError> {
         let provider = MoyaProvider<T>(session: session, plugins: [MoyaLoggerPlugin()])
         
         return Future<R, CollabeeError> { [weak self] promise in

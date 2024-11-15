@@ -5,6 +5,6 @@
 //  Created by Jinyoung Yoo on 11/12/24.
 //
 
-enum OAuthError: Error {
+public enum OAuthError: Error {
     case tokenError
 }

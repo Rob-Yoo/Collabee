@@ -5,10 +5,13 @@
       location = "group:App/App.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Data/Data.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Feature/Feature.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Data/Data.xcodeproj">
+      location = "group:DataSource/DataSource.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Domain/Domain.xcodeproj">

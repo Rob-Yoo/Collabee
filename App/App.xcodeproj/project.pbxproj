@@ -63,11 +63,11 @@
 /* Begin PBXFileReference section */
 		CC15F4BA2CD50BFA00EBAA7D /* ko-KR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ko-KR"; path = "ko-KR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		CCA52A272CD77024000E62EA /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
-		CCB446472CD9BFC300A4FCAB /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		CCB446672CD9EDE200A4FCAB /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCB4466A2CD9EEE200A4FCAB /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCB4468F2CDB94CE00A4FCAB /* DataAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAssembly.swift; sourceTree = "<group>"; };
 		CCB446912CDB953C00A4FCAB /* DomainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainAssembly.swift; sourceTree = "<group>"; };
+		CCC4AFBD2CE7002D00707CD2 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		CCFE26942CD4C3C000E8D655 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE26972CD4C3C000E8D655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCFE26992CD4C3C000E8D655 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			children = (
 				CCFE26A02CD4C3C100E8D655 /* Assets.xcassets */,
 				CCFE26A22CD4C3C100E8D655 /* LaunchScreen.storyboard */,
-				CCB446472CD9BFC300A4FCAB /* Secret.xcconfig */,
+				CCC4AFBD2CE7002D00707CD2 /* Secret.xcconfig */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -391,7 +391,6 @@
 /* Begin XCBuildConfiguration section */
 		CCFE26BC2CD4C3C100E8D655 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCB446472CD9BFC300A4FCAB /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -456,7 +455,6 @@
 		};
 		CCFE26BD2CD4C3C100E8D655 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCB446472CD9BFC300A4FCAB /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -514,7 +512,6 @@
 		};
 		CCFE26BF2CD4C3C100E8D655 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCB446472CD9BFC300A4FCAB /* Secret.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -549,7 +546,6 @@
 		};
 		CCFE26C02CD4C3C100E8D655 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCB446472CD9BFC300A4FCAB /* Secret.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

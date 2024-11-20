@@ -8,6 +8,9 @@
 import UIKit
 import Common
 
+import FirebaseCore
+import FirebaseMessaging
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NetworkProviderAssembly(),
             AuthorizationAssembly()
         ])
+        
+        FirebaseApp.configure()
+        
+        UNUserNotificationCenter.current().delegate = self
+
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+          options: authOptions,
+          completionHandler: { _, _ in }
+        )
+
+        application.registerForRemoteNotifications()
+        Messaging.messaging().delegate = self
         
         return true
     }
@@ -38,3 +54,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func application(application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // APNs에서 제공하는 Device Token 값을 FCM에 보내면 이를 이용해서 FCMToken 값을 새로 만든다.
+        Messaging.messaging().apnsToken = deviceToken
+    }
+    
+}
+
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        
+        // 현재 등록 토큰(디바이스마다 고유한 토큰 가지고 있는듯) 가져오기
+        Messaging.messaging().token { token, error in
+            if let error = error {
+                print("Error fetching FCM registration token: \(error)")
+            } else if let token = token {
+                // FCM 토큰 받기
+                print("FCM registration token: \(token)")
+            }
+        }
+        
+        // 토큰 갱신 모니터링
+//        print("Firebase registration token: \(String(describing: fcmToken))")
+        let dataDict: [String: String] = ["token": fcmToken ?? ""]
+
+        NotificationCenter.default.post(
+          name: Notification.Name("FCMToken"),
+          object: nil,
+          userInfo: dataDict
+        )
+    }
+}

@@ -7,11 +7,7 @@
 
 import Moya
 
-public extension TargetType {
-    var baseURL: URL {
-        return URL(string: Literal.Secret.BaseURL)!
-    }
-    
+extension TargetType {
     var validationType: ValidationType {
         return .successCodes
     }

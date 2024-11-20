@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		CC0D21A82CE763B900EA6254 /* Literal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0D21A72CE763B900EA6254 /* Literal.swift */; };
-		CC8386442CE70D520077ED8B /* CollabeeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE42CE700EA00707CD2 /* CollabeeError.swift */; };
-		CC8386452CE70D540077ED8B /* OAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE52CE700EA00707CD2 /* OAuthError.swift */; };
-		CC8386462CE70D570077ED8B /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE22CE700EA00707CD2 /* NetworkProvider.swift */; };
+		CC7FDD812CE8D8C400E7B0E5 /* APIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDD802CE8D8C400E7B0E5 /* APIAdapter.swift */; };
+		CC7FDD882CEC215D00E7B0E5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDD872CEC215D00E7B0E5 /* API.swift */; };
+		CC7FDD902CEC30BE00E7B0E5 /* ServerKeyAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDD8F2CEC30BE00E7B0E5 /* ServerKeyAdapter.swift */; };
+		CC7FDD982CECA73600E7B0E5 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDD972CECA73600E7B0E5 /* NetworkProvider.swift */; };
+		CC7FDDA12CED6EA800E7B0E5 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDA02CED6EA800E7B0E5 /* UserDefaultStorage.swift */; };
+		CC8386442CE70D520077ED8B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE42CE700EA00707CD2 /* NetworkError.swift */; };
+		CC8386462CE70D570077ED8B /* DefaultNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE22CE700EA00707CD2 /* DefaultNetworkProvider.swift */; };
 		CC8386472CE70D590077ED8B /* TokenInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE32CE700EA00707CD2 /* TokenInterceptor.swift */; };
-		CC8386482CE70D5B0077ED8B /* LoginBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFEA2CE700EA00707CD2 /* LoginBody.swift */; };
-		CC8386492CE70D600077ED8B /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE72CE700EA00707CD2 /* LoginResult.swift */; };
 		CC83864A2CE70D620077ED8B /* TokenRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE82CE700EA00707CD2 /* TokenRefresh.swift */; };
 		CC83864B2CE70D650077ED8B /* TargetType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFEC2CE700EA00707CD2 /* TargetType+Extension.swift */; };
-		CC83864C2CE70D670077ED8B /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFED2CE700EA00707CD2 /* UserAPI.swift */; };
 		CC83864D2CE70D6B0077ED8B /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFEE2CE700EA00707CD2 /* AuthAPI.swift */; };
 		CC8386502CE70D740077ED8B /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFF52CE701D400707CD2 /* TokenStorage.swift */; };
 		CC8386682CE716210077ED8B /* NetworkProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386672CE716210077ED8B /* NetworkProviderTest.swift */; };
@@ -31,7 +32,6 @@
 		CCC4B0092CE7033E00707CD2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCC4B0082CE7033E00707CD2 /* RealmSwift */; };
 		CCC4B00A2CE704E000707CD2 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CCC4B0082CE7033E00707CD2 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CCC4B00E2CE7052900707CD2 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC4B00D2CE7052900707CD2 /* Common.framework */; };
-		CCC4B00F2CE7052900707CD2 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCC4B00D2CE7052900707CD2 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +63,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CCC4B00A2CE704E000707CD2 /* RealmSwift in Embed Frameworks */,
-				CCC4B00F2CE7052900707CD2 /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +72,14 @@
 /* Begin PBXFileReference section */
 		CC0D21A62CE7626C00EA6254 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		CC0D21A72CE763B900EA6254 /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
+		CC7FDD582CE8914400E7B0E5 /* WorkSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WorkSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC7FDD5B2CE8914700E7B0E5 /* Authorization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Authorization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC7FDD7D2CE8D89D00E7B0E5 /* DataSourceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataSourceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC7FDD802CE8D8C400E7B0E5 /* APIAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAdapter.swift; sourceTree = "<group>"; };
+		CC7FDD872CEC215D00E7B0E5 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		CC7FDD8F2CEC30BE00E7B0E5 /* ServerKeyAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerKeyAdapter.swift; sourceTree = "<group>"; };
+		CC7FDD972CECA73600E7B0E5 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		CC7FDDA02CED6EA800E7B0E5 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		CC8386672CE716210077ED8B /* NetworkProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderTest.swift; sourceTree = "<group>"; };
 		CC8386692CE716440077ED8B /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
 		CC9772EA2CE75E6500443542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -82,15 +89,11 @@
 		CCC4AFD52CE7005400707CD2 /* DataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceTests.swift; sourceTree = "<group>"; };
 		CCC4AFE02CE700EA00707CD2 /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
 		CCC4AFE12CE700EA00707CD2 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
-		CCC4AFE22CE700EA00707CD2 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		CCC4AFE22CE700EA00707CD2 /* DefaultNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkProvider.swift; sourceTree = "<group>"; };
 		CCC4AFE32CE700EA00707CD2 /* TokenInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInterceptor.swift; sourceTree = "<group>"; };
-		CCC4AFE42CE700EA00707CD2 /* CollabeeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollabeeError.swift; sourceTree = "<group>"; };
-		CCC4AFE52CE700EA00707CD2 /* OAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthError.swift; sourceTree = "<group>"; };
-		CCC4AFE72CE700EA00707CD2 /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
+		CCC4AFE42CE700EA00707CD2 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		CCC4AFE82CE700EA00707CD2 /* TokenRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefresh.swift; sourceTree = "<group>"; };
-		CCC4AFEA2CE700EA00707CD2 /* LoginBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBody.swift; sourceTree = "<group>"; };
 		CCC4AFEC2CE700EA00707CD2 /* TargetType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TargetType+Extension.swift"; sourceTree = "<group>"; };
-		CCC4AFED2CE700EA00707CD2 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		CCC4AFEE2CE700EA00707CD2 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		CCC4AFF52CE701D400707CD2 /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		CCC4B00D2CE7052900707CD2 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +121,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC7FDD8E2CEC308300E7B0E5 /* Interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				CCC4AFE32CE700EA00707CD2 /* TokenInterceptor.swift */,
+				CC7FDD8F2CEC30BE00E7B0E5 /* ServerKeyAdapter.swift */,
+			);
+			path = Interceptor;
+			sourceTree = "<group>";
+		};
+		CC7FDD962CECA71200E7B0E5 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				CC7FDD972CECA73600E7B0E5 /* NetworkProvider.swift */,
+				CCC4AFE42CE700EA00707CD2 /* NetworkError.swift */,
+				CC7FDD872CEC215D00E7B0E5 /* API.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		CC7FDD992CECA77300E7B0E5 /* Moya */ = {
+			isa = PBXGroup;
+			children = (
+				CC7FDD802CE8D8C400E7B0E5 /* APIAdapter.swift */,
+				CCC4AFE02CE700EA00707CD2 /* MoyaLoggerPlugin.swift */,
+				CCC4AFEC2CE700EA00707CD2 /* TargetType+Extension.swift */,
+			);
+			path = Moya;
+			sourceTree = "<group>";
+		};
 		CCC4AFBE2CE7005400707CD2 = {
 			isa = PBXGroup;
 			children = (
@@ -158,63 +190,43 @@
 			path = DataSourceTests;
 			sourceTree = "<group>";
 		};
-		CCC4AFE62CE700EA00707CD2 /* Error */ = {
-			isa = PBXGroup;
-			children = (
-				CCC4AFE42CE700EA00707CD2 /* CollabeeError.swift */,
-				CCC4AFE52CE700EA00707CD2 /* OAuthError.swift */,
-			);
-			path = Error;
-			sourceTree = "<group>";
-		};
 		CCC4AFE92CE700EA00707CD2 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				CCC4AFE72CE700EA00707CD2 /* LoginResult.swift */,
 				CCC4AFE82CE700EA00707CD2 /* TokenRefresh.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
 		};
-		CCC4AFEB2CE700EA00707CD2 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				CCC4AFEA2CE700EA00707CD2 /* LoginBody.swift */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
 		CCC4AFEF2CE700EA00707CD2 /* APIEndPoint */ = {
 			isa = PBXGroup;
 			children = (
-				CCC4AFEC2CE700EA00707CD2 /* TargetType+Extension.swift */,
-				CCC4AFED2CE700EA00707CD2 /* UserAPI.swift */,
 				CCC4AFEE2CE700EA00707CD2 /* AuthAPI.swift */,
 			);
 			path = APIEndPoint;
 			sourceTree = "<group>";
 		};
-		CCC4AFF02CE700EA00707CD2 /* Network */ = {
+		CCC4AFF02CE700EA00707CD2 /* RemoteDataSource */ = {
 			isa = PBXGroup;
 			children = (
-				CCC4AFE02CE700EA00707CD2 /* MoyaLoggerPlugin.swift */,
 				CCC4AFE12CE700EA00707CD2 /* Header.swift */,
-				CCC4AFE22CE700EA00707CD2 /* NetworkProvider.swift */,
-				CCC4AFE32CE700EA00707CD2 /* TokenInterceptor.swift */,
-				CCC4AFE62CE700EA00707CD2 /* Error */,
+				CCC4AFE22CE700EA00707CD2 /* DefaultNetworkProvider.swift */,
+				CC7FDD962CECA71200E7B0E5 /* Interfaces */,
+				CC7FDD992CECA77300E7B0E5 /* Moya */,
+				CC7FDD8E2CEC308300E7B0E5 /* Interceptor */,
 				CCC4AFE92CE700EA00707CD2 /* Response */,
-				CCC4AFEB2CE700EA00707CD2 /* Request */,
 				CCC4AFEF2CE700EA00707CD2 /* APIEndPoint */,
 			);
-			path = Network;
+			path = RemoteDataSource;
 			sourceTree = "<group>";
 		};
-		CCC4AFF62CE701D400707CD2 /* PersistenceStorages */ = {
+		CCC4AFF62CE701D400707CD2 /* LocalDataSource */ = {
 			isa = PBXGroup;
 			children = (
 				CCC4AFF52CE701D400707CD2 /* TokenStorage.swift */,
+				CC7FDDA02CED6EA800E7B0E5 /* UserDefaultStorage.swift */,
 			);
-			path = PersistenceStorages;
+			path = LocalDataSource;
 			sourceTree = "<group>";
 		};
 		CCC4AFFA2CE7020500707CD2 /* Resources */ = {
@@ -229,8 +241,8 @@
 		CCC4AFFB2CE7020D00707CD2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				CCC4AFF62CE701D400707CD2 /* PersistenceStorages */,
-				CCC4AFF02CE700EA00707CD2 /* Network */,
+				CCC4AFF62CE701D400707CD2 /* LocalDataSource */,
+				CCC4AFF02CE700EA00707CD2 /* RemoteDataSource */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -238,6 +250,9 @@
 		CCC4B00C2CE7052900707CD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC7FDD7D2CE8D89D00E7B0E5 /* DataSourceInterface.framework */,
+				CC7FDD5B2CE8914700E7B0E5 /* Authorization.framework */,
+				CC7FDD582CE8914400E7B0E5 /* WorkSpace.framework */,
 				CCC4B00D2CE7052900707CD2 /* Common.framework */,
 			);
 			name = Frameworks;
@@ -363,20 +378,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7FDDA12CED6EA800E7B0E5 /* UserDefaultStorage.swift in Sources */,
 				CCC4AFF42CE7017500707CD2 /* MoyaLoggerPlugin.swift in Sources */,
 				CC83864A2CE70D620077ED8B /* TokenRefresh.swift in Sources */,
-				CC83864C2CE70D670077ED8B /* UserAPI.swift in Sources */,
+				CC7FDD902CEC30BE00E7B0E5 /* ServerKeyAdapter.swift in Sources */,
 				CC8386502CE70D740077ED8B /* TokenStorage.swift in Sources */,
 				CC83864B2CE70D650077ED8B /* TargetType+Extension.swift in Sources */,
 				CC83864D2CE70D6B0077ED8B /* AuthAPI.swift in Sources */,
+				CC7FDD812CE8D8C400E7B0E5 /* APIAdapter.swift in Sources */,
 				CC8386472CE70D590077ED8B /* TokenInterceptor.swift in Sources */,
-				CC8386482CE70D5B0077ED8B /* LoginBody.swift in Sources */,
 				CCC4AFF32CE7015E00707CD2 /* Header.swift in Sources */,
-				CC8386492CE70D600077ED8B /* LoginResult.swift in Sources */,
-				CC8386452CE70D540077ED8B /* OAuthError.swift in Sources */,
+				CC7FDD982CECA73600E7B0E5 /* NetworkProvider.swift in Sources */,
 				CC0D21A82CE763B900EA6254 /* Literal.swift in Sources */,
-				CC8386442CE70D520077ED8B /* CollabeeError.swift in Sources */,
-				CC8386462CE70D570077ED8B /* NetworkProvider.swift in Sources */,
+				CC8386442CE70D520077ED8B /* NetworkError.swift in Sources */,
+				CC7FDD882CEC215D00E7B0E5 /* API.swift in Sources */,
+				CC8386462CE70D570077ED8B /* DefaultNetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +549,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CC0D21A62CE7626C00EA6254 /* Secret.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -574,7 +589,6 @@
 		CCC4AFDC2CE7005400707CD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

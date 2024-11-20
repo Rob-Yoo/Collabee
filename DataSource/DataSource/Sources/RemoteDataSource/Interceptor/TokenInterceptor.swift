@@ -7,10 +7,8 @@
 
 import Foundation
 import Alamofire
-import Combine
 
-
-final class TokenInterceptor: RequestInterceptor {
+struct TokenInterceptor: RequestInterceptor {
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, any Error>) -> Void) {
         var urlRequest = urlRequest
@@ -26,13 +24,13 @@ final class TokenInterceptor: RequestInterceptor {
     func retry(_ request: Request, for session: Session, dueTo error: any Error, completion: @escaping (RetryResult) -> Void) {
         guard let responseData = (request as? DataRequest)?.data else {
             print("DataRequest로 변환되지 않음")
-            completion(.doNotRetryWithError(CollabeeError.unknownError))
+            completion(.doNotRetryWithError(NetworkError.unknownError))
             return
         }
         
-        guard let decodedError = try? JSONDecoder().decode(CollabeeError.self, from: responseData) else {
+        guard let decodedError = try? JSONDecoder().decode(NetworkError.self, from: responseData) else {
             print("CollabeeError가 아님")
-            completion(.doNotRetryWithError(CollabeeError.unknownError))
+            completion(.doNotRetryWithError(NetworkError.unknownError))
             return
         }
         

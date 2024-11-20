@@ -7,34 +7,34 @@
 
 import Moya
 
-public enum AuthAPI {
+enum AuthAPI {
     case tokenRefresh(_ refreshToken: String)
 }
 
-extension AuthAPI: TargetType {
+extension AuthAPI: API {
     
-    public var path: String {
+    var path: String {
         switch self {
         case .tokenRefresh:
             return "/v1/auth/refresh"
         }
     }
     
-    public var method: Moya.Method {
+    var method: HTTPMethod {
         switch self {
         case .tokenRefresh:
             return .get
         }
     }
     
-    public var task: Moya.Task {
+    var task: HTTPTask {
         switch self {
         case .tokenRefresh:
             return .requestPlain
         }
     }
     
-    public var headers: [String : String]? {
+    var headers: [String : String]? {
         switch self {
         case .tokenRefresh(let refreshToken):
             return [

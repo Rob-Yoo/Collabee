@@ -1,8 +1,8 @@
 //
 //  UserDefaultStorage.swift
-//  Common
+//  DataSource
 //
-//  Created by Jinyoung Yoo on 11/12/24.
+//  Created by Jinyoung Yoo on 11/20/24.
 //
 
 import Foundation
@@ -34,3 +34,4 @@ public enum UserDefaultsStorage {
         }
     }
 }
+

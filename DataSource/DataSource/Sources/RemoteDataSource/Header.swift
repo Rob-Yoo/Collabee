@@ -5,7 +5,7 @@
 //  Created by Jinyoung Yoo on 11/7/24.
 //
 
-enum Header: String {
+public enum Header: String {
     case authoriztion = "Authorization"
     case serverKey = "SesacKey"
     case refresh = "RefreshToken"

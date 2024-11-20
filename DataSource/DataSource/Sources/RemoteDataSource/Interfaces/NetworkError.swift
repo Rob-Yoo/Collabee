@@ -1,5 +1,5 @@
 //
-//  CollabeeError.swift
+//  NetworkError.swift
 //  Data
 //
 //  Created by Jinyoung Yoo on 11/8/24.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-public enum CollabeeError: Decodable, LocalizedError {
+public enum NetworkError: Decodable, LocalizedError {
     case apiError(String)
     case unknownError
 

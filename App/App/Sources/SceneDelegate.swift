@@ -6,7 +6,9 @@
 //
 
 import UIKit
+
 import Authorization
+import DataSource
 import Common
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {

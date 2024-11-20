@@ -13,7 +13,7 @@ import Common
 public enum TokenStorage {
 
     private static let keyChain = KeyChain.shared
-    private static let tokenProvider = DefaultNetworkProvider.shared
+    private static let tokenProvider = DefaultNetworkProvider()
     private static var cancellables = Set<AnyCancellable>()
     
     public enum TokenType: String, CaseIterable {
@@ -49,7 +49,7 @@ public enum TokenStorage {
         guard let refreshToken = Self.read(.refresh) else { return }
         
         delete(.access)
-        tokenProvider.request(AuthAPI.tokenRefresh(refreshToken), TokenRefresh.self)
+        tokenProvider.request(AuthAPI.tokenRefresh(refreshToken), TokenRefresh.self, .withToken)
             .sink { completion in
                 switch completion {
                 case .finished: break

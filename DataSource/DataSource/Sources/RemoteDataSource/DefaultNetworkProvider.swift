@@ -11,26 +11,22 @@ import Combine
 import Moya
 import CombineMoya
 
-public protocol NetworkProvider {
-    func request<T: TargetType, R: Decodable>(_ target: T, _ responseType: R.Type) -> AnyPublisher<R, CollabeeError>
-}
-
 public final class DefaultNetworkProvider: NetworkProvider {
-
-    public static let shared = DefaultNetworkProvider()
-    private let session = Session(interceptor: TokenInterceptor())
+    
+    private let sessions: [SessionType: Session] = [.withoutToken: Session(interceptor: ServerKeyAdapter()), .withToken: Session(interceptor: TokenInterceptor())]
     private var cancellable = Set<AnyCancellable>()
     
-    private init() {}
+    public init() {}
     
-    public func request<T: TargetType, R: Decodable>(_ target: T, _ responseType: R.Type) -> AnyPublisher<R, CollabeeError> {
-        let provider = MoyaProvider<T>(session: session, plugins: [MoyaLoggerPlugin()])
+    public func request<T: API, R: Decodable>(_ target: T, _ responseType: R.Type, _ sessionType: SessionType) -> AnyPublisher<R, NetworkError> {
+        let adaptedTarget = APIAdapter(api: target)
+        let provider = MoyaProvider<APIAdapter>(session: sessions[sessionType]!, plugins: [MoyaLoggerPlugin()])
         
-        return Future<R, CollabeeError> { [weak self] promise in
+        return Future<R, NetworkError> { [weak self] promise in
             
             guard let self else { return }
             
-            provider.requestPublisher(target)
+            provider.requestPublisher(adaptedTarget)
                 .sink { completion in
                     switch completion {
                     case .finished: break
@@ -40,7 +36,7 @@ public final class DefaultNetworkProvider: NetworkProvider {
                             return
                         }
 
-                        guard let decodedError = try? res.map(CollabeeError.self) else {
+                        guard let decodedError = try? res.map(NetworkError.self) else {
                             promise(.failure(.unknownError))
                             return
                         }

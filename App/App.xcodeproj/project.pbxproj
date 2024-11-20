@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC7FDDA32CED719200E7B0E5 /* NetworkProviderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDA22CED719200E7B0E5 /* NetworkProviderAssembly.swift */; };
 		CC8386552CE712370077ED8B /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386542CE712370077ED8B /* AuthorizationAssembly.swift */; };
 		CC8386592CE7139D0077ED8B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386582CE7139D0077ED8B /* OnboardingViewController.swift */; };
 		CC83865B2CE714DE0077ED8B /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC83865A2CE714DE0077ED8B /* UIFont+Extension.swift */; };
@@ -14,11 +15,8 @@
 		CC8386602CE715900077ED8B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC83865F2CE715900077ED8B /* UIViewController+Extension.swift */; };
 		CC8386632CE715B50077ED8B /* WorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386622CE715B50077ED8B /* WorkspaceViewController.swift */; };
 		CC8386652CE716020077ED8B /* Authorization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8386642CE716020077ED8B /* Authorization.framework */; };
-		CC8386662CE716020077ED8B /* Authorization.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC8386642CE716020077ED8B /* Authorization.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CC8386702CE717160077ED8B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CC83866F2CE717160077ED8B /* SnapKit */; };
 		CC8386732CE717240077ED8B /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = CC8386722CE717240077ED8B /* Then */; };
-		CC8386892CE724200077ED8B /* DataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8386872CE723B60077ED8B /* DataSource.framework */; };
-		CC83868A2CE724200077ED8B /* DataSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC8386872CE723B60077ED8B /* DataSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CCFE26982CD4C3C000E8D655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26972CD4C3C000E8D655 /* AppDelegate.swift */; };
 		CCFE269A2CD4C3C000E8D655 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26992CD4C3C000E8D655 /* SceneDelegate.swift */; };
 		CCFE26A12CD4C3C100E8D655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCFE26A02CD4C3C100E8D655 /* Assets.xcassets */; };
@@ -26,8 +24,6 @@
 		CCFE26AF2CD4C3C100E8D655 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26AE2CD4C3C100E8D655 /* AppTests.swift */; };
 		CCFE26B92CD4C3C100E8D655 /* AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26B82CD4C3C100E8D655 /* AppUITests.swift */; };
 		CCFE26BB2CD4C3C100E8D655 /* AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26BA2CD4C3C100E8D655 /* AppUITestsLaunchTests.swift */; };
-		CCFE275D2CD4D30900E8D655 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE275C2CD4D30900E8D655 /* Common.framework */; };
-		CCFE275E2CD4D30900E8D655 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE275C2CD4D30900E8D655 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,24 +43,9 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		CCFE275F2CD4D30900E8D655 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				CC8386662CE716020077ED8B /* Authorization.framework in Embed Frameworks */,
-				CC83868A2CE724200077ED8B /* DataSource.framework in Embed Frameworks */,
-				CCFE275E2CD4D30900E8D655 /* Common.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		CC15F4BA2CD50BFA00EBAA7D /* ko-KR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ko-KR"; path = "ko-KR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CC7FDDA22CED719200E7B0E5 /* NetworkProviderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderAssembly.swift; sourceTree = "<group>"; };
 		CC8386542CE712370077ED8B /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		CC8386582CE7139D0077ED8B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		CC83865A2CE714DE0077ED8B /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -99,8 +80,6 @@
 			files = (
 				CC8386702CE717160077ED8B /* SnapKit in Frameworks */,
 				CC8386652CE716020077ED8B /* Authorization.framework in Frameworks */,
-				CC8386892CE724200077ED8B /* DataSource.framework in Frameworks */,
-				CCFE275D2CD4D30900E8D655 /* Common.framework in Frameworks */,
 				CC8386732CE717240077ED8B /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				CC8386542CE712370077ED8B /* AuthorizationAssembly.swift */,
+				CC7FDDA22CED719200E7B0E5 /* NetworkProviderAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -259,7 +239,6 @@
 				CCFE26902CD4C3C000E8D655 /* Sources */,
 				CCFE26912CD4C3C000E8D655 /* Frameworks */,
 				CCFE26922CD4C3C000E8D655 /* Resources */,
-				CCFE275F2CD4D30900E8D655 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,6 +374,7 @@
 				CC83865B2CE714DE0077ED8B /* UIFont+Extension.swift in Sources */,
 				CC8386602CE715900077ED8B /* UIViewController+Extension.swift in Sources */,
 				CC8386592CE7139D0077ED8B /* OnboardingViewController.swift in Sources */,
+				CC7FDDA32CED719200E7B0E5 /* NetworkProviderAssembly.swift in Sources */,
 				CC8386632CE715B50077ED8B /* WorkspaceViewController.swift in Sources */,
 				CC83865D2CE714F40077ED8B /* Constant.swift in Sources */,
 			);

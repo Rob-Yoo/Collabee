@@ -8,6 +8,9 @@
       location = "group:Authorization/Authorization.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:WorkSpace/WorkSpace.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DataSource/DataSource.xcodeproj">
    </FileRef>
    <FileRef

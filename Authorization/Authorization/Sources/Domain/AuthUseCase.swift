@@ -14,7 +14,7 @@ public enum AuthType {
 }
 
 public protocol AuthUseCase {
-    func login(_ providerType: AuthType) -> AnyPublisher<Void, Error>
+    func login(_ providerType: AuthType) -> AnyPublisher<Void, AuthorizationError>
     func handleOpenURL(_ url: URL)
 }
 
@@ -26,7 +26,7 @@ public final class DefaultAuthUseCase: AuthUseCase {
         self.authRepository = authRepository
     }
     
-    public func login(_ providerType: AuthType) -> AnyPublisher<Void, Error> {
+    public func login(_ providerType: AuthType) -> AnyPublisher<Void, AuthorizationError> {
         authRepository.login(providerType)
     }
     

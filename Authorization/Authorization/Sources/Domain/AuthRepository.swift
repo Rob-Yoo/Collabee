@@ -8,6 +8,6 @@
 import Combine
 
 public protocol AuthRepository {
-    func login(_ authType: AuthType) -> AnyPublisher<Void, Error>
+    func login(_ authType: AuthType) -> AnyPublisher<Void, AuthorizationError>
     func handleOpenURL(_ url: URL)
 }

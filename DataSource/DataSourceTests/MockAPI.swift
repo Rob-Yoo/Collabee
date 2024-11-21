@@ -18,6 +18,40 @@ enum MockAPI {
     case login(_ email: String, _ password: String)
 }
 
+extension MockAPI: API {
+    
+    var path: String {
+        switch self {
+        case .login:
+            return "/v1/users/login"
+        }
+    }
+    
+    var method: HTTPMethod {
+        switch self {
+        case .login:
+            return .post
+        }
+    }
+    
+    var task: HTTPTask {
+        switch self {
+        case .login(let email, let pwd):
+            return .requestWithEncodableBody(LoginBody(email: email, password: pwd))
+        }
+    }
+    
+    var headers: [String : String]? {
+        switch self {
+        case .login:
+            return [
+                Header.contentType.rawValue: Header.json.rawValue
+            ]
+        }
+    }
+    
+}
+
 extension TargetType {
     var baseURL: URL {
         return URL(string: Literal.Secret.BaseURL)!
@@ -27,39 +61,3 @@ extension TargetType {
         return .successCodes
     }
 }
-
-extension MockAPI: TargetType {
-    
-    var path: String {
-        switch self {
-        case .login:
-            return "/v1/users/login"
-        }
-    }
-    
-    var method: Moya.Method {
-        switch self {
-        case .login:
-            return .post
-        }
-    }
-    
-    var task: Moya.Task {
-        switch self {
-        case .login(let email, let pwd):
-            return .requestJSONEncodable(LoginBody(email: email, password: pwd))
-        }
-    }
-    
-    var headers: [String : String]? {
-        switch self {
-        case .login:
-            return [
-                Header.serverKey.rawValue: Literal.Secret.ServerKey ?? "",
-                Header.contentType.rawValue: Header.json.rawValue
-            ]
-        }
-    }
-    
-}
-

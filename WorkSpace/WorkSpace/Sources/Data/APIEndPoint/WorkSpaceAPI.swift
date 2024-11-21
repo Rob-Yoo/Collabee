@@ -11,7 +11,7 @@ import DataSource
 
 enum WorkSpaceAPI {
     case workspaceList
-    case workspaceContent(_ workspaceID: String)
+    case workspace(_ workspaceID: String)
     case createWorkSpace(CreateWorkspaceBody)
     case editWorkSpace(_ workspaceID: String, _ body: EditWorkspaceBody)
     case deleteWorkSpace(_ workspaceID: String)
@@ -23,7 +23,7 @@ extension WorkSpaceAPI: API {
         switch self {
         case .workspaceList, .createWorkSpace:
             return "/v1/workspaces"
-        case .workspaceContent(let workspaceID),
+        case .workspace(let workspaceID),
                 .editWorkSpace(let workspaceID, _),
                 .deleteWorkSpace(let workspaceID):
             return "/v1/workspaces/\(workspaceID)"
@@ -32,7 +32,7 @@ extension WorkSpaceAPI: API {
     
     var method: HTTPMethod {
         switch self {
-        case .workspaceList, .workspaceContent:
+        case .workspaceList, .workspace:
             return .get
         case .createWorkSpace:
             return .post
@@ -45,7 +45,7 @@ extension WorkSpaceAPI: API {
     
     var task: HTTPTask {
         switch self {
-        case .workspaceList, .workspaceContent:
+        case .workspaceList, .workspace:
             return .requestPlain
         case .createWorkSpace(let body):
             return .uploadMultipart(body.makeMultipartFomrData())
@@ -58,7 +58,7 @@ extension WorkSpaceAPI: API {
     
     var headers: [String : String]? {
         switch self {
-        case .workspaceList, .workspaceContent, .deleteWorkSpace:
+        case .workspaceList, .workspace, .deleteWorkSpace:
             return nil
         case .createWorkSpace, .editWorkSpace:
             return [

@@ -1,14 +1,13 @@
 //
-//  WorkSpaceTests.swift
+//  DefaultWorkspaceRepositoryTest.swift
 //  WorkSpaceTests
 //
-//  Created by Jinyoung Yoo on 11/15/24.
+//  Created by Jinyoung Yoo on 11/21/24.
 //
 
 import XCTest
-@testable import WorkSpace
 
-final class WorkSpaceTests: XCTestCase {
+final class DefaultWorkspaceRepositoryTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

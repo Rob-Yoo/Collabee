@@ -7,10 +7,15 @@
 
 import Foundation
 
-struct TransferOwnershipBody: Encodable {
+public struct TransferOwnershipBody: Encodable {
     let newOwnerID: String
     
     enum CodingKeys: String, CodingKey {
         case newOwnerID = "owner_ship"
     }
+    
+    public init(newOwnerID: String) {
+        self.newOwnerID = newOwnerID
+    }
+
 }

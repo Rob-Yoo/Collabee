@@ -25,13 +25,13 @@
 		CC83866B2CE7165A0077ED8B /* DataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC4AFC82CE7005400707CD2 /* DataSource.framework */; };
 		CC83866C2CE7165A0077ED8B /* DataSource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCC4AFC82CE7005400707CD2 /* DataSource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CC8386862CE721CB0077ED8B /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = CC8386852CE721CB0077ED8B /* CombineMoya */; };
-		CCC4AFD62CE7005400707CD2 /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFD52CE7005400707CD2 /* DataSourceTests.swift */; };
 		CCC4AFD72CE7005400707CD2 /* DataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = CCC4AFCB2CE7005400707CD2 /* DataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CCC4AFF32CE7015E00707CD2 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE12CE700EA00707CD2 /* Header.swift */; };
 		CCC4AFF42CE7017500707CD2 /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE02CE700EA00707CD2 /* MoyaLoggerPlugin.swift */; };
 		CCC4B0092CE7033E00707CD2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCC4B0082CE7033E00707CD2 /* RealmSwift */; };
 		CCC4B00A2CE704E000707CD2 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CCC4B0082CE7033E00707CD2 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CCC4B00E2CE7052900707CD2 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC4B00D2CE7052900707CD2 /* Common.framework */; };
+		CCFD05182CEEDB5A0023B97E /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05172CEEDB5A0023B97E /* LoginResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +86,6 @@
 		CCC4AFC82CE7005400707CD2 /* DataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC4AFCB2CE7005400707CD2 /* DataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		CCC4AFD02CE7005400707CD2 /* DataSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataSourceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCC4AFD52CE7005400707CD2 /* DataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceTests.swift; sourceTree = "<group>"; };
 		CCC4AFE02CE700EA00707CD2 /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
 		CCC4AFE12CE700EA00707CD2 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		CCC4AFE22CE700EA00707CD2 /* DefaultNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkProvider.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		CCC4AFEE2CE700EA00707CD2 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		CCC4AFF52CE701D400707CD2 /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		CCC4B00D2CE7052900707CD2 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCFD05172CEEDB5A0023B97E /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,9 +183,9 @@
 		CCC4AFD42CE7005400707CD2 /* DataSourceTests */ = {
 			isa = PBXGroup;
 			children = (
-				CCC4AFD52CE7005400707CD2 /* DataSourceTests.swift */,
 				CC8386672CE716210077ED8B /* NetworkProviderTest.swift */,
 				CC8386692CE716440077ED8B /* MockAPI.swift */,
+				CCFD05172CEEDB5A0023B97E /* LoginResult.swift */,
 			);
 			path = DataSourceTests;
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCC4AFD62CE7005400707CD2 /* DataSourceTests.swift in Sources */,
+				CCFD05182CEEDB5A0023B97E /* LoginResult.swift in Sources */,
 				CC83866A2CE716440077ED8B /* MockAPI.swift in Sources */,
 				CC8386682CE716210077ED8B /* NetworkProviderTest.swift in Sources */,
 			);

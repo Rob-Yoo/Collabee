@@ -15,7 +15,7 @@ final class NetworkProviderTest: XCTestCase {
     var cancellables = Set<AnyCancellable>()
 
     override func setUpWithError() throws {
-        sut = DefaultNetworkProvider.shared
+        sut = DefaultNetworkProvider()
     }
 
     override func tearDownWithError() throws {
@@ -28,7 +28,7 @@ final class NetworkProviderTest: XCTestCase {
         var refreshToken: String? = nil
         let promise = expectation(description: "로그인 요청에 대한 비동기 작업 테스트")
         
-        sut.request(MockAPI.login("jin12243@gmail.com", "Qwer1234!"), LoginResult.self)
+        sut.request(MockAPI.login("jin12243@gmail.com", "Qwer1234!"), LoginResult.self, .withoutToken)
             .print("Test Login Success")
             .sink { completion in
                 switch completion {
@@ -51,7 +51,7 @@ final class NetworkProviderTest: XCTestCase {
     func testLoginFail() throws {
         let promise = expectation(description: "로그인 요청에 대한 비동기 작업 테스트")
         
-        sut.request(MockAPI.login("asdfjasdf", "zxclvkjasdf"), LoginResult.self)
+        sut.request(MockAPI.login("asdfjasdf", "zxclvkjasdf"), LoginResult.self, .withoutToken)
             .sink { completion in
                 switch completion {
                 case .finished:

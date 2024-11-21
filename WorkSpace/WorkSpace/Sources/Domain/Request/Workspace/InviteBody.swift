@@ -7,6 +7,11 @@
 
 import Foundation
 
-struct InviteBody: Encodable {
+public struct InviteBody: Encodable {
     let email: String
+    
+    public init(email: String) {
+        self.email = email
+    }
+    
 }

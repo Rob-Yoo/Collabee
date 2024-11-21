@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ChannelContentDTO: Decodable {
+struct ChannelDetailDTO: Decodable {
     let channelID: String
     let name: String
     let description: String?

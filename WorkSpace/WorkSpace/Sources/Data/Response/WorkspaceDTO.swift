@@ -24,3 +24,15 @@ struct WorkspaceDTO: Decodable {
         case createdAt
     }
 }
+
+extension WorkspaceDTO {
+    func toDomain() -> Workspace {
+        return Workspace(
+            id: self.workspaceID,
+            name: self.name,
+            createdAt: self.createdAt,
+            ownerID: self.ownerID,
+            image: self.coverImage
+        )
+    }
+}

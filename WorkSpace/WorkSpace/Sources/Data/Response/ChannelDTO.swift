@@ -24,3 +24,15 @@ struct ChannelDTO: Decodable {
         case createdAt
     }
 }
+
+extension ChannelDTO {
+    func toDomain() -> Channel {
+        return Channel(
+            id: self.channelID,
+            name: self.name,
+            description: self.description,
+            createdAt: self.createdAt,
+            ownerID: self.ownerID
+        )
+    }
+}

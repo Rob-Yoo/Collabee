@@ -1,5 +1,5 @@
 //
-//  ChannelContentDTO.swift
+//  ChannelDetailDTO.swift
 //  WorkSpace
 //
 //  Created by Jinyoung Yoo on 11/20/24.
@@ -24,5 +24,19 @@ struct ChannelDetailDTO: Decodable {
         case ownerID = "owner_id"
         case createdAt
         case channelMembers
+    }
+}
+
+extension ChannelDetailDTO {
+    func toDomain() -> ChannelDetail {
+        return ChannelDetail(
+            channelID: self.channelID,
+            name: self.name,
+            description: self.description,
+            coverImage: self.coverImage,
+            ownerID: self.ownerID,
+            createdAt: self.createdAt,
+            channelMembers: channelMembers.map { $0.toDomain() }
+        )
     }
 }

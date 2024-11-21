@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CC7FDD392CE76A2500E7B0E5 /* WorkSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7FDD302CE76A2500E7B0E5 /* WorkSpace.framework */; };
-		CC7FDD3E2CE76A2500E7B0E5 /* WorkSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDD3D2CE76A2500E7B0E5 /* WorkSpaceTests.swift */; };
 		CC7FDD3F2CE76A2500E7B0E5 /* WorkSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = CC7FDD332CE76A2500E7B0E5 /* WorkSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC7FDD4C2CE76B1500E7B0E5 /* WorkSpaceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDD4B2CE76B1500E7B0E5 /* WorkSpaceAPI.swift */; };
 		CC7FDD932CEC9DF000E7B0E5 /* DataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7FDD4E2CE76D0700E7B0E5 /* DataSource.framework */; };
@@ -20,8 +19,28 @@
 		CC7FDDB22CEDA29000E7B0E5 /* WorkspaceDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDB12CEDA29000E7B0E5 /* WorkspaceDTO.swift */; };
 		CC7FDDB42CEDA61400E7B0E5 /* WorkspaceContentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDB32CEDA61400E7B0E5 /* WorkspaceContentDTO.swift */; };
 		CC7FDDB62CEDA6F000E7B0E5 /* ChannelDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDB52CEDA6F000E7B0E5 /* ChannelDTO.swift */; };
-		CC7FDDB82CEDA73F00E7B0E5 /* ChannelContentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDB72CEDA73F00E7B0E5 /* ChannelContentDTO.swift */; };
+		CC7FDDB82CEDA73F00E7B0E5 /* ChannelDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDB72CEDA73F00E7B0E5 /* ChannelDetailDTO.swift */; };
 		CC7FDDBA2CEDAA2400E7B0E5 /* MemberDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDB92CEDAA2400E7B0E5 /* MemberDTO.swift */; };
+		CC7FDDBF2CEDB07900E7B0E5 /* WorkspaceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDBE2CEDB07900E7B0E5 /* WorkspaceUseCase.swift */; };
+		CC7FDDC12CEDBEC900E7B0E5 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDC02CEDBEC900E7B0E5 /* Workspace.swift */; };
+		CC7FDDC42CEDC38500E7B0E5 /* WorkspaceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDC32CEDC38500E7B0E5 /* WorkspaceError.swift */; };
+		CCFD04ED2CEDFA430023B97E /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD04EC2CEDFA430023B97E /* Channel.swift */; };
+		CCFD04EF2CEDFB740023B97E /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD04EE2CEDFB740023B97E /* Member.swift */; };
+		CCFD04F22CEDFF150023B97E /* WorkspaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD04F12CEDFF150023B97E /* WorkspaceRepository.swift */; };
+		CCFD04F52CEE01810023B97E /* DefaultWorkspaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD04F42CEE01810023B97E /* DefaultWorkspaceRepository.swift */; };
+		CCFD04F82CEE0FEB0023B97E /* ChannelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD04F72CEE0FEB0023B97E /* ChannelRepository.swift */; };
+		CCFD04FC2CEE10630023B97E /* ChannelBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD04FB2CEE10630023B97E /* ChannelBody.swift */; };
+		CCFD04FE2CEE10F00023B97E /* ChannelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD04FD2CEE10F00023B97E /* ChannelError.swift */; };
+		CCFD05002CEEC0390023B97E /* DefaultChannelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD04FF2CEEC0390023B97E /* DefaultChannelRepository.swift */; };
+		CCFD05022CEEC2760023B97E /* ChannelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05012CEEC2760023B97E /* ChannelAPI.swift */; };
+		CCFD05062CEECACA0023B97E /* ChannelDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05052CEECACA0023B97E /* ChannelDetail.swift */; };
+		CCFD05092CEECBCE0023B97E /* ChannelBody+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05082CEECBCE0023B97E /* ChannelBody+Extension.swift */; };
+		CCFD050B2CEECC0D0023B97E /* CreateWorkspaceBody+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD050A2CEECC0D0023B97E /* CreateWorkspaceBody+Extenstion.swift */; };
+		CCFD050D2CEECC700023B97E /* EditWorkspaceBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD050C2CEECC700023B97E /* EditWorkspaceBody.swift */; };
+		CCFD050F2CEECF5F0023B97E /* WorkspaceMemberRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD050E2CEECF5F0023B97E /* WorkspaceMemberRepository.swift */; };
+		CCFD05142CEED1610023B97E /* WorkspaceMemberError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05132CEED1610023B97E /* WorkspaceMemberError.swift */; };
+		CCFD05162CEED34C0023B97E /* DefaultWorkspaceMemberRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05152CEED34C0023B97E /* DefaultWorkspaceMemberRepository.swift */; };
+		CCFD051B2CEEDD950023B97E /* DefaultWorkspaceRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD051A2CEEDD950023B97E /* DefaultWorkspaceRepositoryTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +57,6 @@
 		CC7FDD302CE76A2500E7B0E5 /* WorkSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WorkSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7FDD332CE76A2500E7B0E5 /* WorkSpace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkSpace.h; sourceTree = "<group>"; };
 		CC7FDD382CE76A2500E7B0E5 /* WorkSpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkSpaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC7FDD3D2CE76A2500E7B0E5 /* WorkSpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceTests.swift; sourceTree = "<group>"; };
 		CC7FDD4B2CE76B1500E7B0E5 /* WorkSpaceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceAPI.swift; sourceTree = "<group>"; };
 		CC7FDD4E2CE76D0700E7B0E5 /* DataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7FDD762CE8D83300E7B0E5 /* DataSourceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataSourceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,8 +68,28 @@
 		CC7FDDB12CEDA29000E7B0E5 /* WorkspaceDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceDTO.swift; sourceTree = "<group>"; };
 		CC7FDDB32CEDA61400E7B0E5 /* WorkspaceContentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceContentDTO.swift; sourceTree = "<group>"; };
 		CC7FDDB52CEDA6F000E7B0E5 /* ChannelDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelDTO.swift; sourceTree = "<group>"; };
-		CC7FDDB72CEDA73F00E7B0E5 /* ChannelContentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelContentDTO.swift; sourceTree = "<group>"; };
+		CC7FDDB72CEDA73F00E7B0E5 /* ChannelDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelDetailDTO.swift; sourceTree = "<group>"; };
 		CC7FDDB92CEDAA2400E7B0E5 /* MemberDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDTO.swift; sourceTree = "<group>"; };
+		CC7FDDBE2CEDB07900E7B0E5 /* WorkspaceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceUseCase.swift; sourceTree = "<group>"; };
+		CC7FDDC02CEDBEC900E7B0E5 /* Workspace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
+		CC7FDDC32CEDC38500E7B0E5 /* WorkspaceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceError.swift; sourceTree = "<group>"; };
+		CCFD04EC2CEDFA430023B97E /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		CCFD04EE2CEDFB740023B97E /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		CCFD04F12CEDFF150023B97E /* WorkspaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceRepository.swift; sourceTree = "<group>"; };
+		CCFD04F42CEE01810023B97E /* DefaultWorkspaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWorkspaceRepository.swift; sourceTree = "<group>"; };
+		CCFD04F72CEE0FEB0023B97E /* ChannelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelRepository.swift; sourceTree = "<group>"; };
+		CCFD04FB2CEE10630023B97E /* ChannelBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelBody.swift; sourceTree = "<group>"; };
+		CCFD04FD2CEE10F00023B97E /* ChannelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelError.swift; sourceTree = "<group>"; };
+		CCFD04FF2CEEC0390023B97E /* DefaultChannelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChannelRepository.swift; sourceTree = "<group>"; };
+		CCFD05012CEEC2760023B97E /* ChannelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelAPI.swift; sourceTree = "<group>"; };
+		CCFD05052CEECACA0023B97E /* ChannelDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelDetail.swift; sourceTree = "<group>"; };
+		CCFD05082CEECBCE0023B97E /* ChannelBody+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChannelBody+Extension.swift"; sourceTree = "<group>"; };
+		CCFD050A2CEECC0D0023B97E /* CreateWorkspaceBody+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateWorkspaceBody+Extenstion.swift"; sourceTree = "<group>"; };
+		CCFD050C2CEECC700023B97E /* EditWorkspaceBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkspaceBody.swift; sourceTree = "<group>"; };
+		CCFD050E2CEECF5F0023B97E /* WorkspaceMemberRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceMemberRepository.swift; sourceTree = "<group>"; };
+		CCFD05132CEED1610023B97E /* WorkspaceMemberError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceMemberError.swift; sourceTree = "<group>"; };
+		CCFD05152CEED34C0023B97E /* DefaultWorkspaceMemberRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWorkspaceMemberRepository.swift; sourceTree = "<group>"; };
+		CCFD051A2CEEDD950023B97E /* DefaultWorkspaceRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWorkspaceRepositoryTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +143,7 @@
 		CC7FDD3C2CE76A2500E7B0E5 /* WorkSpaceTests */ = {
 			isa = PBXGroup;
 			children = (
-				CC7FDD3D2CE76A2500E7B0E5 /* WorkSpaceTests.swift */,
+				CCFD051A2CEEDD950023B97E /* DefaultWorkspaceRepositoryTest.swift */,
 			);
 			path = WorkSpaceTests;
 			sourceTree = "<group>";
@@ -113,6 +151,7 @@
 		CC7FDD482CE76AF000E7B0E5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CC7FDDBB2CEDAFF300E7B0E5 /* Domain */,
 				CC7FDD492CE76AF800E7B0E5 /* Data */,
 			);
 			path = Sources;
@@ -121,8 +160,9 @@
 		CC7FDD492CE76AF800E7B0E5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CCFD05072CEECBC20023B97E /* Request */,
+				CCFD04F32CEE016F0023B97E /* Repositories */,
 				CC7FDDB02CEDA25D00E7B0E5 /* Response */,
-				CC7FDDA72CED7B1B00E7B0E5 /* Request */,
 				CC7FDD4A2CE76B0500E7B0E5 /* APIEndPoint */,
 			);
 			path = Data;
@@ -133,6 +173,7 @@
 			children = (
 				CC7FDD4B2CE76B1500E7B0E5 /* WorkSpaceAPI.swift */,
 				CC7FDDAA2CED8ABA00E7B0E5 /* WorkspaceMemeberAPI.swift */,
+				CCFD05012CEEC2760023B97E /* ChannelAPI.swift */,
 			);
 			path = APIEndPoint;
 			sourceTree = "<group>";
@@ -149,10 +190,8 @@
 		CC7FDDA72CED7B1B00E7B0E5 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				CC7FDDA52CED7B1400E7B0E5 /* CreateWorkspaceBody.swift */,
-				CC7FDDA82CED870400E7B0E5 /* EditWorkspaceBody.swift */,
-				CC7FDDAC2CED8D6500E7B0E5 /* InviteBody.swift */,
-				CC7FDDAE2CED8DF600E7B0E5 /* TransferOwnershipBody.swift */,
+				CCFD04FA2CEE10570023B97E /* Channel */,
+				CCFD04F92CEE104B0023B97E /* Workspace */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -163,10 +202,100 @@
 				CC7FDDB12CEDA29000E7B0E5 /* WorkspaceDTO.swift */,
 				CC7FDDB32CEDA61400E7B0E5 /* WorkspaceContentDTO.swift */,
 				CC7FDDB52CEDA6F000E7B0E5 /* ChannelDTO.swift */,
-				CC7FDDB72CEDA73F00E7B0E5 /* ChannelContentDTO.swift */,
+				CC7FDDB72CEDA73F00E7B0E5 /* ChannelDetailDTO.swift */,
 				CC7FDDB92CEDAA2400E7B0E5 /* MemberDTO.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		CC7FDDBB2CEDAFF300E7B0E5 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CCFD04F02CEDFF030023B97E /* Interfaces */,
+				CC7FDDC22CEDC37B00E7B0E5 /* Error */,
+				CC7FDDA72CED7B1B00E7B0E5 /* Request */,
+				CC7FDDBD2CEDB00400E7B0E5 /* UseCases */,
+				CC7FDDBC2CEDAFFC00E7B0E5 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CC7FDDBC2CEDAFFC00E7B0E5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CC7FDDC02CEDBEC900E7B0E5 /* Workspace.swift */,
+				CCFD04EC2CEDFA430023B97E /* Channel.swift */,
+				CCFD04EE2CEDFB740023B97E /* Member.swift */,
+				CCFD05052CEECACA0023B97E /* ChannelDetail.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CC7FDDBD2CEDB00400E7B0E5 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CC7FDDBE2CEDB07900E7B0E5 /* WorkspaceUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CC7FDDC22CEDC37B00E7B0E5 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				CC7FDDC32CEDC38500E7B0E5 /* WorkspaceError.swift */,
+				CCFD04FD2CEE10F00023B97E /* ChannelError.swift */,
+				CCFD05132CEED1610023B97E /* WorkspaceMemberError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		CCFD04F02CEDFF030023B97E /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				CCFD04F12CEDFF150023B97E /* WorkspaceRepository.swift */,
+				CCFD04F72CEE0FEB0023B97E /* ChannelRepository.swift */,
+				CCFD050E2CEECF5F0023B97E /* WorkspaceMemberRepository.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		CCFD04F32CEE016F0023B97E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CCFD04F42CEE01810023B97E /* DefaultWorkspaceRepository.swift */,
+				CCFD04FF2CEEC0390023B97E /* DefaultChannelRepository.swift */,
+				CCFD05152CEED34C0023B97E /* DefaultWorkspaceMemberRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CCFD04F92CEE104B0023B97E /* Workspace */ = {
+			isa = PBXGroup;
+			children = (
+				CC7FDDA52CED7B1400E7B0E5 /* CreateWorkspaceBody.swift */,
+				CC7FDDA82CED870400E7B0E5 /* EditWorkspaceBody.swift */,
+				CC7FDDAC2CED8D6500E7B0E5 /* InviteBody.swift */,
+				CC7FDDAE2CED8DF600E7B0E5 /* TransferOwnershipBody.swift */,
+			);
+			path = Workspace;
+			sourceTree = "<group>";
+		};
+		CCFD04FA2CEE10570023B97E /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				CCFD04FB2CEE10630023B97E /* ChannelBody.swift */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		CCFD05072CEECBC20023B97E /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				CCFD05082CEECBCE0023B97E /* ChannelBody+Extension.swift */,
+				CCFD050A2CEECC0D0023B97E /* CreateWorkspaceBody+Extenstion.swift */,
+				CCFD050C2CEECC700023B97E /* EditWorkspaceBody.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +366,7 @@
 					};
 					CC7FDD372CE76A2500E7B0E5 = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
 				};
 			};
@@ -283,17 +413,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFD04F82CEE0FEB0023B97E /* ChannelRepository.swift in Sources */,
+				CCFD050B2CEECC0D0023B97E /* CreateWorkspaceBody+Extenstion.swift in Sources */,
 				CC7FDDB22CEDA29000E7B0E5 /* WorkspaceDTO.swift in Sources */,
-				CC7FDDB82CEDA73F00E7B0E5 /* ChannelContentDTO.swift in Sources */,
+				CCFD050D2CEECC700023B97E /* EditWorkspaceBody.swift in Sources */,
+				CCFD04ED2CEDFA430023B97E /* Channel.swift in Sources */,
+				CCFD05022CEEC2760023B97E /* ChannelAPI.swift in Sources */,
+				CC7FDDB82CEDA73F00E7B0E5 /* ChannelDetailDTO.swift in Sources */,
+				CCFD04F22CEDFF150023B97E /* WorkspaceRepository.swift in Sources */,
 				CC7FDDAF2CED8DF600E7B0E5 /* TransferOwnershipBody.swift in Sources */,
+				CCFD050F2CEECF5F0023B97E /* WorkspaceMemberRepository.swift in Sources */,
 				CC7FDDBA2CEDAA2400E7B0E5 /* MemberDTO.swift in Sources */,
+				CCFD04F52CEE01810023B97E /* DefaultWorkspaceRepository.swift in Sources */,
 				CC7FDDA92CED870400E7B0E5 /* EditWorkspaceBody.swift in Sources */,
 				CC7FDD4C2CE76B1500E7B0E5 /* WorkSpaceAPI.swift in Sources */,
+				CCFD05092CEECBCE0023B97E /* ChannelBody+Extension.swift in Sources */,
+				CCFD05142CEED1610023B97E /* WorkspaceMemberError.swift in Sources */,
 				CC7FDDAD2CED8D6500E7B0E5 /* InviteBody.swift in Sources */,
 				CC7FDDB42CEDA61400E7B0E5 /* WorkspaceContentDTO.swift in Sources */,
 				CC7FDDB62CEDA6F000E7B0E5 /* ChannelDTO.swift in Sources */,
+				CC7FDDBF2CEDB07900E7B0E5 /* WorkspaceUseCase.swift in Sources */,
 				CC7FDDAB2CED8ABA00E7B0E5 /* WorkspaceMemeberAPI.swift in Sources */,
 				CC7FDDA62CED7B1400E7B0E5 /* CreateWorkspaceBody.swift in Sources */,
+				CCFD04FE2CEE10F00023B97E /* ChannelError.swift in Sources */,
+				CCFD05162CEED34C0023B97E /* DefaultWorkspaceMemberRepository.swift in Sources */,
+				CCFD05062CEECACA0023B97E /* ChannelDetail.swift in Sources */,
+				CC7FDDC42CEDC38500E7B0E5 /* WorkspaceError.swift in Sources */,
+				CCFD04FC2CEE10630023B97E /* ChannelBody.swift in Sources */,
+				CCFD05002CEEC0390023B97E /* DefaultChannelRepository.swift in Sources */,
+				CC7FDDC12CEDBEC900E7B0E5 /* Workspace.swift in Sources */,
+				CCFD04EF2CEDFB740023B97E /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC7FDD3E2CE76A2500E7B0E5 /* WorkSpaceTests.swift in Sources */,
+				CCFD051B2CEEDD950023B97E /* DefaultWorkspaceRepositoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +675,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YWNQ4RZBTS;
@@ -533,9 +683,15 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.WorkSpaceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "WorkSpaceTests/WorkSpaceTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -543,6 +699,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YWNQ4RZBTS;
@@ -550,9 +707,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinyoo.WorkSpaceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "WorkSpaceTests/WorkSpaceTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

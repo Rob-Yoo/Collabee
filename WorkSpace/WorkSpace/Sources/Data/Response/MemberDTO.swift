@@ -20,3 +20,14 @@ struct MemberDTO: Decodable {
         case profileImage
     }
 }
+
+extension MemberDTO {
+    func toDomain() -> Member {
+        return Member(
+            id: userID,
+            email: self.email,
+            nickname: nickname,
+            profileImage: self.profileImage
+        )
+    }
+}

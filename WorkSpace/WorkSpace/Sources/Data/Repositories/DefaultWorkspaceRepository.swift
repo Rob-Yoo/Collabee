@@ -15,6 +15,8 @@ public final class DefaultWorkspaceRepository: WorkspaceRepository {
     @Injected private var networkProvider: NetworkProvider
     private var cancellable = Set<AnyCancellable>()
     
+    public init() {}
+    
     public func create(_ body: CreateWorkspaceBody) -> AnyPublisher<Workspace, WorkspaceError> {
         
         return Future<Workspace, WorkspaceError> { [weak self] promise in

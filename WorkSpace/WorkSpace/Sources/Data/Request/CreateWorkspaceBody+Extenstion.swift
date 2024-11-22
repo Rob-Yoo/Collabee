@@ -14,7 +14,6 @@ extension CreateWorkspaceBody {
         var data = [MultipartFormData]()
         
         guard let encodedName = name.data(using: .utf8) else { return [] }
-        guard let image else { return [] }
         
         data.append(MultipartFormData(data: encodedName, name: "name"))
         data.append(MultipartFormData(data: image, name: "image", fileName: "workspace", mimeType: "image/jpeg"))

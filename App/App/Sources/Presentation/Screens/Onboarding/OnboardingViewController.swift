@@ -14,7 +14,7 @@ import Common
 import SnapKit
 import Then
 
-public final class OnboardingViewController: UIViewController {
+final class OnboardingViewController: UIViewController {
     
     private let useCase: AuthUseCase
     private var cancellable = Set<AnyCancellable>()

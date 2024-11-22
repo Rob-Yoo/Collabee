@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DIContainer.shared.assemble([
             NetworkProviderAssembly(),
-            AuthorizationAssembly()
+            AuthorizationAssembly(),
+            WorkspaceAssembly()
         ])
         
         FirebaseApp.configure()

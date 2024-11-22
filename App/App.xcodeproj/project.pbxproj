@@ -16,10 +16,30 @@
 		CC83865B2CE714DE0077ED8B /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC83865A2CE714DE0077ED8B /* UIFont+Extension.swift */; };
 		CC83865D2CE714F40077ED8B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC83865C2CE714F40077ED8B /* Constant.swift */; };
 		CC8386602CE715900077ED8B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC83865F2CE715900077ED8B /* UIViewController+Extension.swift */; };
-		CC8386632CE715B50077ED8B /* WorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386622CE715B50077ED8B /* WorkspaceViewController.swift */; };
+		CC8386632CE715B50077ED8B /* EmptyWorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386622CE715B50077ED8B /* EmptyWorkspaceViewController.swift */; };
 		CC8386652CE716020077ED8B /* Authorization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8386642CE716020077ED8B /* Authorization.framework */; };
 		CC8386702CE717160077ED8B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CC83866F2CE717160077ED8B /* SnapKit */; };
 		CC8386732CE717240077ED8B /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = CC8386722CE717240077ED8B /* Then */; };
+		CCFD05202CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD051F2CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift */; };
+		CCFD05232CEEFDA50023B97E /* CombineControlEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05222CEEFDA50023B97E /* CombineControlEvent.swift */; };
+		CCFD05252CEF01400023B97E /* CombineControlProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05242CEF01400023B97E /* CombineControlProperty.swift */; };
+		CCFD05282CEF02CB0023B97E /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05272CEF02CB0023B97E /* UIButton+Combine.swift */; };
+		CCFD052A2CEF03660023B97E /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05292CEF03660023B97E /* UIControl+Combine.swift */; };
+		CCFD052C2CEF05680023B97E /* UITextField+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD052B2CEF05680023B97E /* UITextField+Combine.swift */; };
+		CCFD05302CEF0F130023B97E /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD052F2CEF0F130023B97E /* RoundedImageView.swift */; };
+		CCFD05332CEF16B60023B97E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05322CEF16B60023B97E /* BaseView.swift */; };
+		CCFD05352CEF16EB0023B97E /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05342CEF16EB0023B97E /* BaseTableViewCell.swift */; };
+		CCFD05372CEF17020023B97E /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05362CEF17020023B97E /* BaseCollectionViewCell.swift */; };
+		CCFD05392CEF17170023B97E /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05382CEF17170023B97E /* BaseButton.swift */; };
+		CCFD053B2CEF17A90023B97E /* RoundedTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD053A2CEF17A90023B97E /* RoundedTextButton.swift */; };
+		CCFD053D2CEF1C540023B97E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD053C2CEF1C540023B97E /* BaseViewController.swift */; };
+		CCFD053F2CEF1D800023B97E /* CombineControlTargetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD053E2CEF1D800023B97E /* CombineControlTargetAction.swift */; };
+		CCFD05412CEF29E60023B97E /* UIGestureRecognizer+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05402CEF29E60023B97E /* UIGestureRecognizer+Combine.swift */; };
+		CCFD054B2CEF45450023B97E /* CreateWorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD054A2CEF45450023B97E /* CreateWorkspaceViewController.swift */; };
+		CCFD054D2CEF48220023B97E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD054C2CEF48220023B97E /* UIImage+Extension.swift */; };
+		CCFD05502CEF542D0023B97E /* CreateWorkspaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD054F2CEF542D0023B97E /* CreateWorkspaceViewModel.swift */; };
+		CCFD05522CEF56950023B97E /* WorkSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFD05512CEF56950023B97E /* WorkSpace.framework */; };
+		CCFD055B2CEF66A30023B97E /* WorkspaceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD055A2CEF66A30023B97E /* WorkspaceAssembly.swift */; };
 		CCFE26982CD4C3C000E8D655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26972CD4C3C000E8D655 /* AppDelegate.swift */; };
 		CCFE269A2CD4C3C000E8D655 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26992CD4C3C000E8D655 /* SceneDelegate.swift */; };
 		CCFE26A12CD4C3C100E8D655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCFE26A02CD4C3C100E8D655 /* Assets.xcassets */; };
@@ -55,13 +75,33 @@
 		CC83865A2CE714DE0077ED8B /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		CC83865C2CE714F40077ED8B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CC83865F2CE715900077ED8B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		CC8386622CE715B50077ED8B /* WorkspaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewController.swift; sourceTree = "<group>"; };
+		CC8386622CE715B50077ED8B /* EmptyWorkspaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWorkspaceViewController.swift; sourceTree = "<group>"; };
 		CC8386642CE716020077ED8B /* Authorization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Authorization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8386872CE723B60077ED8B /* DataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA52A272CD77024000E62EA /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
 		CCB446672CD9EDE200A4FCAB /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCB4466A2CD9EEE200A4FCAB /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC4AFBD2CE7002D00707CD2 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
+		CCFD051F2CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWorkspaceViewModel.swift; sourceTree = "<group>"; };
+		CCFD05222CEEFDA50023B97E /* CombineControlEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineControlEvent.swift; sourceTree = "<group>"; };
+		CCFD05242CEF01400023B97E /* CombineControlProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineControlProperty.swift; sourceTree = "<group>"; };
+		CCFD05272CEF02CB0023B97E /* UIButton+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
+		CCFD05292CEF03660023B97E /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
+		CCFD052B2CEF05680023B97E /* UITextField+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Combine.swift"; sourceTree = "<group>"; };
+		CCFD052F2CEF0F130023B97E /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		CCFD05322CEF16B60023B97E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		CCFD05342CEF16EB0023B97E /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		CCFD05362CEF17020023B97E /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		CCFD05382CEF17170023B97E /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		CCFD053A2CEF17A90023B97E /* RoundedTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextButton.swift; sourceTree = "<group>"; };
+		CCFD053C2CEF1C540023B97E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CCFD053E2CEF1D800023B97E /* CombineControlTargetAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineControlTargetAction.swift; sourceTree = "<group>"; };
+		CCFD05402CEF29E60023B97E /* UIGestureRecognizer+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Combine.swift"; sourceTree = "<group>"; };
+		CCFD054A2CEF45450023B97E /* CreateWorkspaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkspaceViewController.swift; sourceTree = "<group>"; };
+		CCFD054C2CEF48220023B97E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		CCFD054F2CEF542D0023B97E /* CreateWorkspaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkspaceViewModel.swift; sourceTree = "<group>"; };
+		CCFD05512CEF56950023B97E /* WorkSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WorkSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCFD055A2CEF66A30023B97E /* WorkspaceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceAssembly.swift; sourceTree = "<group>"; };
 		CCFE26942CD4C3C000E8D655 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE26972CD4C3C000E8D655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCFE26992CD4C3C000E8D655 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFD05522CEF56950023B97E /* WorkSpace.framework in Frameworks */,
 				CC8386702CE717160077ED8B /* SnapKit in Frameworks */,
 				CC8386652CE716020077ED8B /* Authorization.framework in Frameworks */,
 				CC7FDDD12CEDCBE800E7B0E5 /* FirebaseMessaging in Frameworks */,
@@ -110,9 +151,10 @@
 		CC8386562CE7135F0077ED8B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				CC8386612CE715A20077ED8B /* Workspace */,
-				CC83865E2CE715850077ED8B /* Preview */,
-				CC8386572CE7137D0077ED8B /* Onboarding */,
+				CCFD05312CEF16AC0023B97E /* Base */,
+				CCFD052E2CEF0E4B0023B97E /* UIComponents */,
+				CCFD052D2CEF0E380023B97E /* Screens */,
+				CCFD05212CEEFD7B0023B97E /* CombineUI */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -136,7 +178,8 @@
 		CC8386612CE715A20077ED8B /* Workspace */ = {
 			isa = PBXGroup;
 			children = (
-				CC8386622CE715B50077ED8B /* WorkspaceViewController.swift */,
+				CCFD051E2CEEF4050023B97E /* ViewModel */,
+				CCFD051D2CEEF3A50023B97E /* View */,
 			);
 			path = Workspace;
 			sourceTree = "<group>";
@@ -149,6 +192,7 @@
 				CCC4AFBD2CE7002D00707CD2 /* Secret.xcconfig */,
 				CC83865A2CE714DE0077ED8B /* UIFont+Extension.swift */,
 				CC83865C2CE714F40077ED8B /* Constant.swift */,
+				CCFD054C2CEF48220023B97E /* UIImage+Extension.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -169,8 +213,80 @@
 			children = (
 				CC8386542CE712370077ED8B /* AuthorizationAssembly.swift */,
 				CC7FDDA22CED719200E7B0E5 /* NetworkProviderAssembly.swift */,
+				CCFD055A2CEF66A30023B97E /* WorkspaceAssembly.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		CCFD051D2CEEF3A50023B97E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC8386622CE715B50077ED8B /* EmptyWorkspaceViewController.swift */,
+				CCFD054A2CEF45450023B97E /* CreateWorkspaceViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CCFD051E2CEEF4050023B97E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CCFD051F2CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift */,
+				CCFD054F2CEF542D0023B97E /* CreateWorkspaceViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CCFD05212CEEFD7B0023B97E /* CombineUI */ = {
+			isa = PBXGroup;
+			children = (
+				CCFD05262CEF02C00023B97E /* Controls */,
+				CCFD05222CEEFDA50023B97E /* CombineControlEvent.swift */,
+				CCFD05242CEF01400023B97E /* CombineControlProperty.swift */,
+				CCFD053E2CEF1D800023B97E /* CombineControlTargetAction.swift */,
+			);
+			path = CombineUI;
+			sourceTree = "<group>";
+		};
+		CCFD05262CEF02C00023B97E /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				CCFD05292CEF03660023B97E /* UIControl+Combine.swift */,
+				CCFD05272CEF02CB0023B97E /* UIButton+Combine.swift */,
+				CCFD052B2CEF05680023B97E /* UITextField+Combine.swift */,
+				CCFD05402CEF29E60023B97E /* UIGestureRecognizer+Combine.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		CCFD052D2CEF0E380023B97E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CC8386612CE715A20077ED8B /* Workspace */,
+				CC83865E2CE715850077ED8B /* Preview */,
+				CC8386572CE7137D0077ED8B /* Onboarding */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CCFD052E2CEF0E4B0023B97E /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				CCFD052F2CEF0F130023B97E /* RoundedImageView.swift */,
+				CCFD053A2CEF17A90023B97E /* RoundedTextButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		CCFD05312CEF16AC0023B97E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CCFD05322CEF16B60023B97E /* BaseView.swift */,
+				CCFD05342CEF16EB0023B97E /* BaseTableViewCell.swift */,
+				CCFD05362CEF17020023B97E /* BaseCollectionViewCell.swift */,
+				CCFD05382CEF17170023B97E /* BaseButton.swift */,
+				CCFD053C2CEF1C540023B97E /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		CCFE268B2CD4C3C000E8D655 = {
@@ -226,6 +342,7 @@
 		CCFE275B2CD4D30900E8D655 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CCFD05512CEF56950023B97E /* WorkSpace.framework */,
 				CC8386872CE723B60077ED8B /* DataSource.framework */,
 				CC8386642CE716020077ED8B /* Authorization.framework */,
 				CCB4466A2CD9EEE200A4FCAB /* Domain.framework */,
@@ -379,14 +496,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFD053F2CEF1D800023B97E /* CombineControlTargetAction.swift in Sources */,
+				CCFD05302CEF0F130023B97E /* RoundedImageView.swift in Sources */,
 				CC8386552CE712370077ED8B /* AuthorizationAssembly.swift in Sources */,
 				CCFE26982CD4C3C000E8D655 /* AppDelegate.swift in Sources */,
+				CCFD05332CEF16B60023B97E /* BaseView.swift in Sources */,
+				CCFD05352CEF16EB0023B97E /* BaseTableViewCell.swift in Sources */,
+				CCFD052C2CEF05680023B97E /* UITextField+Combine.swift in Sources */,
+				CCFD05392CEF17170023B97E /* BaseButton.swift in Sources */,
 				CCFE269A2CD4C3C000E8D655 /* SceneDelegate.swift in Sources */,
+				CCFD054B2CEF45450023B97E /* CreateWorkspaceViewController.swift in Sources */,
 				CC83865B2CE714DE0077ED8B /* UIFont+Extension.swift in Sources */,
+				CCFD053B2CEF17A90023B97E /* RoundedTextButton.swift in Sources */,
+				CCFD05412CEF29E60023B97E /* UIGestureRecognizer+Combine.swift in Sources */,
+				CCFD054D2CEF48220023B97E /* UIImage+Extension.swift in Sources */,
 				CC8386602CE715900077ED8B /* UIViewController+Extension.swift in Sources */,
 				CC8386592CE7139D0077ED8B /* OnboardingViewController.swift in Sources */,
+				CCFD05502CEF542D0023B97E /* CreateWorkspaceViewModel.swift in Sources */,
+				CCFD055B2CEF66A30023B97E /* WorkspaceAssembly.swift in Sources */,
+				CCFD05372CEF17020023B97E /* BaseCollectionViewCell.swift in Sources */,
+				CCFD053D2CEF1C540023B97E /* BaseViewController.swift in Sources */,
+				CCFD05202CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift in Sources */,
+				CCFD05282CEF02CB0023B97E /* UIButton+Combine.swift in Sources */,
+				CCFD05232CEEFDA50023B97E /* CombineControlEvent.swift in Sources */,
 				CC7FDDA32CED719200E7B0E5 /* NetworkProviderAssembly.swift in Sources */,
-				CC8386632CE715B50077ED8B /* WorkspaceViewController.swift in Sources */,
+				CC8386632CE715B50077ED8B /* EmptyWorkspaceViewController.swift in Sources */,
+				CCFD052A2CEF03660023B97E /* UIControl+Combine.swift in Sources */,
+				CCFD05252CEF01400023B97E /* CombineControlProperty.swift in Sources */,
 				CC83865D2CE714F40077ED8B /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

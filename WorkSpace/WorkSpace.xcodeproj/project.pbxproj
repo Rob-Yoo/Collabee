@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC7FDD392CE76A2500E7B0E5 /* WorkSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7FDD302CE76A2500E7B0E5 /* WorkSpace.framework */; };
 		CC7FDD3F2CE76A2500E7B0E5 /* WorkSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = CC7FDD332CE76A2500E7B0E5 /* WorkSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC7FDD4C2CE76B1500E7B0E5 /* WorkSpaceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDD4B2CE76B1500E7B0E5 /* WorkSpaceAPI.swift */; };
 		CC7FDD932CEC9DF000E7B0E5 /* DataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7FDD4E2CE76D0700E7B0E5 /* DataSource.framework */; };
@@ -36,15 +35,16 @@
 		CCFD05062CEECACA0023B97E /* ChannelDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05052CEECACA0023B97E /* ChannelDetail.swift */; };
 		CCFD05092CEECBCE0023B97E /* ChannelBody+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05082CEECBCE0023B97E /* ChannelBody+Extension.swift */; };
 		CCFD050B2CEECC0D0023B97E /* CreateWorkspaceBody+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD050A2CEECC0D0023B97E /* CreateWorkspaceBody+Extenstion.swift */; };
-		CCFD050D2CEECC700023B97E /* EditWorkspaceBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD050C2CEECC700023B97E /* EditWorkspaceBody.swift */; };
+		CCFD050D2CEECC700023B97E /* EditWorkspaceBody+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD050C2CEECC700023B97E /* EditWorkspaceBody+Extension.swift */; };
 		CCFD050F2CEECF5F0023B97E /* WorkspaceMemberRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD050E2CEECF5F0023B97E /* WorkspaceMemberRepository.swift */; };
 		CCFD05142CEED1610023B97E /* WorkspaceMemberError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05132CEED1610023B97E /* WorkspaceMemberError.swift */; };
 		CCFD05162CEED34C0023B97E /* DefaultWorkspaceMemberRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05152CEED34C0023B97E /* DefaultWorkspaceMemberRepository.swift */; };
 		CCFD051B2CEEDD950023B97E /* DefaultWorkspaceRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD051A2CEEDD950023B97E /* DefaultWorkspaceRepositoryTest.swift */; };
+		CCFD05552CEF57B40023B97E /* WorkSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7FDD302CE76A2500E7B0E5 /* WorkSpace.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CC7FDD3A2CE76A2500E7B0E5 /* PBXContainerItemProxy */ = {
+		CCFD05572CEF57B40023B97E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CC7FDD272CE76A2500E7B0E5 /* Project object */;
 			proxyType = 1;
@@ -85,7 +85,7 @@
 		CCFD05052CEECACA0023B97E /* ChannelDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelDetail.swift; sourceTree = "<group>"; };
 		CCFD05082CEECBCE0023B97E /* ChannelBody+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChannelBody+Extension.swift"; sourceTree = "<group>"; };
 		CCFD050A2CEECC0D0023B97E /* CreateWorkspaceBody+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateWorkspaceBody+Extenstion.swift"; sourceTree = "<group>"; };
-		CCFD050C2CEECC700023B97E /* EditWorkspaceBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkspaceBody.swift; sourceTree = "<group>"; };
+		CCFD050C2CEECC700023B97E /* EditWorkspaceBody+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditWorkspaceBody+Extension.swift"; sourceTree = "<group>"; };
 		CCFD050E2CEECF5F0023B97E /* WorkspaceMemberRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceMemberRepository.swift; sourceTree = "<group>"; };
 		CCFD05132CEED1610023B97E /* WorkspaceMemberError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceMemberError.swift; sourceTree = "<group>"; };
 		CCFD05152CEED34C0023B97E /* DefaultWorkspaceMemberRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultWorkspaceMemberRepository.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC7FDD392CE76A2500E7B0E5 /* WorkSpace.framework in Frameworks */,
+				CCFD05552CEF57B40023B97E /* WorkSpace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +293,7 @@
 			children = (
 				CCFD05082CEECBCE0023B97E /* ChannelBody+Extension.swift */,
 				CCFD050A2CEECC0D0023B97E /* CreateWorkspaceBody+Extenstion.swift */,
-				CCFD050C2CEECC700023B97E /* EditWorkspaceBody.swift */,
+				CCFD050C2CEECC700023B97E /* EditWorkspaceBody+Extension.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -343,7 +343,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CC7FDD3B2CE76A2500E7B0E5 /* PBXTargetDependency */,
+				CCFD05582CEF57B40023B97E /* PBXTargetDependency */,
 			);
 			name = WorkSpaceTests;
 			productName = WorkSpaceTests;
@@ -416,7 +416,7 @@
 				CCFD04F82CEE0FEB0023B97E /* ChannelRepository.swift in Sources */,
 				CCFD050B2CEECC0D0023B97E /* CreateWorkspaceBody+Extenstion.swift in Sources */,
 				CC7FDDB22CEDA29000E7B0E5 /* WorkspaceDTO.swift in Sources */,
-				CCFD050D2CEECC700023B97E /* EditWorkspaceBody.swift in Sources */,
+				CCFD050D2CEECC700023B97E /* EditWorkspaceBody+Extension.swift in Sources */,
 				CCFD04ED2CEDFA430023B97E /* Channel.swift in Sources */,
 				CCFD05022CEEC2760023B97E /* ChannelAPI.swift in Sources */,
 				CC7FDDB82CEDA73F00E7B0E5 /* ChannelDetailDTO.swift in Sources */,
@@ -457,10 +457,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CC7FDD3B2CE76A2500E7B0E5 /* PBXTargetDependency */ = {
+		CCFD05582CEF57B40023B97E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CC7FDD2F2CE76A2500E7B0E5 /* WorkSpace */;
-			targetProxy = CC7FDD3A2CE76A2500E7B0E5 /* PBXContainerItemProxy */;
+			targetProxy = CCFD05572CEF57B40023B97E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -674,7 +674,6 @@
 		CC7FDD462CE76A2500E7B0E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -698,7 +697,6 @@
 		CC7FDD472CE76A2500E7B0E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

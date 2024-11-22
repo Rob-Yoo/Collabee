@@ -15,6 +15,8 @@ public final class DefaultChannelRepository: ChannelRepository {
     @Injected private var networkProvider: NetworkProvider
     private var cancellable = Set<AnyCancellable>()
     
+    public init() {}
+    
     public func create(_ workspaceID: String, _ body: ChannelBody) -> AnyPublisher<Channel, ChannelError> {
         
         return Future<Channel, ChannelError> { [weak self] promise in

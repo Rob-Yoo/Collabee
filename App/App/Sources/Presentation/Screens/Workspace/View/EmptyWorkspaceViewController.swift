@@ -32,7 +32,14 @@ final class EmptyWorkspaceViewController: BaseViewController {
         $0.contentMode = .scaleAspectFill
     }
     
-    private var createButton = RoundedTextButton(Constant.Literal.ButtonText.createWorkspace)
+    private var createButton = RoundedTextButton(Constant.Literal.ButtonText.createWorkspace).then {
+        $0.backgroundColor = .brandMainTheme
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureNavigationRightBarButtonItem()
+    }
     
     override func configureHierarchy() {
         self.view.addSubview(titleLabel)
@@ -66,6 +73,18 @@ final class EmptyWorkspaceViewController: BaseViewController {
         }
     }
     
+    override func bindViewModel() {
+        createButton.tap
+            .sink { [weak self] _ in
+                
+                guard let self else { return }
+                
+                let sheetVC = CreateWorkspaceViewController(navTitle: Constant.Literal.CreateWorkSpace.navTitle)
+                presentBottomSheet(sheetVC)
+                
+            }.store(in: &cancellable)
+    }
+    
     private func configureNavigationRightBarButtonItem() {
         let size = self.navigationController?.navigationBar.frame.height ?? 44
         let profileImageView = RoundedImageView().then {
@@ -81,7 +100,10 @@ final class EmptyWorkspaceViewController: BaseViewController {
         profileImageView.addGestureRecognizer(tapGR)
         
         tapGR.tapPublisher
-            .sink { _ in
+            .sink { [weak self] _ in
+                
+                guard let self else { return }
+                
                 print("HI")
             }
             .store(in: &cancellable)

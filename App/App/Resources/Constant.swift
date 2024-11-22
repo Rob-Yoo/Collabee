@@ -19,6 +19,7 @@ enum Constant {
         }
         
         enum CreateWorkSpace {
+            static var navTitle: String { "워크스페이스 생성" }
             static var nameTextField: String { "워크스페이스 이름" }
             static var nameTextFieldPlaceHolder: String { "워크스페이스 이름을 입력하세요(필수)" }
             static var descriptionTextField: String { "워크스페이스 설명" }

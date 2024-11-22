@@ -40,6 +40,7 @@
 		CCFD05502CEF542D0023B97E /* CreateWorkspaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD054F2CEF542D0023B97E /* CreateWorkspaceViewModel.swift */; };
 		CCFD05522CEF56950023B97E /* WorkSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFD05512CEF56950023B97E /* WorkSpace.framework */; };
 		CCFD055B2CEF66A30023B97E /* WorkspaceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD055A2CEF66A30023B97E /* WorkspaceAssembly.swift */; };
+		CCFD05602CF015D00023B97E /* SheetPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD055F2CF015D00023B97E /* SheetPresentationViewController.swift */; };
 		CCFE26982CD4C3C000E8D655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26972CD4C3C000E8D655 /* AppDelegate.swift */; };
 		CCFE269A2CD4C3C000E8D655 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26992CD4C3C000E8D655 /* SceneDelegate.swift */; };
 		CCFE26A12CD4C3C100E8D655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCFE26A02CD4C3C100E8D655 /* Assets.xcassets */; };
@@ -102,6 +103,7 @@
 		CCFD054F2CEF542D0023B97E /* CreateWorkspaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkspaceViewModel.swift; sourceTree = "<group>"; };
 		CCFD05512CEF56950023B97E /* WorkSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WorkSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFD055A2CEF66A30023B97E /* WorkspaceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceAssembly.swift; sourceTree = "<group>"; };
+		CCFD055F2CF015D00023B97E /* SheetPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationViewController.swift; sourceTree = "<group>"; };
 		CCFE26942CD4C3C000E8D655 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE26972CD4C3C000E8D655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCFE26992CD4C3C000E8D655 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			children = (
 				CCFD052F2CEF0F130023B97E /* RoundedImageView.swift */,
 				CCFD053A2CEF17A90023B97E /* RoundedTextButton.swift */,
+				CCFD055F2CF015D00023B97E /* SheetPresentationViewController.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				CCFD05502CEF542D0023B97E /* CreateWorkspaceViewModel.swift in Sources */,
 				CCFD055B2CEF66A30023B97E /* WorkspaceAssembly.swift in Sources */,
 				CCFD05372CEF17020023B97E /* BaseCollectionViewCell.swift in Sources */,
+				CCFD05602CF015D00023B97E /* SheetPresentationViewController.swift in Sources */,
 				CCFD053D2CEF1C540023B97E /* BaseViewController.swift in Sources */,
 				CCFD05202CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift in Sources */,
 				CCFD05282CEF02CB0023B97E /* UIButton+Combine.swift in Sources */,

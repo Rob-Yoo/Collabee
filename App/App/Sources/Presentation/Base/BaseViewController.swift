@@ -35,6 +35,7 @@ class BaseViewController: UIViewController {
     func bindViewModel() {}
 }
 
+//MARK: - Utility Methods
 extension BaseViewController {
     func addKeyboardDismissAction() {
         let tapGesture = UITapGestureRecognizer()
@@ -47,5 +48,17 @@ extension BaseViewController {
                 view.endEditing(true)
             }
             .store(in: &cancellable)
+    }
+    
+    func presentBottomSheet(_ vc: SheetPresentationViewController) {
+        let sheetVC = UINavigationController(rootViewController: vc)
+        
+        if let sheet = sheetVC.sheetPresentationController {
+            sheet.detents = [.large()]
+            sheet.prefersGrabberVisible = true
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = true
+        }
+        
+        present(sheetVC, animated: true)
     }
 }

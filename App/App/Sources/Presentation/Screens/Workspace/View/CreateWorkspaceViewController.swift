@@ -12,7 +12,7 @@ import PhotosUI
 import SnapKit
 import Then
 
-final class CreateWorkspaceViewController: BaseViewController {
+final class CreateWorkspaceViewController: SheetPresentationViewController {
 
     private var coverImage = PassthroughSubject<UIImage?, Never>()
     private let vm = CreateWorkspaceViewModel()
@@ -133,7 +133,7 @@ final class CreateWorkspaceViewController: BaseViewController {
         }
         
         completeButton.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10)
+            make.bottom.equalTo(view.keyboardLayoutGuide.snp.top).offset(-10)
             make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(44)
         }
@@ -183,6 +183,7 @@ final class CreateWorkspaceViewController: BaseViewController {
             }
             .store(in: &cancellable)
     }
+    
 }
 
 //MARK: - PHPickerViewDelegate
@@ -211,7 +212,7 @@ import SwiftUI
 
 struct CreateWorkspaceViewControllerPreView: PreviewProvider {
     static var previews: some View {
-        CreateWorkspaceViewController().toPreview()
+        CreateWorkspaceViewController(navTitle: "워크스페이스 생성").toPreview()
     }
 }
 #endif

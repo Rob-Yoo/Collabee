@@ -29,3 +29,8 @@ struct KakaoLoginBody: Encodable {
     }
 
 }
+
+struct EmailLoginBody: Encodable {
+    let email: String
+    let password: String
+}

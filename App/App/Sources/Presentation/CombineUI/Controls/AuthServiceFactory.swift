@@ -19,8 +19,8 @@ enum AuthServiceFactory {
             return KakaoAuthService()
         case .apple(let presentationAnchor):
             return AppleAuthService(presentationAnchor: presentationAnchor)
-        @unknown default:
-            fatalError("등록되지 않은 AuthType 사용")
+        case .email:
+            return EmailAuthService()
         }
     }
 }

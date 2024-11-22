@@ -11,6 +11,7 @@ import AuthenticationServices
 public enum AuthType {
     case kakao
     case apple(_ presentationAnchor: ASPresentationAnchor)
+    case email
 }
 
 public protocol AuthUseCase {

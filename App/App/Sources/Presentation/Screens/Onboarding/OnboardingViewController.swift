@@ -51,6 +51,11 @@ final class OnboardingViewController: UIViewController {
         $0.addTarget(self, action: #selector(kakaoLoginButtonTapped), for: .touchUpInside)
     }
     
+    private lazy var emailLoginButton = RoundedTextButton(Constant.Literal.Onboarding.emailLogin).then {
+        $0.backgroundColor = .brandMainTheme
+        $0.addTarget(self, action: #selector(emailLoginButtonTapped), for: .touchUpInside)
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -67,6 +72,7 @@ final class OnboardingViewController: UIViewController {
         self.view.addSubview(imageView)
         self.view.addSubview(appleLoginButton)
         self.view.addSubview(kakaoLoginButton)
+        self.view.addSubview(emailLoginButton)
     }
     
     private func configureLayout() {
@@ -90,6 +96,12 @@ final class OnboardingViewController: UIViewController {
             make.top.equalTo(appleLoginButton.snp.bottom).offset(10)
             make.horizontalEdges.equalToSuperview().inset(40)
             make.height.equalTo(50)
+        }
+        
+        emailLoginButton.snp.makeConstraints { make in
+            make.top.equalTo(kakaoLoginButton.snp.bottom).offset(10)
+            make.horizontalEdges.equalToSuperview().inset(55)
+            make.height.equalTo(44)
         }
     }
     
@@ -120,6 +132,20 @@ final class OnboardingViewController: UIViewController {
             }.store(in: &cancellable)
     }
     
+    @objc
+    private func emailLoginButtonTapped() {
+        useCase.login(.email)
+            .sink { completion in
+                switch completion {
+                case .finished: break
+                case .failure(let error):
+                    print("📌 에러 발생: " + error.localizedDescription)
+                }
+            } receiveValue: { _ in
+                NotificationCenter.default.post(name: .ChangeWindowScene, object: nil)
+            }.store(in: &cancellable)
+
+    }
 }
 //
 //#if DEBUG

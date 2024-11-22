@@ -11,6 +11,7 @@ enum Constant {
         
         enum Onboarding {
             static var description: String { "콜라비를 사용하면 어디서나\n팀을 모을 수 있습니다" }
+            static var emailLogin: String { "이메일로 계속하기" }
         }
         
         enum HomeEmpty {

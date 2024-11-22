@@ -10,6 +10,7 @@ import DataSource
 enum UserAPI {
     case kakaoLogin(_ body: KakaoLoginBody)
     case appleLogin(_ body: AppleLoginBody)
+    case emailLogin(_ body: EmailLoginBody)
 }
 
 extension UserAPI: API {
@@ -20,12 +21,14 @@ extension UserAPI: API {
             return "/v1/users/login/kakao"
         case .appleLogin:
             return "/v1/users/login/apple"
+        case .emailLogin:
+            return "/v1/users/login"
         }
     }
     
     public var method: HTTPMethod {
         switch self {
-        case .kakaoLogin, .appleLogin:
+        case .kakaoLogin, .appleLogin, .emailLogin:
             return .post
         }
     }
@@ -36,12 +39,14 @@ extension UserAPI: API {
             return .requestWithEncodableBody(body)
         case .appleLogin(let body):
             return .requestWithEncodableBody(body)
+        case .emailLogin(let body):
+            return .requestWithEncodableBody(body)
         }
     }
     
     public var headers: [String : String]? {
         switch self {
-        case .kakaoLogin, .appleLogin:
+        case .kakaoLogin, .appleLogin, .emailLogin:
             return [
                 Header.contentType.rawValue: Header.json.rawValue
             ]

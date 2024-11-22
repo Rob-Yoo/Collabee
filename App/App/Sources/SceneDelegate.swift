@@ -27,7 +27,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @objc
     private func connectWindowScene() {
         let isAuthorized = UserDefaultsStorage.isAuthorized
-        let rootVC = isAuthorized ? UINavigationController(rootViewController: EmptyWorkspaceViewController()) : UINavigationController(rootViewController: OnboardingViewController(useCase: authUseCase))
+        let rootVC = isAuthorized ? UINavigationController(rootViewController: WorkspaceContainerViewController()) : UINavigationController(rootViewController: OnboardingViewController(useCase: authUseCase))
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
     }

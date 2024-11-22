@@ -13,6 +13,15 @@ import Then
 
 final class EmptyWorkspaceViewController: BaseViewController {
     
+    private var profileImageView = RoundedImageView().then {
+        let placeHolder = UIImage.profilePlaceholder
+        let size = CGSize(width: 40, height: 40)
+        
+        $0.isUserInteractionEnabled = true
+        $0.image = placeHolder.resizeImage(size)
+        $0.frame = CGRect(origin: .zero, size: size)
+    }
+    
     private var titleLabel = UILabel().then {
         $0.text = Constant.Literal.HomeEmpty.title
         $0.font = .bold22
@@ -51,7 +60,7 @@ final class EmptyWorkspaceViewController: BaseViewController {
     override func configureLayout() {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-                .offset(20)
+                .offset(30)
             make.centerX.equalToSuperview()
         }
         
@@ -74,29 +83,8 @@ final class EmptyWorkspaceViewController: BaseViewController {
     }
     
     override func bindViewModel() {
-        createButton.tap
-            .sink { [weak self] _ in
-                
-                guard let self else { return }
-                
-                let sheetVC = CreateWorkspaceViewController(navTitle: Constant.Literal.CreateWorkSpace.navTitle)
-                presentBottomSheet(sheetVC)
-                
-            }.store(in: &cancellable)
-    }
-    
-    private func configureNavigationRightBarButtonItem() {
-        let size = self.navigationController?.navigationBar.frame.height ?? 44
-        let profileImageView = RoundedImageView().then {
-            $0.isUserInteractionEnabled = true
-            $0.backgroundColor = .black
- /*           $0.image = .profile0.resizeImage(size: CGSize(width: size, height: size))*/ // BarButtonItem에 넣을 땐 Resizing 필수?!
-            $0.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
-        }
-        let barButton = UIBarButtonItem(customView: profileImageView)
         let tapGR = UITapGestureRecognizer()
         
-        self.navigationItem.rightBarButtonItem = barButton
         profileImageView.addGestureRecognizer(tapGR)
         
         tapGR.tapPublisher
@@ -107,6 +95,22 @@ final class EmptyWorkspaceViewController: BaseViewController {
                 print("HI")
             }
             .store(in: &cancellable)
+        
+        createButton.tap
+            .sink { [weak self] _ in
+                
+                guard let self else { return }
+                
+                let sheetVC = CreateWorkspaceViewController(navTitle: Constant.Literal.CreateWorkSpace.navTitle)
+                presentBottomSheet(sheetVC)
+                
+            }.store(in: &cancellable)
+        
+    }
+    
+    private func configureNavigationRightBarButtonItem() {
+        let barButton = UIBarButtonItem(customView: profileImageView)
+        self.navigationItem.rightBarButtonItem = barButton
     }
 }
 

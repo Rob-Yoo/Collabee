@@ -31,7 +31,7 @@ class SheetPresentationViewController: BaseViewController {
     }
     
     private let cancelButton = UIButton().then {
-        $0.setImage(UIImage(systemName: "xmark"), for: .normal)
+        $0.setImage(.xIcon, for: .normal)
         $0.tintColor = .black
     }
     
@@ -46,11 +46,6 @@ class SheetPresentationViewController: BaseViewController {
     }
     
     private func configureNavigationBar() {
-        let appearance = UINavigationBarAppearance()
-
-        appearance.configureWithOpaqueBackground()
-        self.navigationController?.navigationBar.standardAppearance = appearance
-        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
         self.navigationItem.titleView = titleContainerView
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: cancelButton)
         

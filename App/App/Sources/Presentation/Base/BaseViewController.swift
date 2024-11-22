@@ -23,6 +23,11 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appearence = UINavigationBarAppearance()
+        
+        appearence.configureWithOpaqueBackground()
+        self.navigationController?.navigationBar.standardAppearance = appearence
+        self.navigationController?.navigationBar.scrollEdgeAppearance = appearence
         view.backgroundColor = .white
         configureHierarchy()
         configureLayout()

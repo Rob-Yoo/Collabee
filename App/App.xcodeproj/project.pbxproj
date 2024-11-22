@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC608F362CF08A95003D1EBA /* WorkspaceContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F352CF08A95003D1EBA /* WorkspaceContainerViewController.swift */; };
+		CC608F382CF09D6C003D1EBA /* CombineTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F372CF09D6C003D1EBA /* CombineTableView.swift */; };
+		CC608F3B2CF0A7FE003D1EBA /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F3A2CF0A7FE003D1EBA /* ChannelTableViewCell.swift */; };
+		CC608F3D2CF0A828003D1EBA /* WorkspaceSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F3C2CF0A828003D1EBA /* WorkspaceSectionTableViewCell.swift */; };
 		CC7FDDA32CED719200E7B0E5 /* NetworkProviderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDA22CED719200E7B0E5 /* NetworkProviderAssembly.swift */; };
 		CC7FDDCC2CEDCB6300E7B0E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC7FDDCB2CEDCB6300E7B0E5 /* GoogleService-Info.plist */; };
 		CC7FDDCF2CEDCBE800E7B0E5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7FDDCE2CEDCBE800E7B0E5 /* FirebaseAnalytics */; };
@@ -41,6 +45,8 @@
 		CCFD05522CEF56950023B97E /* WorkSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFD05512CEF56950023B97E /* WorkSpace.framework */; };
 		CCFD055B2CEF66A30023B97E /* WorkspaceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD055A2CEF66A30023B97E /* WorkspaceAssembly.swift */; };
 		CCFD05602CF015D00023B97E /* SheetPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD055F2CF015D00023B97E /* SheetPresentationViewController.swift */; };
+		CCFD05642CF040D50023B97E /* WorkspaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05632CF040D50023B97E /* WorkspaceViewController.swift */; };
+		CCFD05662CF0417E0023B97E /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05652CF0417E0023B97E /* IdentifierProtocol.swift */; };
 		CCFE26982CD4C3C000E8D655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26972CD4C3C000E8D655 /* AppDelegate.swift */; };
 		CCFE269A2CD4C3C000E8D655 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26992CD4C3C000E8D655 /* SceneDelegate.swift */; };
 		CCFE26A12CD4C3C100E8D655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCFE26A02CD4C3C100E8D655 /* Assets.xcassets */; };
@@ -69,6 +75,10 @@
 
 /* Begin PBXFileReference section */
 		CC15F4BA2CD50BFA00EBAA7D /* ko-KR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ko-KR"; path = "ko-KR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CC608F352CF08A95003D1EBA /* WorkspaceContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceContainerViewController.swift; sourceTree = "<group>"; };
+		CC608F372CF09D6C003D1EBA /* CombineTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTableView.swift; sourceTree = "<group>"; };
+		CC608F3A2CF0A7FE003D1EBA /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
+		CC608F3C2CF0A828003D1EBA /* WorkspaceSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceSectionTableViewCell.swift; sourceTree = "<group>"; };
 		CC7FDDA22CED719200E7B0E5 /* NetworkProviderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderAssembly.swift; sourceTree = "<group>"; };
 		CC7FDDCB2CEDCB6300E7B0E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC8386542CE712370077ED8B /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
@@ -104,6 +114,8 @@
 		CCFD05512CEF56950023B97E /* WorkSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WorkSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFD055A2CEF66A30023B97E /* WorkspaceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceAssembly.swift; sourceTree = "<group>"; };
 		CCFD055F2CF015D00023B97E /* SheetPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationViewController.swift; sourceTree = "<group>"; };
+		CCFD05632CF040D50023B97E /* WorkspaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewController.swift; sourceTree = "<group>"; };
+		CCFD05652CF0417E0023B97E /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
 		CCFE26942CD4C3C000E8D655 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE26972CD4C3C000E8D655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCFE26992CD4C3C000E8D655 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +162,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC608F392CF0A7CD003D1EBA /* UITableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				CC608F3A2CF0A7FE003D1EBA /* ChannelTableViewCell.swift */,
+				CC608F3C2CF0A828003D1EBA /* WorkspaceSectionTableViewCell.swift */,
+			);
+			path = UITableViewCells;
+			sourceTree = "<group>";
+		};
 		CC8386562CE7135F0077ED8B /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,8 +244,11 @@
 		CCFD051D2CEEF3A50023B97E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CC608F392CF0A7CD003D1EBA /* UITableViewCells */,
 				CC8386622CE715B50077ED8B /* EmptyWorkspaceViewController.swift */,
 				CCFD054A2CEF45450023B97E /* CreateWorkspaceViewController.swift */,
+				CCFD05632CF040D50023B97E /* WorkspaceViewController.swift */,
+				CC608F352CF08A95003D1EBA /* WorkspaceContainerViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,6 +269,7 @@
 				CCFD05222CEEFDA50023B97E /* CombineControlEvent.swift */,
 				CCFD05242CEF01400023B97E /* CombineControlProperty.swift */,
 				CCFD053E2CEF1D800023B97E /* CombineControlTargetAction.swift */,
+				CC608F372CF09D6C003D1EBA /* CombineTableView.swift */,
 			);
 			path = CombineUI;
 			sourceTree = "<group>";
@@ -288,6 +313,7 @@
 				CCFD05362CEF17020023B97E /* BaseCollectionViewCell.swift */,
 				CCFD05382CEF17170023B97E /* BaseButton.swift */,
 				CCFD053C2CEF1C540023B97E /* BaseViewController.swift */,
+				CCFD05652CF0417E0023B97E /* IdentifierProtocol.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -510,12 +536,15 @@
 				CCFE269A2CD4C3C000E8D655 /* SceneDelegate.swift in Sources */,
 				CCFD054B2CEF45450023B97E /* CreateWorkspaceViewController.swift in Sources */,
 				CC83865B2CE714DE0077ED8B /* UIFont+Extension.swift in Sources */,
+				CCFD05662CF0417E0023B97E /* IdentifierProtocol.swift in Sources */,
 				CCFD053B2CEF17A90023B97E /* RoundedTextButton.swift in Sources */,
 				CCFD05412CEF29E60023B97E /* UIGestureRecognizer+Combine.swift in Sources */,
 				CCFD054D2CEF48220023B97E /* UIImage+Extension.swift in Sources */,
 				CC8386602CE715900077ED8B /* UIViewController+Extension.swift in Sources */,
+				CC608F382CF09D6C003D1EBA /* CombineTableView.swift in Sources */,
 				CC8386592CE7139D0077ED8B /* OnboardingViewController.swift in Sources */,
 				CCFD05502CEF542D0023B97E /* CreateWorkspaceViewModel.swift in Sources */,
+				CC608F362CF08A95003D1EBA /* WorkspaceContainerViewController.swift in Sources */,
 				CCFD055B2CEF66A30023B97E /* WorkspaceAssembly.swift in Sources */,
 				CCFD05372CEF17020023B97E /* BaseCollectionViewCell.swift in Sources */,
 				CCFD05602CF015D00023B97E /* SheetPresentationViewController.swift in Sources */,
@@ -523,10 +552,13 @@
 				CCFD05202CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift in Sources */,
 				CCFD05282CEF02CB0023B97E /* UIButton+Combine.swift in Sources */,
 				CCFD05232CEEFDA50023B97E /* CombineControlEvent.swift in Sources */,
+				CC608F3D2CF0A828003D1EBA /* WorkspaceSectionTableViewCell.swift in Sources */,
+				CC608F3B2CF0A7FE003D1EBA /* ChannelTableViewCell.swift in Sources */,
 				CC7FDDA32CED719200E7B0E5 /* NetworkProviderAssembly.swift in Sources */,
 				CC8386632CE715B50077ED8B /* EmptyWorkspaceViewController.swift in Sources */,
 				CCFD052A2CEF03660023B97E /* UIControl+Combine.swift in Sources */,
 				CCFD05252CEF01400023B97E /* CombineControlProperty.swift in Sources */,
+				CCFD05642CF040D50023B97E /* WorkspaceViewController.swift in Sources */,
 				CC83865D2CE714F40077ED8B /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

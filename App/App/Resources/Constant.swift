@@ -5,6 +5,8 @@
 //  Created by Jinyoung Yoo on 11/15/24.
 //
 
+import UIKit
+
 enum Constant {
     
     enum Literal {
@@ -31,6 +33,11 @@ enum Constant {
             static var createWorkspace: String { "워크스페이스 생성" }
             static var complete: String  { "완료" }
         }
+    }
+    
+    enum Dimension {
+        static var screenWidth: CGFloat { return UIScreen.main.bounds.width }
+        static var screenHeight: CGFloat { return UIScreen.main.bounds.height }
     }
 }
 

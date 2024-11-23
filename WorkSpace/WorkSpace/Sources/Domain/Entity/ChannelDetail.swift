@@ -8,11 +8,11 @@
 import Foundation
 
 public struct ChannelDetail {
-    let channelID: String
-    let name: String
-    let description: String?
+    public let channelID: String
+    public let name: String
+    public let description: String?
     let coverImage: String?
-    let ownerID: String
+    public let ownerID: String
     let createdAt: Date
-    let channelMembers: [Member]
+    public let channelMembers: [Member]
 }

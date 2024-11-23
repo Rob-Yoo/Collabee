@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC608F412CF0AF66003D1EBA /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F402CF0AF66003D1EBA /* Publisher+Extension.swift */; };
 		CCB4466F2CD9F12000A4FCAB /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4466E2CD9F12000A4FCAB /* Container.swift */; };
 		CCB446772CDA07F700A4FCAB /* CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446762CDA07F700A4FCAB /* CommonTests.swift */; };
 		CCB4467E2CDA080C00A4FCAB /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE27382CD4CDB600E8D655 /* Common.framework */; platformFilter = ios; };
@@ -46,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CC608F402CF0AF66003D1EBA /* Publisher+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extension.swift"; sourceTree = "<group>"; };
 		CCB4466E2CD9F12000A4FCAB /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		CCB446742CDA07F700A4FCAB /* CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCB446762CDA07F700A4FCAB /* CommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTests.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				CCB831E92CE4A2F4007E2CDD /* Notification.Name+Extension.swift */,
+				CC608F402CF0AF66003D1EBA /* Publisher+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			files = (
 				CCB831EA2CE4A2F4007E2CDD /* Notification.Name+Extension.swift in Sources */,
 				CCB4466F2CD9F12000A4FCAB /* Container.swift in Sources */,
+				CC608F412CF0AF66003D1EBA /* Publisher+Extension.swift in Sources */,
 				CCB4468B2CDB8F7500A4FCAB /* Assembly.swift in Sources */,
 				CCBC38542CE3493A008472E5 /* KeyChain.swift in Sources */,
 				CCB446892CDB17E300A4FCAB /* DIContainer.swift in Sources */,

@@ -6,8 +6,8 @@
 //
 
 public struct Member {
-    let id: String
+    public let id: String
     let email: String
-    let nickname: String
-    let profileImage: String?
+    public let nickname: String
+    public let profileImage: String?
 }

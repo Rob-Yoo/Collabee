@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC608F7A2CF2439F003D1EBA /* DefaultAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F792CF2439F003D1EBA /* DefaultAuthRepository.swift */; };
+		CC608F7D2CF243BE003D1EBA /* AuthServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F7C2CF243BE003D1EBA /* AuthServiceFactory.swift */; };
+		CC608F7F2CF243E1003D1EBA /* AppleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F7E2CF243E1003D1EBA /* AppleAuthService.swift */; };
+		CC608F812CF243EF003D1EBA /* KakaoAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F802CF243EF003D1EBA /* KakaoAuthService.swift */; };
+		CC608F832CF24436003D1EBA /* EmailAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F822CF24436003D1EBA /* EmailAuthService.swift */; };
 		CC7FDD5F2CE8ADE300E7B0E5 /* AuthorizationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDD5E2CE8ADE300E7B0E5 /* AuthorizationError.swift */; };
 		CC7FDD8B2CEC25E100E7B0E5 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDD8A2CEC25E100E7B0E5 /* UserAPI.swift */; };
 		CC7FDD8C2CEC263C00E7B0E5 /* DataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8386342CE708820077ED8B /* DataSource.framework */; };
@@ -19,11 +24,6 @@
 		CCC4B0542CE705D700707CD2 /* Authorization.h in Headers */ = {isa = PBXBuildFile; fileRef = CCC4B0482CE705D700707CD2 /* Authorization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CCC4B07F2CE7074C00707CD2 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4B07E2CE7074C00707CD2 /* AuthRepository.swift */; };
 		CCC4B0812CE7077500707CD2 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4B0802CE7077500707CD2 /* AuthUseCase.swift */; };
-		CCFD05432CEF40DF0023B97E /* DefaultAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05422CEF40DF0023B97E /* DefaultAuthRepository.swift */; };
-		CCFD05452CEF42230023B97E /* AuthServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05442CEF42230023B97E /* AuthServiceFactory.swift */; };
-		CCFD05472CEF42370023B97E /* KakaoAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05462CEF42370023B97E /* KakaoAuthService.swift */; };
-		CCFD05492CEF425C0023B97E /* AppleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05482CEF425C0023B97E /* AppleAuthService.swift */; };
-		CCFD05622CF0233E0023B97E /* EmailAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05612CF0233E0023B97E /* EmailAuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC608F792CF2439F003D1EBA /* DefaultAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthRepository.swift; sourceTree = "<group>"; };
+		CC608F7C2CF243BE003D1EBA /* AuthServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceFactory.swift; sourceTree = "<group>"; };
+		CC608F7E2CF243E1003D1EBA /* AppleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthService.swift; sourceTree = "<group>"; };
+		CC608F802CF243EF003D1EBA /* KakaoAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthService.swift; sourceTree = "<group>"; };
+		CC608F822CF24436003D1EBA /* EmailAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthService.swift; sourceTree = "<group>"; };
 		CC7FDD5E2CE8ADE300E7B0E5 /* AuthorizationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationError.swift; sourceTree = "<group>"; };
 		CC7FDD7A2CE8D85B00E7B0E5 /* DataSourceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataSourceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7FDD8A2CEC25E100E7B0E5 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
@@ -51,11 +56,6 @@
 		CCC4B0522CE705D700707CD2 /* AuthorizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationTests.swift; sourceTree = "<group>"; };
 		CCC4B07E2CE7074C00707CD2 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		CCC4B0802CE7077500707CD2 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
-		CCFD05422CEF40DF0023B97E /* DefaultAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DefaultAuthRepository.swift; path = ../../../../App/App/Sources/Presentation/CombineUI/Controls/DefaultAuthRepository.swift; sourceTree = "<group>"; };
-		CCFD05442CEF42230023B97E /* AuthServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthServiceFactory.swift; path = ../../../../../App/App/Sources/Presentation/CombineUI/Controls/AuthServiceFactory.swift; sourceTree = "<group>"; };
-		CCFD05462CEF42370023B97E /* KakaoAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KakaoAuthService.swift; path = ../../../../../App/App/Sources/Presentation/CombineUI/Controls/KakaoAuthService.swift; sourceTree = "<group>"; };
-		CCFD05482CEF425C0023B97E /* AppleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppleAuthService.swift; path = ../../../../../App/App/Sources/Presentation/CombineUI/Controls/AppleAuthService.swift; sourceTree = "<group>"; };
-		CCFD05612CF0233E0023B97E /* EmailAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmailAuthService.swift; path = ../../../../../App/App/Sources/Presentation/UIComponents/EmailAuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +79,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC608F782CF24390003D1EBA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				CC608F7B2CF243B5003D1EBA /* Services */,
+				CC608F792CF2439F003D1EBA /* DefaultAuthRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		CC608F7B2CF243B5003D1EBA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CC608F7C2CF243BE003D1EBA /* AuthServiceFactory.swift */,
+				CC608F7E2CF243E1003D1EBA /* AppleAuthService.swift */,
+				CC608F802CF243EF003D1EBA /* KakaoAuthService.swift */,
+				CC608F822CF24436003D1EBA /* EmailAuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		CC7FDD892CEC25DA00E7B0E5 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,27 +121,6 @@
 				CC7FDD9E2CED6A9700E7B0E5 /* LoginResult.swift */,
 			);
 			path = Response;
-			sourceTree = "<group>";
-		};
-		CC83862B2CE708420077ED8B /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				CCFD05442CEF42230023B97E /* AuthServiceFactory.swift */,
-				CCFD05462CEF42370023B97E /* KakaoAuthService.swift */,
-				CCFD05482CEF425C0023B97E /* AppleAuthService.swift */,
-				CCFD05612CF0233E0023B97E /* EmailAuthService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		CC83862E2CE708420077ED8B /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				CC83862B2CE708420077ED8B /* Services */,
-				CCFD05422CEF40DF0023B97E /* DefaultAuthRepository.swift */,
-			);
-			name = Repositories;
-			path = ../../../../Data/Data/Sources/Repositories;
 			sourceTree = "<group>";
 		};
 		CC8386332CE708820077ED8B /* Frameworks */ = {
@@ -201,10 +200,10 @@
 		CCC4B0822CE7078F00707CD2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CC608F782CF24390003D1EBA /* Repository */,
 				CC7FDD9D2CED6A9000E7B0E5 /* Response */,
 				CC7FDD9A2CECA7C100E7B0E5 /* Request */,
 				CC7FDD892CEC25DA00E7B0E5 /* API */,
-				CC83862E2CE708420077ED8B /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -327,16 +326,16 @@
 			files = (
 				CCC4B07F2CE7074C00707CD2 /* AuthRepository.swift in Sources */,
 				CC8386532CE710C20077ED8B /* Literal.swift in Sources */,
-				CCFD05432CEF40DF0023B97E /* DefaultAuthRepository.swift in Sources */,
 				CCC4B0812CE7077500707CD2 /* AuthUseCase.swift in Sources */,
-				CCFD05622CF0233E0023B97E /* EmailAuthService.swift in Sources */,
 				CC7FDD9F2CED6A9700E7B0E5 /* LoginResult.swift in Sources */,
-				CCFD05492CEF425C0023B97E /* AppleAuthService.swift in Sources */,
+				CC608F832CF24436003D1EBA /* EmailAuthService.swift in Sources */,
 				CC7FDD5F2CE8ADE300E7B0E5 /* AuthorizationError.swift in Sources */,
-				CCFD05452CEF42230023B97E /* AuthServiceFactory.swift in Sources */,
+				CC608F7D2CF243BE003D1EBA /* AuthServiceFactory.swift in Sources */,
+				CC608F7A2CF2439F003D1EBA /* DefaultAuthRepository.swift in Sources */,
 				CC7FDD8B2CEC25E100E7B0E5 /* UserAPI.swift in Sources */,
+				CC608F7F2CF243E1003D1EBA /* AppleAuthService.swift in Sources */,
 				CC7FDD9C2CECA90500E7B0E5 /* LoginBody.swift in Sources */,
-				CCFD05472CEF42370023B97E /* KakaoAuthService.swift in Sources */,
+				CC608F812CF243EF003D1EBA /* KakaoAuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

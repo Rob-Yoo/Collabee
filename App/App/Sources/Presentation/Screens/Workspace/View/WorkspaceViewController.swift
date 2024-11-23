@@ -11,93 +11,140 @@ import Combine
 import SnapKit
 import Then
 
-struct Section {
-    let title: String
-    let channel: [String]
-    var isOpened = true
+fileprivate final class DataSource: UITableViewDiffableDataSource<WorkspaceSection, WorkspaceItem> {
+    init(tableView: UITableView) {
+        super.init(tableView: tableView) { tableView, indexPath, item in
+            switch item {
+            case .channel(let channel):
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ChannelTableViewCell.identifier, for: indexPath) as? ChannelTableViewCell else {
+                    return UITableViewCell()
+                }
+
+                cell.configureCell(channel.name)
+                return cell
+            case .dm(let dm):
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ChannelTableViewCell.identifier, for: indexPath) as? ChannelTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.configureCell(dm)
+                return cell
+            }
+        }
+    }
 }
 
 final class WorkspaceViewController: BaseViewController {
+
+    private let vm = WorkspaceViewModel()
+    private let didSelectRowAtSubject = PassthroughSubject<IndexPath, Never>()
+    private let headerTappedSubject = PassthroughSubject<Int, Never>()
     
-    var sections = [
-        Section(title: "채널", channel: ["일반", "일반", "일반"]),
-        Section(title: "다이렉트 메시지", channel: ["유", "진", "영"])
-    ]
+    private lazy var dataSource = DataSource(tableView: tableView).then {
+        $0.defaultRowAnimation = .none
+    }
     
-    private lazy var tableView = CombineTableView().then {
-        $0.register(WorkSpaceSectionTableViewCell.self, forCellReuseIdentifier: WorkSpaceSectionTableViewCell.identifier)
+    private lazy var tableView = UITableView(frame: .zero, style: .grouped).then {
+        $0.register(WorkSpaceTableViewHeaderView.self, forHeaderFooterViewReuseIdentifier: WorkSpaceTableViewHeaderView.identifier)
         $0.register(ChannelTableViewCell.self, forCellReuseIdentifier: ChannelTableViewCell.identifier)
-        $0.dataSource = self
+        $0.delegate = self
         $0.rowHeight = 45
         $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
+        $0.sectionFooterHeight = 0
+        $0.backgroundColor = .clear
+    }
+    
+    private let inviteButton = UIButton().then {
+        let conf = UIImage.SymbolConfiguration(font: .bold22)
+        
+        $0.backgroundColor = .brandMainTheme
+        $0.setImage(.inviteIcon?.withConfiguration(conf), for: .normal)
+        $0.layer.cornerRadius = 27
+        $0.tintColor = .white
+        $0.layer.shadowOffset = CGSize(width: 2, height: 2)
+        $0.layer.shadowOpacity = 0.25
+        $0.layer.shadowRadius = 5
     }
     
     override func configureHierarchy() {
         self.view.addSubview(tableView)
+        self.view.addSubview(inviteButton)
     }
     
     override func configureLayout() {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
+        
+        inviteButton.snp.makeConstraints { make in
+            make.bottom.trailing.equalTo(view.safeAreaLayoutGuide).inset(15)
+            make.size.equalTo(54)
+        }
     }
     
     override func bindViewModel() {
-        tableView.didSelectRow
-            .sink { [weak self] indexPath in
+        let channelTapped = didSelectRowAtSubject.filter { $0.section == 0 }.map { $0.row }.eraseToAnyPublisher()
+        let dmTapped = didSelectRowAtSubject.filter { $0.section == 1 }.map { $0.row }.eraseToAnyPublisher()
+        
+        let input = WorkspaceViewModel.Input(
+            viewDidLoad: viewDidLoadPublisher,
+            inviteButtonTapped: inviteButton.tap,
+            channelTapped: channelTapped,
+            dmTapped: dmTapped,
+            headerTapped: headerTappedSubject.eraseToAnyPublisher()
+        )
+        let output = vm.transform(input: input)
+        
+        output.inviteButtonTapped
+            .withUnretained(self)
+            .sink { (owner, workspaceID) in
+                let inviteVC = InviteMemberViewController(
+                    workspaceID: workspaceID,
+                    navTitle: Constant.Literal.InviteMember.navTitle
+                )
                 
-                guard let self else { return }
-                
-                if indexPath.row == 0 {
-                    sections[indexPath.section].isOpened.toggle()
-                    tableView.reloadSections([indexPath.section], with: .automatic)
-                }
-                
+                owner.presentBottomSheet(inviteVC)
+            }.store(in: &cancellable)
+        
+        output.snapShotPublisher
+            .receive(on: DispatchQueue.main)
+            .withUnretained(self)
+            .sink { owner, snapShot in
+                owner.dataSource.apply(snapShot, animatingDifferences: true)
             }.store(in: &cancellable)
     }
 }
 
-extension WorkspaceViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+//MARK: - UITableViewDelegate
+extension WorkspaceViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        didSelectRowAtSubject.send(indexPath)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = sections[section]
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: WorkSpaceTableViewHeaderView.identifier) as? WorkSpaceTableViewHeaderView else {
+            return UIView()
+        }
         
-        if section.isOpened {
-            return section.channel.count + 1
-        } else {
-            return 1
+        headerView.onTap = { [weak self] in
+            self?.headerTappedSubject.send(section)
         }
+        
+        let sectionIdentifiers = dataSource.snapshot().sectionIdentifiers
+
+        if sectionIdentifiers.count > section {
+            let sectionModel = sectionIdentifiers[section]
+            
+            headerView.configureView(isOpened: sectionModel.isOpened, title: sectionModel.title)
+        }
+        
+        return headerView
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = sections[indexPath.section]
-
-        if indexPath.row == 0 {
-            guard let sectionCell = tableView.dequeueReusableCell(withIdentifier: WorkSpaceSectionTableViewCell.identifier, for: indexPath) as? WorkSpaceSectionTableViewCell else {
-                return UITableViewCell()
-            }
-            
-            sectionCell.configureCell(isOpened: section.isOpened, title: section.title)
-            sectionCell.selectionStyle = .none
-            return sectionCell
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ChannelTableViewCell.identifier, for: indexPath) as? ChannelTableViewCell else {
-                return UITableViewCell()
-            }
-            
-            cell.configureCell(section.channel[indexPath.row - 1])
-            return cell
-        }
-
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 55
     }
-
 }
-
 
 #if DEBUG
 import SwiftUI

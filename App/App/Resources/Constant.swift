@@ -29,9 +29,16 @@ enum Constant {
             static var descriptionTextFieldPlaceHolder: String { "워크스페이스 설명을 입력하세요(옵션)" }
         }
         
+        enum InviteMember {
+            static var navTitle: String { "팀원 초대" }
+            static var emailTextField: String { "이메일" }
+            static var emailTextFieldPlaceholder: String { "초대하려는 팀원의 이메일을 입력하세요." }
+        }
+        
         enum ButtonText {
             static var createWorkspace: String { "워크스페이스 생성" }
             static var complete: String  { "완료" }
+            static var invite: String { "초대 보내기" }
         }
     }
     

@@ -26,4 +26,5 @@ extension UIImage {
     static var downArrowIcon = UIImage(systemName: "chevron.down")
     static var threeDotsIcon = UIImage(systemName: "ellipsis")
     static var bulletListIcon = UIImage(systemName: "list.bullet")
+    static var inviteIcon = UIImage(systemName: "person.fill.badge.plus")
 }

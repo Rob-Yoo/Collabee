@@ -23,17 +23,21 @@ final class WorkspaceContainerViewController: BaseViewController {
     }
     
     private func configureChildVC() {
-        if let _ = repository.getWorkspaceID() {
-            self.addChild(workspaceVC)
-            workspaceVC.didMove(toParent: self)
-            self.view.addSubview(workspaceVC.view)
-            workspaceVC.view.frame = view.bounds
-        } else {
-            self.addChild(emptyWorkspaceVC)
-            emptyWorkspaceVC.didMove(toParent: self)
-            self.view.addSubview(emptyWorkspaceVC.view)
-            emptyWorkspaceVC.view.frame = view.bounds
-        }
+//        if let _ = repository.getWorkspaceID() {
+//            self.addChild(workspaceVC)
+//            workspaceVC.didMove(toParent: self)
+//            self.view.addSubview(workspaceVC.view)
+//            workspaceVC.view.frame = view.bounds
+//        } else {
+//            self.addChild(emptyWorkspaceVC)
+//            emptyWorkspaceVC.didMove(toParent: self)
+//            self.view.addSubview(emptyWorkspaceVC.view)
+//            emptyWorkspaceVC.view.frame = view.bounds
+//        }Y
+        self.addChild(workspaceVC)
+        workspaceVC.didMove(toParent: self)
+        self.view.addSubview(workspaceVC.view)
+        workspaceVC.view.frame = view.bounds
     }
     
 }

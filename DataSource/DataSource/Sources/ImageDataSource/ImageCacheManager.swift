@@ -11,15 +11,15 @@ import Combine
 
 import Common
 
-final class ImageCacheManager {
+public final class ImageCacheManager {
     
-    static let shared = ImageCacheManager()
+    public static let shared = ImageCacheManager()
     @Injected private var networkProvider: NetworkProvider
     private var cancellable = Set<AnyCancellable>()
     private let diskCache = DiskCache.shared
     private init() {}
     
-    func getImageData(_ imagePath: String) -> AnyPublisher<Data?, Never> {
+    public func getImageData(_ imagePath: String) -> AnyPublisher<Data?, Never> {
         return diskCache.load(imagePath: imagePath)
             .withUnretained(self)
             .flatMap { (owner, cachedData) -> AnyPublisher<Data?, Never> in

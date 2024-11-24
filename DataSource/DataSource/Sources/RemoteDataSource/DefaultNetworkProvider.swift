@@ -40,7 +40,6 @@ public final class DefaultNetworkProvider: NetworkProvider {
                             promise(.failure(.unknownError))
                             return
                         }
-        
                         promise(.failure(decodedError))
                     }
                 } receiveValue: { res in
@@ -53,5 +52,51 @@ public final class DefaultNetworkProvider: NetworkProvider {
                 }.store(in: &self.cancellable)
         }
         .eraseToAnyPublisher()
+    }
+    
+    public func requestImage(_ target: ImageAPI) -> AnyPublisher<Data, NetworkError> {
+        
+        let adaptedTarget = APIAdapter(api: target)
+        let provider = MoyaProvider<APIAdapter>(session: sessions[.withToken]!, plugins: [MoyaLoggerPlugin()])
+        
+        return Future<Data, NetworkError> { [weak self] promise in
+            
+            guard let self else { return }
+            
+            provider.requestPublisher(adaptedTarget)
+                .sink { completion in
+                    switch completion {
+                    case .finished: break
+                    case .failure(let error):
+                        guard let res = error.response else {
+                            promise(.failure(.unknownError))
+                            return
+                        }
+
+                        guard let decodedError = try? res.map(NetworkError.self) else {
+                            
+                            if res.statusCode == 304 {
+                                promise(.failure(.notModified))
+                            }
+                            
+                            return
+                        }
+                        
+                        promise(.failure(decodedError))
+                    }
+                } receiveValue: { res in
+                    guard let etag = res.response?.allHeaderFields["Etag"] as? String else {
+                        print("Header 필드에 ETag 값이 없음")
+                        return promise(.failure(.unknownError))
+                    }
+                    
+                    // Etag 저장
+                    UserDefaults.standard.setValue(etag, forKey: target.path)
+                    
+                    promise(.success(res.data))
+                }.store(in: &self.cancellable)
+            
+        }.eraseToAnyPublisher()
+        
     }
 }

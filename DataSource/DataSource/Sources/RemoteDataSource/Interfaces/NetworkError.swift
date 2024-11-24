@@ -13,6 +13,7 @@ public enum NetworkError: Decodable, LocalizedError {
     case unknownError
     case exceedRetryLimit
     case decodingFailure
+    case notModified
 
     private enum CodingKeys: String, CodingKey {
         case errorCode
@@ -37,6 +38,8 @@ public enum NetworkError: Decodable, LocalizedError {
             return "네트워크 재시도 횟수 초과"
         case .decodingFailure:
             return "Json 디코딩 실패"
+        case .notModified:
+            return "Not Modified"
         }
     }
     
@@ -44,7 +47,7 @@ public enum NetworkError: Decodable, LocalizedError {
         switch self {
         case .apiError(let code):
             return code
-        case .unknownError, .exceedRetryLimit, .decodingFailure:
+        default:
             return nil
         }
     }

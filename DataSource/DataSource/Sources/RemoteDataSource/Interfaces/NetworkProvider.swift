@@ -10,6 +10,7 @@ import Combine
 
 public protocol NetworkProvider {
     func request<T: API, R: Decodable>(_ target: T, _ responseType: R.Type, _ sessionType: SessionType) -> AnyPublisher<R, NetworkError>
+    func requestImage(_ target: ImageAPI) -> AnyPublisher<Data, NetworkError>
 }
 
 public enum SessionType {

@@ -12,5 +12,6 @@ public enum Header: String {
     case contentType = "Content-Type"
     case json = "application/json"
     case multipart = "multipart/form-data"
+    case ifNoneMatch = "If-None-Match"
 }
 

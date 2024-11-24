@@ -48,7 +48,8 @@ public final class DefaultChannelRepository: ChannelRepository {
                 .sink { completion in
                     switch completion {
                     case .finished: break
-                    case .failure(_):
+                    case .failure(let error):
+                        print(#function, error.errorDescription ?? "")
                         promise(.failure(.getListFailure))
                     }
                 } receiveValue: { res in
@@ -68,7 +69,8 @@ public final class DefaultChannelRepository: ChannelRepository {
                 .sink { completion in
                     switch completion {
                     case .finished: break
-                    case .failure(_):
+                    case .failure(let error):
+                        print(#function, error.errorDescription ?? "")
                         promise(.failure(.getListFailure))
                     }
                 } receiveValue: { res in

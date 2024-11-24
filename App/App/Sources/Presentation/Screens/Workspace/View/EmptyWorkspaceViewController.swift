@@ -8,6 +8,8 @@
 import UIKit
 import Combine
 
+import Common
+
 import SnapKit
 import Then
 
@@ -102,6 +104,10 @@ final class EmptyWorkspaceViewController: BaseViewController {
                 guard let self else { return }
                 
                 let sheetVC = CreateWorkspaceViewController(navTitle: Constant.Literal.CreateWorkSpace.navTitle)
+                
+                sheetVC.onDismiss = {
+                    NotificationCenter.default.post(name: .ChangeWindowScene, object: nil)
+                }
                 presentBottomSheet(sheetVC)
                 
             }.store(in: &cancellable)

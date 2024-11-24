@@ -16,6 +16,7 @@ final class CreateWorkspaceViewController: SheetPresentationViewController {
 
     private var coverImage = PassthroughSubject<UIImage?, Never>()
     private let vm = CreateWorkspaceViewModel()
+    var onDismiss: (() -> Void)?
     
     private var photoPicker: PHPickerViewController {
         var configuration = PHPickerConfiguration()
@@ -38,7 +39,6 @@ final class CreateWorkspaceViewController: SheetPresentationViewController {
     
     private lazy var coverContainerView = UIView().then {
         $0.isUserInteractionEnabled = true
-        $0.backgroundColor = .brandMainTheme
         $0.layer.cornerRadius = 15
         
         $0.addSubview(coverImageView)
@@ -169,7 +169,7 @@ final class CreateWorkspaceViewController: SheetPresentationViewController {
         
         output.selectedCoverImage
             .receive(on: DispatchQueue.main)
-            .map { Optional($0) }
+            .map { $0 }
             .assign(to: \.image, on: coverImageView)
             .store(in: &cancellable)
         
@@ -182,6 +182,16 @@ final class CreateWorkspaceViewController: SheetPresentationViewController {
                 completeButton.backgroundColor = isValid ? .brandMainTheme : .brandInactive
             }
             .store(in: &cancellable)
+        
+        output.isComplete
+            .receive(on: DispatchQueue.main)
+            .withUnretained(self)
+            .sink { (owner, flag) in
+                if flag {
+                    owner.onDismiss?()
+                    owner.dismiss(animated: true)
+                }
+            }.store(in: &cancellable)
     }
     
 }
@@ -196,7 +206,7 @@ extension CreateWorkspaceViewController: PHPickerViewControllerDelegate {
                 guard let self else { return }
                 
                 if let image = object as? UIImage {
-                    coverImage.send(image)
+                    coverImage.send(image.resizeImage(CGSize(width: 70, height: 70)))
                 }
             }
             

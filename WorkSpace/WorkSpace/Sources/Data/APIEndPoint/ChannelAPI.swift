@@ -22,9 +22,9 @@ extension ChannelAPI: API {
     var path: String {
         switch self {
         case .myChannels(let id):
-            return "/v1/workspace/\(id)/my-channels"
+            return "/v1/workspaces/\(id)/my-channels"
         case .channels(let id), .create(let id, _):
-            return "/v1/workspace/\(id)/channels"
+            return "/v1/workspaces/\(id)/channels"
         case .channelDetail(let wsID, let chID), .deleteChannel(let wsID, let chID), .editChannel(let wsID, let chID, _):
             return "/v1/workspaces/\(wsID)/channels/\(chID)"
         case .exitChannel(let wsID, let chID):

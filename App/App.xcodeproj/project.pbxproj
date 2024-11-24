@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC608F362CF08A95003D1EBA /* WorkspaceContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F352CF08A95003D1EBA /* WorkspaceContainerViewController.swift */; };
 		CC608F382CF09D6C003D1EBA /* CombineTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F372CF09D6C003D1EBA /* CombineTableView.swift */; };
 		CC608F3B2CF0A7FE003D1EBA /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F3A2CF0A7FE003D1EBA /* ChannelTableViewCell.swift */; };
 		CC608F3D2CF0A828003D1EBA /* WorkSpaceTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F3C2CF0A828003D1EBA /* WorkSpaceTableViewHeaderView.swift */; };
@@ -80,7 +79,6 @@
 
 /* Begin PBXFileReference section */
 		CC15F4BA2CD50BFA00EBAA7D /* ko-KR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ko-KR"; path = "ko-KR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		CC608F352CF08A95003D1EBA /* WorkspaceContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceContainerViewController.swift; sourceTree = "<group>"; };
 		CC608F372CF09D6C003D1EBA /* CombineTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTableView.swift; sourceTree = "<group>"; };
 		CC608F3A2CF0A7FE003D1EBA /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
 		CC608F3C2CF0A828003D1EBA /* WorkSpaceTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceTableViewHeaderView.swift; sourceTree = "<group>"; };
@@ -278,7 +276,6 @@
 				CC8386622CE715B50077ED8B /* EmptyWorkspaceViewController.swift */,
 				CCFD054A2CEF45450023B97E /* CreateWorkspaceViewController.swift */,
 				CCFD05632CF040D50023B97E /* WorkspaceViewController.swift */,
-				CC608F352CF08A95003D1EBA /* WorkspaceContainerViewController.swift */,
 				CC608F422CF0BD3C003D1EBA /* InviteMemberViewController.swift */,
 			);
 			path = View;
@@ -577,7 +574,6 @@
 				CC608F432CF0BD3C003D1EBA /* InviteMemberViewController.swift in Sources */,
 				CC8386592CE7139D0077ED8B /* OnboardingViewController.swift in Sources */,
 				CCFD05502CEF542D0023B97E /* CreateWorkspaceViewModel.swift in Sources */,
-				CC608F362CF08A95003D1EBA /* WorkspaceContainerViewController.swift in Sources */,
 				CCFD055B2CEF66A30023B97E /* WorkspaceAssembly.swift in Sources */,
 				CCFD05372CEF17020023B97E /* BaseCollectionViewCell.swift in Sources */,
 				CCFD05602CF015D00023B97E /* SheetPresentationViewController.swift in Sources */,

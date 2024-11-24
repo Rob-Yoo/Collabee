@@ -8,7 +8,7 @@
 public struct Workspace {
     public let id: String
     public let name: String
-    let createdAt: Date
+    let createdAt: String
     public let ownerID: String
     public let image: String
 }

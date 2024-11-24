@@ -51,7 +51,7 @@ final class WorkspaceViewController: BaseViewController {
         $0.showsVerticalScrollIndicator = false
         $0.separatorStyle = .none
         $0.sectionFooterHeight = 0
-        $0.backgroundColor = .clear
+        $0.backgroundColor = .white
     }
     
     private let inviteButton = UIButton().then {
@@ -87,7 +87,7 @@ final class WorkspaceViewController: BaseViewController {
         let dmTapped = didSelectRowAtSubject.filter { $0.section == 1 }.map { $0.row }.eraseToAnyPublisher()
         
         let input = WorkspaceViewModel.Input(
-            viewDidLoad: viewDidLoadPublisher,
+            viewWillAppear: viewWillAppearPublisher,
             inviteButtonTapped: inviteButton.tap,
             channelTapped: channelTapped,
             dmTapped: dmTapped,

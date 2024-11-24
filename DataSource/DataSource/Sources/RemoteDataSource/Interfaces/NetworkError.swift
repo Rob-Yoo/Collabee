@@ -12,6 +12,7 @@ public enum NetworkError: Decodable, LocalizedError {
     case apiError(String)
     case unknownError
     case exceedRetryLimit
+    case decodingFailure
 
     private enum CodingKeys: String, CodingKey {
         case errorCode
@@ -34,6 +35,8 @@ public enum NetworkError: Decodable, LocalizedError {
             return "An unknown error occurred."
         case .exceedRetryLimit:
             return "네트워크 재시도 횟수 초과"
+        case .decodingFailure:
+            return "Json 디코딩 실패"
         }
     }
     
@@ -41,7 +44,7 @@ public enum NetworkError: Decodable, LocalizedError {
         switch self {
         case .apiError(let code):
             return code
-        case .unknownError, .exceedRetryLimit:
+        case .unknownError, .exceedRetryLimit, .decodingFailure:
             return nil
         }
     }
@@ -52,6 +55,7 @@ public enum NetworkError: Decodable, LocalizedError {
         case "E02": return "토큰 인증에 실패하였습니다."
         case "E03": return "서버에 등록되지 않은 계정입니다."
         case "E05": return "액세스 토큰이 만료 되었습니다."
+        case "E06": return "리프레시 토큰이 만료 되었습니다."
         case "E11": return "잘못된 요청입니다. 요청 파라미터나 바디를 확인해주세요."
         case "E12": return "중복 데이터입니다."
         case "E13": return "서버에 존재하지 않는 데이터입니다."

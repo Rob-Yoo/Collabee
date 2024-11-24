@@ -27,7 +27,7 @@ final class WorkSpaceTableViewHeaderView: UITableViewHeaderFooterView {
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .clear
+        contentView.backgroundColor = .white
         configureHierarchy()
         configureLayout()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(headerTapped))

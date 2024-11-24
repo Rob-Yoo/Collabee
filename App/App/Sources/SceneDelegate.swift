@@ -8,6 +8,7 @@
 import UIKit
 
 import Authorization
+import WorkSpace
 import DataSource
 import Common
 
@@ -15,6 +16,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     @Injected private var authUseCase: AuthUseCase
+    @Injected private var workspaceRepository: WorkspaceRepository
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -24,10 +26,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         connectWindowScene()
     }
     
-    @objc
+    @objc @MainActor
     private func connectWindowScene() {
         let isAuthorized = UserDefaultsStorage.isAuthorized
-        let rootVC = isAuthorized ? UINavigationController(rootViewController: WorkspaceContainerViewController()) : UINavigationController(rootViewController: OnboardingViewController(useCase: authUseCase))
+        let workspaceVC = workspaceRepository.getWorkspaceID() == nil ? EmptyWorkspaceViewController() : WorkspaceViewController()
+        let rootVC = isAuthorized ? UINavigationController(rootViewController: workspaceVC) : UINavigationController(rootViewController: OnboardingViewController(useCase: authUseCase))
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
     }

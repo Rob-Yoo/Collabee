@@ -48,7 +48,7 @@ final class TokenInterceptor: RequestInterceptor, @unchecked Sendable {
             return
         }
         
-        print(decodedError.errorDescription ?? "")
+        print(#function, decodedError.errorDescription ?? "")
         
         // AccessToken Expired
         if let errorCode = decodedError.errorCode, errorCode == "E05" {

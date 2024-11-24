@@ -45,7 +45,7 @@ public final class DefaultNetworkProvider: NetworkProvider {
                     }
                 } receiveValue: { res in
                     guard let result = try? res.map(responseType.self) else {
-                        promise(.failure(.unknownError))
+                        promise(.failure(.decodingFailure))
                         return
                     }
                     

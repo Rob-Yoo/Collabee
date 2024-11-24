@@ -12,4 +12,5 @@ public protocol WorkspaceRepository {
     func fetchWorkSpace(_ workspaceID: String) -> AnyPublisher<Workspace, WorkspaceError>
     func edit(_ id: String, _ body: EditWorkspaceBody) -> AnyPublisher<Workspace, WorkspaceError>
     func getWorkspaceID() -> String?
+    func saveWorkspaceID(_ id: String)
 }

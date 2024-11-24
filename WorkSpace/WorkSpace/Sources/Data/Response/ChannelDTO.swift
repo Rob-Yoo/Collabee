@@ -13,7 +13,7 @@ struct ChannelDTO: Decodable {
     let description: String?
     let coverImage: String?
     let ownerID: String
-    let createdAt: Date
+    let createdAt: String
 
     enum CodingKeys: String, CodingKey {
         case channelID = "channel_id"

@@ -13,6 +13,6 @@ public struct ChannelDetail {
     public let description: String?
     let coverImage: String?
     public let ownerID: String
-    let createdAt: Date
+    let createdAt: String
     public let channelMembers: [Member]
 }

@@ -39,7 +39,7 @@ public final class KeyChain {
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
             kSecAttrAccount as String: account,
-            kSecReturnData as String: kCFBooleanTrue!,
+            kSecReturnData as String: true,
             kSecMatchLimit as String: kSecMatchLimitOne
         ]
         
@@ -47,7 +47,7 @@ public final class KeyChain {
         let status = SecItemCopyMatching(query as CFDictionary, &result)
         
         guard status == errSecSuccess else {
-            print("키체인 접근 실패: \(status)")
+            print("키체인 접근 실패: \(account)")
             return nil
         }
         

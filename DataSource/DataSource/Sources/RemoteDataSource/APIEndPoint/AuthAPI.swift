@@ -38,7 +38,8 @@ extension AuthAPI: API {
         switch self {
         case .tokenRefresh(let refreshToken):
             return [
-                Header.refresh.rawValue: refreshToken
+                Header.refresh.rawValue: refreshToken,
+                Header.authoriztion.rawValue: TokenStorage.read(.access) ?? ""
             ]
         }
     }

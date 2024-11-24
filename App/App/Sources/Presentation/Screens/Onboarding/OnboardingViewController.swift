@@ -77,7 +77,7 @@ final class OnboardingViewController: UIViewController {
     
     private func configureLayout() {
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(25)
             make.horizontalEdges.equalToSuperview().inset(30)
             make.centerX.equalToSuperview()
         }
@@ -87,7 +87,7 @@ final class OnboardingViewController: UIViewController {
         }
         
         appleLoginButton.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(60)
+            make.top.equalTo(imageView.snp.bottom).offset(30)
             make.horizontalEdges.equalToSuperview().inset(40)
             make.height.equalTo(50)
         }
@@ -100,7 +100,7 @@ final class OnboardingViewController: UIViewController {
         
         emailLoginButton.snp.makeConstraints { make in
             make.top.equalTo(kakaoLoginButton.snp.bottom).offset(10)
-            make.horizontalEdges.equalToSuperview().inset(55)
+            make.horizontalEdges.equalToSuperview().inset(40)
             make.height.equalTo(44)
         }
     }

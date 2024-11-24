@@ -13,7 +13,7 @@ import Common
 public enum TokenStorage {
 
     private static let keyChain = KeyChain.shared
-    private static let tokenProvider = DefaultNetworkProvider()
+    @Injected private static var tokenProvider: NetworkProvider
     private static var cancellables = Set<AnyCancellable>()
     
     public enum TokenType: String, CaseIterable {
@@ -23,6 +23,11 @@ public enum TokenStorage {
     
     public static func save(_ token: String, _ tokenType: TokenType
     ) {
+        if (tokenType == .access) {
+            print("액세스 토큰: \(token)")
+        } else {
+            print("리프레시 토큰: \(token)")
+        }
         keyChain.save(token.data(using: .utf8)!, account: tokenType.rawValue)
     }
     
@@ -46,13 +51,12 @@ public enum TokenStorage {
     }
     
     public static func refresh(completionHandler: ((NetworkError?) -> Void)? = nil) {
-        guard let refreshToken = Self.read(.refresh) else {
+        guard let refreshToken = read(.refresh) else {
             completionHandler?(NetworkError.unknownError)
             return
         }
-        
-        delete(.access)
-        tokenProvider.request(AuthAPI.tokenRefresh(refreshToken), TokenRefresh.self, .withToken)
+
+        tokenProvider.request(AuthAPI.tokenRefresh(refreshToken), TokenRefresh.self, .withoutToken)
             .sink { completion in
                 switch completion {
                 case .finished: break
@@ -62,9 +66,12 @@ public enum TokenStorage {
                         delete(.refresh)
                         NotificationCenter.default.post(name: .ChangeWindowScene, object: nil)
                     }
+                    
+                    print(#function, error.errorDescription ?? "")
                     completionHandler?(error)
                 }
             } receiveValue: { tokenRefresh in
+                print(#function, "재발급 토큰: " + tokenRefresh.accessToken)
                 save(tokenRefresh.accessToken, .access)
                 completionHandler?(nil)
             }.store(in: &cancellables)

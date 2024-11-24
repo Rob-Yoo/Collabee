@@ -50,11 +50,22 @@ final class CreateWorkspaceViewModel {
             }.store(in: &cancellable)
         
         input.completeButtonTapped
-            .sink { [weak self] _ in
-                guard let self else { return }
-                let body = requestBodyBuilder.build()
-                let _ = repository.create(body)
+            .withUnretained(self)
+            .flatMap { (owner, _) -> AnyPublisher<Workspace, WorkspaceError> in
+                let body = owner.requestBodyBuilder.build()
+                return owner.repository.create(body)
             }
+            .withUnretained(self)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished: break
+                case .failure(let error):
+                    print(error.errorDescription ?? "")
+                }
+            }, receiveValue: { owner, res in
+                owner.repository.saveWorkspaceID(res.id)
+                isComplete.send(true)
+            })
             .store(in: &cancellable)
         
         Publishers.CombineLatest(input.coverImage, input.nameText)

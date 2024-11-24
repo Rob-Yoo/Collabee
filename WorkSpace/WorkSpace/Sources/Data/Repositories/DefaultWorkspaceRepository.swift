@@ -28,7 +28,8 @@ public final class DefaultWorkspaceRepository: WorkspaceRepository {
                 .sink { completion in
                     switch completion {
                     case .finished: break
-                    case .failure(_):
+                    case .failure(let error):
+                        print(#function, error.errorDescription ?? "")
                         promise(.failure(.creationFailure))
                     }
                 } receiveValue: { res in
@@ -83,5 +84,9 @@ public final class DefaultWorkspaceRepository: WorkspaceRepository {
     
     public func getWorkspaceID() -> String? {
         return UserDefaultsStorage.workspaceID
+    }
+    
+    public func saveWorkspaceID(_ id: String) {
+        UserDefaultsStorage.workspaceID = id
     }
 }

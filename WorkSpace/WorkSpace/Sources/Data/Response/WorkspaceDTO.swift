@@ -10,10 +10,10 @@ import Foundation
 struct WorkspaceDTO: Decodable {
     let workspaceID: String
     let name: String
-    let description: String
+    let description: String?
     let coverImage: String
     let ownerID: String
-    let createdAt: Date
+    let createdAt: String
 
     enum CodingKeys: String, CodingKey {
         case workspaceID = "workspace_id"

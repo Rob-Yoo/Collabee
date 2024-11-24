@@ -37,49 +37,42 @@ final class WorkspaceViewModel {
             owner.createSnapshot(subjects.1, subjects.2)
         }.eraseToAnyPublisher()
 
-        input.viewDidLoad
+        input.viewWillAppear
+            .withUnretained(self)
+            .flatMap { (owner, _) ->AnyPublisher<Workspace, WorkspaceError> in
+                owner.workspaceRepository.fetchWorkSpace(owner.workspaceID)
+            }
+            .sink { completion in
+                switch completion {
+                case .finished: break
+                case .failure(let error):
+                    print(#function, "🚨 \(error.errorDescription ?? "")")
+                }
+            } receiveValue: { workspace in
+                workspaceSubject.send(workspace)
+            }.store(in: &cancellable)
+        
+        input.viewWillAppear
+            .withUnretained(self)
+            .flatMap { (owner, _) -> AnyPublisher<[Channel], ChannelError> in
+                owner.channelRepository.fetchMyChannels(owner.workspaceID)
+            }
+            .sink { completion in
+                switch completion {
+                case .finished: break
+                case .failure(let error):
+                    print(#function, "🚨 \(error.errorDescription ?? "")")
+                }
+            } receiveValue: { [weak self] channelList in
+                self?.channelListSubject.send(channelList)
+            }.store(in: &cancellable)
+        
+        input.viewWillAppear
             .withUnretained(self)
             .sink { owner, _ in
-                let channels = [
-                    Channel(id: "adsf", name: "일반", description: "ㅁㅇㄴㄹ", createdAt: .now, ownerID: "asdf"),
-                    Channel(id: "adsf", name: "테스트1", description: "ㅁㅇㄴㄹ", createdAt: .now, ownerID: "asdf"),
-                    Channel(id: "adsf", name: "테스트2", description: "ㅁㅇㄴㄹ", createdAt: .now, ownerID: "asdf"),
-                    Channel(id: "adsf", name: "테스트3", description: "ㅁㅇㄴㄹ", createdAt: .now, ownerID: "asdf"),
-                    Channel(id: "adsf", name: "테스트4", description: "ㅁㅇㄴㄹ", createdAt: .now, ownerID: "asdf"),
-                ]
                 let dms = ["유진영", "소정섭", "김윤우", "김건섭", "최대성"]
-                owner.channelListSubject.send(channels)
                 owner.dmListSubject.send(dms)
             }.store(in: &cancellable)
-//        input.viewDidLoad
-//            .withUnretained(self)
-//            .flatMap { (owner, _) ->AnyPublisher<Workspace, WorkspaceError> in
-//                owner.workspaceRepository.fetchWorkSpace(owner.workspaceID)
-//            }
-//            .sink { completion in
-//                switch completion {
-//                case .finished: break
-//                case .failure(let error):
-//                    print("🚨 \(error.errorDescription ?? "")")
-//                }
-//            } receiveValue: { workspace in
-//                workspaceSubject.send(workspace)
-//            }.store(in: &cancellable)
-        
-//        input.viewDidLoad
-//            .withUnretained(self)
-//            .flatMap { (owner, _) -> AnyPublisher<[Channel], ChannelError> in
-//                owner.channelRepository.fetchMyChannels(owner.workspaceID)
-//            }
-//            .sink { completion in
-//                switch completion {
-//                case .finished: break
-//                case .failure(let error):
-//                    print("🚨 \(error.errorDescription ?? "")")
-//                }
-//            } receiveValue: { [weak self] channelList in
-//                self?.channelListSubject.send(channelList)
-//            }.store(in: &cancellable)
         
         input.inviteButtonTapped
             .withUnretained(self)
@@ -135,7 +128,7 @@ final class WorkspaceViewModel {
 extension WorkspaceViewModel {
     
     struct Input {
-        let viewDidLoad: AnyPublisher<Void, Never>
+        let viewWillAppear: AnyPublisher<Void, Never>
         let inviteButtonTapped: AnyPublisher<Void, Never>
         let channelTapped: AnyPublisher<Int, Never>
         let dmTapped: AnyPublisher<Int, Never>

@@ -129,7 +129,7 @@ extension WorkspaceViewController: UITableViewDelegate {
         headerView.onTap = { [weak self] in
             self?.headerTappedSubject.send(section)
         }
-        
+
         let sectionIdentifiers = dataSource.snapshot().sectionIdentifiers
 
         if sectionIdentifiers.count > section {

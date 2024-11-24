@@ -45,8 +45,11 @@ public enum TokenStorage {
         keyChain.delete(account: tokenType.rawValue)
     }
     
-    public static func refresh(completionHandler: (() -> Void)? = nil) {
-        guard let refreshToken = Self.read(.refresh) else { return }
+    public static func refresh(completionHandler: ((NetworkError?) -> Void)? = nil) {
+        guard let refreshToken = Self.read(.refresh) else {
+            completionHandler?(NetworkError.unknownError)
+            return
+        }
         
         delete(.access)
         tokenProvider.request(AuthAPI.tokenRefresh(refreshToken), TokenRefresh.self, .withToken)
@@ -59,10 +62,11 @@ public enum TokenStorage {
                         delete(.refresh)
                         NotificationCenter.default.post(name: .ChangeWindowScene, object: nil)
                     }
+                    completionHandler?(error)
                 }
             } receiveValue: { tokenRefresh in
                 save(tokenRefresh.accessToken, .access)
-                completionHandler?()
+                completionHandler?(nil)
             }.store(in: &cancellables)
     }
 }

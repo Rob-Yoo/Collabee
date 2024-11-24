@@ -11,6 +11,7 @@ import Combine
 public enum NetworkError: Decodable, LocalizedError {
     case apiError(String)
     case unknownError
+    case exceedRetryLimit
 
     private enum CodingKeys: String, CodingKey {
         case errorCode
@@ -31,6 +32,8 @@ public enum NetworkError: Decodable, LocalizedError {
             return Self.descriptionForErrorCode(code)
         case .unknownError:
             return "An unknown error occurred."
+        case .exceedRetryLimit:
+            return "네트워크 재시도 횟수 초과"
         }
     }
     
@@ -38,7 +41,7 @@ public enum NetworkError: Decodable, LocalizedError {
         switch self {
         case .apiError(let code):
             return code
-        case .unknownError:
+        case .unknownError, .exceedRetryLimit:
             return nil
         }
     }

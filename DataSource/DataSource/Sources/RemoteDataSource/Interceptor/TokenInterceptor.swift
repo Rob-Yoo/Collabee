@@ -8,7 +8,13 @@
 import Foundation
 import Alamofire
 
-struct TokenInterceptor: RequestInterceptor {
+final class TokenInterceptor: RequestInterceptor, @unchecked Sendable {
+    
+    private var requestsToRetry: [(RetryResult) -> Void] = []
+    private var isRefreshing = false
+    let a = NSLock()
+    private let retrySemaphore = DispatchSemaphore(value: 1)
+    private let retryLimit = 3
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, any Error>) -> Void) {
         var urlRequest = urlRequest
@@ -22,6 +28,14 @@ struct TokenInterceptor: RequestInterceptor {
     }
 
     func retry(_ request: Request, for session: Session, dueTo error: any Error, completion: @escaping (RetryResult) -> Void) {
+        
+        retrySemaphore.wait(); defer { retrySemaphore.signal() }
+        
+        guard request.retryCount < retryLimit else {
+            completion(.doNotRetryWithError(NetworkError.exceedRetryLimit))
+            return
+        }
+        
         guard let responseData = (request as? DataRequest)?.data else {
             print("DataRequest로 변환되지 않음")
             completion(.doNotRetryWithError(NetworkError.unknownError))
@@ -36,10 +50,33 @@ struct TokenInterceptor: RequestInterceptor {
         
         print(decodedError.errorDescription ?? "")
         
+        // AccessToken Expired
         if let errorCode = decodedError.errorCode, errorCode == "E05" {
-            TokenStorage.refresh {
-                completion(.retry)
+            
+            requestsToRetry.append(completion)
+            
+            if !isRefreshing {
+                
+                isRefreshing = true
+                
+                TokenStorage.refresh { [weak self] error in
+                    
+                    if let error {
+                        self?.requestsToRetry.forEach {
+                            $0(.doNotRetryWithError(error))
+                        }
+                    } else {
+                        self?.requestsToRetry.forEach {
+                            $0(.retry)
+                        }
+                    }
+                    
+                    self?.requestsToRetry.removeAll()
+                    self?.isRefreshing = false
+                }
+                
             }
+            
         } else {
             completion(.doNotRetry)
         }

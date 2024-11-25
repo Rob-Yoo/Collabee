@@ -206,7 +206,7 @@ extension CreateWorkspaceViewController: PHPickerViewControllerDelegate {
                 guard let self else { return }
                 
                 if let image = object as? UIImage {
-                    coverImage.send(image.resizeImage(CGSize(width: 70, height: 70)))
+                    coverImage.send(image.resizeImage(CGSize(width: 200, height: 200)))
                 }
             }
             

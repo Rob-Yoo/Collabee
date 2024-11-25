@@ -16,11 +16,9 @@ import Then
 final class EmptyWorkspaceViewController: BaseViewController {
     
     private var profileImageView = RoundedImageView().then {
-        let placeHolder = UIImage.profilePlaceholder
         let size = CGSize(width: 40, height: 40)
         
         $0.isUserInteractionEnabled = true
-        $0.image = placeHolder.resizeImage(size)
         $0.frame = CGRect(origin: .zero, size: size)
     }
     

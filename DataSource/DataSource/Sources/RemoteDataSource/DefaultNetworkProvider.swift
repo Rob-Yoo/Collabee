@@ -57,7 +57,12 @@ public final class DefaultNetworkProvider: NetworkProvider {
     public func requestImage(_ target: ImageAPI) -> AnyPublisher<Data, NetworkError> {
         
         let adaptedTarget = APIAdapter(api: target)
-        let provider = MoyaProvider<APIAdapter>(session: sessions[.withToken]!, plugins: [MoyaLoggerPlugin()])
+        let requestClosure = { (endPoint: Endpoint, done: MoyaProvider<APIAdapter>.RequestResultClosure) in
+            var request: URLRequest? = try? endPoint.urlRequest()
+            request?.cachePolicy = .reloadIgnoringLocalCacheData
+            done(.success(request!))
+        }
+        let provider = MoyaProvider<APIAdapter>(requestClosure: requestClosure, session: sessions[.withToken]!, plugins: [MoyaLoggerPlugin()])
         
         return Future<Data, NetworkError> { [weak self] promise in
             
@@ -89,10 +94,11 @@ public final class DefaultNetworkProvider: NetworkProvider {
                         print("Header 필드에 ETag 값이 없음")
                         return promise(.failure(.unknownError))
                     }
-                    
+
                     // Etag 저장
-                    UserDefaults.standard.setValue(etag, forKey: target.path)
-                    
+                    let imagePath = target.path.replacingOccurrences(of: "/v1", with: "")
+                    UserDefaults.standard.setValue(etag, forKey: imagePath)
+
                     promise(.success(res.data))
                 }.store(in: &self.cancellable)
             

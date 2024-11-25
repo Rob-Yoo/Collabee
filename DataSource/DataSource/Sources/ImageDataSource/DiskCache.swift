@@ -46,6 +46,7 @@ final class DiskCache {
             do {
                 try data.write(to: fileURL, options: .atomic)
                 try FileManager.default.setAttributes([.modificationDate: Date()], ofItemAtPath: fileURL.path)
+                print("DiskCache 저장 성공 - \(fileName)")
             } catch {
                 print("DiskCache: 이미지 저장 실패 - \(error)")
             }
@@ -67,6 +68,7 @@ final class DiskCache {
             fileQueue.async {
                 if FileManager.default.fileExists(atPath: fileURL.path) {
                     let data = try? Data(contentsOf: fileURL)
+                    print("디스크 캐시 히트")
                     promise(.success(data))
                 }
                 promise(.success(nil))
@@ -91,6 +93,7 @@ final class DiskCache {
                         }
                     }
                 }
+                print(#function)
             } catch {
                 print("DiskCache: 파일 정리 실패 - \(error)")
             }

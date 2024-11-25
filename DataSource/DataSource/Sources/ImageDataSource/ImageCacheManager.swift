@@ -25,10 +25,10 @@ public final class ImageCacheManager {
             .flatMap { (owner, cachedData) -> AnyPublisher<Data?, Never> in
                 
                 if let cachedData, let etag = UserDefaults.standard.string(forKey: imagePath) {
-                    
                     return owner.synchronizeWithServer(imagePath: imagePath, etag: etag)
                         .map { Optional($0) }
                         .catch { error -> Just<Data?> in
+                            print(error.errorDescription ?? "")
                             return Just(cachedData)
                         }.eraseToAnyPublisher()
                     
@@ -47,8 +47,8 @@ public final class ImageCacheManager {
 }
 
 extension ImageCacheManager {
-    private func synchronizeWithServer(imagePath: String, etag: String? = nil) -> AnyPublisher<Data, NetworkError> {
-        
+    private func synchronizeWithServer(imagePath: String, etag: String = "") -> AnyPublisher<Data, NetworkError> {
+
         return Future<Data, NetworkError> { [unowned self] promise in
             
             networkProvider.requestImage(.load(imagePath, etag))

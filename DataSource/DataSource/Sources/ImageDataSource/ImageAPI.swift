@@ -6,14 +6,14 @@
 //
 
 public enum ImageAPI {
-    case load(_ imagePath: String, _ etag: String?)
+    case load(_ imagePath: String, _ etag: String)
 }
 
 extension ImageAPI: API  {
     public var path: String {
         switch self {
         case .load(let imagePath, _):
-            return imagePath
+            return "/v1" + imagePath
         }
     }
     
@@ -31,10 +31,10 @@ extension ImageAPI: API  {
         }
     }
     
-    public var headers: [String : String]? {
+    public var headers: [String: String]? {
         switch self {
         case .load(_, let etag):
-            if let etag {
+            if !etag.isEmpty {
                 return [
                     Header.ifNoneMatch.rawValue: etag
                 ]

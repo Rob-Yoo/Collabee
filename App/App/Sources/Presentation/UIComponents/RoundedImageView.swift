@@ -12,7 +12,7 @@ final class RoundedImageView: UIImageView {
     init() {
         super.init(frame: .zero)
         
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = 10
         self.clipsToBounds = true
     }
     

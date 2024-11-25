@@ -12,7 +12,6 @@ final class TokenInterceptor: RequestInterceptor, @unchecked Sendable {
     
     private var requestsToRetry: [(RetryResult) -> Void] = []
     private var isRefreshing = false
-    let a = NSLock()
     private let retrySemaphore = DispatchSemaphore(value: 1)
     private let retryLimit = 3
     

@@ -6,15 +6,25 @@
 //
 
 import UIKit
+import ImageIO
 
 extension UIImage {
     
-    func resizeImage(_ size: CGSize) -> UIImage {
-        let render = UIGraphicsImageRenderer(size: size)
-        let resizedImage = render.image { _ in
-            self.draw(in: CGRect(origin: .zero, size: size))
-        }
+    func resizeImage(_ size: CGSize) -> UIImage? {
+        let options: [CFString: Any] = [
+            kCGImageSourceShouldCache: false,
+            kCGImageSourceCreateThumbnailFromImageAlways: true,
+            kCGImageSourceCreateThumbnailFromImageIfAbsent: true,
+            kCGImageSourceThumbnailMaxPixelSize: max(size.width, size.height),
+            kCGImageSourceCreateThumbnailWithTransform: true
+        ]
         
+        guard let data = self.pngData(),
+              let imageSource = CGImageSourceCreateWithData(data as CFData, nil),
+              let cgImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary)
+        else { return nil }
+        
+        let resizedImage = UIImage(cgImage: cgImage)
         return resizedImage
     }
     

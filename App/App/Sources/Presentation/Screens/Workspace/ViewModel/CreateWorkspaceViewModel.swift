@@ -32,7 +32,7 @@ final class CreateWorkspaceViewModel {
                 
                 if let image {
                     selectedCoverImage.send(image)
-                    requestBodyBuilder.image(image.jpegData(compressionQuality: 0.5)!)
+                    requestBodyBuilder.image(image.jpegData(compressionQuality: 1.0)!)
                 }
                 
             }.store(in: &cancellable)

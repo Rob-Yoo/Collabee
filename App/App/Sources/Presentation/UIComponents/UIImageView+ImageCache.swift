@@ -23,14 +23,15 @@ extension UIImageView {
         }
     }
 
-    func setImage(imageURL: String, placeHolder: UIImage? = nil, size: CGSize? = nil) {
+    func setImage(imageURL: String?, placeHolder: UIImage? = nil, size: CGSize? = nil) {
 
         imageCancellable?.cancel()
 
         DispatchQueue.main.async {
             self.image = placeHolder
         }
-
+        
+        guard let imageURL else { return }
         imageCancellable = ImageCacheManager.shared.getImageData(imageURL)
             .receive(on: DispatchQueue.main)
             .withUnretained(self)

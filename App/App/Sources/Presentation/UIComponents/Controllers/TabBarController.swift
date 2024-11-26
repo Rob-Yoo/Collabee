@@ -54,7 +54,7 @@ extension TabBarController {
             case .home:
                 return WorkspaceViewController()
             case .dm:
-                return ViewController()
+                return DMListViewController()
             case .setting:
                 return ViewController()
             }

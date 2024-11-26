@@ -10,6 +10,11 @@
 		CC2DA57C2CF3598D00EA238F /* UIImageView+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2DA57B2CF3598D00EA238F /* UIImageView+ImageCache.swift */; };
 		CC2DA57E2CF54AEA00EA238F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2DA57D2CF54AEA00EA238F /* TabBarController.swift */; };
 		CC2DA5812CF54B3A00EA238F /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2DA5802CF54B3A00EA238F /* NavigationController.swift */; };
+		CC2DA5842CF58AD900EA238F /* DMListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2DA5832CF58AD900EA238F /* DMListViewController.swift */; };
+		CC2DA5862CF598B100EA238F /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2DA5852CF598B100EA238F /* MemberCollectionViewCell.swift */; };
+		CC2DA5882CF59E7000EA238F /* DMRoomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2DA5872CF59E7000EA238F /* DMRoomCollectionViewCell.swift */; };
+		CC2DA58A2CF5A5EB00EA238F /* DMRoomPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2DA5892CF5A5EB00EA238F /* DMRoomPresentationModel.swift */; };
+		CC2DA58C2CF5A7B000EA238F /* UnreadCountTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2DA58B2CF5A7B000EA238F /* UnreadCountTagView.swift */; };
 		CC608F382CF09D6C003D1EBA /* CombineTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F372CF09D6C003D1EBA /* CombineTableView.swift */; };
 		CC608F3B2CF0A7FE003D1EBA /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F3A2CF0A7FE003D1EBA /* ChannelTableViewCell.swift */; };
 		CC608F3D2CF0A828003D1EBA /* WorkSpaceTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F3C2CF0A828003D1EBA /* WorkSpaceTableViewHeaderView.swift */; };
@@ -85,6 +90,11 @@
 		CC2DA57B2CF3598D00EA238F /* UIImageView+ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageCache.swift"; sourceTree = "<group>"; };
 		CC2DA57D2CF54AEA00EA238F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CC2DA5802CF54B3A00EA238F /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		CC2DA5832CF58AD900EA238F /* DMListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMListViewController.swift; sourceTree = "<group>"; };
+		CC2DA5852CF598B100EA238F /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC2DA5872CF59E7000EA238F /* DMRoomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMRoomCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC2DA5892CF5A5EB00EA238F /* DMRoomPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMRoomPresentationModel.swift; sourceTree = "<group>"; };
+		CC2DA58B2CF5A7B000EA238F /* UnreadCountTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnreadCountTagView.swift; sourceTree = "<group>"; };
 		CC608F372CF09D6C003D1EBA /* CombineTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTableView.swift; sourceTree = "<group>"; };
 		CC608F3A2CF0A7FE003D1EBA /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
 		CC608F3C2CF0A828003D1EBA /* WorkSpaceTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceTableViewHeaderView.swift; sourceTree = "<group>"; };
@@ -183,6 +193,16 @@
 				CC2DA5802CF54B3A00EA238F /* NavigationController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CC2DA5822CF58AD000EA238F /* DM */ = {
+			isa = PBXGroup;
+			children = (
+				CC2DA5832CF58AD900EA238F /* DMListViewController.swift */,
+				CC2DA5872CF59E7000EA238F /* DMRoomCollectionViewCell.swift */,
+				CC2DA5892CF5A5EB00EA238F /* DMRoomPresentationModel.swift */,
+			);
+			path = DM;
 			sourceTree = "<group>";
 		};
 		CC608F392CF0A7CD003D1EBA /* UITableViewCells */ = {
@@ -331,6 +351,7 @@
 		CCFD052D2CEF0E380023B97E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CC2DA5822CF58AD000EA238F /* DM */,
 				CC8386612CE715A20077ED8B /* Workspace */,
 				CC83865E2CE715850077ED8B /* Preview */,
 				CC8386572CE7137D0077ED8B /* Onboarding */,
@@ -346,6 +367,8 @@
 				CCFD052F2CEF0F130023B97E /* RoundedImageView.swift */,
 				CCFD053A2CEF17A90023B97E /* RoundedTextButton.swift */,
 				CCFD055F2CF015D00023B97E /* SheetPresentationViewController.swift */,
+				CC2DA5852CF598B100EA238F /* MemberCollectionViewCell.swift */,
+				CC2DA58B2CF5A7B000EA238F /* UnreadCountTagView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -574,10 +597,12 @@
 				CCFD05302CEF0F130023B97E /* RoundedImageView.swift in Sources */,
 				CC8386552CE712370077ED8B /* AuthorizationAssembly.swift in Sources */,
 				CCFE26982CD4C3C000E8D655 /* AppDelegate.swift in Sources */,
+				CC2DA5862CF598B100EA238F /* MemberCollectionViewCell.swift in Sources */,
 				CCFD05332CEF16B60023B97E /* BaseView.swift in Sources */,
 				CCFD05352CEF16EB0023B97E /* BaseTableViewCell.swift in Sources */,
 				CCFD052C2CEF05680023B97E /* UITextField+Combine.swift in Sources */,
 				CCFD05392CEF17170023B97E /* BaseButton.swift in Sources */,
+				CC2DA58A2CF5A5EB00EA238F /* DMRoomPresentationModel.swift in Sources */,
 				CCFE269A2CD4C3C000E8D655 /* SceneDelegate.swift in Sources */,
 				CCFD054B2CEF45450023B97E /* CreateWorkspaceViewController.swift in Sources */,
 				CC608F732CF1A1DF003D1EBA /* WorkspaceItem.swift in Sources */,
@@ -587,6 +612,7 @@
 				CCFD05412CEF29E60023B97E /* UIGestureRecognizer+Combine.swift in Sources */,
 				CCFD054D2CEF48220023B97E /* UIImage+Extension.swift in Sources */,
 				CC8386602CE715900077ED8B /* UIViewController+Extension.swift in Sources */,
+				CC2DA5842CF58AD900EA238F /* DMListViewController.swift in Sources */,
 				CC608F382CF09D6C003D1EBA /* CombineTableView.swift in Sources */,
 				CC608F432CF0BD3C003D1EBA /* InviteMemberViewController.swift in Sources */,
 				CC2DA5812CF54B3A00EA238F /* NavigationController.swift in Sources */,
@@ -597,6 +623,8 @@
 				CCFD05602CF015D00023B97E /* SheetPresentationViewController.swift in Sources */,
 				CCFD053D2CEF1C540023B97E /* BaseViewController.swift in Sources */,
 				CC2DA57E2CF54AEA00EA238F /* TabBarController.swift in Sources */,
+				CC2DA58C2CF5A7B000EA238F /* UnreadCountTagView.swift in Sources */,
+				CC2DA5882CF59E7000EA238F /* DMRoomCollectionViewCell.swift in Sources */,
 				CCFD05202CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift in Sources */,
 				CCFD05282CEF02CB0023B97E /* UIButton+Combine.swift in Sources */,
 				CCFD05232CEEFDA50023B97E /* CombineControlEvent.swift in Sources */,

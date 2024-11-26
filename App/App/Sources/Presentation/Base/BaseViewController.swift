@@ -28,7 +28,7 @@ class BaseViewController: UIViewController {
         appearence.configureWithOpaqueBackground()
         self.navigationController?.navigationBar.standardAppearance = appearence
         self.navigationController?.navigationBar.scrollEdgeAppearance = appearence
-        view.backgroundColor = .white
+        view.backgroundColor = .bgPrimary
         configureHierarchy()
         configureLayout()
         bindViewModel()

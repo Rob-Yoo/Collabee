@@ -35,6 +35,10 @@ enum Constant {
             static var emailTextFieldPlaceholder: String { "초대하려는 팀원의 이메일을 입력하세요." }
         }
         
+        enum DMList {
+            static var navTitle: String { "Direct Message" }
+        }
+        
         enum ButtonText {
             static var createWorkspace: String { "워크스페이스 생성" }
             static var complete: String  { "완료" }

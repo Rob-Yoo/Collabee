@@ -10,7 +10,17 @@ import ImageIO
 
 extension UIImage {
     
-    func resizeImage(_ size: CGSize) -> UIImage? {
+    func resize(_ size: CGSize) -> UIImage {
+        let render = UIGraphicsImageRenderer(size: size)
+        let resizedImage = render.image { _ in
+            self.draw(in: CGRect(origin: .zero, size: size))
+        }
+        
+        print(resizedImage.jpegData(compressionQuality: 1)!)
+        return resizedImage
+    }
+    
+    static func downsample(_ data: Data, _ size: CGSize) -> UIImage? {
         let options: [CFString: Any] = [
             kCGImageSourceShouldCache: false,
             kCGImageSourceCreateThumbnailFromImageAlways: true,
@@ -19,12 +29,12 @@ extension UIImage {
             kCGImageSourceCreateThumbnailWithTransform: true
         ]
         
-        guard let data = self.pngData(),
-              let imageSource = CGImageSourceCreateWithData(data as CFData, nil),
+        guard let imageSource = CGImageSourceCreateWithData(data as CFData, nil),
               let cgImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary)
         else { return nil }
         
         let resizedImage = UIImage(cgImage: cgImage)
+        print(resizedImage.jpegData(compressionQuality: 1)!)
         return resizedImage
     }
     
@@ -37,4 +47,10 @@ extension UIImage {
     static var threeDotsIcon = UIImage(systemName: "ellipsis")
     static var bulletListIcon = UIImage(systemName: "list.bullet")
     static var inviteIcon = UIImage(systemName: "person.fill.badge.plus")
+    static var homeFillIcon = UIImage(systemName: "house.fill")
+    static var homeIcon = UIImage(systemName: "house")
+    static var dmFillIcon = UIImage(systemName: "message.fill")
+    static var dmIcon = UIImage(systemName: "message")
+    static var settingFillIcon = UIImage(systemName: "gearshape.fill")
+    static var settingIcon = UIImage(systemName: "gearshape")
 }

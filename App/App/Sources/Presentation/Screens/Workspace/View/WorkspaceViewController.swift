@@ -43,6 +43,23 @@ final class WorkspaceViewController: BaseViewController {
         $0.defaultRowAnimation = .none
     }
     
+    private var coverImageView = RoundedImageView().then {
+        let size = CGSize(width: 35, height: 35)
+        
+        $0.isUserInteractionEnabled = true
+        $0.contentMode = .scaleAspectFill
+        $0.frame = CGRect(origin: .zero, size: size)
+    }
+    
+    private var profileImageView = RoundedImageView().then {
+        let placeHolder = UIImage.profilePlaceholder
+        let size = CGSize(width: 35, height: 35)
+        
+        $0.isUserInteractionEnabled = true
+        $0.image = placeHolder.resize(size)
+        $0.frame = CGRect(origin: .zero, size: size)
+    }
+    
     private lazy var tableView = UITableView(frame: .zero, style: .grouped).then {
         $0.register(WorkSpaceTableViewHeaderView.self, forHeaderFooterViewReuseIdentifier: WorkSpaceTableViewHeaderView.identifier)
         $0.register(ChannelTableViewCell.self, forCellReuseIdentifier: ChannelTableViewCell.identifier)
@@ -64,6 +81,11 @@ final class WorkspaceViewController: BaseViewController {
         $0.layer.shadowOffset = CGSize(width: 2, height: 2)
         $0.layer.shadowOpacity = 0.25
         $0.layer.shadowRadius = 5
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureNavigationBarButtonItems()
     }
     
     override func configureHierarchy() {
@@ -106,12 +128,29 @@ final class WorkspaceViewController: BaseViewController {
                 owner.presentBottomSheet(inviteVC)
             }.store(in: &cancellable)
         
+        output.workspace
+            .receive(on: DispatchQueue.main)
+            .withUnretained(self)
+            .sink { owner, workspace in
+                
+                owner.navigationItem.title = workspace.name
+                owner.coverImageView.setImage(imageURL: workspace.image, placeHolder: .sesacBot, size: CGSize(width: 35, height: 35))
+                
+            }.store(in: &cancellable)
+        
         output.snapShotPublisher
             .receive(on: DispatchQueue.main)
             .withUnretained(self)
             .sink { owner, snapShot in
                 owner.dataSource.apply(snapShot, animatingDifferences: true)
             }.store(in: &cancellable)
+    }
+    
+    private func configureNavigationBarButtonItems() {
+        let leftBarButton = UIBarButtonItem(customView: coverImageView)
+        let rightBarButton = UIBarButtonItem(customView: profileImageView)
+        self.navigationItem.leftBarButtonItem = leftBarButton
+        self.navigationItem.rightBarButtonItem = rightBarButton
     }
 }
 

@@ -200,13 +200,16 @@ final class CreateWorkspaceViewController: SheetPresentationViewController {
 extension CreateWorkspaceViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         for result in results {
-            
+
             result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] (object, error) in
                 
                 guard let self else { return }
                 
                 if let image = object as? UIImage {
-                    coverImage.send(image.resizeImage(CGSize(width: 200, height: 200)))
+                    let downsampledImage = UIImage.downsample(image.jpegData(compressionQuality: 1.0)!, CGSize(width: 200, height: 200))
+                    coverImage.send(downsampledImage)
+                } else {
+                    print("Cannot Data")
                 }
             }
             

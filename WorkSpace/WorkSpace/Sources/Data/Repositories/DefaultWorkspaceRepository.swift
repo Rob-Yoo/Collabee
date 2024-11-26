@@ -40,6 +40,26 @@ public final class DefaultWorkspaceRepository: WorkspaceRepository {
         }.eraseToAnyPublisher()
     }
     
+    public func fetchWorkspaceList() -> AnyPublisher<[Workspace], WorkspaceError> {
+        return Future<[Workspace], WorkspaceError> { [weak self] promise in
+
+            guard let self else { return }
+            
+            networkProvider.request(WorkSpaceAPI.workspaceList, [WorkspaceDTO].self, .withToken)
+                .sink { completion in
+                    switch completion {
+                    case .finished: break
+                    case .failure(let error):
+                        promise(.failure(.getListFailure))
+                    }
+                } receiveValue: { res in
+                    promise(.success(res.map { $0.toDomain() }))
+                }.store(in: &cancellable)
+
+            
+        }.eraseToAnyPublisher()
+    }
+    
     public func fetchWorkSpace(_ workspaceID: String) -> AnyPublisher<Workspace, WorkspaceError> {
         return Future<Workspace, WorkspaceError> { [weak self] promise in
             

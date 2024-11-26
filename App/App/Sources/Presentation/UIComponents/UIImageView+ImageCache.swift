@@ -23,7 +23,7 @@ extension UIImageView {
         }
     }
 
-    func setImage(imageURL: String, placeHolder: UIImage?) {
+    func setImage(imageURL: String, placeHolder: UIImage? = nil, size: CGSize? = nil) {
 
         imageCancellable?.cancel()
 
@@ -36,7 +36,11 @@ extension UIImageView {
             .withUnretained(self)
             .sink { owner, data in
                 if let data, let image = UIImage(data: data) {
-                    owner.image = image
+                    if let size {
+                        owner.image = image.resize(size)
+                    } else {
+                        owner.image = image
+                    }
                 }
             }
     }

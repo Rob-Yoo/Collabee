@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 import Authorization
 import WorkSpace
@@ -15,6 +16,7 @@ import Common
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private var cancellable = Set<AnyCancellable>()
     @Injected private var authUseCase: AuthUseCase
     @Injected private var workspaceRepository: WorkspaceRepository
 
@@ -29,10 +31,35 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @objc @MainActor
     private func connectWindowScene() {
         let isAuthorized = UserDefaultsStorage.isAuthorized
-        let workspaceVC = workspaceRepository.getWorkspaceID() == nil ? EmptyWorkspaceViewController() : WorkspaceViewController()
-        let rootVC = isAuthorized ? UINavigationController(rootViewController: workspaceVC) : UINavigationController(rootViewController: OnboardingViewController(useCase: authUseCase))
-        window?.rootViewController = rootVC
-        window?.makeKeyAndVisible()
+        
+        if isAuthorized {
+        
+            workspaceRepository.fetchWorkspaceList()
+                .withUnretained(self)
+                .sink { completion in
+                    switch completion {
+                    case .finished: break
+                    case .failure(let error):
+                        print("🚨 ", #function, error.errorDescription ?? "")
+                    }
+                } receiveValue: { owner, list in
+                    let homeVC: UIViewController
+                    
+                    if list.isEmpty {
+                        homeVC = EmptyWorkspaceViewController()
+                    } else {
+                        owner.workspaceRepository.saveWorkspaceID(list[0].id)
+                        homeVC = TabBarController()
+                    }
+                    
+                    owner.window?.rootViewController = homeVC
+                    owner.window?.makeKeyAndVisible()
+                }.store(in: &cancellable)
+
+        } else {
+            window?.rootViewController = UINavigationController(rootViewController: OnboardingViewController(useCase: authUseCase))
+            window?.makeKeyAndVisible()
+        }
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

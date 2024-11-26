@@ -32,7 +32,7 @@ final class InviteMemberViewController: SheetPresentationViewController {
     }
     
     private let emailTextField = UITextField().then {
-        $0.placeholder = Constant.Literal.CreateWorkSpace.nameTextFieldPlaceHolder
+        $0.placeholder = Constant.Literal.InviteMember.emailTextFieldPlaceholder
         $0.font = .regular13
         $0.textColor = .black
         $0.layer.cornerRadius = 10
@@ -47,6 +47,7 @@ final class InviteMemberViewController: SheetPresentationViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .bgPrimary
+        addKeyboardDismissAction()
     }
     
     override func configureHierarchy() {
@@ -89,6 +90,7 @@ final class InviteMemberViewController: SheetPresentationViewController {
             .flatMap { (owner, _) -> AnyPublisher<Member, WorkspaceMemberError> in
                 owner.repostiory.invite(owner.workspaceID, InviteBody(email: owner.email))
             }
+            .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .finished: break

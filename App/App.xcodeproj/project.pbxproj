@@ -36,6 +36,9 @@
 		CC8386652CE716020077ED8B /* Authorization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC8386642CE716020077ED8B /* Authorization.framework */; };
 		CC8386702CE717160077ED8B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CC83866F2CE717160077ED8B /* SnapKit */; };
 		CC8386732CE717240077ED8B /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = CC8386722CE717240077ED8B /* Then */; };
+		CCBABF662CF6B2A300C227C1 /* DMListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBABF652CF6B2A300C227C1 /* DMListViewModel.swift */; };
+		CCBABF692CF6D16F00C227C1 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = CCBABF682CF6D16F00C227C1 /* MessageKit */; };
+		CCBABF6C2CF6D27700C227C1 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBABF6B2CF6D27700C227C1 /* ChattingViewController.swift */; };
 		CCFD05202CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD051F2CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift */; };
 		CCFD05232CEEFDA50023B97E /* CombineControlEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05222CEEFDA50023B97E /* CombineControlEvent.swift */; };
 		CCFD05252CEF01400023B97E /* CombineControlProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05242CEF01400023B97E /* CombineControlProperty.swift */; };
@@ -116,6 +119,8 @@
 		CCA52A272CD77024000E62EA /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
 		CCB446672CD9EDE200A4FCAB /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCB4466A2CD9EEE200A4FCAB /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCBABF652CF6B2A300C227C1 /* DMListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMListViewModel.swift; sourceTree = "<group>"; };
+		CCBABF6B2CF6D27700C227C1 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		CCC4AFBD2CE7002D00707CD2 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		CCFD051F2CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWorkspaceViewModel.swift; sourceTree = "<group>"; };
 		CCFD05222CEEFDA50023B97E /* CombineControlEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineControlEvent.swift; sourceTree = "<group>"; };
@@ -163,6 +168,7 @@
 				CCFD05522CEF56950023B97E /* WorkSpace.framework in Frameworks */,
 				CC8386702CE717160077ED8B /* SnapKit in Frameworks */,
 				CC8386652CE716020077ED8B /* Authorization.framework in Frameworks */,
+				CCBABF692CF6D16F00C227C1 /* MessageKit in Frameworks */,
 				CC7FDDD12CEDCBE800E7B0E5 /* FirebaseMessaging in Frameworks */,
 				CC7FDDCF2CEDCBE800E7B0E5 /* FirebaseAnalytics in Frameworks */,
 				CC8386732CE717240077ED8B /* Then in Frameworks */,
@@ -198,9 +204,8 @@
 		CC2DA5822CF58AD000EA238F /* DM */ = {
 			isa = PBXGroup;
 			children = (
-				CC2DA5832CF58AD900EA238F /* DMListViewController.swift */,
-				CC2DA5872CF59E7000EA238F /* DMRoomCollectionViewCell.swift */,
-				CC2DA5892CF5A5EB00EA238F /* DMRoomPresentationModel.swift */,
+				CCBABF642CF6B29800C227C1 /* ViewModel */,
+				CCBABF622CF6B27200C227C1 /* View */,
 			);
 			path = DM;
 			sourceTree = "<group>";
@@ -302,6 +307,41 @@
 				CCFD055A2CEF66A30023B97E /* WorkspaceAssembly.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		CCBABF622CF6B27200C227C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CCBABF6A2CF6D26C00C227C1 /* Chatting */,
+				CCBABF632CF6B28200C227C1 /* DMList */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CCBABF632CF6B28200C227C1 /* DMList */ = {
+			isa = PBXGroup;
+			children = (
+				CC2DA5832CF58AD900EA238F /* DMListViewController.swift */,
+				CC2DA5872CF59E7000EA238F /* DMRoomCollectionViewCell.swift */,
+				CC2DA5892CF5A5EB00EA238F /* DMRoomPresentationModel.swift */,
+			);
+			path = DMList;
+			sourceTree = "<group>";
+		};
+		CCBABF642CF6B29800C227C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CCBABF652CF6B2A300C227C1 /* DMListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CCBABF6A2CF6D26C00C227C1 /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				CCBABF6B2CF6D27700C227C1 /* ChattingViewController.swift */,
+			);
+			path = Chatting;
 			sourceTree = "<group>";
 		};
 		CCFD051D2CEEF3A50023B97E /* View */ = {
@@ -471,6 +511,7 @@
 				CC8386722CE717240077ED8B /* Then */,
 				CC7FDDCE2CEDCBE800E7B0E5 /* FirebaseAnalytics */,
 				CC7FDDD02CEDCBE800E7B0E5 /* FirebaseMessaging */,
+				CCBABF682CF6D16F00C227C1 /* MessageKit */,
 			);
 			productName = App;
 			productReference = CCFE26942CD4C3C000E8D655 /* App.app */;
@@ -549,6 +590,7 @@
 				CC83866E2CE717150077ED8B /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CC8386712CE717240077ED8B /* XCRemoteSwiftPackageReference "Then" */,
 				CC7FDDCD2CEDCBE800E7B0E5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CCBABF672CF6D16F00C227C1 /* XCRemoteSwiftPackageReference "MessageKit" */,
 			);
 			productRefGroup = CCFE26952CD4C3C000E8D655 /* Products */;
 			projectDirPath = "";
@@ -601,6 +643,7 @@
 				CCFD05332CEF16B60023B97E /* BaseView.swift in Sources */,
 				CCFD05352CEF16EB0023B97E /* BaseTableViewCell.swift in Sources */,
 				CCFD052C2CEF05680023B97E /* UITextField+Combine.swift in Sources */,
+				CCBABF6C2CF6D27700C227C1 /* ChattingViewController.swift in Sources */,
 				CCFD05392CEF17170023B97E /* BaseButton.swift in Sources */,
 				CC2DA58A2CF5A5EB00EA238F /* DMRoomPresentationModel.swift in Sources */,
 				CCFE269A2CD4C3C000E8D655 /* SceneDelegate.swift in Sources */,
@@ -634,6 +677,7 @@
 				CC8386632CE715B50077ED8B /* EmptyWorkspaceViewController.swift in Sources */,
 				CCFD052A2CEF03660023B97E /* UIControl+Combine.swift in Sources */,
 				CCFD05252CEF01400023B97E /* CombineControlProperty.swift in Sources */,
+				CCBABF662CF6B2A300C227C1 /* DMListViewModel.swift in Sources */,
 				CCFD05642CF040D50023B97E /* WorkspaceViewController.swift in Sources */,
 				CC608F712CF1A1CF003D1EBA /* WorkspaceSection.swift in Sources */,
 				CC608F3F2CF0AA01003D1EBA /* WorkspaceViewModel.swift in Sources */,
@@ -1023,6 +1067,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		CCBABF672CF6D16F00C227C1 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1045,6 +1097,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CC8386712CE717240077ED8B /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		CCBABF682CF6D16F00C227C1 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCBABF672CF6D16F00C227C1 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

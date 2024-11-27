@@ -31,7 +31,8 @@ extension UIImageView {
             self.image = placeHolder
         }
         
-        guard let imageURL else { return }
+        guard let imageURL, !imageURL.isEmpty else { return }
+
         imageCancellable = ImageCacheManager.shared.getImageData(imageURL)
             .receive(on: DispatchQueue.main)
             .withUnretained(self)

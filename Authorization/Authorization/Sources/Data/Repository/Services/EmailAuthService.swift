@@ -33,6 +33,7 @@ final class EmailAuthService: AuthService {
                 } receiveValue: { res in
                     let token = res.token
                     
+                    UserDefaultsStorage.userID = res.userID
                     TokenStorage.save(token.accessToken, .access)
                     TokenStorage.save(token.refreshToken, .refresh)
                     promise(.success(()))

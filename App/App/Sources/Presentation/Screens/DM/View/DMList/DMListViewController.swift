@@ -51,6 +51,7 @@ fileprivate typealias Snapshot = NSDiffableDataSourceSnapshot<DMSection, DMItem>
 
 final class DMListViewController: BaseViewController {
     
+    private let vm = DMListViewModel()
     private let didSelectItemAtSubject = PassthroughSubject<IndexPath, Never>()
     private lazy var dataSource = DataSource(collectionView)
     
@@ -82,7 +83,32 @@ final class DMListViewController: BaseViewController {
         super.viewDidLoad()
         navigationItem.title = Constant.Literal.DMList.navTitle
         configureNavigationBarButtonItems()
-        applySnapShot()
+    }
+    
+    override func bindViewModel() {
+        let selectedDMRoom = didSelectItemAtSubject.filter { $0.section == 1 }.map { $0.row }
+        let input = DMListViewModel.Input(
+            viewDidLoad: viewDidLoadPublisher.eraseToAnyPublisher(),
+            viewWillAppear: viewWillAppearPublisher.eraseToAnyPublisher(),
+            selectedDMRoom: selectedDMRoom.eraseToAnyPublisher()
+        )
+        let output = vm.transform(input)
+        
+        output.workspace
+            .receive(on: DispatchQueue.main)
+            .withUnretained(self)
+            .sink { owner, workspace in
+                owner.coverImageView.setImage(imageURL: workspace.image, placeHolder: .sesacBot, size: CGSize(width: 35, height: 35))
+                
+            }.store(in: &cancellable)
+        
+        Publishers.CombineLatest(output.memberList, output.dmRoomList)
+            .receive(on: DispatchQueue.main)
+            .withUnretained(self)
+            .sink { (owner, listTuple) in
+                let (memberList, dmRoomList) = listTuple
+                owner.applySnapShot(memberList, dmRoomList)
+            }.store(in: &cancellable)
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -147,29 +173,8 @@ final class DMListViewController: BaseViewController {
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
-    private func applySnapShot() {
+    private func applySnapShot(_ memberList: [Member], _ dmRoomList: [DMRoomPresentationModel]) {
         var snapShot = Snapshot()
-        let memberList = [
-            Member(id: "asdfasdf", email: "asdfasdf", nickname: "test1", profileImage: nil),
-            Member(id: "asdfasdf", email: "asdfasdf", nickname: "test2", profileImage: nil),
-            Member(id: "asdfasdf", email: "asdfasdf", nickname: "test3", profileImage: nil),
-            Member(id: "asdfasdf", email: "asdfasdf", nickname: "test4", profileImage: nil),
-            Member(id: "asdfasdf", email: "asdfasdf", nickname: "test5", profileImage: nil),
-            Member(id: "asdfasdf", email: "asdfasdf", nickname: "test6", profileImage: nil),
-            Member(id: "asdfasdf", email: "asdfasdf", nickname: "test7", profileImage: nil),
-            Member(id: "asdfasdf", email: "asdfasdf", nickname: "test8", profileImage: nil),
-            Member(id: "asdfasdf", email: "asdfasdf", nickname: "test9", profileImage: nil),
-            Member(id: "asdfasdf", email: "asdfasdf", nickname: "test10", profileImage: nil)
-        ]
-        let dmRoomList = [
-            DMRoomPresentationModel(name: "test1", profileImageURL: "", lastMessage: "가나다라마바사", lastDate: "PM 06:33", numberOfUnreadMessage: Int.random(in: 0...20)),
-            DMRoomPresentationModel(name: "test2", profileImageURL: "", lastMessage: "안녕하세요", lastDate: "PM 06:33", numberOfUnreadMessage: Int.random(in: 0...20)),
-            DMRoomPresentationModel(name: "test3", profileImageURL: "", lastMessage: "ㅁㄴ앝ㅊ퍚단ㅇㄹㄴ알", lastDate: "PM 06:33", numberOfUnreadMessage: Int.random(in: 0...20)),
-            DMRoomPresentationModel(name: "test4", profileImageURL: "", lastMessage: "ㅁㄴㅇ람ㄴ이ㅏㄹㄴㅁㅇㄹ", lastDate: "PM 07:33", numberOfUnreadMessage: Int.random(in: 0...20)),
-            DMRoomPresentationModel(name: "test5", profileImageURL: "", lastMessage: "옹골찬 고래밥", lastDate: "AM 06:33", numberOfUnreadMessage: Int.random(in: 0...20)),
-            DMRoomPresentationModel(name: "test6", profileImageURL: "", lastMessage: "asdfasdf", lastDate: "PM 06:33", numberOfUnreadMessage: Int.random(in: 0...20))
-        ]
-        
         snapShot.appendSections([.member, .dm])
         snapShot.appendItems(memberList.map { DMItem.memberList($0) }, toSection: .member)
         snapShot.appendItems(dmRoomList.map { DMItem.dmRoomList($0) }, toSection: .dm)

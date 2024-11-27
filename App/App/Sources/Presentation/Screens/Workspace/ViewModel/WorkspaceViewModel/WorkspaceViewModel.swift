@@ -37,7 +37,7 @@ final class WorkspaceViewModel {
             owner.createSnapshot(subjects.1, subjects.2)
         }.eraseToAnyPublisher()
 
-        input.viewWillAppear
+        input.viewDidLoad
             .withUnretained(self)
             .flatMap { (owner, _) ->AnyPublisher<Workspace, WorkspaceError> in
                 owner.workspaceRepository.fetchWorkSpace(owner.workspaceID)
@@ -52,7 +52,7 @@ final class WorkspaceViewModel {
                 workspaceSubject.send(workspace)
             }.store(in: &cancellable)
         
-        input.viewWillAppear
+        input.viewDidLoad
             .withUnretained(self)
             .flatMap { (owner, _) -> AnyPublisher<[Channel], ChannelError> in
                 owner.channelRepository.fetchMyChannels(owner.workspaceID)
@@ -67,7 +67,7 @@ final class WorkspaceViewModel {
                 self?.channelListSubject.send(channelList)
             }.store(in: &cancellable)
         
-        input.viewWillAppear
+        input.viewDidLoad
             .withUnretained(self)
             .sink { owner, _ in
                 let dms = ["유진영", "소정섭", "김윤우", "김건섭", "최대성"]
@@ -128,7 +128,7 @@ final class WorkspaceViewModel {
 extension WorkspaceViewModel {
     
     struct Input {
-        let viewWillAppear: AnyPublisher<Void, Never>
+        let viewDidLoad: AnyPublisher<Void, Never>
         let inviteButtonTapped: AnyPublisher<Void, Never>
         let channelTapped: AnyPublisher<Int, Never>
         let dmTapped: AnyPublisher<Int, Never>

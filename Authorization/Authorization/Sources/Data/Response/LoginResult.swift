@@ -8,10 +8,12 @@
 import Foundation
 
 struct LoginResult: Decodable {
+    let userID: String
     let token: Token
     
-    init(token: Token) {
-        self.token = token
+    enum CodingKeys: String, CodingKey {
+        case userID = "user_id"
+        case token
     }
 }
 

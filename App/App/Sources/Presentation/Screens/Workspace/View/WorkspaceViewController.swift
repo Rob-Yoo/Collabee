@@ -109,7 +109,7 @@ final class WorkspaceViewController: BaseViewController {
         let dmTapped = didSelectRowAtSubject.filter { $0.section == 1 }.map { $0.row }.eraseToAnyPublisher()
         
         let input = WorkspaceViewModel.Input(
-            viewWillAppear: viewWillAppearPublisher,
+            viewDidLoad: viewDidLoadPublisher,
             inviteButtonTapped: inviteButton.tap,
             channelTapped: channelTapped,
             dmTapped: dmTapped,

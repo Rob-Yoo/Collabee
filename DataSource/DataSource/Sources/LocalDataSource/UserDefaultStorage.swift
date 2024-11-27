@@ -24,6 +24,7 @@ public enum UserDefaultsStorage {
     enum Keys: String, CaseIterable {
         case isAuthorized
         case workspaceID
+        case userID
     }
     
     @UserDefault(key: Keys.isAuthorized.rawValue, defaultValue: false)
@@ -31,6 +32,9 @@ public enum UserDefaultsStorage {
 
     @UserDefault(key: Keys.workspaceID.rawValue, defaultValue: nil)
     public static var workspaceID: String?
+    
+    @UserDefault(key: Keys.userID.rawValue, defaultValue: "")
+    public static var userID: String
     
     public static func deleteAll() {
         Keys.allCases.forEach {

@@ -16,6 +16,10 @@
 		CC7FDD902CEC30BE00E7B0E5 /* ServerKeyAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDD8F2CEC30BE00E7B0E5 /* ServerKeyAdapter.swift */; };
 		CC7FDD982CECA73600E7B0E5 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDD972CECA73600E7B0E5 /* NetworkProvider.swift */; };
 		CC7FDDA12CED6EA800E7B0E5 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDA02CED6EA800E7B0E5 /* UserDefaultStorage.swift */; };
+		CC80B4882CF88D1300BE8813 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = CC80B4872CF88D1300BE8813 /* SocketIO */; };
+		CC80B48C2CF88E3200BE8813 /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B48B2CF88E3200BE8813 /* WebSocketProvider.swift */; };
+		CC80B48E2CF8954000BE8813 /* WSRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B48D2CF8954000BE8813 /* WSRouter.swift */; };
+		CC80B4902CF8A02800BE8813 /* WebSocketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B48F2CF8A02800BE8813 /* WebSocketError.swift */; };
 		CC8386442CE70D520077ED8B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE42CE700EA00707CD2 /* NetworkError.swift */; };
 		CC8386462CE70D570077ED8B /* DefaultNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE22CE700EA00707CD2 /* DefaultNetworkProvider.swift */; };
 		CC8386472CE70D590077ED8B /* TokenInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE32CE700EA00707CD2 /* TokenInterceptor.swift */; };
@@ -73,7 +77,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CC0D21A62CE7626C00EA6254 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		CC0D21A72CE763B900EA6254 /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
 		CC2DA5742CF32FE200EA238F /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		CC2DA5772CF334D800EA238F /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
@@ -86,6 +89,9 @@
 		CC7FDD8F2CEC30BE00E7B0E5 /* ServerKeyAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerKeyAdapter.swift; sourceTree = "<group>"; };
 		CC7FDD972CECA73600E7B0E5 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		CC7FDDA02CED6EA800E7B0E5 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
+		CC80B48B2CF88E3200BE8813 /* WebSocketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
+		CC80B48D2CF8954000BE8813 /* WSRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRouter.swift; sourceTree = "<group>"; };
+		CC80B48F2CF8A02800BE8813 /* WebSocketError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketError.swift; sourceTree = "<group>"; };
 		CC8386672CE716210077ED8B /* NetworkProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderTest.swift; sourceTree = "<group>"; };
 		CC8386692CE716440077ED8B /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
 		CC9772EA2CE75E6500443542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCC4B00E2CE7052900707CD2 /* Common.framework in Frameworks */,
+				CC80B4882CF88D1300BE8813 /* SocketIO in Frameworks */,
 				CCC4B0092CE7033E00707CD2 /* RealmSwift in Frameworks */,
 				CC8386862CE721CB0077ED8B /* CombineMoya in Frameworks */,
 			);
@@ -175,6 +182,29 @@
 			path = Moya;
 			sourceTree = "<group>";
 		};
+		CC80B4892CF88D2F00BE8813 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				CCC4AFE12CE700EA00707CD2 /* Header.swift */,
+				CCC4AFE22CE700EA00707CD2 /* DefaultNetworkProvider.swift */,
+				CC7FDD962CECA71200E7B0E5 /* Interfaces */,
+				CC7FDD992CECA77300E7B0E5 /* Moya */,
+				CC7FDD8E2CEC308300E7B0E5 /* Interceptor */,
+				CCC4AFE92CE700EA00707CD2 /* Response */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		CC80B48A2CF88D4300BE8813 /* WS */ = {
+			isa = PBXGroup;
+			children = (
+				CC80B48B2CF88E3200BE8813 /* WebSocketProvider.swift */,
+				CC80B48D2CF8954000BE8813 /* WSRouter.swift */,
+				CC80B48F2CF8A02800BE8813 /* WebSocketError.swift */,
+			);
+			path = WS;
+			sourceTree = "<group>";
+		};
 		CCC4AFBE2CE7005400707CD2 = {
 			isa = PBXGroup;
 			children = (
@@ -226,12 +256,8 @@
 		CCC4AFF02CE700EA00707CD2 /* RemoteDataSource */ = {
 			isa = PBXGroup;
 			children = (
-				CCC4AFE12CE700EA00707CD2 /* Header.swift */,
-				CCC4AFE22CE700EA00707CD2 /* DefaultNetworkProvider.swift */,
-				CC7FDD962CECA71200E7B0E5 /* Interfaces */,
-				CC7FDD992CECA77300E7B0E5 /* Moya */,
-				CC7FDD8E2CEC308300E7B0E5 /* Interceptor */,
-				CCC4AFE92CE700EA00707CD2 /* Response */,
+				CC80B48A2CF88D4300BE8813 /* WS */,
+				CC80B4892CF88D2F00BE8813 /* HTTP */,
 			);
 			path = RemoteDataSource;
 			sourceTree = "<group>";
@@ -248,7 +274,6 @@
 		CCC4AFFA2CE7020500707CD2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CC0D21A62CE7626C00EA6254 /* Secret.xcconfig */,
 				CC0D21A72CE763B900EA6254 /* Literal.swift */,
 			);
 			path = Resources;
@@ -307,6 +332,7 @@
 			packageProductDependencies = (
 				CCC4B0082CE7033E00707CD2 /* RealmSwift */,
 				CC8386852CE721CB0077ED8B /* CombineMoya */,
+				CC80B4872CF88D1300BE8813 /* SocketIO */,
 			);
 			productName = DataSource;
 			productReference = CCC4AFC82CE7005400707CD2 /* DataSource.framework */;
@@ -362,6 +388,7 @@
 				CCC4B0072CE7033E00707CD2 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				CC8386842CE721CB0077ED8B /* XCRemoteSwiftPackageReference "Moya" */,
 				CCCBB4362CE72D0F000DBB95 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CC80B4862CF88D1200BE8813 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */,
 			);
 			productRefGroup = CCC4AFC92CE7005400707CD2 /* Products */;
 			projectDirPath = "";
@@ -397,15 +424,18 @@
 			files = (
 				CC7FDDA12CED6EA800E7B0E5 /* UserDefaultStorage.swift in Sources */,
 				CCC4AFF42CE7017500707CD2 /* MoyaLoggerPlugin.swift in Sources */,
+				CC80B4902CF8A02800BE8813 /* WebSocketError.swift in Sources */,
 				CC83864A2CE70D620077ED8B /* TokenRefresh.swift in Sources */,
 				CC7FDD902CEC30BE00E7B0E5 /* ServerKeyAdapter.swift in Sources */,
 				CC2DA5752CF32FE200EA238F /* ImageCacheManager.swift in Sources */,
 				CC2DA57A2CF3433600EA238F /* DiskCache.swift in Sources */,
 				CC8386502CE70D740077ED8B /* TokenStorage.swift in Sources */,
 				CC83864B2CE70D650077ED8B /* TargetType+Extension.swift in Sources */,
+				CC80B48E2CF8954000BE8813 /* WSRouter.swift in Sources */,
 				CC83864D2CE70D6B0077ED8B /* AuthAPI.swift in Sources */,
 				CC7FDD812CE8D8C400E7B0E5 /* APIAdapter.swift in Sources */,
 				CC8386472CE70D590077ED8B /* TokenInterceptor.swift in Sources */,
+				CC80B48C2CF88E3200BE8813 /* WebSocketProvider.swift in Sources */,
 				CC2DA5782CF334D800EA238F /* ImageAPI.swift in Sources */,
 				CCC4AFF32CE7015E00707CD2 /* Header.swift in Sources */,
 				CC7FDD982CECA73600E7B0E5 /* NetworkProvider.swift in Sources */,
@@ -439,7 +469,6 @@
 /* Begin XCBuildConfiguration section */
 		CCC4AFD82CE7005400707CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC0D21A62CE7626C00EA6254 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -567,7 +596,6 @@
 		};
 		CCC4AFDB2CE7005400707CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC0D21A62CE7626C00EA6254 /* Secret.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -721,6 +749,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CC80B4862CF88D1200BE8813 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 16.1.1;
+			};
+		};
 		CC8386842CE721CB0077ED8B /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -748,6 +784,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CC80B4872CF88D1300BE8813 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC80B4862CF88D1200BE8813 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */;
+			productName = SocketIO;
+		};
 		CC8386852CE721CB0077ED8B /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CC8386842CE721CB0077ED8B /* XCRemoteSwiftPackageReference "Moya" */;

@@ -22,7 +22,7 @@
 		CC608F712CF1A1CF003D1EBA /* WorkspaceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F702CF1A1CF003D1EBA /* WorkspaceSection.swift */; };
 		CC608F732CF1A1DF003D1EBA /* WorkspaceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F722CF1A1DF003D1EBA /* WorkspaceItem.swift */; };
 		CC608F772CF1F345003D1EBA /* UIViewController+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F762CF1F345003D1EBA /* UIViewController+Combine.swift */; };
-		CC7FDDA32CED719200E7B0E5 /* NetworkProviderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDA22CED719200E7B0E5 /* NetworkProviderAssembly.swift */; };
+		CC7FDDA32CED719200E7B0E5 /* DataSourceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FDDA22CED719200E7B0E5 /* DataSourceAssembly.swift */; };
 		CC7FDDCC2CEDCB6300E7B0E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC7FDDCB2CEDCB6300E7B0E5 /* GoogleService-Info.plist */; };
 		CC7FDDCF2CEDCBE800E7B0E5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7FDDCE2CEDCBE800E7B0E5 /* FirebaseAnalytics */; };
 		CC7FDDD12CEDCBE800E7B0E5 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = CC7FDDD02CEDCBE800E7B0E5 /* FirebaseMessaging */; };
@@ -108,7 +108,7 @@
 		CC608F702CF1A1CF003D1EBA /* WorkspaceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceSection.swift; sourceTree = "<group>"; };
 		CC608F722CF1A1DF003D1EBA /* WorkspaceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceItem.swift; sourceTree = "<group>"; };
 		CC608F762CF1F345003D1EBA /* UIViewController+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Combine.swift"; sourceTree = "<group>"; };
-		CC7FDDA22CED719200E7B0E5 /* NetworkProviderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderAssembly.swift; sourceTree = "<group>"; };
+		CC7FDDA22CED719200E7B0E5 /* DataSourceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceAssembly.swift; sourceTree = "<group>"; };
 		CC7FDDCB2CEDCB6300E7B0E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC8386542CE712370077ED8B /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		CC8386582CE7139D0077ED8B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -309,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				CC8386542CE712370077ED8B /* AuthorizationAssembly.swift */,
-				CC7FDDA22CED719200E7B0E5 /* NetworkProviderAssembly.swift */,
+				CC7FDDA22CED719200E7B0E5 /* DataSourceAssembly.swift */,
 				CCFD055A2CEF66A30023B97E /* WorkspaceAssembly.swift */,
 			);
 			path = DI;
@@ -694,7 +694,7 @@
 				CCBABF732CF6EF5D00C227C1 /* ChatTableViewCell.swift in Sources */,
 				CC608F3D2CF0A828003D1EBA /* WorkSpaceTableViewHeaderView.swift in Sources */,
 				CC608F3B2CF0A7FE003D1EBA /* ChannelTableViewCell.swift in Sources */,
-				CC7FDDA32CED719200E7B0E5 /* NetworkProviderAssembly.swift in Sources */,
+				CC7FDDA32CED719200E7B0E5 /* DataSourceAssembly.swift in Sources */,
 				CC8386632CE715B50077ED8B /* EmptyWorkspaceViewController.swift in Sources */,
 				CCFD052A2CEF03660023B97E /* UIControl+Combine.swift in Sources */,
 				CCFD05252CEF01400023B97E /* CombineControlProperty.swift in Sources */,

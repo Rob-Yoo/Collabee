@@ -15,9 +15,9 @@ struct ChatBody {
 }
 
 enum ChannelChatAPI {
-    case chatList(_ wsID: String, _ chID: String, _ cursorDate: Date)
+    case chatList(_ wsID: String, _ chID: String, _ cursorDate: String)
     case sendChat(_ wsID: String, _ chID: String, ChatBody)
-    case unreads(_ wsID: String, _ chID: String, _ after: Date)
+    case unreads(_ wsID: String, _ chID: String, _ after: String)
 }
 
 extension ChannelChatAPI: API {

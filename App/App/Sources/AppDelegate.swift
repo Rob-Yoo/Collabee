@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIViewController.swizzleLifecycleMethods()
         
         DIContainer.shared.assemble([
-            NetworkProviderAssembly(),
+            DataSourceAssembly(),
             AuthorizationAssembly(),
             WorkspaceAssembly()
         ])

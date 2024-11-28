@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Chat/Chat.xcodeproj">
+      location = "group:App/App.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:App/App.xcodeproj">
+      location = "group:Chat/Chat.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Authorization/Authorization.xcodeproj">

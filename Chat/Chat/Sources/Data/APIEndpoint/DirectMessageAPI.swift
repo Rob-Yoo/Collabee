@@ -21,8 +21,8 @@ enum DirectMessageAPI {
     case enterRoom(_ wsID: String, EnterRoomBody)
     case dmRooms(_ wsID: String)
     case sendDM(_ wsID: String, _ roomID: String, ChatBody)
-    case dms(_ wsID: String, _ roomID: String, _ cursorDate: Date)
-    case unreads(_ wsID: String, _ roomID: String, _ after: Date)
+    case dms(_ wsID: String, _ roomID: String, _ cursorDate: String)
+    case unreads(_ wsID: String, _ roomID: String, _ after: String)
 }
 
 extension DirectMessageAPI: API {

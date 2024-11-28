@@ -21,6 +21,7 @@ public extension UIScreenEdgePanGestureRecognizer {
 }
 
 private func gesturePublisher<Gesture: UIGestureRecognizer>(for gesture: Gesture) -> AnyPublisher<Gesture, Never> {
+
     Publishers.ControlTarget(control: gesture,
                              addTargetAction: { gesture, target, action in
                                 gesture.addTarget(target, action: action)

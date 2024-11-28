@@ -15,7 +15,6 @@
 		CC2DA5882CF59E7000EA238F /* DMRoomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2DA5872CF59E7000EA238F /* DMRoomCollectionViewCell.swift */; };
 		CC2DA58A2CF5A5EB00EA238F /* DMRoomPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2DA5892CF5A5EB00EA238F /* DMRoomPresentationModel.swift */; };
 		CC2DA58C2CF5A7B000EA238F /* UnreadCountTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2DA58B2CF5A7B000EA238F /* UnreadCountTagView.swift */; };
-		CC608F382CF09D6C003D1EBA /* CombineTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F372CF09D6C003D1EBA /* CombineTableView.swift */; };
 		CC608F3B2CF0A7FE003D1EBA /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F3A2CF0A7FE003D1EBA /* ChannelTableViewCell.swift */; };
 		CC608F3D2CF0A828003D1EBA /* WorkSpaceTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F3C2CF0A828003D1EBA /* WorkSpaceTableViewHeaderView.swift */; };
 		CC608F3F2CF0AA01003D1EBA /* WorkspaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F3E2CF0AA01003D1EBA /* WorkspaceViewModel.swift */; };
@@ -37,8 +36,12 @@
 		CC8386702CE717160077ED8B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CC83866F2CE717160077ED8B /* SnapKit */; };
 		CC8386732CE717240077ED8B /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = CC8386722CE717240077ED8B /* Then */; };
 		CCBABF662CF6B2A300C227C1 /* DMListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBABF652CF6B2A300C227C1 /* DMListViewModel.swift */; };
-		CCBABF692CF6D16F00C227C1 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = CCBABF682CF6D16F00C227C1 /* MessageKit */; };
-		CCBABF6C2CF6D27700C227C1 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBABF6B2CF6D27700C227C1 /* ChattingViewController.swift */; };
+		CCBABF6C2CF6D27700C227C1 /* DMChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBABF6B2CF6D27700C227C1 /* DMChattingViewController.swift */; };
+		CCBABF712CF6EF0C00C227C1 /* ChatInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBABF702CF6EF0C00C227C1 /* ChatInputView.swift */; };
+		CCBABF732CF6EF5D00C227C1 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBABF722CF6EF5D00C227C1 /* ChatTableViewCell.swift */; };
+		CCBABF752CF6F0C600C227C1 /* AddImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBABF742CF6F0C600C227C1 /* AddImageCollectionViewCell.swift */; };
+		CCBABF772CF70F7D00C227C1 /* UITextView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBABF762CF70F7D00C227C1 /* UITextView+Combine.swift */; };
+		CCBABF792CF72DF800C227C1 /* UITableView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBABF782CF72DF800C227C1 /* UITableView+Combine.swift */; };
 		CCFD05202CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD051F2CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift */; };
 		CCFD05232CEEFDA50023B97E /* CombineControlEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05222CEEFDA50023B97E /* CombineControlEvent.swift */; };
 		CCFD05252CEF01400023B97E /* CombineControlProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFD05242CEF01400023B97E /* CombineControlProperty.swift */; };
@@ -98,7 +101,6 @@
 		CC2DA5872CF59E7000EA238F /* DMRoomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMRoomCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC2DA5892CF5A5EB00EA238F /* DMRoomPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMRoomPresentationModel.swift; sourceTree = "<group>"; };
 		CC2DA58B2CF5A7B000EA238F /* UnreadCountTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnreadCountTagView.swift; sourceTree = "<group>"; };
-		CC608F372CF09D6C003D1EBA /* CombineTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTableView.swift; sourceTree = "<group>"; };
 		CC608F3A2CF0A7FE003D1EBA /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
 		CC608F3C2CF0A828003D1EBA /* WorkSpaceTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkSpaceTableViewHeaderView.swift; sourceTree = "<group>"; };
 		CC608F3E2CF0AA01003D1EBA /* WorkspaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceViewModel.swift; sourceTree = "<group>"; };
@@ -120,7 +122,12 @@
 		CCB446672CD9EDE200A4FCAB /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCB4466A2CD9EEE200A4FCAB /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCBABF652CF6B2A300C227C1 /* DMListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMListViewModel.swift; sourceTree = "<group>"; };
-		CCBABF6B2CF6D27700C227C1 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		CCBABF6B2CF6D27700C227C1 /* DMChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMChattingViewController.swift; sourceTree = "<group>"; };
+		CCBABF702CF6EF0C00C227C1 /* ChatInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputView.swift; sourceTree = "<group>"; };
+		CCBABF722CF6EF5D00C227C1 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		CCBABF742CF6F0C600C227C1 /* AddImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		CCBABF762CF70F7D00C227C1 /* UITextView+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Combine.swift"; sourceTree = "<group>"; };
+		CCBABF782CF72DF800C227C1 /* UITableView+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Combine.swift"; sourceTree = "<group>"; };
 		CCC4AFBD2CE7002D00707CD2 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
 		CCFD051F2CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyWorkspaceViewModel.swift; sourceTree = "<group>"; };
 		CCFD05222CEEFDA50023B97E /* CombineControlEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineControlEvent.swift; sourceTree = "<group>"; };
@@ -168,7 +175,6 @@
 				CCFD05522CEF56950023B97E /* WorkSpace.framework in Frameworks */,
 				CC8386702CE717160077ED8B /* SnapKit in Frameworks */,
 				CC8386652CE716020077ED8B /* Authorization.framework in Frameworks */,
-				CCBABF692CF6D16F00C227C1 /* MessageKit in Frameworks */,
 				CC7FDDD12CEDCBE800E7B0E5 /* FirebaseMessaging in Frameworks */,
 				CC7FDDCF2CEDCBE800E7B0E5 /* FirebaseAnalytics in Frameworks */,
 				CC8386732CE717240077ED8B /* Then in Frameworks */,
@@ -339,7 +345,17 @@
 		CCBABF6A2CF6D26C00C227C1 /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
-				CCBABF6B2CF6D27700C227C1 /* ChattingViewController.swift */,
+				CCBABF6B2CF6D27700C227C1 /* DMChattingViewController.swift */,
+			);
+			path = Chatting;
+			sourceTree = "<group>";
+		};
+		CCBABF6D2CF6EED600C227C1 /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				CCBABF702CF6EF0C00C227C1 /* ChatInputView.swift */,
+				CCBABF722CF6EF5D00C227C1 /* ChatTableViewCell.swift */,
+				CCBABF742CF6F0C600C227C1 /* AddImageCollectionViewCell.swift */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -378,12 +394,13 @@
 		CCFD05262CEF02C00023B97E /* UIPublisher */ = {
 			isa = PBXGroup;
 			children = (
-				CC608F372CF09D6C003D1EBA /* CombineTableView.swift */,
 				CCFD05292CEF03660023B97E /* UIControl+Combine.swift */,
 				CCFD05272CEF02CB0023B97E /* UIButton+Combine.swift */,
 				CCFD052B2CEF05680023B97E /* UITextField+Combine.swift */,
 				CCFD05402CEF29E60023B97E /* UIGestureRecognizer+Combine.swift */,
 				CC608F762CF1F345003D1EBA /* UIViewController+Combine.swift */,
+				CCBABF762CF70F7D00C227C1 /* UITextView+Combine.swift */,
+				CCBABF782CF72DF800C227C1 /* UITableView+Combine.swift */,
 			);
 			path = UIPublisher;
 			sourceTree = "<group>";
@@ -402,6 +419,7 @@
 		CCFD052E2CEF0E4B0023B97E /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				CCBABF6D2CF6EED600C227C1 /* Chatting */,
 				CC2DA57F2CF54B2F00EA238F /* Controllers */,
 				CC2DA57B2CF3598D00EA238F /* UIImageView+ImageCache.swift */,
 				CCFD052F2CEF0F130023B97E /* RoundedImageView.swift */,
@@ -511,7 +529,6 @@
 				CC8386722CE717240077ED8B /* Then */,
 				CC7FDDCE2CEDCBE800E7B0E5 /* FirebaseAnalytics */,
 				CC7FDDD02CEDCBE800E7B0E5 /* FirebaseMessaging */,
-				CCBABF682CF6D16F00C227C1 /* MessageKit */,
 			);
 			productName = App;
 			productReference = CCFE26942CD4C3C000E8D655 /* App.app */;
@@ -638,25 +655,27 @@
 				CCFD053F2CEF1D800023B97E /* CombineControlTargetAction.swift in Sources */,
 				CCFD05302CEF0F130023B97E /* RoundedImageView.swift in Sources */,
 				CC8386552CE712370077ED8B /* AuthorizationAssembly.swift in Sources */,
+				CCBABF752CF6F0C600C227C1 /* AddImageCollectionViewCell.swift in Sources */,
 				CCFE26982CD4C3C000E8D655 /* AppDelegate.swift in Sources */,
 				CC2DA5862CF598B100EA238F /* MemberCollectionViewCell.swift in Sources */,
 				CCFD05332CEF16B60023B97E /* BaseView.swift in Sources */,
 				CCFD05352CEF16EB0023B97E /* BaseTableViewCell.swift in Sources */,
 				CCFD052C2CEF05680023B97E /* UITextField+Combine.swift in Sources */,
-				CCBABF6C2CF6D27700C227C1 /* ChattingViewController.swift in Sources */,
+				CCBABF6C2CF6D27700C227C1 /* DMChattingViewController.swift in Sources */,
 				CCFD05392CEF17170023B97E /* BaseButton.swift in Sources */,
 				CC2DA58A2CF5A5EB00EA238F /* DMRoomPresentationModel.swift in Sources */,
+				CCBABF792CF72DF800C227C1 /* UITableView+Combine.swift in Sources */,
 				CCFE269A2CD4C3C000E8D655 /* SceneDelegate.swift in Sources */,
 				CCFD054B2CEF45450023B97E /* CreateWorkspaceViewController.swift in Sources */,
 				CC608F732CF1A1DF003D1EBA /* WorkspaceItem.swift in Sources */,
 				CC83865B2CE714DE0077ED8B /* UIFont+Extension.swift in Sources */,
 				CCFD05662CF0417E0023B97E /* IdentifierProtocol.swift in Sources */,
+				CCBABF712CF6EF0C00C227C1 /* ChatInputView.swift in Sources */,
 				CCFD053B2CEF17A90023B97E /* RoundedTextButton.swift in Sources */,
 				CCFD05412CEF29E60023B97E /* UIGestureRecognizer+Combine.swift in Sources */,
 				CCFD054D2CEF48220023B97E /* UIImage+Extension.swift in Sources */,
 				CC8386602CE715900077ED8B /* UIViewController+Extension.swift in Sources */,
 				CC2DA5842CF58AD900EA238F /* DMListViewController.swift in Sources */,
-				CC608F382CF09D6C003D1EBA /* CombineTableView.swift in Sources */,
 				CC608F432CF0BD3C003D1EBA /* InviteMemberViewController.swift in Sources */,
 				CC2DA5812CF54B3A00EA238F /* NavigationController.swift in Sources */,
 				CC8386592CE7139D0077ED8B /* OnboardingViewController.swift in Sources */,
@@ -668,9 +687,11 @@
 				CC2DA57E2CF54AEA00EA238F /* TabBarController.swift in Sources */,
 				CC2DA58C2CF5A7B000EA238F /* UnreadCountTagView.swift in Sources */,
 				CC2DA5882CF59E7000EA238F /* DMRoomCollectionViewCell.swift in Sources */,
+				CCBABF772CF70F7D00C227C1 /* UITextView+Combine.swift in Sources */,
 				CCFD05202CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift in Sources */,
 				CCFD05282CEF02CB0023B97E /* UIButton+Combine.swift in Sources */,
 				CCFD05232CEEFDA50023B97E /* CombineControlEvent.swift in Sources */,
+				CCBABF732CF6EF5D00C227C1 /* ChatTableViewCell.swift in Sources */,
 				CC608F3D2CF0A828003D1EBA /* WorkSpaceTableViewHeaderView.swift in Sources */,
 				CC608F3B2CF0A7FE003D1EBA /* ChannelTableViewCell.swift in Sources */,
 				CC7FDDA32CED719200E7B0E5 /* NetworkProviderAssembly.swift in Sources */,
@@ -1097,11 +1118,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CC8386712CE717240077ED8B /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
-		};
-		CCBABF682CF6D16F00C227C1 /* MessageKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CCBABF672CF6D16F00C227C1 /* XCRemoteSwiftPackageReference "MessageKit" */;
-			productName = MessageKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

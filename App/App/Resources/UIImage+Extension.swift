@@ -39,6 +39,9 @@ extension UIImage {
     }
     
     static var xIcon = UIImage(systemName: "xmark")
+    static var xCircleIcon = UIImage(named: "xmark.circle")
+    static var disabledSendIcon = UIImage(systemName: "paperplane")
+    static var enabledSendIcon = UIImage(systemName: "paperplane.fill")
     static var channelIcon = UIImage(systemName: "number")
     static var plusIcon = UIImage(systemName: "plus")
     static var leftArrowIcon = UIImage(systemName: "chevron.left")

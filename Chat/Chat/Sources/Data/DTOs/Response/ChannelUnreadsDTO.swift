@@ -1,5 +1,5 @@
 //
-//  UnreadsDTO.swift
+//  ChannelUnreadsDTO.swift
 //  Chat
 //
 //  Created by Jinyoung Yoo on 11/29/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UnreadsDTO: Decodable {
+struct ChannelUnreadsDTO: Decodable {
     let channelID: String
     let name: String
     let count: Int
@@ -16,5 +16,11 @@ struct UnreadsDTO: Decodable {
         case channelID = "channel_id"
         case name
         case count
+    }
+}
+
+extension ChannelUnreadsDTO {
+    func toDomain() -> Unreads {
+        return Unreads(id: self.channelID, count: self.count)
     }
 }

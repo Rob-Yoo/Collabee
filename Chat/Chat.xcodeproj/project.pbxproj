@@ -18,10 +18,15 @@
 		CC80B49A2CF9B9BE00BE8813 /* SenderObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4992CF9B9BE00BE8813 /* SenderObject.swift */; };
 		CC80B49E2CF9D08B00BE8813 /* ChannelChatDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B49D2CF9D08B00BE8813 /* ChannelChatDTO.swift */; };
 		CC80B4A02CF9D33800BE8813 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B49F2CF9D33800BE8813 /* UserDTO.swift */; };
-		CC80B4A22CF9D4A000BE8813 /* UnreadsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4A12CF9D4A000BE8813 /* UnreadsDTO.swift */; };
-		CC80B4A42CF9D57500BE8813 /* DMRoomListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4A32CF9D57500BE8813 /* DMRoomListDTO.swift */; };
+		CC80B4A22CF9D4A000BE8813 /* ChannelUnreadsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4A12CF9D4A000BE8813 /* ChannelUnreadsDTO.swift */; };
+		CC80B4A42CF9D57500BE8813 /* DMRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4A32CF9D57500BE8813 /* DMRoomDTO.swift */; };
 		CC80B4A62CF9D5AC00BE8813 /* DMChatDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4A52CF9D5AC00BE8813 /* DMChatDTO.swift */; };
 		CC80B4A82CF9D63900BE8813 /* DMUnreadsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4A72CF9D63900BE8813 /* DMUnreadsDTO.swift */; };
+		CC80B4AD2CF9D95800BE8813 /* ChannelChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4AC2CF9D95800BE8813 /* ChannelChat.swift */; };
+		CC80B4AF2CF9DA0500BE8813 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4AE2CF9DA0500BE8813 /* Sender.swift */; };
+		CC80B4B12CF9DAC200BE8813 /* DMChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4B02CF9DAC200BE8813 /* DMChat.swift */; };
+		CC80B4B32CF9DB6000BE8813 /* Unreads.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4B22CF9DB6000BE8813 /* Unreads.swift */; };
+		CC80B4B52CF9DBC400BE8813 /* DMRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4B42CF9DBC400BE8813 /* DMRoom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +52,15 @@
 		CC80B4992CF9B9BE00BE8813 /* SenderObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderObject.swift; sourceTree = "<group>"; };
 		CC80B49D2CF9D08B00BE8813 /* ChannelChatDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelChatDTO.swift; sourceTree = "<group>"; };
 		CC80B49F2CF9D33800BE8813 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
-		CC80B4A12CF9D4A000BE8813 /* UnreadsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnreadsDTO.swift; sourceTree = "<group>"; };
-		CC80B4A32CF9D57500BE8813 /* DMRoomListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMRoomListDTO.swift; sourceTree = "<group>"; };
+		CC80B4A12CF9D4A000BE8813 /* ChannelUnreadsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelUnreadsDTO.swift; sourceTree = "<group>"; };
+		CC80B4A32CF9D57500BE8813 /* DMRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMRoomDTO.swift; sourceTree = "<group>"; };
 		CC80B4A52CF9D5AC00BE8813 /* DMChatDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMChatDTO.swift; sourceTree = "<group>"; };
 		CC80B4A72CF9D63900BE8813 /* DMUnreadsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMUnreadsDTO.swift; sourceTree = "<group>"; };
+		CC80B4AC2CF9D95800BE8813 /* ChannelChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelChat.swift; sourceTree = "<group>"; };
+		CC80B4AE2CF9DA0500BE8813 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		CC80B4B02CF9DAC200BE8813 /* DMChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMChat.swift; sourceTree = "<group>"; };
+		CC80B4B22CF9DB6000BE8813 /* Unreads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unreads.swift; sourceTree = "<group>"; };
+		CC80B4B42CF9DBC400BE8813 /* DMRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMRoom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +130,7 @@
 		CC80B47F2CF8822100BE8813 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CC80B4A92CF9D93700BE8813 /* Domain */,
 				CC80B4802CF8822A00BE8813 /* Data */,
 			);
 			path = Sources;
@@ -167,12 +178,32 @@
 			children = (
 				CC80B49D2CF9D08B00BE8813 /* ChannelChatDTO.swift */,
 				CC80B49F2CF9D33800BE8813 /* UserDTO.swift */,
-				CC80B4A12CF9D4A000BE8813 /* UnreadsDTO.swift */,
-				CC80B4A32CF9D57500BE8813 /* DMRoomListDTO.swift */,
+				CC80B4A12CF9D4A000BE8813 /* ChannelUnreadsDTO.swift */,
+				CC80B4A32CF9D57500BE8813 /* DMRoomDTO.swift */,
 				CC80B4A52CF9D5AC00BE8813 /* DMChatDTO.swift */,
 				CC80B4A72CF9D63900BE8813 /* DMUnreadsDTO.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		CC80B4A92CF9D93700BE8813 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CC80B4AB2CF9D94D00BE8813 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CC80B4AB2CF9D94D00BE8813 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CC80B4AE2CF9DA0500BE8813 /* Sender.swift */,
+				CC80B4AC2CF9D95800BE8813 /* ChannelChat.swift */,
+				CC80B4B02CF9DAC200BE8813 /* DMChat.swift */,
+				CC80B4B22CF9DB6000BE8813 /* Unreads.swift */,
+				CC80B4B42CF9DBC400BE8813 /* DMRoom.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,13 +316,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC80B4AF2CF9DA0500BE8813 /* Sender.swift in Sources */,
 				CC80B4962CF9B7F100BE8813 /* ChannelObject.swift in Sources */,
+				CC80B4AD2CF9D95800BE8813 /* ChannelChat.swift in Sources */,
 				CC80B49E2CF9D08B00BE8813 /* ChannelChatDTO.swift in Sources */,
 				CC80B4832CF8824800BE8813 /* ChannelChatAPI.swift in Sources */,
+				CC80B4B52CF9DBC400BE8813 /* DMRoom.swift in Sources */,
 				CC80B4852CF8825D00BE8813 /* DirectMessageAPI.swift in Sources */,
+				CC80B4B12CF9DAC200BE8813 /* DMChat.swift in Sources */,
 				CC80B4A82CF9D63900BE8813 /* DMUnreadsDTO.swift in Sources */,
-				CC80B4A42CF9D57500BE8813 /* DMRoomListDTO.swift in Sources */,
-				CC80B4A22CF9D4A000BE8813 /* UnreadsDTO.swift in Sources */,
+				CC80B4A42CF9D57500BE8813 /* DMRoomDTO.swift in Sources */,
+				CC80B4A22CF9D4A000BE8813 /* ChannelUnreadsDTO.swift in Sources */,
+				CC80B4B32CF9DB6000BE8813 /* Unreads.swift in Sources */,
 				CC80B49A2CF9B9BE00BE8813 /* SenderObject.swift in Sources */,
 				CC80B4A02CF9D33800BE8813 /* UserDTO.swift in Sources */,
 				CC80B4A62CF9D5AC00BE8813 /* DMChatDTO.swift in Sources */,

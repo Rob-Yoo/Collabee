@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct ChannelChattingDTO: Decodable {
+struct ChannelChatDTO: Decodable {
     let channelID: String
     let channelName: String
-    let chatID: Int
+    let chatID: String
     let content: String
     let createdAt: String
     let files: [String]
@@ -24,5 +24,17 @@ struct ChannelChattingDTO: Decodable {
         case createdAt
         case files
         case user
+    }
+}
+
+extension ChannelChatDTO {
+    func toDomain() -> ChannelChat {
+        return ChannelChat(chatID: self.chatID,
+                           channelID: self.channelID,
+                           channelName: self.channelName,
+                           content: self.content,
+                           createdAt: self.createdAt,
+                           files: self.files,
+                           sender: self.user.toDomain())
     }
 }

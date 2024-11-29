@@ -16,3 +16,9 @@ struct DMUnreadsDTO: Decodable {
         case count
     }
 }
+
+extension DMUnreadsDTO {
+    func toDomain() -> Unreads {
+        return Unreads(id: self.roomID, count: self.count)
+    }
+}

@@ -9,7 +9,7 @@ import Foundation
 
 struct DMChatDTO: Decodable {
     let roomID: String
-    let dmID: Int
+    let dmID: String
     let content: String
     let createdAt: String
     let files: [String]
@@ -22,5 +22,16 @@ struct DMChatDTO: Decodable {
         case createdAt
         case files
         case user
+    }
+}
+
+extension DMChatDTO {
+    func toDomain() -> DMChat {
+        return DMChat(chatID: self.dmID,
+                      roomID: self.roomID,
+                      content: self.content,
+                      createdAt: self.createdAt,
+                      files: self.files,
+                      sender: self.user.toDomain())
     }
 }

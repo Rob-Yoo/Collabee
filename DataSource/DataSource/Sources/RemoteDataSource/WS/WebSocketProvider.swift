@@ -20,6 +20,7 @@ public protocol WebSocketProvider {
 public final class DefaultWebSocketProvider: WebSocketProvider {
     private let manager = SocketManager(socketURL: URL(string: Literal.Secret.SocketURL)!, config: [.compress, .log(true)])
     private var ws: SocketIOClient
+    private var isConnected = false
     
     public init() {
         ws = manager.defaultSocket
@@ -33,31 +34,37 @@ public final class DefaultWebSocketProvider: WebSocketProvider {
     }
     
     public func establishConnection(router: WSRouter) {
-        ws = self.manager.socket(forNamespace: router.nameSpace)
-        ws.connect()
+        if !isConnected {
+            ws = self.manager.socket(forNamespace: router.nameSpace)
+            ws.connect()
+            isConnected = true
+        }
     }
     
     public func closeConnection() {
-        ws.disconnect()
+        if isConnected {
+            ws.disconnect()
+            isConnected = false
+        }
     }
     
     public func receive<R: Decodable>(_ router: WSRouter, responseType: R.Type) -> AnyPublisher<R, WebSocketError> {
         
-        return Future<R, WebSocketError> { [unowned self] promise in
-            
-            ws.on(router.event) { stream, ack in
-                
-                guard let data = stream.first,
-                      let jsonData = try? JSONSerialization.data(withJSONObject: data),
-                      let decodedData = try? JSONDecoder().decode(R.self, from: jsonData) else {
-                    promise(.failure(.decodeFailure))
-                    return
-                }
-                
-                promise(.success(decodedData))
+        let wsSubject = PassthroughSubject<R, WebSocketError>()
+        
+        ws.on(router.event) { stream, ack in
+
+            guard let data = stream.first,
+                  let jsonData = try? JSONSerialization.data(withJSONObject: data),
+                  let decodedData = try? JSONDecoder().decode(R.self, from: jsonData) else {
+                wsSubject.send(completion: .failure(.decodeFailure))
+                return
             }
             
-        }.eraseToAnyPublisher()
+            wsSubject.send(decodedData)
+        }
+        
+        return wsSubject.eraseToAnyPublisher()
         
     }
 }

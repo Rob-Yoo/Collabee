@@ -7,16 +7,6 @@
 
 import DataSource
 
-struct EnterRoomBody: Encodable {
-    let opponentID: String
-    
-    enum CodingKeys: String, CodingKey {
-        case opponentID = "opponent_id"
-    }
-    
-    func makeMultiPartFormData() -> [MultipartFormData] { return [] }
-}
-
 enum DirectMessageAPI {
     case enterRoom(_ wsID: String, EnterRoomBody)
     case dmRooms(_ wsID: String)

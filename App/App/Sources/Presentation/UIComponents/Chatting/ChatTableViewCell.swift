@@ -210,16 +210,3 @@ final class ChatTableViewCell: BaseTableViewCell {
     }
     
 }
-
-struct ChatPresentationModel: Hashable, Identifiable {
-    let id: String
-    let profileImage: String?
-    let senderName: String
-    let content: String
-    let sendDate: String
-    let images: [String]
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}

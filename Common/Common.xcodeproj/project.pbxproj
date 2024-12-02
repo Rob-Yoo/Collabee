@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CC608F412CF0AF66003D1EBA /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC608F402CF0AF66003D1EBA /* Publisher+Extension.swift */; };
+		CC80B4E22CFC091F00BE8813 /* DateFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4E12CFC091F00BE8813 /* DateFormatManager.swift */; };
+		CC80B4E42CFC097C00BE8813 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4E32CFC097C00BE8813 /* String+Extension.swift */; };
+		CC80B4E62CFC09B800BE8813 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4E52CFC09B800BE8813 /* Date+Extension.swift */; };
 		CCB4466F2CD9F12000A4FCAB /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB4466E2CD9F12000A4FCAB /* Container.swift */; };
 		CCB446772CDA07F700A4FCAB /* CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB446762CDA07F700A4FCAB /* CommonTests.swift */; };
 		CCB4467E2CDA080C00A4FCAB /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFE27382CD4CDB600E8D655 /* Common.framework */; platformFilter = ios; };
@@ -48,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		CC608F402CF0AF66003D1EBA /* Publisher+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Extension.swift"; sourceTree = "<group>"; };
+		CC80B4E12CFC091F00BE8813 /* DateFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatManager.swift; sourceTree = "<group>"; };
+		CC80B4E32CFC097C00BE8813 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		CC80B4E52CFC09B800BE8813 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		CCB4466E2CD9F12000A4FCAB /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		CCB446742CDA07F700A4FCAB /* CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCB446762CDA07F700A4FCAB /* CommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTests.swift; sourceTree = "<group>"; };
@@ -81,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC80B4E02CFC091400BE8813 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CC80B4E12CFC091F00BE8813 /* DateFormatManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		CCB4466D2CD9F11800A4FCAB /* DependencyInject */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +129,8 @@
 			children = (
 				CCB831E92CE4A2F4007E2CDD /* Notification.Name+Extension.swift */,
 				CC608F402CF0AF66003D1EBA /* Publisher+Extension.swift */,
+				CC80B4E32CFC097C00BE8813 /* String+Extension.swift */,
+				CC80B4E52CFC09B800BE8813 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -148,6 +164,7 @@
 		CCFE273A2CD4CDB600E8D655 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CC80B4E02CFC091400BE8813 /* Utils */,
 				CCB831E82CE4A2A1007E2CDD /* Extensions */,
 				CCBC38522CE348F7008472E5 /* KeyChain */,
 				CCB4466D2CD9F11800A4FCAB /* DependencyInject */,
@@ -282,9 +299,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCB831EA2CE4A2F4007E2CDD /* Notification.Name+Extension.swift in Sources */,
+				CC80B4E42CFC097C00BE8813 /* String+Extension.swift in Sources */,
 				CCB4466F2CD9F12000A4FCAB /* Container.swift in Sources */,
 				CC608F412CF0AF66003D1EBA /* Publisher+Extension.swift in Sources */,
 				CCB4468B2CDB8F7500A4FCAB /* Assembly.swift in Sources */,
+				CC80B4E62CFC09B800BE8813 /* Date+Extension.swift in Sources */,
+				CC80B4E22CFC091F00BE8813 /* DateFormatManager.swift in Sources */,
 				CCBC38542CE3493A008472E5 /* KeyChain.swift in Sources */,
 				CCB446892CDB17E300A4FCAB /* DIContainer.swift in Sources */,
 				CCB446872CDA161B00A4FCAB /* Injected.swift in Sources */,

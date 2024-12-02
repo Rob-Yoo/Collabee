@@ -26,6 +26,10 @@
 		CC7FDDCC2CEDCB6300E7B0E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC7FDDCB2CEDCB6300E7B0E5 /* GoogleService-Info.plist */; };
 		CC7FDDCF2CEDCBE800E7B0E5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7FDDCE2CEDCBE800E7B0E5 /* FirebaseAnalytics */; };
 		CC7FDDD12CEDCBE800E7B0E5 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = CC7FDDD02CEDCBE800E7B0E5 /* FirebaseMessaging */; };
+		CC80B4E82CFD403100BE8813 /* Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC80B4E72CFD403100BE8813 /* Chat.framework */; };
+		CC80B4EC2CFD411800BE8813 /* ChatAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4EB2CFD411800BE8813 /* ChatAssembly.swift */; };
+		CC80B4F72CFD799A00BE8813 /* DMChattingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4F62CFD799A00BE8813 /* DMChattingViewModel.swift */; };
+		CC80B4F92CFD7A8300BE8813 /* ChatPresentaionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4F82CFD7A8300BE8813 /* ChatPresentaionModel.swift */; };
 		CC8386552CE712370077ED8B /* AuthorizationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386542CE712370077ED8B /* AuthorizationAssembly.swift */; };
 		CC8386592CE7139D0077ED8B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8386582CE7139D0077ED8B /* OnboardingViewController.swift */; };
 		CC83865B2CE714DE0077ED8B /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC83865A2CE714DE0077ED8B /* UIFont+Extension.swift */; };
@@ -110,6 +114,11 @@
 		CC608F762CF1F345003D1EBA /* UIViewController+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Combine.swift"; sourceTree = "<group>"; };
 		CC7FDDA22CED719200E7B0E5 /* DataSourceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceAssembly.swift; sourceTree = "<group>"; };
 		CC7FDDCB2CEDCB6300E7B0E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CC80B4C92CFAC58900BE8813 /* Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC80B4E72CFD403100BE8813 /* Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC80B4EB2CFD411800BE8813 /* ChatAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAssembly.swift; sourceTree = "<group>"; };
+		CC80B4F62CFD799A00BE8813 /* DMChattingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMChattingViewModel.swift; sourceTree = "<group>"; };
+		CC80B4F82CFD7A8300BE8813 /* ChatPresentaionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresentaionModel.swift; sourceTree = "<group>"; };
 		CC8386542CE712370077ED8B /* AuthorizationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAssembly.swift; sourceTree = "<group>"; };
 		CC8386582CE7139D0077ED8B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		CC83865A2CE714DE0077ED8B /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -175,6 +184,7 @@
 				CCFD05522CEF56950023B97E /* WorkSpace.framework in Frameworks */,
 				CC8386702CE717160077ED8B /* SnapKit in Frameworks */,
 				CC8386652CE716020077ED8B /* Authorization.framework in Frameworks */,
+				CC80B4E82CFD403100BE8813 /* Chat.framework in Frameworks */,
 				CC7FDDD12CEDCBE800E7B0E5 /* FirebaseMessaging in Frameworks */,
 				CC7FDDCF2CEDCBE800E7B0E5 /* FirebaseAnalytics in Frameworks */,
 				CC8386732CE717240077ED8B /* Then in Frameworks */,
@@ -311,6 +321,7 @@
 				CC8386542CE712370077ED8B /* AuthorizationAssembly.swift */,
 				CC7FDDA22CED719200E7B0E5 /* DataSourceAssembly.swift */,
 				CCFD055A2CEF66A30023B97E /* WorkspaceAssembly.swift */,
+				CC80B4EB2CFD411800BE8813 /* ChatAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -329,7 +340,6 @@
 			children = (
 				CC2DA5832CF58AD900EA238F /* DMListViewController.swift */,
 				CC2DA5872CF59E7000EA238F /* DMRoomCollectionViewCell.swift */,
-				CC2DA5892CF5A5EB00EA238F /* DMRoomPresentationModel.swift */,
 			);
 			path = DMList;
 			sourceTree = "<group>";
@@ -337,7 +347,10 @@
 		CCBABF642CF6B29800C227C1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CC2DA5892CF5A5EB00EA238F /* DMRoomPresentationModel.swift */,
 				CCBABF652CF6B2A300C227C1 /* DMListViewModel.swift */,
+				CC80B4F62CFD799A00BE8813 /* DMChattingViewModel.swift */,
+				CC80B4F82CFD7A8300BE8813 /* ChatPresentaionModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -497,6 +510,8 @@
 		CCFE275B2CD4D30900E8D655 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC80B4E72CFD403100BE8813 /* Chat.framework */,
+				CC80B4C92CFAC58900BE8813 /* Chat.framework */,
 				CCFD05512CEF56950023B97E /* WorkSpace.framework */,
 				CC8386872CE723B60077ED8B /* DataSource.framework */,
 				CC8386642CE716020077ED8B /* Authorization.framework */,
@@ -653,6 +668,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCFD053F2CEF1D800023B97E /* CombineControlTargetAction.swift in Sources */,
+				CC80B4EC2CFD411800BE8813 /* ChatAssembly.swift in Sources */,
 				CCFD05302CEF0F130023B97E /* RoundedImageView.swift in Sources */,
 				CC8386552CE712370077ED8B /* AuthorizationAssembly.swift in Sources */,
 				CCBABF752CF6F0C600C227C1 /* AddImageCollectionViewCell.swift in Sources */,
@@ -674,6 +690,7 @@
 				CCFD053B2CEF17A90023B97E /* RoundedTextButton.swift in Sources */,
 				CCFD05412CEF29E60023B97E /* UIGestureRecognizer+Combine.swift in Sources */,
 				CCFD054D2CEF48220023B97E /* UIImage+Extension.swift in Sources */,
+				CC80B4F72CFD799A00BE8813 /* DMChattingViewModel.swift in Sources */,
 				CC8386602CE715900077ED8B /* UIViewController+Extension.swift in Sources */,
 				CC2DA5842CF58AD900EA238F /* DMListViewController.swift in Sources */,
 				CC608F432CF0BD3C003D1EBA /* InviteMemberViewController.swift in Sources */,
@@ -688,6 +705,7 @@
 				CC2DA58C2CF5A7B000EA238F /* UnreadCountTagView.swift in Sources */,
 				CC2DA5882CF59E7000EA238F /* DMRoomCollectionViewCell.swift in Sources */,
 				CCBABF772CF70F7D00C227C1 /* UITextView+Combine.swift in Sources */,
+				CC80B4F92CFD7A8300BE8813 /* ChatPresentaionModel.swift in Sources */,
 				CCFD05202CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift in Sources */,
 				CCFD05282CEF02CB0023B97E /* UIButton+Combine.swift in Sources */,
 				CCFD05232CEEFDA50023B97E /* CombineControlEvent.swift in Sources */,

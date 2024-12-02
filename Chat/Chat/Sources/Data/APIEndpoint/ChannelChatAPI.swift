@@ -7,13 +7,6 @@
 
 import DataSource
 
-struct ChatBody {
-    let content: String
-    let images: [Data]
-    
-    func makeMultipartFormData() -> [MultipartFormData] { return [] }
-}
-
 enum ChannelChatAPI {
     case chatList(_ wsID: String, _ chID: String, _ cursorDate: String)
     case sendChat(_ wsID: String, _ chID: String, ChatBody)

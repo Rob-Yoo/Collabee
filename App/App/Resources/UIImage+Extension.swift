@@ -11,9 +11,14 @@ import ImageIO
 extension UIImage {
     
     func resize(_ size: CGSize) -> UIImage {
-        let render = UIGraphicsImageRenderer(size: size)
+        let originalSize = self.size
+        let ratio = originalSize.width / originalSize.height
+        let targetSize = originalSize.width > originalSize.height ?
+            CGSize(width: size.width, height: size.width / ratio) :
+            CGSize(width: size.width * ratio, height: size.width)
+        let render = UIGraphicsImageRenderer(size: targetSize)
         let resizedImage = render.image { _ in
-            self.draw(in: CGRect(origin: .zero, size: size))
+            self.draw(in: CGRect(origin: .zero, size: targetSize))
         }
         
         print(resizedImage.jpegData(compressionQuality: 1)!)
@@ -34,9 +39,11 @@ extension UIImage {
         else { return nil }
         
         let resizedImage = UIImage(cgImage: cgImage)
+        print(data)
         print(resizedImage.jpegData(compressionQuality: 1)!)
         return resizedImage
     }
+    
     
     static var xIcon = UIImage(systemName: "xmark")
     static var xCircleIcon = UIImage(named: "xmark.circle")

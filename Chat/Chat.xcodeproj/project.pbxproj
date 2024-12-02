@@ -13,20 +13,29 @@
 		CC80B47C2CF8821900BE8813 /* DataSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC80B47B2CF8821900BE8813 /* DataSource.framework */; };
 		CC80B4832CF8824800BE8813 /* ChannelChatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4822CF8824800BE8813 /* ChannelChatAPI.swift */; };
 		CC80B4852CF8825D00BE8813 /* DirectMessageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4842CF8825D00BE8813 /* DirectMessageAPI.swift */; };
-		CC80B4962CF9B7F100BE8813 /* ChannelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4952CF9B7F100BE8813 /* ChannelObject.swift */; };
-		CC80B4982CF9B91700BE8813 /* ChannelChatObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4972CF9B91700BE8813 /* ChannelChatObject.swift */; };
+		CC80B4962CF9B7F100BE8813 /* ChatRoomObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4952CF9B7F100BE8813 /* ChatRoomObject.swift */; };
+		CC80B4982CF9B91700BE8813 /* ChatObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4972CF9B91700BE8813 /* ChatObject.swift */; };
 		CC80B49A2CF9B9BE00BE8813 /* SenderObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4992CF9B9BE00BE8813 /* SenderObject.swift */; };
 		CC80B49E2CF9D08B00BE8813 /* ChannelChatDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B49D2CF9D08B00BE8813 /* ChannelChatDTO.swift */; };
 		CC80B4A02CF9D33800BE8813 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B49F2CF9D33800BE8813 /* UserDTO.swift */; };
 		CC80B4A22CF9D4A000BE8813 /* ChannelUnreadsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4A12CF9D4A000BE8813 /* ChannelUnreadsDTO.swift */; };
-		CC80B4A42CF9D57500BE8813 /* DMRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4A32CF9D57500BE8813 /* DMRoomDTO.swift */; };
 		CC80B4A62CF9D5AC00BE8813 /* DMChatDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4A52CF9D5AC00BE8813 /* DMChatDTO.swift */; };
 		CC80B4A82CF9D63900BE8813 /* DMUnreadsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4A72CF9D63900BE8813 /* DMUnreadsDTO.swift */; };
-		CC80B4AD2CF9D95800BE8813 /* ChannelChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4AC2CF9D95800BE8813 /* ChannelChat.swift */; };
+		CC80B4AD2CF9D95800BE8813 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4AC2CF9D95800BE8813 /* Chat.swift */; };
 		CC80B4AF2CF9DA0500BE8813 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4AE2CF9DA0500BE8813 /* Sender.swift */; };
-		CC80B4B12CF9DAC200BE8813 /* DMChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4B02CF9DAC200BE8813 /* DMChat.swift */; };
 		CC80B4B32CF9DB6000BE8813 /* Unreads.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4B22CF9DB6000BE8813 /* Unreads.swift */; };
-		CC80B4B52CF9DBC400BE8813 /* DMRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4B42CF9DBC400BE8813 /* DMRoom.swift */; };
+		CC80B4BB2CF9F2B900BE8813 /* ChatError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4BA2CF9F2B900BE8813 /* ChatError.swift */; };
+		CC80B4C12CF9F3C200BE8813 /* ChatBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4C02CF9F3C200BE8813 /* ChatBody.swift */; };
+		CC80B4C42CF9F3EC00BE8813 /* ChatBody+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4C32CF9F3EC00BE8813 /* ChatBody+Extension.swift */; };
+		CC80B4D22CFAD99700BE8813 /* ChatUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4D12CFAD99700BE8813 /* ChatUseCase.swift */; };
+		CC80B4D42CFAE3D000BE8813 /* ChatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4D32CFAE3D000BE8813 /* ChatType.swift */; };
+		CC80B4D62CFAEA5B00BE8813 /* ChatActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4D52CFAEA5B00BE8813 /* ChatActionRepository.swift */; };
+		CC80B4D82CFAEA6400BE8813 /* ChatDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4D72CFAEA6400BE8813 /* ChatDataRepository.swift */; };
+		CC80B4DA2CFAEAC500BE8813 /* DefaultChatActionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4D92CFAEAC500BE8813 /* DefaultChatActionRepository.swift */; };
+		CC80B4DC2CFAF13C00BE8813 /* DefaultChatDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4DB2CFAF13C00BE8813 /* DefaultChatDataRepository.swift */; };
+		CC80B4F02CFD4BC200BE8813 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4EF2CFD4BC200BE8813 /* ChatRoom.swift */; };
+		CC80B4F22CFD4C0100BE8813 /* ChatRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4F12CFD4C0100BE8813 /* ChatRoomDTO.swift */; };
+		CC80B4F42CFD742000BE8813 /* EnterRoomBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4F32CFD742000BE8813 /* EnterRoomBody.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,20 +56,29 @@
 		CC80B47B2CF8821900BE8813 /* DataSource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataSource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC80B4822CF8824800BE8813 /* ChannelChatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelChatAPI.swift; sourceTree = "<group>"; };
 		CC80B4842CF8825D00BE8813 /* DirectMessageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessageAPI.swift; sourceTree = "<group>"; };
-		CC80B4952CF9B7F100BE8813 /* ChannelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelObject.swift; sourceTree = "<group>"; };
-		CC80B4972CF9B91700BE8813 /* ChannelChatObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelChatObject.swift; sourceTree = "<group>"; };
+		CC80B4952CF9B7F100BE8813 /* ChatRoomObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomObject.swift; sourceTree = "<group>"; };
+		CC80B4972CF9B91700BE8813 /* ChatObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatObject.swift; sourceTree = "<group>"; };
 		CC80B4992CF9B9BE00BE8813 /* SenderObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderObject.swift; sourceTree = "<group>"; };
 		CC80B49D2CF9D08B00BE8813 /* ChannelChatDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelChatDTO.swift; sourceTree = "<group>"; };
 		CC80B49F2CF9D33800BE8813 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		CC80B4A12CF9D4A000BE8813 /* ChannelUnreadsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelUnreadsDTO.swift; sourceTree = "<group>"; };
-		CC80B4A32CF9D57500BE8813 /* DMRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMRoomDTO.swift; sourceTree = "<group>"; };
 		CC80B4A52CF9D5AC00BE8813 /* DMChatDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMChatDTO.swift; sourceTree = "<group>"; };
 		CC80B4A72CF9D63900BE8813 /* DMUnreadsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMUnreadsDTO.swift; sourceTree = "<group>"; };
-		CC80B4AC2CF9D95800BE8813 /* ChannelChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelChat.swift; sourceTree = "<group>"; };
+		CC80B4AC2CF9D95800BE8813 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		CC80B4AE2CF9DA0500BE8813 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
-		CC80B4B02CF9DAC200BE8813 /* DMChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMChat.swift; sourceTree = "<group>"; };
 		CC80B4B22CF9DB6000BE8813 /* Unreads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unreads.swift; sourceTree = "<group>"; };
-		CC80B4B42CF9DBC400BE8813 /* DMRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMRoom.swift; sourceTree = "<group>"; };
+		CC80B4BA2CF9F2B900BE8813 /* ChatError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatError.swift; sourceTree = "<group>"; };
+		CC80B4C02CF9F3C200BE8813 /* ChatBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBody.swift; sourceTree = "<group>"; };
+		CC80B4C32CF9F3EC00BE8813 /* ChatBody+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatBody+Extension.swift"; sourceTree = "<group>"; };
+		CC80B4D12CFAD99700BE8813 /* ChatUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUseCase.swift; sourceTree = "<group>"; };
+		CC80B4D32CFAE3D000BE8813 /* ChatType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatType.swift; sourceTree = "<group>"; };
+		CC80B4D52CFAEA5B00BE8813 /* ChatActionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatActionRepository.swift; sourceTree = "<group>"; };
+		CC80B4D72CFAEA6400BE8813 /* ChatDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataRepository.swift; sourceTree = "<group>"; };
+		CC80B4D92CFAEAC500BE8813 /* DefaultChatActionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChatActionRepository.swift; sourceTree = "<group>"; };
+		CC80B4DB2CFAF13C00BE8813 /* DefaultChatDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultChatDataRepository.swift; sourceTree = "<group>"; };
+		CC80B4EF2CFD4BC200BE8813 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		CC80B4F12CFD4C0100BE8813 /* ChatRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomDTO.swift; sourceTree = "<group>"; };
+		CC80B4F32CFD742000BE8813 /* EnterRoomBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterRoomBody.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +157,8 @@
 		CC80B4802CF8822A00BE8813 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CC80B4C22CF9F3E100BE8813 /* Request */,
+				CC80B4BC2CF9F31500BE8813 /* Repositories */,
 				CC80B49B2CF9CFCC00BE8813 /* DTOs */,
 				CC80B4812CF8823100BE8813 /* APIEndpoint */,
 			);
@@ -157,8 +177,8 @@
 		CC80B4942CF9B79600BE8813 /* PersistanceDTO */ = {
 			isa = PBXGroup;
 			children = (
-				CC80B4952CF9B7F100BE8813 /* ChannelObject.swift */,
-				CC80B4972CF9B91700BE8813 /* ChannelChatObject.swift */,
+				CC80B4952CF9B7F100BE8813 /* ChatRoomObject.swift */,
+				CC80B4972CF9B91700BE8813 /* ChatObject.swift */,
 				CC80B4992CF9B9BE00BE8813 /* SenderObject.swift */,
 			);
 			path = PersistanceDTO;
@@ -179,9 +199,9 @@
 				CC80B49D2CF9D08B00BE8813 /* ChannelChatDTO.swift */,
 				CC80B49F2CF9D33800BE8813 /* UserDTO.swift */,
 				CC80B4A12CF9D4A000BE8813 /* ChannelUnreadsDTO.swift */,
-				CC80B4A32CF9D57500BE8813 /* DMRoomDTO.swift */,
 				CC80B4A52CF9D5AC00BE8813 /* DMChatDTO.swift */,
 				CC80B4A72CF9D63900BE8813 /* DMUnreadsDTO.swift */,
+				CC80B4F12CFD4C0100BE8813 /* ChatRoomDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -189,6 +209,10 @@
 		CC80B4A92CF9D93700BE8813 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				CC80B4D02CFAD95000BE8813 /* UseCase */,
+				CC80B4BF2CF9F3B700BE8813 /* Request */,
+				CC80B4B92CF9F2AF00BE8813 /* Error */,
+				CC80B4B62CF9E3F400BE8813 /* Interfaces */,
 				CC80B4AB2CF9D94D00BE8813 /* Entity */,
 			);
 			path = Domain;
@@ -198,12 +222,63 @@
 			isa = PBXGroup;
 			children = (
 				CC80B4AE2CF9DA0500BE8813 /* Sender.swift */,
-				CC80B4AC2CF9D95800BE8813 /* ChannelChat.swift */,
-				CC80B4B02CF9DAC200BE8813 /* DMChat.swift */,
+				CC80B4AC2CF9D95800BE8813 /* Chat.swift */,
 				CC80B4B22CF9DB6000BE8813 /* Unreads.swift */,
-				CC80B4B42CF9DBC400BE8813 /* DMRoom.swift */,
+				CC80B4D32CFAE3D000BE8813 /* ChatType.swift */,
+				CC80B4EF2CFD4BC200BE8813 /* ChatRoom.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		CC80B4B62CF9E3F400BE8813 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				CC80B4D52CFAEA5B00BE8813 /* ChatActionRepository.swift */,
+				CC80B4D72CFAEA6400BE8813 /* ChatDataRepository.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		CC80B4B92CF9F2AF00BE8813 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				CC80B4BA2CF9F2B900BE8813 /* ChatError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		CC80B4BC2CF9F31500BE8813 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CC80B4D92CFAEAC500BE8813 /* DefaultChatActionRepository.swift */,
+				CC80B4DB2CFAF13C00BE8813 /* DefaultChatDataRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CC80B4BF2CF9F3B700BE8813 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				CC80B4C02CF9F3C200BE8813 /* ChatBody.swift */,
+				CC80B4F32CFD742000BE8813 /* EnterRoomBody.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		CC80B4C22CF9F3E100BE8813 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				CC80B4C32CF9F3EC00BE8813 /* ChatBody+Extension.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		CC80B4D02CFAD95000BE8813 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				CC80B4D12CFAD99700BE8813 /* ChatUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,21 +392,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC80B4AF2CF9DA0500BE8813 /* Sender.swift in Sources */,
-				CC80B4962CF9B7F100BE8813 /* ChannelObject.swift in Sources */,
-				CC80B4AD2CF9D95800BE8813 /* ChannelChat.swift in Sources */,
+				CC80B4962CF9B7F100BE8813 /* ChatRoomObject.swift in Sources */,
+				CC80B4C12CF9F3C200BE8813 /* ChatBody.swift in Sources */,
+				CC80B4BB2CF9F2B900BE8813 /* ChatError.swift in Sources */,
+				CC80B4DA2CFAEAC500BE8813 /* DefaultChatActionRepository.swift in Sources */,
+				CC80B4D42CFAE3D000BE8813 /* ChatType.swift in Sources */,
+				CC80B4AD2CF9D95800BE8813 /* Chat.swift in Sources */,
 				CC80B49E2CF9D08B00BE8813 /* ChannelChatDTO.swift in Sources */,
+				CC80B4F22CFD4C0100BE8813 /* ChatRoomDTO.swift in Sources */,
 				CC80B4832CF8824800BE8813 /* ChannelChatAPI.swift in Sources */,
-				CC80B4B52CF9DBC400BE8813 /* DMRoom.swift in Sources */,
 				CC80B4852CF8825D00BE8813 /* DirectMessageAPI.swift in Sources */,
-				CC80B4B12CF9DAC200BE8813 /* DMChat.swift in Sources */,
 				CC80B4A82CF9D63900BE8813 /* DMUnreadsDTO.swift in Sources */,
-				CC80B4A42CF9D57500BE8813 /* DMRoomDTO.swift in Sources */,
 				CC80B4A22CF9D4A000BE8813 /* ChannelUnreadsDTO.swift in Sources */,
+				CC80B4F42CFD742000BE8813 /* EnterRoomBody.swift in Sources */,
+				CC80B4D62CFAEA5B00BE8813 /* ChatActionRepository.swift in Sources */,
 				CC80B4B32CF9DB6000BE8813 /* Unreads.swift in Sources */,
+				CC80B4F02CFD4BC200BE8813 /* ChatRoom.swift in Sources */,
 				CC80B49A2CF9B9BE00BE8813 /* SenderObject.swift in Sources */,
+				CC80B4DC2CFAF13C00BE8813 /* DefaultChatDataRepository.swift in Sources */,
 				CC80B4A02CF9D33800BE8813 /* UserDTO.swift in Sources */,
+				CC80B4D22CFAD99700BE8813 /* ChatUseCase.swift in Sources */,
+				CC80B4C42CF9F3EC00BE8813 /* ChatBody+Extension.swift in Sources */,
+				CC80B4D82CFAEA6400BE8813 /* ChatDataRepository.swift in Sources */,
 				CC80B4A62CF9D5AC00BE8813 /* DMChatDTO.swift in Sources */,
-				CC80B4982CF9B91700BE8813 /* ChannelChatObject.swift in Sources */,
+				CC80B4982CF9B91700BE8813 /* ChatObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +441,7 @@
 		CC80B4722CF881F800BE8813 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -423,6 +508,7 @@
 		CC80B4732CF881F800BE8813 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -482,6 +568,7 @@
 		CC80B4752CF881F800BE8813 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -501,6 +588,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -522,6 +610,7 @@
 		CC80B4762CF881F800BE8813 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,6 +630,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";

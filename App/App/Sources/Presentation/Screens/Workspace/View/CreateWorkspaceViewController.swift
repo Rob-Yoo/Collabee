@@ -169,7 +169,7 @@ final class CreateWorkspaceViewController: SheetPresentationViewController {
         
         output.selectedCoverImage
             .receive(on: DispatchQueue.main)
-            .map { $0 }
+            .map { $0.resize(CGSize(width: 70, height: 70)) }
             .assign(to: \.image, on: coverImageView)
             .store(in: &cancellable)
         
@@ -206,7 +206,7 @@ extension CreateWorkspaceViewController: PHPickerViewControllerDelegate {
                 guard let self else { return }
                 
                 if let image = object as? UIImage {
-                    let downsampledImage = UIImage.downsample(image.jpegData(compressionQuality: 1.0)!, CGSize(width: 200, height: 200))
+                    let downsampledImage = UIImage.downsample(image.jpegData(compressionQuality: 1.0)!, CGSize(width: Constant.Dimension.screenWidth, height: Constant.Dimension.screenWidth))
                     coverImage.send(downsampledImage)
                 } else {
                     print("Cannot Data")

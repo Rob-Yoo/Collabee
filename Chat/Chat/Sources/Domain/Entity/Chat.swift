@@ -1,24 +1,27 @@
 //
-//  DMChat.swift
+//  ChannelChat.swift
 //  Chat
 //
 //  Created by Jinyoung Yoo on 11/29/24.
 //
 
-public struct DMChat {
-    public let chatID: String
+public struct Chat {
+    public let id: String
     public let roomID: String
+    public let roomName: String
     public let content: String
     public let createdAt: String
     public let files: [String]
     public let sender: Sender
     
-    public init(chatID: String, roomID: String, content: String, createdAt: String, files: [String], sender: Sender) {
-        self.chatID = chatID
+    public init(id: String, roomID: String, roomName: String, content: String, createdAt: String, files: [String], sender: Sender) {
+        self.id = id
         self.roomID = roomID
+        self.roomName = roomName
         self.content = content
         self.createdAt = createdAt
         self.files = files
         self.sender = sender
     }
+    
 }

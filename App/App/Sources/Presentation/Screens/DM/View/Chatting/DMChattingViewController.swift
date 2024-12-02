@@ -42,6 +42,7 @@ fileprivate typealias Snapshot = NSDiffableDataSourceSnapshot<Section, ChatItem>
 
 final class DMChattingViewController: BaseViewController {
     
+    private var vm: DMChattingViewModel
     private lazy var dataSource = DataSource(chatTableView)
     
     private lazy var chatTableView = UITableView().then {
@@ -52,6 +53,11 @@ final class DMChattingViewController: BaseViewController {
         $0.separatorStyle = .none
     }
     private let chatInputView = ChatInputView()
+    
+    init(vm: DMChattingViewModel) {
+        self.vm = vm
+        super.init()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +85,11 @@ final class DMChattingViewController: BaseViewController {
     }
     
     override func bindViewModel() {
+        let input = DMChattingViewModel.Input(
+            viewDidLoad: viewDidLoadPublisher.eraseToAnyPublisher()
+        )
+        let output = vm.transform(input)
+        
         chatInputView.chatInputTextView.textPublisher
             .withUnretained(self)
             .sink { owner, text in
@@ -92,19 +103,12 @@ final class DMChattingViewController: BaseViewController {
                 owner.chatInputView.updateTextViewHeight()
             }.store(in: &cancellable)
         
-        let chats = [
-            ChatPresentationModel(id: UUID().uuidString, profileImage: "", senderName: "유진영", content: "안녕하세요", sendDate: "11:00 오전", images: ["", "", "", ""]),
-            ChatPresentationModel(id: UUID().uuidString, profileImage: "", senderName: "최대성", content: "안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요", sendDate: "11:34 오전", images: ["", "", "", "", ""]),
-            ChatPresentationModel(id: UUID().uuidString, profileImage: "", senderName: "유진영", content: "안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요", sendDate: "12:00 오후", images: ["", "", "", "", ""]),
-            ChatPresentationModel(id: UUID().uuidString, profileImage: "", senderName: "최대성", content: "", sendDate: "12:30 오후", images: ["", "", ""]),
-            ChatPresentationModel(id: UUID().uuidString, profileImage: "", senderName: "유진영", content: "안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요", sendDate: "13:30 오후", images: ["", ""]),
-            ChatPresentationModel(id: UUID().uuidString, profileImage: "", senderName: "최대성", content: "안녕하세요 안녕하세요 안녕하세요 안녕하세요", sendDate: "14:55 오후", images: []),
-            ChatPresentationModel(id: UUID().uuidString, profileImage: "", senderName: "최대성", content: "안녕하세요 안녕하세요 안녕하세요 안녕하세요", sendDate: "15:30 오후", images: []),
-            ChatPresentationModel(id: UUID().uuidString, profileImage: "", senderName: "유진영", content: "안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요", sendDate: "14:30 오후", images: [""]),
-            ChatPresentationModel(id: UUID().uuidString, profileImage: "", senderName: "유진영", content: "안녕하세요 안녕하세요 안녕하세요 안녕하세요. 안녕하세요", sendDate: "14:33 오후", images: [])
-        ]
-        
-        applySnapShot(chats)
+        output.chatList
+            .receive(on: DispatchQueue.main)
+            .withUnretained(self)
+            .sink { owner, chats in
+                owner.applySnapShot(chats)
+            }.store(in: &cancellable)
     }
     
     private func applySnapShot(_ chats: [ChatPresentationModel]) {

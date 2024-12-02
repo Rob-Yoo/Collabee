@@ -26,12 +26,13 @@ struct DMChatDTO: Decodable {
 }
 
 extension DMChatDTO {
-    func toDomain() -> DMChat {
-        return DMChat(chatID: self.dmID,
-                      roomID: self.roomID,
-                      content: self.content,
-                      createdAt: self.createdAt,
-                      files: self.files,
-                      sender: self.user.toDomain())
+    func toDomain() -> Chat {
+        return Chat(id: self.dmID,
+                    roomID: self.roomID,
+                    roomName: self.user.nickname,
+                    content: self.content,
+                    createdAt: self.createdAt,
+                    files: self.files,
+                    sender: self.user.toDomain())
     }
 }

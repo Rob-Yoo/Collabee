@@ -17,5 +17,9 @@ struct DataSourceAssembly: Assembly {
         container.register(WebSocketProvider.self) { _ in
             return DefaultWebSocketProvider()
         }
+        
+        container.register(DataBaseProvider.self) { _ in
+            return DefaultDataBaseProvider()
+        }
     }
 }

@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DIContainer.shared.assemble([
             DataSourceAssembly(),
             AuthorizationAssembly(),
-            WorkspaceAssembly()
+            WorkspaceAssembly(),
+            ChatAssembly()
         ])
         
         FirebaseApp.configure()

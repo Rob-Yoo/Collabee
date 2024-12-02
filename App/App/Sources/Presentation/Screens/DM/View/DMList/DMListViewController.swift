@@ -86,10 +86,12 @@ final class DMListViewController: BaseViewController {
     }
     
     override func bindViewModel() {
+        let selectedMember = didSelectItemAtSubject.filter { $0.section == 0 }.map { $0.row }
         let selectedDMRoom = didSelectItemAtSubject.filter { $0.section == 1 }.map { $0.row }
         let input = DMListViewModel.Input(
             viewDidLoad: viewDidLoadPublisher.eraseToAnyPublisher(),
             viewWillAppear: viewWillAppearPublisher.eraseToAnyPublisher(),
+            selectedMember: selectedMember.eraseToAnyPublisher(),
             selectedDMRoom: selectedDMRoom.eraseToAnyPublisher()
         )
         let output = vm.transform(input)
@@ -108,6 +110,17 @@ final class DMListViewController: BaseViewController {
             .sink { (owner, listTuple) in
                 let (memberList, dmRoomList) = listTuple
                 owner.applySnapShot(memberList, dmRoomList)
+            }.store(in: &cancellable)
+        
+        output.willEnterRoomID
+            .receive(on: DispatchQueue.main)
+            .withUnretained(self)
+            .sink { owner, id in
+                
+                let nextVC = DMChattingViewController(vm: DMChattingViewModel(roomID: id))
+                
+                nextVC.hidesBottomBarWhenPushed = true
+                owner.navigationController?.pushViewController(nextVC, animated: true)
             }.store(in: &cancellable)
     }
     

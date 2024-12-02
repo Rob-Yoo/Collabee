@@ -60,7 +60,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            window?.rootViewController = UINavigationController(rootViewController: OnboardingViewController(useCase: authUseCase))
 //            window?.makeKeyAndVisible()
 //        }
-        window?.rootViewController = DMChattingViewController()
+        window?.rootViewController = EmptyWorkspaceViewController()
         window?.makeKeyAndVisible()
     }
     

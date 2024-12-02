@@ -28,13 +28,13 @@ struct ChannelChatDTO: Decodable {
 }
 
 extension ChannelChatDTO {
-    func toDomain() -> ChannelChat {
-        return ChannelChat(chatID: self.chatID,
-                           channelID: self.channelID,
-                           channelName: self.channelName,
-                           content: self.content,
-                           createdAt: self.createdAt,
-                           files: self.files,
-                           sender: self.user.toDomain())
+    func toDomain() -> Chat {
+        return Chat(id: self.chatID,
+                    roomID: self.channelID,
+                    roomName: self.channelName,
+                    content: self.content,
+                    createdAt: self.createdAt,
+                    files: self.files,
+                    sender: self.user.toDomain())
     }
 }

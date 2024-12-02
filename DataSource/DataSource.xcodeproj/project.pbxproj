@@ -20,6 +20,8 @@
 		CC80B48C2CF88E3200BE8813 /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B48B2CF88E3200BE8813 /* WebSocketProvider.swift */; };
 		CC80B48E2CF8954000BE8813 /* WSRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B48D2CF8954000BE8813 /* WSRouter.swift */; };
 		CC80B4902CF8A02800BE8813 /* WebSocketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B48F2CF8A02800BE8813 /* WebSocketError.swift */; };
+		CC80B4932CF8A67300BE8813 /* DataBaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4922CF8A67300BE8813 /* DataBaseProvider.swift */; };
+		CC80B4C62CFAA15800BE8813 /* DataBaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4C52CFAA15800BE8813 /* DataBaseError.swift */; };
 		CC8386442CE70D520077ED8B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE42CE700EA00707CD2 /* NetworkError.swift */; };
 		CC8386462CE70D570077ED8B /* DefaultNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE22CE700EA00707CD2 /* DefaultNetworkProvider.swift */; };
 		CC8386472CE70D590077ED8B /* TokenInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC4AFE32CE700EA00707CD2 /* TokenInterceptor.swift */; };
@@ -92,6 +94,8 @@
 		CC80B48B2CF88E3200BE8813 /* WebSocketProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
 		CC80B48D2CF8954000BE8813 /* WSRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRouter.swift; sourceTree = "<group>"; };
 		CC80B48F2CF8A02800BE8813 /* WebSocketError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketError.swift; sourceTree = "<group>"; };
+		CC80B4922CF8A67300BE8813 /* DataBaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseProvider.swift; sourceTree = "<group>"; };
+		CC80B4C52CFAA15800BE8813 /* DataBaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseError.swift; sourceTree = "<group>"; };
 		CC8386672CE716210077ED8B /* NetworkProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderTest.swift; sourceTree = "<group>"; };
 		CC8386692CE716440077ED8B /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
 		CC9772EA2CE75E6500443542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -205,6 +209,15 @@
 			path = WS;
 			sourceTree = "<group>";
 		};
+		CC80B4912CF8A64F00BE8813 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				CC80B4922CF8A67300BE8813 /* DataBaseProvider.swift */,
+				CC80B4C52CFAA15800BE8813 /* DataBaseError.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
 		CCC4AFBE2CE7005400707CD2 = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +278,7 @@
 		CCC4AFF62CE701D400707CD2 /* LocalDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				CC80B4912CF8A64F00BE8813 /* DB */,
 				CC2DA5762CF334BE00EA238F /* Token */,
 				CC7FDDA02CED6EA800E7B0E5 /* UserDefaultStorage.swift */,
 			);
@@ -422,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC80B4C62CFAA15800BE8813 /* DataBaseError.swift in Sources */,
 				CC7FDDA12CED6EA800E7B0E5 /* UserDefaultStorage.swift in Sources */,
 				CCC4AFF42CE7017500707CD2 /* MoyaLoggerPlugin.swift in Sources */,
 				CC80B4902CF8A02800BE8813 /* WebSocketError.swift in Sources */,
@@ -433,6 +448,7 @@
 				CC83864B2CE70D650077ED8B /* TargetType+Extension.swift in Sources */,
 				CC80B48E2CF8954000BE8813 /* WSRouter.swift in Sources */,
 				CC83864D2CE70D6B0077ED8B /* AuthAPI.swift in Sources */,
+				CC80B4932CF8A67300BE8813 /* DataBaseProvider.swift in Sources */,
 				CC7FDD812CE8D8C400E7B0E5 /* APIAdapter.swift in Sources */,
 				CC8386472CE70D590077ED8B /* TokenInterceptor.swift in Sources */,
 				CC80B48C2CF88E3200BE8813 /* WebSocketProvider.swift in Sources */,

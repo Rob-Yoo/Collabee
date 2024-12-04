@@ -26,7 +26,7 @@ extension ChatObject {
         self.id = entity.id
         self.content = entity.content
         self.createdAt = entity.createdAt.toServerDate()
-        self.chatRoom = ChatRoomObject(id: entity.roomID, name: entity.roomName)
+        self.chatRoom = ChatRoomObject(id: entity.roomID)
         self.sender = SenderObject(entity.sender)
         fileList.append(objectsIn: entity.files)
         self.files = fileList
@@ -35,7 +35,6 @@ extension ChatObject {
     func toDomain() -> Chat {
         return Chat(id: self.id,
                     roomID: self.chatRoom?.id ?? "",
-                    roomName: self.chatRoom?.name ?? "",
                     content: self.content,
                     createdAt: self.createdAt.toServerDateStr(),
                     files: self.files.map { $0 },

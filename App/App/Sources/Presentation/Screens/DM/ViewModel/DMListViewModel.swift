@@ -80,10 +80,10 @@ final class DMListViewModel {
                                 guard let last = readChats.last else {
                                     return nil
                                 }
-                                
-                                return DMRoomPresentationModel.create(last, numberOfUnreadMessage: 0)
+                                 
+                                return DMRoomPresentationModel.create(last, name: chatRoom.name, numberOfUnreadMessage: 0)
                             }
-                            return DMRoomPresentationModel.create(lastChat, numberOfUnreadMessage: chats.count)
+                            return DMRoomPresentationModel.create(lastChat, name: chatRoom.name, numberOfUnreadMessage: chats.count)
                         }
                 }
                 

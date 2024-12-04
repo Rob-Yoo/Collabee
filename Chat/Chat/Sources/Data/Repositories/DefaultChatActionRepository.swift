@@ -39,6 +39,7 @@ public final class DefaultChatActionRepository: ChatActionRepository {
         case .channel:
             wsProvider.establishConnection(router: .channel(roomID))
             return wsProvider.receive(.channel(roomID), responseType: ChannelChatDTO.self)
+                .print("🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿")
                 .map { $0.toDomain() }
                 .mapError { _ in ChatError.receiveChatFailure }
                 .eraseToAnyPublisher()

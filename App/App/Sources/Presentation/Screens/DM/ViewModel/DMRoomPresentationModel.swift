@@ -21,10 +21,10 @@ struct DMRoomPresentationModel: Hashable, Identifiable {
 }
 
 extension DMRoomPresentationModel {
-    static func create(_ entity: Chat, numberOfUnreadMessage: Int) -> Self {
+    static func create(_ entity: Chat, name: String, numberOfUnreadMessage: Int) -> Self {
         return DMRoomPresentationModel(
             id: entity.roomID,
-            name: entity.roomName,
+            name: name,
             profileImageURL: entity.sender.profileImage,
             lastMessage: entity.content,
             lastDate: entity.createdAt,

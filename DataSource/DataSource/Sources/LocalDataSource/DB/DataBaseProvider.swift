@@ -22,7 +22,7 @@ public final class DefaultDataBaseProvider: DataBaseProvider {
     private let realm = try! Realm()
     
     public init() {
-        let configuration = Realm.Configuration(schemaVersion: 1)
+        let configuration = Realm.Configuration(schemaVersion: 2)
         Realm.Configuration.defaultConfiguration = configuration
         print("🚧🚧🚧🚧🚧🚧🚧 \(Realm.Configuration.defaultConfiguration.fileURL)")
     }

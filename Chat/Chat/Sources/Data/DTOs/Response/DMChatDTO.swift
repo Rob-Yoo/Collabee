@@ -29,7 +29,6 @@ extension DMChatDTO {
     func toDomain() -> Chat {
         return Chat(id: self.dmID,
                     roomID: self.roomID,
-                    roomName: self.user.nickname,
                     content: self.content,
                     createdAt: self.createdAt,
                     files: self.files,

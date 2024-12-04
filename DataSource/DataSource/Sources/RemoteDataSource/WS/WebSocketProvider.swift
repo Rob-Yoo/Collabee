@@ -35,7 +35,9 @@ public final class DefaultWebSocketProvider: WebSocketProvider {
     
     public func establishConnection(router: WSRouter) {
         if !isConnected {
+            print("I' m Here")
             ws = self.manager.socket(forNamespace: router.nameSpace)
+            ws?.removeAllHandlers()
             ws?.on(clientEvent: .connect, callback: { data, ack in
                 print("💡💡💡💡💡💡💡💡 웹소켓 연결 성공 💡💡💡💡💡💡💡💡💡", data, ack)
             })
@@ -67,7 +69,7 @@ public final class DefaultWebSocketProvider: WebSocketProvider {
                 wsSubject.send(completion: .failure(.decodeFailure))
                 return
             }
-            
+            print("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉 \(decodedData)")
             wsSubject.send(decodedData)
         }
         

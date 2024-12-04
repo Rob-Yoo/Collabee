@@ -9,7 +9,6 @@ import Foundation
 
 struct ChannelChatDTO: Decodable {
     let channelID: String
-    let channelName: String
     let chatID: String
     let content: String
     let createdAt: String
@@ -18,7 +17,6 @@ struct ChannelChatDTO: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case channelID = "channel_id"
-        case channelName
         case chatID = "chat_id"
         case content
         case createdAt
@@ -31,7 +29,6 @@ extension ChannelChatDTO {
     func toDomain() -> Chat {
         return Chat(id: self.chatID,
                     roomID: self.channelID,
-                    roomName: self.channelName,
                     content: self.content,
                     createdAt: self.createdAt,
                     files: self.files,

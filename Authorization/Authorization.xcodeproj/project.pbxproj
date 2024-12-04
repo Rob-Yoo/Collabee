@@ -138,7 +138,8 @@
 			children = (
 				CC8386522CE710C20077ED8B /* Literal.swift */,
 			);
-			path = Resources;
+			name = Resources;
+			path = ../../App/Resources;
 			sourceTree = "<group>";
 		};
 		CCC4B03B2CE705D700707CD2 = {

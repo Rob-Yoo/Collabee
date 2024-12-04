@@ -112,12 +112,11 @@ final class DMListViewController: BaseViewController {
                 owner.applySnapShot(memberList, dmRoomList)
             }.store(in: &cancellable)
         
-        output.willEnterRoomID
+        output.willEnterRoom
             .receive(on: DispatchQueue.main)
             .withUnretained(self)
-            .sink { owner, id in
-                
-                let nextVC = DMChattingViewController(vm: DMChattingViewModel(roomID: id))
+            .sink { owner, room in
+                let nextVC = DMChattingViewController(vm: DMChattingViewModel(room: room))
                 
                 nextVC.hidesBottomBarWhenPushed = true
                 owner.navigationController?.pushViewController(nextVC, animated: true)

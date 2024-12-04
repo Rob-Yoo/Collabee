@@ -29,7 +29,7 @@ final class DMListViewModel {
     func transform(_ input: Input) -> Output {
         let workspaceSubject = PassthroughSubject<Workspace, Never>()
         let chatRoomList = CurrentValueSubject<[ChatRoom], Never>([])
-        let willlEnterRoomID = PassthroughSubject<String, Never>()
+        let willlEnterRoom = PassthroughSubject<ChatRoom, Never>()
 
         input.viewWillAppear
             .withUnretained(self)
@@ -74,7 +74,15 @@ final class DMListViewModel {
                 let publishers = chatRoomList.map { chatRoom in
                     owner.chatUseCase.loadUnreadChats(owner.workspaceID, chatRoom.roomID, chatType: .dm)
                         .map { chats -> DMRoomPresentationModel? in
-                            guard let lastChat = chats.last else { return nil }
+                            guard let lastChat = chats.last else {
+                                let readChats = owner.chatUseCase.loadReadChats(chatRoom.roomID, isPagination: false)
+                                
+                                guard let last = readChats.last else {
+                                    return nil
+                                }
+                                
+                                return DMRoomPresentationModel.create(last, numberOfUnreadMessage: 0)
+                            }
                             return DMRoomPresentationModel.create(lastChat, numberOfUnreadMessage: chats.count)
                         }
                 }
@@ -98,10 +106,10 @@ final class DMListViewModel {
 
         input.selectedMember
             .withUnretained(self)
-            .flatMap { owner, index -> AnyPublisher<String, ChatError> in
+            .flatMap { owner, index -> AnyPublisher<ChatRoom, ChatError> in
                 let memberID = owner.memberList.value[index].id
                 
-                return owner.chatUseCase.getChatRoomID(owner.workspaceID, EnterRoomBody(opponentID: memberID))
+                return owner.chatUseCase.getChatRoom(owner.workspaceID, EnterRoomBody(opponentID: memberID))
             }
             .sink { completion in
                 switch completion {
@@ -109,23 +117,23 @@ final class DMListViewModel {
                 case .failure(let error):
                     print("🚨 ", #function, error.errorDescription ?? "")
                 }
-            } receiveValue: { roomID in
-                willlEnterRoomID.send(roomID)
+            } receiveValue: { room in
+                willlEnterRoom.send(room)
             }.store(in: &cancellable)
         
         input.selectedDMRoom
             .withUnretained(self)
             .sink { owner, index in
-                let dmRoomID = owner.dmRoomList.value[index].id
-                
-                willlEnterRoomID.send(dmRoomID)
+                let dmRoom = owner.dmRoomList.value[index]
+
+                willlEnterRoom.send(ChatRoom(roomID: dmRoom.id, name: dmRoom.name))
             }.store(in: &cancellable)
         
         return Output(
             workspace: workspaceSubject.eraseToAnyPublisher(),
             memberList: memberList.eraseToAnyPublisher(),
             dmRoomList: dmRoomList.eraseToAnyPublisher(),
-            willEnterRoomID: willlEnterRoomID.eraseToAnyPublisher()
+            willEnterRoom: willlEnterRoom.eraseToAnyPublisher()
         )
     }
 }
@@ -143,7 +151,7 @@ extension DMListViewModel {
         let workspace: AnyPublisher<Workspace, Never>
         let memberList: AnyPublisher<[Member], Never>
         let dmRoomList: AnyPublisher<[DMRoomPresentationModel], Never>
-        let willEnterRoomID: AnyPublisher<String, Never>
+        let willEnterRoom: AnyPublisher<ChatRoom, Never>
     }
     
 }

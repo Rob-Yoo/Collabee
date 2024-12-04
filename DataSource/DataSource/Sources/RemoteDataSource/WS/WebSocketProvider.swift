@@ -18,32 +18,39 @@ public protocol WebSocketProvider {
 
 // MARK: - DIContainer에 의해서 싱글턴으로 공유될 객체
 public final class DefaultWebSocketProvider: WebSocketProvider {
-    private let manager = SocketManager(socketURL: URL(string: Literal.Secret.SocketURL)!, config: [.compress, .log(true)])
-    private var ws: SocketIOClient
+    private let manager = SocketManager(socketURL: URL(string: Literal.Secret.SocketURL)!, config: [.log(true), .compress])
+    private var ws: SocketIOClient?
     private var isConnected = false
     
     public init() {
-        ws = manager.defaultSocket
-        ws.on(clientEvent: .connect) { data, ack in
-            print("웹소켓 연결 성공", data, ack)
-        }
-        
-        ws.on(clientEvent: .disconnect) { data, ack in
-            print("웹소켓 연결 끊김", data, ack)
-        }
+//        ws = manager.defaultSocket
+//        ws.on(clientEvent: .connect) { data, ack in
+//            print("웹소켓 연결 성공", data, ack)
+//        }
+//        
+//        ws.on(clientEvent: .disconnect) { data, ack in
+//            print("웹소켓 연결 끊김", data, ack)
+//        }
     }
     
     public func establishConnection(router: WSRouter) {
         if !isConnected {
             ws = self.manager.socket(forNamespace: router.nameSpace)
-            ws.connect()
+            ws?.on(clientEvent: .connect, callback: { data, ack in
+                print("💡💡💡💡💡💡💡💡 웹소켓 연결 성공 💡💡💡💡💡💡💡💡💡", data, ack)
+            })
+            ws?.on(clientEvent: .disconnect, callback: { data, ack in
+                print("💡💡💡💡💡💡💡💡 웹소켓 연결 끊김 💡💡💡💡💡💡💡💡💡", data, ack)
+            })
+            ws?.connect()
             isConnected = true
         }
     }
     
     public func closeConnection() {
         if isConnected {
-            ws.disconnect()
+            ws?.disconnect()
+            ws = nil
             isConnected = false
         }
     }
@@ -52,7 +59,7 @@ public final class DefaultWebSocketProvider: WebSocketProvider {
         
         let wsSubject = PassthroughSubject<R, WebSocketError>()
         
-        ws.on(router.event) { stream, ack in
+        ws?.on(router.event) { stream, ack in
 
             guard let data = stream.first,
                   let jsonData = try? JSONSerialization.data(withJSONObject: data),

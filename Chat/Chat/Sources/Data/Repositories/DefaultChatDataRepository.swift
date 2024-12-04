@@ -23,6 +23,7 @@ public final class DefaultChatDataRepository: ChatDataRepository {
     public init() {}
     
     public func saveChatData(_ chat: Chat) -> AnyPublisher<Chat, ChatError> {
+
         let chatObject = ChatObject(chat)
         
         return databaseProvider.add([chatObject])
@@ -56,9 +57,9 @@ public final class DefaultChatDataRepository: ChatDataRepository {
         }
     }
     
-    public func fetchChatRoomID(_ wsID: String, _ body: EnterRoomBody) -> AnyPublisher<String, ChatError> {
+    public func fetchChatRoom(_ wsID: String, _ body: EnterRoomBody) -> AnyPublisher<ChatRoom, ChatError> {
         return networkProvider.request(DirectMessageAPI.enterRoom(wsID, body), ChatRoomDTO.self, .withToken)
-            .map { $0.roomID }
+            .map { $0.toDomain() }
             .mapError { _ in ChatError.fetchChatRoomIDFailure }
             .eraseToAnyPublisher()
     }
@@ -70,15 +71,6 @@ public final class DefaultChatDataRepository: ChatDataRepository {
             return networkProvider.request(ChannelChatAPI.chatList(wsID, roomID, after), [ChannelChatDTO].self, .withToken)
                 .map { $0.map { $0.toDomain() } }
                 .mapError { _ in ChatError.fetchChatListFailure }
-                .withUnretained(self)
-                .flatMap { (owner, chatList) -> AnyPublisher<[Chat], ChatError> in
-                    
-                    return owner.databaseProvider.add(chatList.map { ChatObject($0) })
-                        .map { _ in chatList }
-                        .mapError { _ in ChatError.saveChatFailure }
-                        .eraseToAnyPublisher()
-                    
-                }
                 .eraseToAnyPublisher()
         case .dm:
             return networkProvider.request(DirectMessageAPI.dms(wsID, roomID, after), [DMChatDTO].self, .withToken)
@@ -96,28 +88,45 @@ public final class DefaultChatDataRepository: ChatDataRepository {
         }
     }
     
-    public func fetchReadChats(_ roomID: String, isPagination: Bool) -> AnyPublisher<[Chat], ChatError> {
-        return Future<[Chat], ChatError> { [weak self] promise in
-            guard let self else { return }
-            
-            var chatQuery = databaseProvider.read(objectType: ChatObject.self)
-                .where { $0.chatRoom.id == roomID }
-                .sorted(by: \.createdAt, ascending: false)
-            
-            if isPagination, let cursor {
-                chatQuery = chatQuery.filter("createdAt < %@", cursor.createdAt)
-            }
-            
-            let limitedChats = chatQuery.prefix(30)
-            let chatList = limitedChats.map { $0.toDomain() }
-            
-            if let newCursor = limitedChats.last {
-                self.cursor = newCursor
-            }
-            
-            promise(.success(Array(chatList)))
-            
-        }.eraseToAnyPublisher()
+    public func fetchReadChats(_ roomID: String, isPagination: Bool) -> [Chat] {
+        var chatQuery = databaseProvider.read(objectType: ChatObject.self)
+            .where { $0.chatRoom.id == roomID }
+            .sorted(by: \.createdAt, ascending: true)
+        
+        if isPagination, let cursor {
+            chatQuery = chatQuery.filter("createdAt < %@", cursor.createdAt)
+        }
+        
+        let limitedChats = chatQuery.prefix(30)
+        let chatList = limitedChats.map { $0.toDomain() }
+        
+        if let newCursor = limitedChats.last {
+            self.cursor = newCursor
+        }
+        
+        
+        return Array(chatList)
+//        return Future<[Chat], ChatError> { [weak self] promise in
+//            guard let self else { return }
+//            
+//            var chatQuery = databaseProvider.read(objectType: ChatObject.self)
+//                .where { $0.chatRoom.id == roomID }
+//                .sorted(by: \.createdAt, ascending: false)
+//            
+//            if isPagination, let cursor {
+//                chatQuery = chatQuery.filter("createdAt < %@", cursor.createdAt)
+//            }
+//            
+//            let limitedChats = chatQuery.prefix(30)
+//            let chatList = limitedChats.map { $0.toDomain() }
+//            
+//            if let newCursor = limitedChats.last {
+//                self.cursor = newCursor
+//            }
+//            
+//            promise(.success(Array(chatList)))
+//            
+//        }.eraseToAnyPublisher()
         
     }
     

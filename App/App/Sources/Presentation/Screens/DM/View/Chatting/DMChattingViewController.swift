@@ -58,7 +58,7 @@ final class DMChattingViewController: BaseViewController {
         self.vm = vm
         super.init()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addKeyboardDismissAction()
@@ -86,7 +86,11 @@ final class DMChattingViewController: BaseViewController {
     
     override func bindViewModel() {
         let input = DMChattingViewModel.Input(
-            viewDidLoad: viewDidLoadPublisher.eraseToAnyPublisher()
+            viewDidLoad: viewDidLoadPublisher.eraseToAnyPublisher(),
+            sendButtonTapped: chatInputView.sendButton.tap.eraseToAnyPublisher(),
+            chatTextContent: chatInputView.chatInputTextView.textPublisher.eraseToAnyPublisher(),
+            viewDidDissapear: viewDidDisappearPublisher.eraseToAnyPublisher()
+//            chatImageContent:
         )
         let output = vm.transform(input)
         
@@ -108,6 +112,13 @@ final class DMChattingViewController: BaseViewController {
             .withUnretained(self)
             .sink { owner, chats in
                 owner.applySnapShot(chats)
+            }.store(in: &cancellable)
+        
+        output.chatRoom
+            .receive(on: DispatchQueue.main)
+            .withUnretained(self)
+            .sink { owner, chatRoom in
+                owner.navigationItem.title = chatRoom.name
             }.store(in: &cancellable)
     }
     
@@ -192,13 +203,13 @@ extension DMChattingViewController {
     }
 }
 
-#if DEBUG
-import SwiftUI
-
-struct DMChattingViewControllerPreview: PreviewProvider {
-    static var previews: some View {
-        DMChattingViewController().toPreview()
-    }
-}
-#endif
+//#if DEBUG
+//import SwiftUI
+//
+//struct DMChattingViewControllerPreview: PreviewProvider {
+//    static var previews: some View {
+//        DMChattingViewController().toPreview()
+//    }
+//}
+//#endif
 

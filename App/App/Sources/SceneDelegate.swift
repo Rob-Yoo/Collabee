@@ -30,38 +30,38 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     @objc @MainActor
     private func connectWindowScene() {
-//        let isAuthorized = UserDefaultsStorage.isAuthorized
-//        
-//        if isAuthorized {
-//        
-//            workspaceRepository.fetchWorkspaceList()
-//                .withUnretained(self)
-//                .sink { completion in
-//                    switch completion {
-//                    case .finished: break
-//                    case .failure(let error):
-//                        print("🚨 ", #function, error.errorDescription ?? "")
-//                    }
-//                } receiveValue: { owner, list in
-//                    let homeVC: UIViewController
-//                    
-//                    if list.isEmpty {
-//                        homeVC = EmptyWorkspaceViewController()
-//                    } else {
-//                        owner.workspaceRepository.saveWorkspaceID(list[0].id)
-//                        homeVC = TabBarController()
-//                    }
-//                    
-//                    owner.window?.rootViewController = homeVC
-//                    owner.window?.makeKeyAndVisible()
-//                }.store(in: &cancellable)
-//
-//        } else {
-//            window?.rootViewController = UINavigationController(rootViewController: OnboardingViewController(useCase: authUseCase))
-//            window?.makeKeyAndVisible()
-//        }
-        window?.rootViewController = EmptyWorkspaceViewController()
-        window?.makeKeyAndVisible()
+        let isAuthorized = UserDefaultsStorage.isAuthorized
+        
+        if isAuthorized {
+        
+            workspaceRepository.fetchWorkspaceList()
+                .withUnretained(self)
+                .sink { completion in
+                    switch completion {
+                    case .finished: break
+                    case .failure(let error):
+                        print("🚨 ", #function, error.errorDescription ?? "")
+                    }
+                } receiveValue: { owner, list in
+                    let homeVC: UIViewController
+                    
+                    if list.isEmpty {
+                        homeVC = EmptyWorkspaceViewController()
+                    } else {
+                        owner.workspaceRepository.saveWorkspaceID(list[0].id)
+                        homeVC = TabBarController()
+                    }
+                    
+                    owner.window?.rootViewController = homeVC
+                    owner.window?.makeKeyAndVisible()
+                }.store(in: &cancellable)
+
+        } else {
+            window?.rootViewController = UINavigationController(rootViewController: OnboardingViewController(useCase: authUseCase))
+            window?.makeKeyAndVisible()
+        }
+//        window?.rootViewController = EmptyWorkspaceViewController()
+//        window?.makeKeyAndVisible()
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

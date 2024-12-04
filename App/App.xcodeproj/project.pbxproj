@@ -26,7 +26,7 @@
 		CC7FDDCC2CEDCB6300E7B0E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC7FDDCB2CEDCB6300E7B0E5 /* GoogleService-Info.plist */; };
 		CC7FDDCF2CEDCBE800E7B0E5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7FDDCE2CEDCBE800E7B0E5 /* FirebaseAnalytics */; };
 		CC7FDDD12CEDCBE800E7B0E5 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = CC7FDDD02CEDCBE800E7B0E5 /* FirebaseMessaging */; };
-		CC80B4E82CFD403100BE8813 /* Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC80B4E72CFD403100BE8813 /* Chat.framework */; };
+		CC80B4E82CFD403100BE8813 /* Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC80B4E72CFD403100BE8813 /* Chat.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		CC80B4EC2CFD411800BE8813 /* ChatAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4EB2CFD411800BE8813 /* ChatAssembly.swift */; };
 		CC80B4F72CFD799A00BE8813 /* DMChattingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4F62CFD799A00BE8813 /* DMChattingViewModel.swift */; };
 		CC80B4F92CFD7A8300BE8813 /* ChatPresentaionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4F82CFD7A8300BE8813 /* ChatPresentaionModel.swift */; };
@@ -76,6 +76,8 @@
 		CCFE26AF2CD4C3C100E8D655 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26AE2CD4C3C100E8D655 /* AppTests.swift */; };
 		CCFE26B92CD4C3C100E8D655 /* AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26B82CD4C3C100E8D655 /* AppUITests.swift */; };
 		CCFE26BB2CD4C3C100E8D655 /* AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26BA2CD4C3C100E8D655 /* AppUITestsLaunchTests.swift */; };
+		CCFF20472CFE95F9009DCA66 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCFF20462CFE95F9009DCA66 /* RealmSwift */; };
+		CCFF20482CFE9600009DCA66 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CCFF20462CFE95F9009DCA66 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,20 @@
 			remoteInfo = App;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CCFF20492CFE9600009DCA66 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CCFF20482CFE9600009DCA66 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CC15F4BA2CD50BFA00EBAA7D /* ko-KR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ko-KR"; path = "ko-KR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -174,6 +190,7 @@
 		CCFE26BA2CD4C3C100E8D655 /* AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CCFE275C2CD4D30900E8D655 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE27602CD4D31E00E8D655 /* Feature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Feature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCFF204A2CFEBD56009DCA66 /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFF20472CFE95F9009DCA66 /* RealmSwift in Frameworks */,
 				CCFD05522CEF56950023B97E /* WorkSpace.framework in Frameworks */,
 				CC8386702CE717160077ED8B /* SnapKit in Frameworks */,
 				CC8386652CE716020077ED8B /* Authorization.framework in Frameworks */,
@@ -510,6 +528,7 @@
 		CCFE275B2CD4D30900E8D655 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CCFF204B2CFEBD56009DCA66 /* Resources */,
 				CC80B4E72CFD403100BE8813 /* Chat.framework */,
 				CC80B4C92CFAC58900BE8813 /* Chat.framework */,
 				CCFD05512CEF56950023B97E /* WorkSpace.framework */,
@@ -523,6 +542,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CCFF204B2CFEBD56009DCA66 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CCFF204A2CFEBD56009DCA66 /* Literal.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -533,6 +560,7 @@
 				CCFE26902CD4C3C000E8D655 /* Sources */,
 				CCFE26912CD4C3C000E8D655 /* Frameworks */,
 				CCFE26922CD4C3C000E8D655 /* Resources */,
+				CCFF20492CFE9600009DCA66 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -544,6 +572,7 @@
 				CC8386722CE717240077ED8B /* Then */,
 				CC7FDDCE2CEDCBE800E7B0E5 /* FirebaseAnalytics */,
 				CC7FDDD02CEDCBE800E7B0E5 /* FirebaseMessaging */,
+				CCFF20462CFE95F9009DCA66 /* RealmSwift */,
 			);
 			productName = App;
 			productReference = CCFE26942CD4C3C000E8D655 /* App.app */;
@@ -623,6 +652,7 @@
 				CC8386712CE717240077ED8B /* XCRemoteSwiftPackageReference "Then" */,
 				CC7FDDCD2CEDCBE800E7B0E5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				CCBABF672CF6D16F00C227C1 /* XCRemoteSwiftPackageReference "MessageKit" */,
+				CCFF20452CFE95F9009DCA66 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = CCFE26952CD4C3C000E8D655 /* Products */;
 			projectDirPath = "";
@@ -898,6 +928,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCC4AFBD2CE7002D00707CD2 /* Secret.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
@@ -933,6 +964,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCC4AFBD2CE7002D00707CD2 /* Secret.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
@@ -1114,6 +1146,14 @@
 				minimumVersion = 4.3.0;
 			};
 		};
+		CCFF20452CFE95F9009DCA66 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.54.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1136,6 +1176,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CC8386712CE717240077ED8B /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		CCFF20462CFE95F9009DCA66 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCFF20452CFE95F9009DCA66 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

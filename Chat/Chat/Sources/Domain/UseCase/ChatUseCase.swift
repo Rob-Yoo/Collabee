@@ -13,11 +13,11 @@ public protocol ChatUseCase {
     func sendChat(_ wsID: String, _ roomID: String, chat: ChatBody, chatType: ChatType) -> AnyPublisher<Chat, ChatError>
     func receiveChat(_ roomID: String, chatType: ChatType) -> AnyPublisher<Chat, ChatError>
     func disconnect()
-    func getChatRoomID(_ wsID: String, _ body: EnterRoomBody) -> AnyPublisher<String, ChatError>
+    func getChatRoom(_ wsID: String, _ body: EnterRoomBody) -> AnyPublisher<ChatRoom, ChatError>
     func getNumberOfUnreads(_ wsID: String, _ roomID: String, chatType: ChatType) -> AnyPublisher<Int, ChatError>
     func getChatRoomList(_ wsID: String) -> AnyPublisher<[ChatRoom], ChatError>
     func loadUnreadChats(_ wsID: String, _ roomID: String, chatType: ChatType) -> AnyPublisher<[Chat], ChatError>
-    func loadReadChats(_ roomID: String, isPagination: Bool) -> AnyPublisher<[Chat], ChatError>
+    func loadReadChats(_ roomID: String, isPagination: Bool) -> [Chat]
 }
 
 //MARK: ChatDataRepository가 Unique 스코프이므로 UseCase도 Unique여야 함
@@ -55,8 +55,8 @@ public final class DefaultChatUseCase: ChatUseCase {
         chatActionRepository.disconnect()
     }
     
-    public func getChatRoomID(_ wsID: String, _ body: EnterRoomBody) -> AnyPublisher<String, ChatError> {
-        return chatDataRepository.fetchChatRoomID(wsID, body)
+    public func getChatRoom(_ wsID: String, _ body: EnterRoomBody) -> AnyPublisher<ChatRoom, ChatError> {
+        return chatDataRepository.fetchChatRoom(wsID, body)
     }
     
     public func getNumberOfUnreads(_ wsID: String, _ roomID: String, chatType: ChatType) -> AnyPublisher<Int, ChatError> {
@@ -80,10 +80,11 @@ public final class DefaultChatUseCase: ChatUseCase {
             .withUnretained(self)
             .flatMap { (owner, after) -> AnyPublisher<[Chat], ChatError> in
                 return owner.chatDataRepository.fetchUnreadChats(wsID, roomID, after: after, chatType: chatType)
-            }.eraseToAnyPublisher()
+            }
+            .eraseToAnyPublisher()
     }
     
-    public func loadReadChats(_ roomID: String, isPagination: Bool) -> AnyPublisher<[Chat], ChatError> {
+    public func loadReadChats(_ roomID: String, isPagination: Bool) -> [Chat] {
         // 1. Local DB로부터 이전 날짜에 대한 오프셋 페이지네이션 요청
         return chatDataRepository.fetchReadChats(roomID, isPagination: isPagination)
     }

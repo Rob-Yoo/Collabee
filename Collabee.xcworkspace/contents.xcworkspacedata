@@ -5,6 +5,9 @@
       location = "group:App/App.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:User/User.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Chat/Chat.xcodeproj">
    </FileRef>
    <FileRef

@@ -107,6 +107,12 @@ final class DMChattingViewController: BaseViewController {
                 owner.chatInputView.updateTextViewHeight()
             }.store(in: &cancellable)
         
+        chatInputView.sendButton.tap
+            .withUnretained(self)
+            .sink { owner, _ in
+                owner.chatInputView.chatInputTextView.text = ""
+            }.store(in: &cancellable)
+        
         output.chatList
             .receive(on: DispatchQueue.main)
             .withUnretained(self)

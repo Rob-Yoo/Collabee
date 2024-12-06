@@ -27,7 +27,6 @@ public final class DefaultDataBaseProvider: DataBaseProvider {
         print("🚧🚧🚧🚧🚧🚧🚧 \(Realm.Configuration.defaultConfiguration.fileURL)")
     }
     
-    @MainActor
     public func add<T: Object>(_ dataArray: [T]) -> AnyPublisher<Void, DataBaseError> {
         
         return Future<Void, DataBaseError> { [unowned self] promise in

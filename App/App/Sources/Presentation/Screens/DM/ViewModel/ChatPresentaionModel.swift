@@ -16,7 +16,7 @@ struct ChatPresentationModel: Hashable, Identifiable {
     let images: [String]
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        return hasher.combine(self.id)
     }
 }
 

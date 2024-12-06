@@ -17,8 +17,8 @@ final class EmailAuthService: AuthService {
     
     func perform() -> AnyPublisher<Void, AuthorizationError> {
         
-        let loginBody = EmailLoginBody(email: "user@user.com", password: "Qwer1234!")
-//        let loginBody = EmailLoginBody(email: "jintest3@test.com", password: "Qwer1234!")
+//        let loginBody = EmailLoginBody(email: "user@user.com", password: "Qwer1234!")
+        let loginBody = EmailLoginBody(email: "jintest3@test.com", password: "Qwer1234!")
         
         return Future<Void, AuthorizationError> { [weak self] promise in
             

@@ -38,14 +38,10 @@ final class DMChattingViewModel {
             .sink { owner, _ in
                 let chats = owner.chatUseCase.loadReadChats(owner.room.roomID, isPagination: false)
                 owner.chatList.send(chats.map { ChatPresentationModel.create($0) })
-                socketConnectTrigger.send(())
             }.store(in: &cancellable)
         
         //MARK: - 소켓 연결 및 메세지 수신
-        Publishers.CombineLatest(
-            socketConnectTrigger,
-            chatUseCase.receiveChat(room.roomID, chatType: .dm)
-        )
+        chatUseCase.receiveChat(room.roomID, chatType: .dm)
         .withUnretained(self)
         .receive(on: DispatchQueue.main)
         .sink { completion in
@@ -54,8 +50,8 @@ final class DMChattingViewModel {
             case .failure(let error):
                 print("🚨 ", #function, error.errorDescription ?? "")
             }
-        } receiveValue: { (owner, tuple) in
-            let newChat = ChatPresentationModel.create(tuple.1)
+        } receiveValue: { (owner, chat) in
+            let newChat = ChatPresentationModel.create(chat)
             var chatList = owner.chatList.value
             
             chatList.append(newChat)
@@ -67,13 +63,6 @@ final class DMChattingViewModel {
             .sink { owner, text in
                 owner.textContent = text
             }.store(in: &cancellable)
-        
-//        input.chatImageContent
-//            .withUnretained(self)
-//            .sink { owner, images in
-//                owner.imageContents = images
-//            }.store(in: &cancellable)
-        
         
         //MARK: - 전송 로직
         input.sendButtonTapped

@@ -12,7 +12,6 @@ enum Literal {
     enum InfoDictionary {
         static var SERVER_KEY: String { "SERVER_KEY" }
         static var BASE_URL: String { "BASE_URL" }
-        static var SOCKET_URL: String { "SOCKET_URL" }
     }
     
     enum Secret {
@@ -33,15 +32,6 @@ enum Literal {
             }
             
             return serverKey
-        }
-
-        static var SocketURL: String {
-            guard let socketURL = Bundle.main.infoDictionary?[Literal.InfoDictionary.SOCKET_URL] as? String else {
-                print("소켓 URL 미등록")
-                return ""
-            }
-            
-            return socketURL
         }
     }
 }

@@ -39,13 +39,13 @@ public final class DefaultChatActionRepository: ChatActionRepository {
         case .channel:
             wsProvider.establishConnection(router: .channel(roomID))
             return wsProvider.receive(.channel(roomID), responseType: ChannelChatDTO.self)
-                .print("🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿")
                 .map { $0.toDomain() }
                 .mapError { _ in ChatError.receiveChatFailure }
                 .eraseToAnyPublisher()
         case .dm:
             wsProvider.establishConnection(router: .dm(roomID))
             return wsProvider.receive(.dm(roomID), responseType: DMChatDTO.self)
+                .print("🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿")
                 .map { $0.toDomain() }
                 .mapError { _ in ChatError.receiveChatFailure }
                 .eraseToAnyPublisher()

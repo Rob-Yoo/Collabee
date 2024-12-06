@@ -18,7 +18,7 @@ public protocol WebSocketProvider {
 
 // MARK: - DIContainer에 의해서 싱글턴으로 공유될 객체
 public final class DefaultWebSocketProvider: WebSocketProvider {
-    private let manager = SocketManager(socketURL: URL(string: Literal.Secret.SocketURL)!, config: [.log(true), .compress])
+    private let manager = SocketManager(socketURL: URL(string: Literal.Secret.BaseURL)!, config: [.log(true), .compress])
     private var ws: SocketIOClient?
     private var isConnected = false
     
@@ -35,7 +35,6 @@ public final class DefaultWebSocketProvider: WebSocketProvider {
     
     public func establishConnection(router: WSRouter) {
         if !isConnected {
-            print("I' m Here")
             ws = self.manager.socket(forNamespace: router.nameSpace)
             ws?.removeAllHandlers()
             ws?.on(clientEvent: .connect, callback: { data, ack in

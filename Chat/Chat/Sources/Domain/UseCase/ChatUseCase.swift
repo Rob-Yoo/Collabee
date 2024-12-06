@@ -44,6 +44,7 @@ public final class DefaultChatUseCase: ChatUseCase {
     public func receiveChat(_ roomID: String, chatType: ChatType) -> AnyPublisher<Chat, ChatError> {
         // 1. 서버로부터 채팅 수신(WebSocket)
         // 2. LocalDB에 채팅 저장
+        print("🪧🪧🪧🪧🪧🪧🪧🪧🪧🪧🪧🪧🪧🪧🪧🪧🪧🪧🪧🪧🪧")
         return chatActionRepository.receive(roomID, chatType: chatType)
             .withUnretained(self)
             .flatMap { (owner, chat) -> AnyPublisher<Chat, ChatError> in

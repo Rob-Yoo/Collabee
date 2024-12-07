@@ -6,6 +6,7 @@
 //
 
 import Chat
+import Common
 
 struct DMRoomPresentationModel: Hashable, Identifiable {
     let id: String
@@ -21,13 +22,13 @@ struct DMRoomPresentationModel: Hashable, Identifiable {
 }
 
 extension DMRoomPresentationModel {
-    static func create(_ entity: Chat, name: String, numberOfUnreadMessage: Int) -> Self {
+    static func create(_ entity: Chat, _ chatRoom: ChatRoom, numberOfUnreadMessage: Int) -> Self {
         return DMRoomPresentationModel(
             id: entity.roomID,
-            name: name,
-            profileImageURL: entity.sender.profileImage,
+            name: chatRoom.name,
+            profileImageURL: chatRoom.imageURL,
             lastMessage: entity.content,
-            lastDate: entity.createdAt,
+            lastDate: entity.createdAt.toChatTime(),
             numberOfUnreadMessage: numberOfUnreadMessage
         )
     }

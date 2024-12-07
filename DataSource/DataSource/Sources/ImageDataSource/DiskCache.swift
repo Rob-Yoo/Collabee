@@ -10,9 +10,8 @@ import Combine
 
 final class DiskCache {
     
-//    private let expirationInterval: TimeInterval = 7 * (24 * 60 * 60) // 7일
     static let shared = DiskCache()
-    private let expirationInterval: TimeInterval = 60 * 2 // 2분
+    private let expirationInterval: TimeInterval = 3 * (24 * 60 * 60) // 3일
     private let fileQueue = DispatchQueue(label: "diskCache.fileQueue", attributes: .concurrent)
     private let cacheDirectory: URL = {
         let directory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent("DiskCache")
@@ -22,14 +21,8 @@ final class DiskCache {
         return directory
     }()
     
-    private var cleanupTimer: Timer?
-    
     private init() {
         cleanupExpiredFiles()
-        
-        cleanupTimer = Timer.scheduledTimer(withTimeInterval: 60 * 60 * 2, repeats: true) { [weak self] _ in
-            self?.cleanupExpiredFiles()
-        }
     }
     
     func save(imagePath: String, data: Data) {

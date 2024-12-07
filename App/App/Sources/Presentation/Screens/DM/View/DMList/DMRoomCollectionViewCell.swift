@@ -56,12 +56,12 @@ final class DMRoomCollectionViewCell: BaseCollectionViewCell {
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(profileImageView.snp.top).offset(3)
-            make.leading.equalTo(profileImageView.snp.trailing).offset(5)
+            make.leading.equalTo(profileImageView.snp.trailing).offset(10)
         }
         
         lastMessageLabel.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(1)
-            make.leading.equalTo(profileImageView.snp.trailing).offset(5)
+            make.leading.equalTo(profileImageView.snp.trailing).offset(10)
         }
         
         lastDateLabel.snp.makeConstraints { make in

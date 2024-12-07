@@ -19,6 +19,8 @@ struct ChatRoomDTO: Decodable {
 
 extension ChatRoomDTO {
     func toDomain() -> ChatRoom {
-        return ChatRoom(roomID: self.roomID, name: self.user.nickname)
+        return ChatRoom(roomID: self.roomID,
+                        name: self.user.nickname,
+                        imageURL: user.profileImage)
     }
 }

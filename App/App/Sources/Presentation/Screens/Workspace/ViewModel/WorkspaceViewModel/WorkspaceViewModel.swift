@@ -9,6 +9,7 @@ import Combine
 import UIKit.NSDiffableDataSourceSectionSnapshot
 
 import WorkSpace
+import Chat
 import User
 import Common
 
@@ -18,6 +19,7 @@ final class WorkspaceViewModel {
     
     @Injected private var workspaceRepository: WorkspaceRepository
     @Injected private var channelRepository: ChannelRepository
+    @Injected private var chatRepository: ChatDataRepository
     @Injected private var userRepository: UserRepository
 
     private var cancellable = Set<AnyCancellable>()
@@ -25,7 +27,7 @@ final class WorkspaceViewModel {
     
     private let toggleSubject = CurrentValueSubject<Void, Never>(())
     private let channelListSubject = CurrentValueSubject<[Channel], Never>([])
-    private let dmListSubject = CurrentValueSubject<[String], Never>([])
+    private let dmListSubject = CurrentValueSubject<[ChatRoom], Never>([])
     private var sections = [
         WorkspaceSection(sectionType: .channel, title: "채널", isOpened: true),
         WorkspaceSection(sectionType: .dm, title: "다이렉트 메세지", isOpened: true)
@@ -89,10 +91,20 @@ final class WorkspaceViewModel {
 
         input.viewDidLoad
             .withUnretained(self)
-            .sink { owner, _ in
-                let dms = ["유진영", "소정섭", "김윤우", "김건섭", "최대성"]
-                owner.dmListSubject.send(dms)
+            .flatMap { owner, _ -> AnyPublisher<[ChatRoom], ChatError> in
+                return owner.chatRepository.fetchChatRoomList(owner.workspaceID)
+            }
+            .withUnretained(self)
+            .sink { completion in
+                switch completion {
+                case .finished: break
+                case .failure(let error):
+                    print(#function, "🚨 \(error.errorDescription ?? "")")
+                }
+            } receiveValue: { owner, chatRooms in
+                owner.dmListSubject.send(chatRooms)
             }.store(in: &cancellable)
+
         
         input.inviteButtonTapped
             .withUnretained(self)
@@ -124,7 +136,7 @@ final class WorkspaceViewModel {
         )
     }
 
-    private func createSnapshot(_ channels: [Channel], _ dms: [String]) -> Snapshot {
+    private func createSnapshot(_ channels: [Channel], _ dms: [ChatRoom]) -> Snapshot {
         var snapShot = Snapshot()
 
         snapShot.appendSections(sections)

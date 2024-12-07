@@ -35,6 +35,7 @@ final class ChatTableViewCell: BaseTableViewCell {
     
     private let chatLabel = UILabel().then {
         $0.textColor = .textPrimary
+        $0.lineBreakMode = .byWordWrapping
         $0.numberOfLines = 0
         $0.font = .regular13
     }
@@ -128,7 +129,7 @@ final class ChatTableViewCell: BaseTableViewCell {
         contentStackView.snp.makeConstraints { make in
             make.top.equalTo(senderNameLabel.snp.bottom).offset(5)
             make.leading.equalTo(senderNameLabel)
-            make.width.lessThanOrEqualTo(224)
+            make.width.lessThanOrEqualTo(250)
             make.bottom.lessThanOrEqualToSuperview().inset(6)
         }
         
@@ -153,7 +154,7 @@ final class ChatTableViewCell: BaseTableViewCell {
     private func configureChatImages(_ imageURLs: [String]) {
         imageStackView.isHidden = imageURLs.isEmpty
         imageURLs.enumerated().forEach { (idx, imageURL) in
-            imageViewList[idx].setImage(imageURL: imageURL, placeHolder: .onboarding)
+            imageViewList[idx].setImage(imageURL: imageURL)
         }
         
         switch imageURLs.count {

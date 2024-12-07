@@ -6,6 +6,7 @@
 //
 
 import Chat
+import Common
 
 struct ChatPresentationModel: Hashable, Identifiable {
     let id: String
@@ -16,7 +17,7 @@ struct ChatPresentationModel: Hashable, Identifiable {
     let images: [String]
     
     func hash(into hasher: inout Hasher) {
-        return hasher.combine(self.id)
+        return hasher.combine(id)
     }
 }
 
@@ -26,7 +27,7 @@ extension ChatPresentationModel {
                                      profileImage: entity.sender.profileImage,
                                      senderName: entity.sender.name,
                                      content: entity.content,
-                                     sendDate: entity.createdAt,
+                                     sendDate: entity.createdAt.toChatTime(),
                                      images: entity.files)
     }
 }

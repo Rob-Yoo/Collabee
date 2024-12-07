@@ -82,6 +82,7 @@
 		CCFF20872D0318BF009DCA66 /* UserAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFF20862D0318BF009DCA66 /* UserAssembly.swift */; };
 		CCFF20892D0318CC009DCA66 /* User.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFF20882D0318CC009DCA66 /* User.framework */; };
 		CCFF208C2D031AAF009DCA66 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFF208B2D031AAF009DCA66 /* ProfileViewModel.swift */; };
+		CCFF60312D03EECB00C6E4FB /* DMTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFF60302D03EECB00C6E4FB /* DMTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +200,7 @@
 		CCFF20862D0318BF009DCA66 /* UserAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAssembly.swift; sourceTree = "<group>"; };
 		CCFF20882D0318CC009DCA66 /* User.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = User.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFF208B2D031AAF009DCA66 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		CCFF60302D03EECB00C6E4FB /* DMTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 			children = (
 				CC608F3A2CF0A7FE003D1EBA /* ChannelTableViewCell.swift */,
 				CC608F3C2CF0A828003D1EBA /* WorkSpaceTableViewHeaderView.swift */,
+				CCFF60302D03EECB00C6E4FB /* DMTableViewCell.swift */,
 			);
 			path = UITableViewCells;
 			sourceTree = "<group>";
@@ -758,6 +761,7 @@
 				CC2DA57E2CF54AEA00EA238F /* TabBarController.swift in Sources */,
 				CC2DA58C2CF5A7B000EA238F /* UnreadCountTagView.swift in Sources */,
 				CC2DA5882CF59E7000EA238F /* DMRoomCollectionViewCell.swift in Sources */,
+				CCFF60312D03EECB00C6E4FB /* DMTableViewCell.swift in Sources */,
 				CCBABF772CF70F7D00C227C1 /* UITextView+Combine.swift in Sources */,
 				CC80B4F92CFD7A8300BE8813 /* ChatPresentaionModel.swift in Sources */,
 				CCFD05202CEEF41D0023B97E /* EmptyWorkspaceViewModel.swift in Sources */,

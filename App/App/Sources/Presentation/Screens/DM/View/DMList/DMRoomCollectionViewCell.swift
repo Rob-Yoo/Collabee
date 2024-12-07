@@ -24,6 +24,7 @@ final class DMRoomCollectionViewCell: BaseCollectionViewCell {
     private let lastMessageLabel = UILabel().then {
         $0.textColor = .textSecondary
         $0.font = .regular13
+        $0.numberOfLines = 1
     }
     
     private let lastDateLabel = UILabel().then {
@@ -62,6 +63,7 @@ final class DMRoomCollectionViewCell: BaseCollectionViewCell {
         lastMessageLabel.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(1)
             make.leading.equalTo(profileImageView.snp.trailing).offset(10)
+            make.trailing.equalToSuperview()
         }
         
         lastDateLabel.snp.makeConstraints { make in

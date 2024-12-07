@@ -1,8 +1,8 @@
 //
-//  ChannelTableViewCell.swift
+//  DMTableViewCell.swift
 //  App
 //
-//  Created by Jinyoung Yoo on 11/22/24.
+//  Created by Jinyoung Yoo on 12/7/24.
 //
 
 import UIKit
@@ -10,39 +10,39 @@ import UIKit
 import SnapKit
 import Then
 
-final class ChannelTableViewCell: BaseTableViewCell {
+final class DMTableViewCell: BaseTableViewCell {
     
-    private let channelIcon = UIImageView().then {
-        let conf = UIImage.SymbolConfiguration(font: .regular15)
-        
-        $0.image = .channelIcon?.withConfiguration(conf)
+    private let profileImageView = RoundedImageView().then {
         $0.contentMode = .scaleAspectFill
-        $0.tintColor = .textSecondary
     }
     
-    private let channelNameLabel = UILabel().then {
-        $0.textColor = .textSecondary
+    private let nameLabel = UILabel().then {
+        $0.textColor = .textPrimary
         $0.font = .regular15
     }
     
     private let unreadCountTagView = UnreadCountTagView()
     
+    override func configureView() {
+        contentView.backgroundColor = .clear
+    }
+    
     override func configureHierarchy() {
-        contentView.addSubview(channelIcon)
-        contentView.addSubview(channelNameLabel)
+        contentView.addSubview(profileImageView)
+        contentView.addSubview(nameLabel)
         contentView.addSubview(unreadCountTagView)
     }
     
     override func configureLayout() {
-        channelIcon.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(30)
+        profileImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.size.equalTo(15)
+            make.leading.equalToSuperview().offset(30)
+            make.size.equalTo(30)
         }
         
-        channelNameLabel.snp.makeConstraints { make in
-            make.leading.equalTo(channelIcon.snp.trailing).offset(15)
+        nameLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
+            make.leading.equalTo(profileImageView.snp.trailing).offset(20)
         }
         
         unreadCountTagView.snp.makeConstraints { make in
@@ -53,20 +53,21 @@ final class ChannelTableViewCell: BaseTableViewCell {
         }
     }
     
-    func configureCell(_ name: String) {
-        let unreads = Int.random(in: 0..<15)
+    func configureCell(_ profileImageURL: String?, _ name: String) {
+        let unreads = Int.random(in: 0..<5)
         
-        self.channelNameLabel.text = name
+        profileImageView.setImage(imageURL: profileImageURL, placeHolder: .profilePlaceholder)
+        nameLabel.text = name
         
-        if unreads < 7 {
+        if unreads < 2 {
             unreadCountTagView.isHidden = true
-            channelNameLabel.textColor = .textSecondary
-            channelNameLabel.font = .regular15
+            nameLabel.textColor = .textSecondary
+            nameLabel.font = .regular15
         } else {
             unreadCountTagView.isHidden = false
             unreadCountTagView.countLabel.text = unreads.formatted()
-            channelNameLabel.font = .bold15
-            channelNameLabel.textColor = .textPrimary
+            nameLabel.font = .bold15
+            nameLabel.textColor = .textPrimary
             
             unreadCountTagView.snp.updateConstraints { make in
                 make.height.equalTo(unreadCountTagView.countLabel.intrinsicContentSize.height + 4)

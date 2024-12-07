@@ -8,9 +8,10 @@
 import Foundation
 
 import WorkSpace
+import Chat
 
 enum WorkspaceItem: Hashable {
     case channel(Channel)
-    case dm(String)
+    case dm(ChatRoom)
 }
 

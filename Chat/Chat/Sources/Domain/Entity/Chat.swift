@@ -5,7 +5,8 @@
 //  Created by Jinyoung Yoo on 11/29/24.
 //
 
-public struct Chat {
+public struct Chat: Hashable {
+
     public let id: String
     public let roomID: String
     public let content: String
@@ -22,4 +23,11 @@ public struct Chat {
         self.sender = sender
     }
     
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(id)
+    }
+ 
+    public static func == (lhs: Chat, rhs: Chat) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

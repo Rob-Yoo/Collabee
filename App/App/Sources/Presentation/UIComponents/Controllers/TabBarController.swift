@@ -35,7 +35,7 @@ final class TabBarController: UITabBarController {
         apearance.configureWithOpaqueBackground()
         self.tabBar.standardAppearance = apearance
         self.tabBar.scrollEdgeAppearance = apearance
-        self.tabBar.tintColor = .textPrimary
+        self.tabBar.tintColor = .brandMainTheme
         self.tabBar.unselectedItemTintColor = .textSecondary
     }
 }

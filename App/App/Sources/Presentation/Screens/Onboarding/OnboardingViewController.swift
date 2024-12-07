@@ -37,7 +37,7 @@ final class OnboardingViewController: UIViewController {
     }
     
     private let imageView = UIImageView().then {
-        $0.image = .onboarding
+        $0.image = .collabee
         $0.contentMode = .scaleAspectFill
     }
     
@@ -83,11 +83,12 @@ final class OnboardingViewController: UIViewController {
         }
         
         imageView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-40)
         }
         
         appleLoginButton.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(30)
+            make.top.equalTo(imageView.snp.bottom).offset(50)
             make.horizontalEdges.equalToSuperview().inset(40)
             make.height.equalTo(50)
         }

@@ -49,7 +49,8 @@ final class DMChattingViewController: BaseViewController {
         $0.register(ChatTableViewCell.self, forCellReuseIdentifier: ChatTableViewCell.identifier)
         $0.backgroundColor = .bgPrimary
         $0.rowHeight = UITableView.automaticDimension
-        $0.estimatedRowHeight = 300
+        $0.estimatedRowHeight = 400
+        $0.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         $0.separatorStyle = .none
     }
     private let chatInputView = ChatInputView()
@@ -63,6 +64,10 @@ final class DMChattingViewController: BaseViewController {
         super.viewDidLoad()
         addKeyboardDismissAction()
         startObservingKeyboard()
+        let backButton = UIBarButtonItem(image: .leftArrowIcon, style: .plain, target: nil, action: nil)
+
+        self.navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.leftBarButtonItem?.tintColor = .black
     }
     
     override func configureHierarchy() {

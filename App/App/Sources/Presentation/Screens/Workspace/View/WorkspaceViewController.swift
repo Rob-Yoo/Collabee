@@ -25,10 +25,10 @@ fileprivate final class DataSource: UITableViewDiffableDataSource<WorkspaceSecti
                 cell.configureCell(channel.name)
                 return cell
             case .dm(let dm):
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: ChannelTableViewCell.identifier, for: indexPath) as? ChannelTableViewCell else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: DMTableViewCell.identifier, for: indexPath) as? DMTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.configureCell(dm)
+                cell.configureCell(dm.imageURL, dm.name)
                 return cell
             }
         }
@@ -65,6 +65,7 @@ final class WorkspaceViewController: BaseViewController {
     private lazy var tableView = UITableView(frame: .zero, style: .grouped).then {
         $0.register(WorkSpaceTableViewHeaderView.self, forHeaderFooterViewReuseIdentifier: WorkSpaceTableViewHeaderView.identifier)
         $0.register(ChannelTableViewCell.self, forCellReuseIdentifier: ChannelTableViewCell.identifier)
+        $0.register(DMTableViewCell.self, forCellReuseIdentifier: DMTableViewCell.identifier)
         $0.delegate = self
         $0.rowHeight = 45
         $0.showsVerticalScrollIndicator = false
@@ -209,12 +210,12 @@ extension WorkspaceViewController: UITableViewDelegate {
     }
 }
 
-#if DEBUG
-import SwiftUI
-
-struct WorkspaceViewControllerPreview: PreviewProvider {
-    static var previews: some View {
-        WorkspaceViewController().toPreview()
-    }
-}
-#endif
+//#if DEBUG
+//import SwiftUI
+//
+//struct WorkspaceViewControllerPreview: PreviewProvider {
+//    static var previews: some View {
+//        WorkspaceViewController().toPreview()
+//    }
+//}
+//#endif

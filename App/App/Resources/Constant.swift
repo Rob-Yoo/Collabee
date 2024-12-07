@@ -21,6 +21,12 @@ enum Constant {
             static var subtitle: String { "관리자에게 초대를 요청하거나, 다른 이메일로 시도하거나\n새로운 워크스페이스를 생성해주세요." }
         }
         
+        enum Profile {
+            static var navTitle: String { "프로필" }
+            static var nameTextField: String { "이름" }
+            static var nameTextFieldPlaceHolder: String { "이름을 입력하세요" }
+        }
+        
         enum CreateWorkSpace {
             static var navTitle: String { "워크스페이스 생성" }
             static var nameTextField: String { "워크스페이스 이름" }

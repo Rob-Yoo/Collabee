@@ -63,12 +63,12 @@ final class DMListViewController: BaseViewController {
         $0.frame = CGRect(origin: .zero, size: size)
     }
     
-    private let profileImageView = RoundedImageView().then {
-        let placeHolder = UIImage.profilePlaceholder
+    private var profileImageView = RoundedImageView().then {
         let size = CGSize(width: 35, height: 35)
         
         $0.isUserInteractionEnabled = true
-        $0.image = placeHolder.resize(size)
+        $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
         $0.frame = CGRect(origin: .zero, size: size)
     }
     
@@ -88,6 +88,9 @@ final class DMListViewController: BaseViewController {
     override func bindViewModel() {
         let selectedMember = didSelectItemAtSubject.filter { $0.section == 0 }.map { $0.row }
         let selectedDMRoom = didSelectItemAtSubject.filter { $0.section == 1 }.map { $0.row }
+        let profileImageTapGR = UITapGestureRecognizer().then {
+            profileImageView.addGestureRecognizer($0)
+        }
         let input = DMListViewModel.Input(
             viewDidLoad: viewDidLoadPublisher.eraseToAnyPublisher(),
             viewWillAppear: viewWillAppearPublisher.eraseToAnyPublisher(),
@@ -95,6 +98,25 @@ final class DMListViewController: BaseViewController {
             selectedDMRoom: selectedDMRoom.eraseToAnyPublisher()
         )
         let output = vm.transform(input)
+        
+        profileImageTapGR.tapPublisher
+            .withUnretained(self)
+            .sink { owner, _ in
+                let nextVC = ProfileViewController(navTitle: "프로필")
+                
+                nextVC.onDismiss = { [unowned self] profileImage in
+                    profileImageView.image = profileImage
+                }
+                owner.presentBottomSheet(nextVC)
+            }.store(in: &cancellable)
+        
+        output.profileImage
+            .receive(on: DispatchQueue.main)
+            .withUnretained(self)
+            .sink { owner, imageURL in
+                owner.profileImageView.setImage(imageURL: imageURL, placeHolder: .profilePlaceholder, size: CGSize(width: 35, height: 35))
+                
+            }.store(in: &cancellable)
         
         output.workspace
             .receive(on: DispatchQueue.main)

@@ -36,6 +36,8 @@
 		CC80B4F02CFD4BC200BE8813 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4EF2CFD4BC200BE8813 /* ChatRoom.swift */; };
 		CC80B4F22CFD4C0100BE8813 /* ChatRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4F12CFD4C0100BE8813 /* ChatRoomDTO.swift */; };
 		CC80B4F42CFD742000BE8813 /* EnterRoomBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC80B4F32CFD742000BE8813 /* EnterRoomBody.swift */; };
+		CCFF208E2D0334CC009DCA66 /* SenderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFF208D2D0334CC009DCA66 /* SenderRepository.swift */; };
+		CCFF20902D033512009DCA66 /* DefaultSenderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFF208F2D033512009DCA66 /* DefaultSenderRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		CC80B4EF2CFD4BC200BE8813 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		CC80B4F12CFD4C0100BE8813 /* ChatRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomDTO.swift; sourceTree = "<group>"; };
 		CC80B4F32CFD742000BE8813 /* EnterRoomBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterRoomBody.swift; sourceTree = "<group>"; };
+		CCFF208D2D0334CC009DCA66 /* SenderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderRepository.swift; sourceTree = "<group>"; };
+		CCFF208F2D033512009DCA66 /* DefaultSenderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSenderRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +239,7 @@
 			children = (
 				CC80B4D52CFAEA5B00BE8813 /* ChatActionRepository.swift */,
 				CC80B4D72CFAEA6400BE8813 /* ChatDataRepository.swift */,
+				CCFF208D2D0334CC009DCA66 /* SenderRepository.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			children = (
 				CC80B4D92CFAEAC500BE8813 /* DefaultChatActionRepository.swift */,
 				CC80B4DB2CFAF13C00BE8813 /* DefaultChatDataRepository.swift */,
+				CCFF208F2D033512009DCA66 /* DefaultSenderRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFF208E2D0334CC009DCA66 /* SenderRepository.swift in Sources */,
 				CC80B4AF2CF9DA0500BE8813 /* Sender.swift in Sources */,
 				CC80B4962CF9B7F100BE8813 /* ChatRoomObject.swift in Sources */,
 				CC80B4C12CF9F3C200BE8813 /* ChatBody.swift in Sources */,
@@ -398,6 +405,7 @@
 				CC80B4DA2CFAEAC500BE8813 /* DefaultChatActionRepository.swift in Sources */,
 				CC80B4D42CFAE3D000BE8813 /* ChatType.swift in Sources */,
 				CC80B4AD2CF9D95800BE8813 /* Chat.swift in Sources */,
+				CCFF20902D033512009DCA66 /* DefaultSenderRepository.swift in Sources */,
 				CC80B49E2CF9D08B00BE8813 /* ChannelChatDTO.swift in Sources */,
 				CC80B4F22CFD4C0100BE8813 /* ChatRoomDTO.swift in Sources */,
 				CC80B4832CF8824800BE8813 /* ChannelChatAPI.swift in Sources */,

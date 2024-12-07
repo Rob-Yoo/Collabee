@@ -9,6 +9,7 @@ import Combine
 import UIKit.NSDiffableDataSourceSectionSnapshot
 
 import WorkSpace
+import User
 import Common
 
 fileprivate typealias Snapshot = NSDiffableDataSourceSnapshot<WorkspaceSection, WorkspaceItem>
@@ -17,6 +18,8 @@ final class WorkspaceViewModel {
     
     @Injected private var workspaceRepository: WorkspaceRepository
     @Injected private var channelRepository: ChannelRepository
+    @Injected private var userRepository: UserRepository
+
     private var cancellable = Set<AnyCancellable>()
     private lazy var workspaceID = workspaceRepository.getWorkspaceID()!
     
@@ -36,6 +39,7 @@ final class WorkspaceViewModel {
         let snapShotPublisher = Publishers.CombineLatest3(toggleSubject, channelListSubject, dmListSubject).withUnretained(self).map { (owner, subjects) in
             owner.createSnapshot(subjects.1, subjects.2)
         }.eraseToAnyPublisher()
+        let profileImage = PassthroughSubject<String, Never>()
 
         input.viewDidLoad
             .withUnretained(self)
@@ -69,6 +73,22 @@ final class WorkspaceViewModel {
         
         input.viewDidLoad
             .withUnretained(self)
+            .flatMap { owner, _ -> AnyPublisher<User, UserError> in
+                return owner.userRepository.fetchMyProfile()
+            }
+            .withUnretained(self)
+            .sink { completion in
+                switch completion {
+                case .finished: break
+                case .failure(let error):
+                    print(#function, "🚨 \(error.errorDescription ?? "")")
+                }
+            } receiveValue: { owner, user in
+                profileImage.send(user.profileImage)
+            }.store(in: &cancellable)
+
+        input.viewDidLoad
+            .withUnretained(self)
             .sink { owner, _ in
                 let dms = ["유진영", "소정섭", "김윤우", "김건섭", "최대성"]
                 owner.dmListSubject.send(dms)
@@ -99,7 +119,8 @@ final class WorkspaceViewModel {
             workspace: workspaceSubject.eraseToAnyPublisher(),
             inviteButtonTapped: workspaceIDSubject.eraseToAnyPublisher(),
             selectedChannel: selectedChannelSubject.eraseToAnyPublisher(),
-            snapShotPublisher: snapShotPublisher.eraseToAnyPublisher()
+            snapShotPublisher: snapShotPublisher.eraseToAnyPublisher(),
+            profileImage: profileImage.eraseToAnyPublisher()
         )
     }
 
@@ -140,5 +161,6 @@ extension WorkspaceViewModel {
         let inviteButtonTapped: AnyPublisher<String, Never>
         let selectedChannel: AnyPublisher<Channel, Never>
         let snapShotPublisher: AnyPublisher<NSDiffableDataSourceSnapshot<WorkspaceSection, WorkspaceItem>, Never>
+        let profileImage: AnyPublisher<String, Never>
     }
 }

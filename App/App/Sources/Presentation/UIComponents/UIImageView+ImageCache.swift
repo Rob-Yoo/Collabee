@@ -33,6 +33,7 @@ extension UIImageView {
         
         guard let imageURL, !imageURL.isEmpty else { return }
 
+        
         imageCancellable = ImageCacheManager.shared.getImageData(imageURL)
             .receive(on: DispatchQueue.main)
             .withUnretained(self)
@@ -45,5 +46,6 @@ extension UIImageView {
                     }
                 }
             }
+        
     }
 }

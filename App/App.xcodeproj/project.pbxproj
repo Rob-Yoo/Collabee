@@ -78,6 +78,10 @@
 		CCFE26BB2CD4C3C100E8D655 /* AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE26BA2CD4C3C100E8D655 /* AppUITestsLaunchTests.swift */; };
 		CCFF20472CFE95F9009DCA66 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCFF20462CFE95F9009DCA66 /* RealmSwift */; };
 		CCFF20482CFE9600009DCA66 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CCFF20462CFE95F9009DCA66 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CCFF20852D03189A009DCA66 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFF20842D03189A009DCA66 /* ProfileViewController.swift */; };
+		CCFF20872D0318BF009DCA66 /* UserAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFF20862D0318BF009DCA66 /* UserAssembly.swift */; };
+		CCFF20892D0318CC009DCA66 /* User.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFF20882D0318CC009DCA66 /* User.framework */; };
+		CCFF208C2D031AAF009DCA66 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFF208B2D031AAF009DCA66 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +195,10 @@
 		CCFE275C2CD4D30900E8D655 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFE27602CD4D31E00E8D655 /* Feature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Feature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCFF204A2CFEBD56009DCA66 /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
+		CCFF20842D03189A009DCA66 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CCFF20862D0318BF009DCA66 /* UserAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAssembly.swift; sourceTree = "<group>"; };
+		CCFF20882D0318CC009DCA66 /* User.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = User.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCFF208B2D031AAF009DCA66 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +212,7 @@
 				CC8386652CE716020077ED8B /* Authorization.framework in Frameworks */,
 				CC80B4E82CFD403100BE8813 /* Chat.framework in Frameworks */,
 				CC7FDDD12CEDCBE800E7B0E5 /* FirebaseMessaging in Frameworks */,
+				CCFF20892D0318CC009DCA66 /* User.framework in Frameworks */,
 				CC7FDDCF2CEDCBE800E7B0E5 /* FirebaseAnalytics in Frameworks */,
 				CC8386732CE717240077ED8B /* Then in Frameworks */,
 			);
@@ -340,6 +349,7 @@
 				CC7FDDA22CED719200E7B0E5 /* DataSourceAssembly.swift */,
 				CCFD055A2CEF66A30023B97E /* WorkspaceAssembly.swift */,
 				CC80B4EB2CFD411800BE8813 /* ChatAssembly.swift */,
+				CCFF20862D0318BF009DCA66 /* UserAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -439,6 +449,7 @@
 		CCFD052D2CEF0E380023B97E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CCFF20832D031885009DCA66 /* Profile */,
 				CC2DA5822CF58AD000EA238F /* DM */,
 				CC8386612CE715A20077ED8B /* Workspace */,
 				CC83865E2CE715850077ED8B /* Preview */,
@@ -528,6 +539,7 @@
 		CCFE275B2CD4D30900E8D655 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CCFF20882D0318CC009DCA66 /* User.framework */,
 				CCFF204B2CFEBD56009DCA66 /* Resources */,
 				CC80B4E72CFD403100BE8813 /* Chat.framework */,
 				CC80B4C92CFAC58900BE8813 /* Chat.framework */,
@@ -548,6 +560,15 @@
 				CCFF204A2CFEBD56009DCA66 /* Literal.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CCFF20832D031885009DCA66 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CCFF20842D03189A009DCA66 /* ProfileViewController.swift */,
+				CCFF208B2D031AAF009DCA66 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -706,10 +727,12 @@
 				CC2DA5862CF598B100EA238F /* MemberCollectionViewCell.swift in Sources */,
 				CCFD05332CEF16B60023B97E /* BaseView.swift in Sources */,
 				CCFD05352CEF16EB0023B97E /* BaseTableViewCell.swift in Sources */,
+				CCFF20852D03189A009DCA66 /* ProfileViewController.swift in Sources */,
 				CCFD052C2CEF05680023B97E /* UITextField+Combine.swift in Sources */,
 				CCBABF6C2CF6D27700C227C1 /* DMChattingViewController.swift in Sources */,
 				CCFD05392CEF17170023B97E /* BaseButton.swift in Sources */,
 				CC2DA58A2CF5A5EB00EA238F /* DMRoomPresentationModel.swift in Sources */,
+				CCFF208C2D031AAF009DCA66 /* ProfileViewModel.swift in Sources */,
 				CCBABF792CF72DF800C227C1 /* UITableView+Combine.swift in Sources */,
 				CCFE269A2CD4C3C000E8D655 /* SceneDelegate.swift in Sources */,
 				CCFD054B2CEF45450023B97E /* CreateWorkspaceViewController.swift in Sources */,
@@ -718,6 +741,7 @@
 				CCFD05662CF0417E0023B97E /* IdentifierProtocol.swift in Sources */,
 				CCBABF712CF6EF0C00C227C1 /* ChatInputView.swift in Sources */,
 				CCFD053B2CEF17A90023B97E /* RoundedTextButton.swift in Sources */,
+				CCFF20872D0318BF009DCA66 /* UserAssembly.swift in Sources */,
 				CCFD05412CEF29E60023B97E /* UIGestureRecognizer+Combine.swift in Sources */,
 				CCFD054D2CEF48220023B97E /* UIImage+Extension.swift in Sources */,
 				CC80B4F72CFD799A00BE8813 /* DMChattingViewModel.swift in Sources */,
@@ -928,7 +952,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCC4AFBD2CE7002D00707CD2 /* Secret.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
@@ -964,7 +987,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCC4AFBD2CE7002D00707CD2 /* Secret.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;

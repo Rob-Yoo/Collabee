@@ -9,6 +9,7 @@ import Combine
 
 import WorkSpace
 import Chat
+import User
 import DataSource
 import Common
 
@@ -16,6 +17,8 @@ final class DMListViewModel {
     
     @Injected private var memberRepository: WorkspaceMemberRepository
     @Injected private var workspaceRepository: WorkspaceRepository
+    @Injected private var userRepository: UserRepository
+    @Injected private var senderRepository: SenderRepository
     
     @Injected(objectScope: .unique)
     private var chatUseCase: ChatUseCase
@@ -28,9 +31,26 @@ final class DMListViewModel {
     
     func transform(_ input: Input) -> Output {
         let workspaceSubject = PassthroughSubject<Workspace, Never>()
+        let profileImage = PassthroughSubject<String, Never>()
         let chatRoomList = CurrentValueSubject<[ChatRoom], Never>([])
         let willlEnterRoom = PassthroughSubject<ChatRoom, Never>()
-
+        
+        input.viewWillAppear
+            .withUnretained(self)
+            .flatMap { owner, _ -> AnyPublisher<User, UserError> in
+                return owner.userRepository.fetchMyProfile()
+            }
+            .withUnretained(self)
+            .sink { completion in
+                switch completion {
+                case .finished: break
+                case .failure(let error):
+                    print(#function, "🚨 \(error.errorDescription ?? "")")
+                }
+            } receiveValue: { owner, user in
+                profileImage.send(user.profileImage)
+            }.store(in: &cancellable)
+        
         input.viewWillAppear
             .withUnretained(self)
             .flatMap { (owner, _) ->AnyPublisher<Workspace, WorkspaceError> in
@@ -61,6 +81,10 @@ final class DMListViewModel {
                     print("🚨 ", #function, error.errorDescription ?? "")
                 }
             } receiveValue: { owner, members in
+                members.forEach {
+                    let sender = Sender(id: $0.id, name: $0.nickname, email: $0.email, profileImage: $0.profileImage)
+                    owner.senderRepository.save(sender)
+                }
                 owner.memberList.send(members)
             }.store(in: &cancellable)
         
@@ -133,7 +157,8 @@ final class DMListViewModel {
             workspace: workspaceSubject.eraseToAnyPublisher(),
             memberList: memberList.eraseToAnyPublisher(),
             dmRoomList: dmRoomList.eraseToAnyPublisher(),
-            willEnterRoom: willlEnterRoom.eraseToAnyPublisher()
+            willEnterRoom: willlEnterRoom.eraseToAnyPublisher(),
+            profileImage: profileImage.eraseToAnyPublisher()
         )
     }
 }
@@ -152,6 +177,7 @@ extension DMListViewModel {
         let memberList: AnyPublisher<[Member], Never>
         let dmRoomList: AnyPublisher<[DMRoomPresentationModel], Never>
         let willEnterRoom: AnyPublisher<ChatRoom, Never>
+        let profileImage: AnyPublisher<String, Never>
     }
     
 }

@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DataSourceAssembly(),
             AuthorizationAssembly(),
             WorkspaceAssembly(),
+            UserAssembly(),
             ChatAssembly()
         ])
         

@@ -8,6 +8,8 @@
 import UIKit
 import Combine
 
+import Common
+
 import SnapKit
 import Then
 
@@ -52,11 +54,11 @@ final class WorkspaceViewController: BaseViewController {
     }
     
     private var profileImageView = RoundedImageView().then {
-        let placeHolder = UIImage.profilePlaceholder
         let size = CGSize(width: 35, height: 35)
         
         $0.isUserInteractionEnabled = true
-        $0.image = placeHolder.resize(size)
+        $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
         $0.frame = CGRect(origin: .zero, size: size)
     }
     
@@ -97,7 +99,7 @@ final class WorkspaceViewController: BaseViewController {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
-        
+
         inviteButton.snp.makeConstraints { make in
             make.bottom.trailing.equalTo(view.safeAreaLayoutGuide).inset(15)
             make.size.equalTo(54)
@@ -107,6 +109,9 @@ final class WorkspaceViewController: BaseViewController {
     override func bindViewModel() {
         let channelTapped = didSelectRowAtSubject.filter { $0.section == 0 }.map { $0.row }.eraseToAnyPublisher()
         let dmTapped = didSelectRowAtSubject.filter { $0.section == 1 }.map { $0.row }.eraseToAnyPublisher()
+        let profileImageTapGR = UITapGestureRecognizer().then {
+            profileImageView.addGestureRecognizer($0)
+        }
         
         let input = WorkspaceViewModel.Input(
             viewDidLoad: viewDidLoadPublisher,
@@ -128,6 +133,17 @@ final class WorkspaceViewController: BaseViewController {
                 owner.presentBottomSheet(inviteVC)
             }.store(in: &cancellable)
         
+        profileImageTapGR.tapPublisher
+            .withUnretained(self)
+            .sink { owner, _ in
+                let nextVC = ProfileViewController(navTitle: "프로필")
+                
+                nextVC.onDismiss = { [unowned self] profileImage in
+                    profileImageView.image = profileImage
+                }
+                owner.presentBottomSheet(nextVC)
+            }.store(in: &cancellable)
+        
         output.workspace
             .receive(on: DispatchQueue.main)
             .withUnretained(self)
@@ -144,6 +160,14 @@ final class WorkspaceViewController: BaseViewController {
             .sink { owner, snapShot in
                 owner.dataSource.apply(snapShot, animatingDifferences: true)
             }.store(in: &cancellable)
+        
+        output.profileImage
+            .receive(on: DispatchQueue.main)
+            .withUnretained(self)
+            .sink { owner, imageURL in
+                owner.profileImageView.setImage(imageURL: imageURL, placeHolder: .profilePlaceholder, size: CGSize(width: 35, height: 35))
+            }
+            .store(in: &cancellable)
     }
     
     private func configureNavigationBarButtonItems() {

@@ -14,6 +14,10 @@ struct ChatAssembly: Assembly {
             return DefaultChatActionRepository()
         }
         
+        container.register(SenderRepository.self) { _ in
+            return DefaultSenderRepository()
+        }
+        
         container.register(ChatDataRepository.self) { _ in
             return DefaultChatDataRepository()
         }

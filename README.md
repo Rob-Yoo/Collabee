@@ -26,10 +26,9 @@
 <br>
 
 
-| 로그인 화면 | 워크스페이스 화면 | DM 목록 화면 | 채팅 화면 |
+| 로그인 화면 | 워크스페이스 화면 | DM 목록 화면 | 채팅 화면 |
 |--|--|--|--|
-|![로그인화면](https://github.com/user-attachments/assets/d0da4c5c-336d-4238-93ee-1a772155b3ba)|![워크스페이스](https://github.com/user-attachments/assets/35904369-e480-4735-9d1b-5dd99e637b07)|![DM](https://github.com/user-attachments/assets/09110508-e5bf-4c59-b691-34668b5745a6)|![c채팅](https://github.com/user-attachments/assets/c0ae1b7c-ff22-48bf-817a-9808fbcc4803)
-
+|![로그인화면](https://github.com/user-attachments/assets/d0da4c5c-336d-4238-93ee-1a772155b3ba)|![워크스페이스](https://github.com/user-attachments/assets/35904369-e480-4735-9d1b-5dd99e637b07)|![DM](https://github.com/user-attachments/assets/6a82b764-83ac-41a5-b805-029477bce3e3)|![채팅](https://github.com/user-attachments/assets/c0ae1b7c-ff22-48bf-817a-9808fbcc4803)
 
 <br>
 

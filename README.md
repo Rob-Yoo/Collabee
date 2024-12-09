@@ -102,8 +102,10 @@
 
 ### Realm DB 모델링
 
-<img width="533" alt="DB 모델링" src="https://github.com/user-attachments/assets/c4891ca2-39c2-4f55-97fb-a31141e983a0">
+<img width="350" alt="스크린샷 2024-12-09 오후 8 17 54" src="https://github.com/user-attachments/assets/503e9253-0e35-401b-8c06-a535f47581fc">
 
+
+<br>
 <br>
 
 - ChatRoomObject와 ChatObject를 `To-Many` 관계로 정의하고 ChatObject를 `EmbeddedObject`타입으로 선언하여 `Cascading Delete`가 가능하도록 설계

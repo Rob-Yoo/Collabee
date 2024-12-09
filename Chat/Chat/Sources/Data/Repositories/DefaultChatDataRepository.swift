@@ -22,20 +22,27 @@ public final class DefaultChatDataRepository: ChatDataRepository {
     
     public init() {}
     
-    public func saveChatData(_ chat: Chat) -> AnyPublisher<Chat, ChatError> {
-
-        let chatObject = ChatObject(chat)
+    public func saveChatData(_ chat: Chat, _ roomID: String) -> AnyPublisher<Chat, ChatError> {
+        let newChatObject = ChatObject(chat)
         
-        return databaseProvider.add([chatObject])
-            .map { _ in chat }
+        newChatObject.sender = databaseProvider.readWithPrimaryKey(objectType: SenderObject.self, primaryKey: chat.sender.id) ?? SenderObject(chat.sender)
+        
+        return databaseProvider.addChats { realm in
+            if let chatRoomObject = realm.object(ofType: ChatRoomObject.self, forPrimaryKey: roomID) {
+                chatRoomObject.chats.append(newChatObject)
+            } else {
+                let chatRoomObject = ChatRoomObject(id: roomID)
+                chatRoomObject.chats.append(newChatObject)
+                realm.add(chatRoomObject)
+            }
+        }.map { _ in chat }
             .mapError { _ in ChatError.saveChatFailure }
             .eraseToAnyPublisher()
     }
     
-    public func fetchLastChatDate() -> AnyPublisher<String, Never> {
+    public func fetchLastChatDate(_ roomID: String) -> AnyPublisher<String, Never> {
         
-        guard let lastChatDate = databaseProvider.read(objectType: ChatObject.self)
-            .max(of: \.createdAt) else {
+        guard let chatRoom = databaseProvider.readWithPrimaryKey(objectType: ChatRoomObject.self, primaryKey: roomID), let lastChatDate = chatRoom.chats.last?.createdAt else {
             return Just("").eraseToAnyPublisher()
         }
         
@@ -79,7 +86,30 @@ public final class DefaultChatDataRepository: ChatDataRepository {
                 .withUnretained(self)
                 .flatMap { (owner, chatList) -> AnyPublisher<[Chat], ChatError> in
                     
-                    return owner.databaseProvider.add(chatList.map { ChatObject($0) })
+                    return owner.databaseProvider.addChats { realm in
+                        if let chatRoomObject = realm.object(ofType: ChatRoomObject.self, forPrimaryKey: roomID) {
+                            chatList.forEach {
+                                
+                                let chatObject = ChatObject($0)
+                                
+                                chatObject.sender = realm.object(ofType: SenderObject.self, forPrimaryKey: $0.sender.id) ?? SenderObject($0.sender)
+                                
+                                chatRoomObject.chats.append(chatObject)
+                            }
+                        } else {
+                            let chatRoomObject = ChatRoomObject(id: roomID)
+                            
+                            realm.add(chatRoomObject, update: .modified)
+                            chatList.forEach {
+                                
+                                let chatObject = ChatObject($0)
+                                
+                                chatObject.sender = realm.object(ofType: SenderObject.self, forPrimaryKey: $0.sender.id) ?? SenderObject($0.sender)
+                                
+                                chatRoomObject.chats.append(chatObject)
+                            }
+                        }
+                    }
                         .map { _ in chatList }
                         .mapError { _ in ChatError.saveChatFailure }
                         .eraseToAnyPublisher()
@@ -89,44 +119,22 @@ public final class DefaultChatDataRepository: ChatDataRepository {
     }
     
     public func fetchReadChats(_ roomID: String, isPagination: Bool) -> [Chat] {
-        var chatQuery = databaseProvider.read(objectType: ChatObject.self)
-            .where { $0.chatRoom.id == roomID }
+        var chatQuery = databaseProvider.readWithPrimaryKey(objectType: ChatRoomObject.self, primaryKey: roomID)?.chats
             .sorted(by: \.createdAt, ascending: true)
         
         if isPagination, let cursor {
-            chatQuery = chatQuery.filter("createdAt < %@", cursor.createdAt)
+            chatQuery = chatQuery?.filter("createdAt < %@", cursor.createdAt)
         }
         
-        let limitedChats = chatQuery.prefix(30)
-        let chatList = limitedChats.map { $0.toDomain() }
+        let limitedChats = chatQuery?.prefix(30)
+        let chatList = limitedChats?.map { $0.toDomain() }
         
-        if let newCursor = limitedChats.last {
+        if let newCursor = limitedChats?.last {
             self.cursor = newCursor
         }
         
         
-        return Array(chatList)
-//        return Future<[Chat], ChatError> { [weak self] promise in
-//            guard let self else { return }
-//            
-//            var chatQuery = databaseProvider.read(objectType: ChatObject.self)
-//                .where { $0.chatRoom.id == roomID }
-//                .sorted(by: \.createdAt, ascending: false)
-//            
-//            if isPagination, let cursor {
-//                chatQuery = chatQuery.filter("createdAt < %@", cursor.createdAt)
-//            }
-//            
-//            let limitedChats = chatQuery.prefix(30)
-//            let chatList = limitedChats.map { $0.toDomain() }
-//            
-//            if let newCursor = limitedChats.last {
-//                self.cursor = newCursor
-//            }
-//            
-//            promise(.success(Array(chatList)))
-//            
-//        }.eraseToAnyPublisher()
+        return chatList?.map { $0 } ?? []
         
     }
     

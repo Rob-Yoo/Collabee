@@ -9,35 +9,35 @@ import Common
 
 import RealmSwift
 
-class ChatObject: Object {
-    @Persisted(primaryKey: true) var id: String
-    @Persisted var chatRoom: ChatRoomObject?
+final class ChatObject: EmbeddedObject {
+    @Persisted var id: String
     @Persisted var sender: SenderObject?
     @Persisted var content: String
-    @Persisted(indexed: true) var createdAt: Date
+    @Persisted var createdAt: Date
     @Persisted var files: List<String>
+    @Persisted(originProperty: "chats") var chatRoom: LinkingObjects<ChatRoomObject>
 }
 
 extension ChatObject {
     convenience init(_ entity: Chat) {
         let fileList = List<String>()
-
+        
+        fileList.append(objectsIn: entity.files)
         self.init()
         self.id = entity.id
         self.content = entity.content
         self.createdAt = entity.createdAt.toServerDate()
-        self.chatRoom = ChatRoomObject(id: entity.roomID)
-        self.sender = SenderObject(entity.sender)
-        fileList.append(objectsIn: entity.files)
         self.files = fileList
     }
     
     func toDomain() -> Chat {
-        return Chat(id: self.id,
-                    roomID: self.chatRoom?.id ?? "",
-                    content: self.content,
-                    createdAt: self.createdAt.toServerDateStr(),
-                    files: self.files.map { $0 },
-                    sender: self.sender?.toDomain() ?? Sender(id: "", name: "", email: "", profileImage: nil))
+        return Chat(
+            id: self.id,
+            roomID: self.chatRoom.first?.id ?? "",
+            content: self.content,
+            createdAt: self.createdAt.toServerDateStr(),
+            files: self.files.map { $0 },
+            sender: self.sender?.toDomain() ?? Sender(id: "", name: "", email: "", profileImage: nil)
+        )
     }
 }

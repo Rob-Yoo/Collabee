@@ -11,6 +11,7 @@ import RealmSwift
 
 public protocol DataBaseProvider {
     func add<T: Object>(_ dataArray: [T]) -> AnyPublisher<Void, DataBaseError>
+    func addChats(transaction: @escaping (Realm) -> Void) -> AnyPublisher<Void, DataBaseError>
     func read<T: Object>(objectType: T.Type) -> Results<T>
     func readWithPrimaryKey<T: Object, P>(objectType: T.Type, primaryKey: P) -> T?
     func delete<T: Object>(_ dataArray: [T]) -> AnyPublisher<Void, DataBaseError>
@@ -45,6 +46,25 @@ public final class DefaultDataBaseProvider: DataBaseProvider {
         }.eraseToAnyPublisher()
     }
 
+    public func addChats(transaction: @escaping (Realm) -> Void) -> AnyPublisher<Void, DataBaseError> {
+        
+        return Future<Void, DataBaseError> { [unowned self] promise in
+            
+            realm.writeAsync {
+                transaction(self.realm)
+            } onComplete: { error in
+                guard error == nil else {
+                    promise(.failure(.createError))
+                    return
+                }
+                
+                promise(.success(()))
+            }
+            
+        }.eraseToAnyPublisher()
+        
+    }
+    
     public func read<T: Object>(objectType: T.Type) -> Results<T> {
         return realm.objects(objectType.self)
     }
@@ -56,8 +76,6 @@ public final class DefaultDataBaseProvider: DataBaseProvider {
     public func delete<T: Object>(_ dataArray: [T]) -> AnyPublisher<Void, DataBaseError> {
         
         return Future<Void, DataBaseError> { [unowned self] promise in
-            
-//            guard let realm else { return }
             
             realm.writeAsync {
                 self.realm.delete(dataArray)

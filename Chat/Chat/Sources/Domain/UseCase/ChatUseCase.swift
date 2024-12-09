@@ -36,7 +36,7 @@ public final class DefaultChatUseCase: ChatUseCase {
         return chatActionRepository.send(wsID, roomID, chat: chat, chatType: chatType)
             .withUnretained(self)
             .flatMap { (owner, chat) -> AnyPublisher<Chat, ChatError> in
-                return owner.chatDataRepository.saveChatData(chat)
+                return owner.chatDataRepository.saveChatData(chat, roomID)
             }
             .eraseToAnyPublisher()
     }
@@ -48,7 +48,7 @@ public final class DefaultChatUseCase: ChatUseCase {
         return chatActionRepository.receive(roomID, chatType: chatType)
             .withUnretained(self)
             .flatMap { (owner, chat) -> AnyPublisher<Chat, ChatError> in
-                return owner.chatDataRepository.saveChatData(chat)
+                return owner.chatDataRepository.saveChatData(chat, roomID)
             }.eraseToAnyPublisher()
     }
     
@@ -63,7 +63,7 @@ public final class DefaultChatUseCase: ChatUseCase {
     public func getNumberOfUnreads(_ wsID: String, _ roomID: String, chatType: ChatType) -> AnyPublisher<Int, ChatError> {
         // 1. Local DB로부터 가장 마지막 메세지의 날짜 받아오기
         // 1. 서버로부터 해당 날짜 이후로 안 읽은 메세지 개수 받아오기(HTTP)
-        return chatDataRepository.fetchLastChatDate()
+        return chatDataRepository.fetchLastChatDate(roomID)
             .withUnretained(self)
             .flatMap { (owner, after) -> AnyPublisher<Int, ChatError> in
                 return owner.chatDataRepository.fetchUnreadsCount(wsID, roomID, after: after, chatType: chatType)
@@ -77,7 +77,7 @@ public final class DefaultChatUseCase: ChatUseCase {
     public func loadUnreadChats(_ wsID: String, _ roomID: String, chatType: ChatType) -> AnyPublisher<[Chat], ChatError> {
         // 1. Local DB로부터 가장 마지막 메세지의 날짜 받아오기
         // 2. 서버로 해당 날짜 이후의 채팅 목록 가져오기(HTTP)
-        return chatDataRepository.fetchLastChatDate()
+        return chatDataRepository.fetchLastChatDate(roomID)
             .withUnretained(self)
             .flatMap { (owner, after) -> AnyPublisher<[Chat], ChatError> in
                 return owner.chatDataRepository.fetchUnreadChats(wsID, roomID, after: after, chatType: chatType)
